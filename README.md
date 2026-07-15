@@ -1,8 +1,18 @@
 # The Developer Handbook
 
-A living software engineering handbook focused on first principles, systems thinking, and efficient professional workflows.
+A living software engineering handbook focused on first principles, systems thinking, technical judgment, and efficient professional workflows.
 
-This project is designed as a continuous learning system rather than a collection of isolated notes. Each chapter should explain not only how a tool or concept works, but why it exists, when it should be used, when it should be avoided, and how it improves engineering judgment.
+> **Understand systems. Build mental models. Automate everything worth repeating.**
+
+This project is a continuous learning system rather than a collection of isolated notes. Chapters are refined as practical experience grows, and the repository preserves both the current guidance and the history of how that guidance evolved.
+
+## Start here
+
+- [Preface](PREFACE.md)
+- [Handbook Philosophy](PHILOSOPHY.md)
+- [How to Use This Handbook](HOW_TO_USE_THIS_HANDBOOK.md)
+- [Learning Roadmap](LEARNING_ROADMAP.md)
+- [Table of Contents](SUMMARY.md)
 
 ## Core priorities
 
@@ -17,6 +27,14 @@ This project is designed as a continuous learning system rather than a collectio
 9. System design
 10. Performance, debugging, and observability
 
+## Working method
+
+```text
+Learn → Refine → Publish → Apply → Revisit
+```
+
+Discussion and experimentation happen before publication. GitHub contains the refined, handbook-quality source.
+
 ## Handbook standard
 
 Each lesson should answer:
@@ -28,4 +46,4 @@ Each lesson should answer:
 - How does this make me a better software engineer?
 - How does this reduce waste or improve efficiency?
 
-The canonical source is Markdown in this repository. PDF, Word, and website versions are generated outputs rather than the primary source.
+The canonical source is Markdown in this repository. PDF, Word, ebook, and website versions are generated outputs rather than independent sources.
