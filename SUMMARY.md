@@ -12,7 +12,7 @@
 1. [Thinking Like a Unix Developer](handbook/foundations/01-thinking-like-a-unix-developer.md)
 2. [The Unix Mental Model](handbook/foundations/02-unix-mental-model.md)
 3. The Unix Filesystem
-4. Programs, Processes, and the Kernel
+4. [Programs, Processes, and the Kernel](handbook/foundations/04-programs-processes-and-the-kernel.md)
 5. The Shell
 6. The Terminal
 7. Users, Groups, and Permissions
