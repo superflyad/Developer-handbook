@@ -7,6 +7,12 @@
 - [How to Use This Handbook](HOW_TO_USE_THIS_HANDBOOK.md)
 - [Learning Roadmap](LEARNING_ROADMAP.md)
 
+## Project Governance
+
+- [Handbook Architecture](ARCHITECTURE.md)
+- [Editorial Guide](EDITORIAL_GUIDE.md)
+- [Handbook Decisions](DECISIONS.md)
+
 ## Part I — Foundations: Building the Machine
 
 1. [Thinking Like a Unix Developer](handbook/foundations/01-thinking-like-a-unix-developer.md)
@@ -16,13 +22,14 @@
 5. [The Shell](handbook/foundations/05-the-shell.md)
 6. [Terminal Emulators: The Window into Unix](handbook/foundations/06-terminal-emulators-the-window-into-unix.md)
 7. [Identity, Authentication, Authorization, and Permissions](handbook/foundations/07-identity-authentication-authorization-and-permissions.md)
-8. Input, Output, and Pipes
-9. Environment Variables
-10. Putting It All Together
+8. Standard Input, Standard Output, and Standard Error
+9. Pipes: Composing Small Tools
+10. Environment Variables
+11. The Unix Way: Composability in Practice
 
 ## Planned Parts
 
-- Part II — Terminal and Shell Mastery
+- Part II — Mastering the Unix Environment
 - Part III — Git Mastery
 - Part IV — Filesystems and Operating Systems
 - Part V — Networking
@@ -31,3 +38,7 @@
 - Part VIII — AWS and Cloud-Native Development
 - Part IX — System Design
 - Part X — Performance, Debugging, and Observability
+
+## Planned Appendix
+
+- Engineering Patterns
