@@ -14,6 +14,14 @@ This project is a continuous learning system rather than a collection of isolate
 - [Learning Roadmap](LEARNING_ROADMAP.md)
 - [Table of Contents](SUMMARY.md)
 
+## Project governance
+
+- [Handbook Architecture](ARCHITECTURE.md)
+- [Editorial Guide](EDITORIAL_GUIDE.md)
+- [Handbook Decisions](DECISIONS.md)
+
+These documents preserve the roadmap, publication workflow, writing standards, and reasoning behind major structural decisions.
+
 ## Core priorities
 
 1. Keyboard-first workflow
@@ -35,9 +43,16 @@ Learn → Refine → Publish → Apply → Revisit
 
 Discussion and experimentation happen before publication. GitHub contains the refined, handbook-quality source.
 
+Operational meanings:
+
+- **Discuss:** explore without repository changes.
+- **Draft:** prepare polished proposed content.
+- **Publish / Commit:** write the approved files to a feature branch and open or update a draft pull request.
+- **Merge:** integrate an approved pull request into `main`.
+
 ## Handbook standard
 
-Each lesson should answer:
+Each chapter should answer:
 
 - What problem does this solve?
 - Why was it designed this way?
