@@ -22,10 +22,10 @@
 5. [The Shell](handbook/foundations/05-the-shell.md)
 6. [Terminal Emulators: The Window into Unix](handbook/foundations/06-terminal-emulators-the-window-into-unix.md)
 7. [Identity, Authentication, Authorization, and Permissions](handbook/foundations/07-identity-authentication-authorization-and-permissions.md)
-8. Standard Input, Standard Output, and Standard Error
-9. Pipes: Composing Small Tools
-10. Environment Variables
-11. The Unix Way: Composability in Practice
+8. [Standard Input, Standard Output, and Standard Error](handbook/foundations/08-standard-input-standard-output-and-standard-error.md)
+9. [Pipes: Composing Small Tools](handbook/foundations/09-pipes-composing-small-tools.md)
+10. [Environment Variables](handbook/foundations/10-environment-variables.md)
+11. [The Unix Way: Composability in Practice](handbook/foundations/11-the-unix-way-composability-in-practice.md)
 
 ## Planned Parts
 
