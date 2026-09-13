@@ -1,6 +1,6 @@
-# Lesson 2 — The Unix Mental Model
+# Chapter 2 — The Unix Mental Model
 
-Lesson 1 described how Unix developers compose tools. This lesson explains the operating-system model underneath those tools.
+Chapter 1 described how Unix developers compose tools. This chapter explains the operating-system model underneath those tools.
 
 The central idea is:
 
@@ -214,7 +214,7 @@ This model gives you a debugging map. A failure could come from shell parsing, p
 ## 11. Platform comparison
 
 | Concept | Windows | macOS | Linux |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Kernel family | Windows NT | XNU | Linux |
 | Common interactive shell | PowerShell | zsh | Often Bash; distribution-dependent |
 | Filesystem roots | Drive letters and mounted volumes | One `/` tree | One `/` tree |

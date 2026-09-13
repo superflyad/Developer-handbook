@@ -1,6 +1,6 @@
-# Lesson 6 — Terminal Emulators: The Window into Unix
+# Chapter 6 — Terminal Emulators: The Window into Unix
 
-Lesson 5 explained the shell as a command interpreter and process coordinator. This lesson separates that shell from the application you see on screen.
+Chapter 5 explained the shell as a command interpreter and process coordinator. This chapter separates that shell from the application you see on screen.
 
 The central idea is:
 

@@ -1,4 +1,4 @@
-# Lesson 7 — Identity, Authentication, Authorization, and Permissions
+# Chapter 7 — Identity, Authentication, Authorization, and Permissions
 
 The previous chapters explained how Unix runs software. This chapter explains how Unix decides whether running software is allowed to act.
 
@@ -341,7 +341,7 @@ Bypassing the boundary without understanding it trades a visible failure for a h
 All three platforms implement identity and authorization, but expose them differently.
 
 | Concept | Windows | macOS | Linux |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | User identity | Security identifier (SID) | UID plus Apple security layers | UID |
 | Group identity | Group SID | GID and directory-service groups | GID |
 | Elevated authority | Administrator token and UAC | `sudo`, authorization services | `sudo`, root, policy tools |

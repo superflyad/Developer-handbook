@@ -1,4 +1,4 @@
-# Lesson 1 — Thinking Like a Unix Developer
+# Chapter 1 — Thinking Like a Unix Developer
 
 Unix is not primarily a collection of commands. It is a way of designing and operating systems.
 
@@ -43,16 +43,16 @@ Traditional Unix tools tend to have narrow responsibilities:
 Their real power comes from composition rather than individual feature count.
 
 ```bash
-find . -name '*.log' | grep 'ERROR' | wc -l
+find . -type f -name '*.log' -exec grep -h 'ERROR' {} + | wc -l
 ```
 
 Conceptually, this workflow:
 
-1. discovers log files,
-2. selects error records,
-3. counts the results.
+1. discovers regular files whose names end in `.log`,
+2. passes those files to `grep`, which emits matching records,
+3. counts the emitted records.
 
-The exact command will be refined in later lessons. For now, focus on the architecture: each stage has one responsibility and communicates through a standard interface.
+Piping plain `find` output into `grep` would search the filenames themselves, not the contents of the files. Here, `-exec ... {} +` supplies the discovered paths to `grep` as file arguments. The exact command will be refined in later chapters. For now, focus on the architecture: each stage has one responsibility and communicates through a standard interface.
 
 ## 4. Text as an interoperability format
 
@@ -141,7 +141,7 @@ The same habits that produce good shell workflows also produce maintainable soft
 ## Platform comparison
 
 | Platform | Traditional emphasis | Modern engineering reality |
-|---|---|---|
+| --- | --- | --- |
 | Windows | GUI and application-centric workflows | PowerShell, Windows Terminal, WSL, package managers, and automation are first-class tools |
 | macOS | Polished desktop built on Unix foundations | Native Unix tools coexist with strong graphical applications |
 | Linux | Command-line and server-oriented workflows | Dominant environment for servers, containers, cloud workloads, and embedded systems |
@@ -180,7 +180,7 @@ Reusable tools and automated workflows eliminate repeated manual steps, reduce m
 
 ## Practice
 
-Before the next lesson, observe three actions you perform on your computer. For each, ask:
+Before the next chapter, observe three actions you perform on your computer. For each, ask:
 
 1. What is the input?
 2. What transformation occurs?

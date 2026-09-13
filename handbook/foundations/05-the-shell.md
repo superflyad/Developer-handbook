@@ -1,6 +1,6 @@
-# Lesson 5 — The Shell
+# Chapter 5 — The Shell
 
-Lesson 4 established that a process is a running program with identity, state, resources, and a lifecycle. The shell is one such process, but it has a special role: it interprets command language and coordinates other processes.
+Chapter 4 established that a process is a running program with identity, state, resources, and a lifecycle. The shell is one such process, but it has a special role: it interprets command language and coordinates other processes.
 
 The central idea is:
 
@@ -423,7 +423,7 @@ The shell is excellent glue. It is a poor foundation for a skyscraper.
 ## Platform comparison
 
 | Platform | Common shell | Key characteristic |
-|---|---|---|
+| --- | --- | --- |
 | Windows | PowerShell | Pipelines pass structured objects and integrate deeply with Windows |
 | macOS | `zsh` | Unix shell with strong interactive features |
 | Linux | commonly `bash` | Broad deployment across servers, containers, and automation |

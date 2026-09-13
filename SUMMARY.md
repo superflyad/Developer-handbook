@@ -17,7 +17,7 @@
 
 1. [Thinking Like a Unix Developer](handbook/foundations/01-thinking-like-a-unix-developer.md)
 2. [The Unix Mental Model](handbook/foundations/02-unix-mental-model.md)
-3. The Unix Filesystem
+3. [The Unix Filesystem](handbook/foundations/03-the-unix-filesystem.md)
 4. [Programs, Processes, and the Kernel](handbook/foundations/04-programs-processes-and-the-kernel.md)
 5. [The Shell](handbook/foundations/05-the-shell.md)
 6. [Terminal Emulators: The Window into Unix](handbook/foundations/06-terminal-emulators-the-window-into-unix.md)

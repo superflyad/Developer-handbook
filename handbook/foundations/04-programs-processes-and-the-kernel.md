@@ -1,4 +1,4 @@
-# Lesson 4 — Programs, Processes, and the Kernel
+# Chapter 4 — Programs, Processes, and the Kernel
 
 So far, the handbook has established three ideas:
 
@@ -363,7 +363,7 @@ Editors launch compilers, language servers, test runners, and debuggers as child
 ## Platform comparison
 
 | Concept | Windows | macOS | Linux |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | Process identifier | PID | PID | PID |
 | Kernel | NT | XNU | Linux |
 | Graphical viewer | Task Manager | Activity Monitor | Desktop system monitor varies |
