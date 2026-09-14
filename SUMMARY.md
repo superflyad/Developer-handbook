@@ -38,7 +38,7 @@
 - [Quoting, Expansion, and Redirection in Practice](handbook/terminal/18-quoting-expansion-and-redirection-in-practice.md)
 - [Processes, Jobs, and Signals](handbook/terminal/19-processes-jobs-and-signals.md)
 - [Permissions in Daily Work](handbook/terminal/20-permissions-in-daily-work.md)
-- Chapter 21 — Installing and Managing Software
+- [Installing and Managing Software](handbook/terminal/21-installing-and-managing-software.md)
 - Chapter 22 — Shell Startup, Configuration, and `PATH`
 - Chapter 23 — Building an Efficient Command-Line Workflow
 
