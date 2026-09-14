@@ -36,7 +36,7 @@
 - [Searching Text and Working with Regular Expressions](handbook/terminal/16-searching-text-and-working-with-regular-expressions.md)
 - [Reading and Transforming Text](handbook/terminal/17-reading-and-transforming-text.md)
 - [Quoting, Expansion, and Redirection in Practice](handbook/terminal/18-quoting-expansion-and-redirection-in-practice.md)
-- Chapter 19 — Processes, Jobs, and Signals
+- [Processes, Jobs, and Signals](handbook/terminal/19-processes-jobs-and-signals.md)
 - Chapter 20 — Permissions in Daily Work
 - Chapter 21 — Installing and Managing Software
 - Chapter 22 — Shell Startup, Configuration, and `PATH`
