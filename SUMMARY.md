@@ -29,7 +29,7 @@
 
 ## Part II — Mastering the Unix Environment (Planned)
 
-- Chapter 12 — Command-Line Grammar and Getting Help
+- [Command-Line Grammar and Getting Help](handbook/terminal/12-command-line-grammar-and-getting-help.md)
 - Chapter 13 — Navigation and Path Resolution
 - Chapter 14 — Safe File and Directory Operations
 - Chapter 15 — Finding Files and Inspecting Metadata
