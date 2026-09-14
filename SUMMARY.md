@@ -27,9 +27,23 @@
 10. [Environment Variables](handbook/foundations/10-environment-variables.md)
 11. [The Unix Way: Composability in Practice](handbook/foundations/11-the-unix-way-composability-in-practice.md)
 
+## Part II — Mastering the Unix Environment (Planned)
+
+- Chapter 12 — Command-Line Grammar and Getting Help
+- Chapter 13 — Navigation and Path Resolution
+- Chapter 14 — Safe File and Directory Operations
+- Chapter 15 — Finding Files and Inspecting Metadata
+- Chapter 16 — Searching Text and Working with Regular Expressions
+- Chapter 17 — Reading and Transforming Text
+- Chapter 18 — Quoting, Expansion, and Redirection in Practice
+- Chapter 19 — Processes, Jobs, and Signals
+- Chapter 20 — Permissions in Daily Work
+- Chapter 21 — Installing and Managing Software
+- Chapter 22 — Shell Startup, Configuration, and `PATH`
+- Chapter 23 — Building an Efficient Command-Line Workflow
+
 ## Planned Parts
 
-- Part II — Mastering the Unix Environment
 - Part III — Git Mastery
 - Part IV — Filesystems and Operating Systems
 - Part V — Networking

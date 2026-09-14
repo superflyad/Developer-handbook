@@ -102,7 +102,20 @@ Part I builds the operating-system mental model before introducing command-focus
 
 ### Part II — Mastering the Unix Environment
 
-Navigation, file operations, search, text processing, redirection, expansion, process control, practical permissions, package management, shell configuration, and command-line workflows.
+- Chapter 12 — Command-Line Grammar and Getting Help
+- Chapter 13 — Navigation and Path Resolution
+- Chapter 14 — Safe File and Directory Operations
+- Chapter 15 — Finding Files and Inspecting Metadata
+- Chapter 16 — Searching Text and Working with Regular Expressions
+- Chapter 17 — Reading and Transforming Text
+- Chapter 18 — Quoting, Expansion, and Redirection in Practice
+- Chapter 19 — Processes, Jobs, and Signals
+- Chapter 20 — Permissions in Daily Work
+- Chapter 21 — Installing and Managing Software
+- Chapter 22 — Shell Startup, Configuration, and `PATH`
+- Chapter 23 — Building an Efficient Command-Line Workflow
+
+Part II converts the mental model from Part I into practical fluency. It progresses through command literacy, filesystem work, discovery, text processing, shell evaluation, runtime control, permissions, software management, environment ownership, and an integrated workflow. Detailed inclusion and deferral boundaries live in `LEARNING_ROADMAP.md`.
 
 ### Part III — Git Mastery
 

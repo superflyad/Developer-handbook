@@ -153,3 +153,30 @@ Each pull request should represent one coherent chapter, related chapter pair, s
 - Related chapters may share a pull request when they form one conceptual unit.
 - Unrelated changes are separated.
 - Commit and PR history should communicate the handbook's evolution clearly.
+
+## ADR-009 — Progress from command literacy to integrated Unix workflows
+
+**Status:** Accepted
+
+### Context
+
+Part I established a systems mental model. Part II must turn that model into practical fluency without becoming a disconnected command reference, duplicating Part I, or prematurely teaching the automation material reserved for Part VI.
+
+### Decision
+
+Part II spans Chapters 12 through 23 and follows four phases:
+
+1. command and filesystem fluency,
+2. discovery and text composition,
+3. runtime control and environment ownership,
+4. an integrated command-line workflow.
+
+The learning roadmap records an explicit purpose, included scope, deferred scope, and reader outcome for every chapter. Each chapter is implemented as a separate commit.
+
+### Consequences
+
+- Later chapters may rely on the shell and process models established in Part I instead of repeating them.
+- Tool coverage is selected to teach a transferable operation or decision, not to maximize the number of commands mentioned.
+- Shell scripting, CI/CD, and production automation remain in Part VI.
+- Filesystem and operating-system internals remain in Part IV unless Part II needs a concise practical explanation.
+- Chapter 23 must integrate the skills from Part II and establish the boundary between interactive work and automation.
