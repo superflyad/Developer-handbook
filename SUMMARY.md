@@ -27,20 +27,20 @@
 10. [Environment Variables](handbook/foundations/10-environment-variables.md)
 11. [The Unix Way: Composability in Practice](handbook/foundations/11-the-unix-way-composability-in-practice.md)
 
-## Part II — Mastering the Unix Environment (Planned)
+## Part II — Mastering the Unix Environment
 
-- [Command-Line Grammar and Getting Help](handbook/terminal/12-command-line-grammar-and-getting-help.md)
-- [Navigation and Path Resolution](handbook/terminal/13-navigation-and-path-resolution.md)
-- [Safe File and Directory Operations](handbook/terminal/14-safe-file-and-directory-operations.md)
-- [Finding Files and Inspecting Metadata](handbook/terminal/15-finding-files-and-inspecting-metadata.md)
-- [Searching Text and Working with Regular Expressions](handbook/terminal/16-searching-text-and-working-with-regular-expressions.md)
-- [Reading and Transforming Text](handbook/terminal/17-reading-and-transforming-text.md)
-- [Quoting, Expansion, and Redirection in Practice](handbook/terminal/18-quoting-expansion-and-redirection-in-practice.md)
-- [Processes, Jobs, and Signals](handbook/terminal/19-processes-jobs-and-signals.md)
-- [Permissions in Daily Work](handbook/terminal/20-permissions-in-daily-work.md)
-- [Installing and Managing Software](handbook/terminal/21-installing-and-managing-software.md)
-- [Shell Startup, Configuration, and PATH](handbook/terminal/22-shell-startup-configuration-and-path.md)
-- Chapter 23 — Building an Efficient Command-Line Workflow
+- [Chapter 12 — Command-Line Grammar and Getting Help](handbook/terminal/12-command-line-grammar-and-getting-help.md)
+- [Chapter 13 — Navigation and Path Resolution](handbook/terminal/13-navigation-and-path-resolution.md)
+- [Chapter 14 — Safe File and Directory Operations](handbook/terminal/14-safe-file-and-directory-operations.md)
+- [Chapter 15 — Finding Files and Inspecting Metadata](handbook/terminal/15-finding-files-and-inspecting-metadata.md)
+- [Chapter 16 — Searching Text and Working with Regular Expressions](handbook/terminal/16-searching-text-and-working-with-regular-expressions.md)
+- [Chapter 17 — Reading and Transforming Text](handbook/terminal/17-reading-and-transforming-text.md)
+- [Chapter 18 — Quoting, Expansion, and Redirection in Practice](handbook/terminal/18-quoting-expansion-and-redirection-in-practice.md)
+- [Chapter 19 — Processes, Jobs, and Signals](handbook/terminal/19-processes-jobs-and-signals.md)
+- [Chapter 20 — Permissions in Daily Work](handbook/terminal/20-permissions-in-daily-work.md)
+- [Chapter 21 — Installing and Managing Software](handbook/terminal/21-installing-and-managing-software.md)
+- [Chapter 22 — Shell Startup, Configuration, and PATH](handbook/terminal/22-shell-startup-configuration-and-path.md)
+- [Chapter 23 — Building an Efficient Command-Line Workflow](handbook/terminal/23-building-an-efficient-command-line-workflow.md)
 
 ## Planned Parts
 
