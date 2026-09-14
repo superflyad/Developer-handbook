@@ -35,7 +35,7 @@
 - [Finding Files and Inspecting Metadata](handbook/terminal/15-finding-files-and-inspecting-metadata.md)
 - [Searching Text and Working with Regular Expressions](handbook/terminal/16-searching-text-and-working-with-regular-expressions.md)
 - [Reading and Transforming Text](handbook/terminal/17-reading-and-transforming-text.md)
-- Chapter 18 — Quoting, Expansion, and Redirection in Practice
+- [Quoting, Expansion, and Redirection in Practice](handbook/terminal/18-quoting-expansion-and-redirection-in-practice.md)
 - Chapter 19 — Processes, Jobs, and Signals
 - Chapter 20 — Permissions in Daily Work
 - Chapter 21 — Installing and Managing Software
