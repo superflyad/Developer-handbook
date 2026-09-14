@@ -39,7 +39,7 @@
 - [Processes, Jobs, and Signals](handbook/terminal/19-processes-jobs-and-signals.md)
 - [Permissions in Daily Work](handbook/terminal/20-permissions-in-daily-work.md)
 - [Installing and Managing Software](handbook/terminal/21-installing-and-managing-software.md)
-- Chapter 22 — Shell Startup, Configuration, and `PATH`
+- [Shell Startup, Configuration, and PATH](handbook/terminal/22-shell-startup-configuration-and-path.md)
 - Chapter 23 — Building an Efficient Command-Line Workflow
 
 ## Planned Parts
