@@ -33,7 +33,7 @@
 - [Navigation and Path Resolution](handbook/terminal/13-navigation-and-path-resolution.md)
 - [Safe File and Directory Operations](handbook/terminal/14-safe-file-and-directory-operations.md)
 - [Finding Files and Inspecting Metadata](handbook/terminal/15-finding-files-and-inspecting-metadata.md)
-- Chapter 16 — Searching Text and Working with Regular Expressions
+- [Searching Text and Working with Regular Expressions](handbook/terminal/16-searching-text-and-working-with-regular-expressions.md)
 - Chapter 17 — Reading and Transforming Text
 - Chapter 18 — Quoting, Expansion, and Redirection in Practice
 - Chapter 19 — Processes, Jobs, and Signals
