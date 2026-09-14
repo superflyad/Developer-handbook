@@ -37,7 +37,7 @@
 - [Reading and Transforming Text](handbook/terminal/17-reading-and-transforming-text.md)
 - [Quoting, Expansion, and Redirection in Practice](handbook/terminal/18-quoting-expansion-and-redirection-in-practice.md)
 - [Processes, Jobs, and Signals](handbook/terminal/19-processes-jobs-and-signals.md)
-- Chapter 20 — Permissions in Daily Work
+- [Permissions in Daily Work](handbook/terminal/20-permissions-in-daily-work.md)
 - Chapter 21 — Installing and Managing Software
 - Chapter 22 — Shell Startup, Configuration, and `PATH`
 - Chapter 23 — Building an Efficient Command-Line Workflow
