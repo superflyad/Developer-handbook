@@ -34,7 +34,7 @@
 - [Safe File and Directory Operations](handbook/terminal/14-safe-file-and-directory-operations.md)
 - [Finding Files and Inspecting Metadata](handbook/terminal/15-finding-files-and-inspecting-metadata.md)
 - [Searching Text and Working with Regular Expressions](handbook/terminal/16-searching-text-and-working-with-regular-expressions.md)
-- Chapter 17 — Reading and Transforming Text
+- [Reading and Transforming Text](handbook/terminal/17-reading-and-transforming-text.md)
 - Chapter 18 — Quoting, Expansion, and Redirection in Practice
 - Chapter 19 — Processes, Jobs, and Signals
 - Chapter 20 — Permissions in Daily Work
