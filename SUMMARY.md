@@ -44,7 +44,7 @@
 
 ## Part III — Git Mastery (Planned)
 
-- Chapter 24 — Why Git Works: Repositories, Objects, and History
+- [Chapter 24 — Why Git Works: Repositories, Objects, and History](handbook/git/24-why-git-works-repositories-objects-and-history.md)
 - Chapter 25 — The Working Tree, Index, and `HEAD`
 - Chapter 26 — Staging and Making Coherent Commits
 - Chapter 27 — Reading History and Investigating Changes
