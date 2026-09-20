@@ -122,7 +122,108 @@ Each chapter is implemented as a separate commit. Its commit includes the chapte
 
 ## Part III — Git Mastery
 
-The object model, working tree, index, commits, branches, merging, rebasing, remotes, recovery, collaboration, and professional repository workflows.
+Part III treats Git as a system for recording and integrating changes, not a collection of commands to memorize. The proposed sequence starts with local state, then introduces shared history and integration, and ends with recovery and team practice.
+
+### Phase 1 — Local state and history
+
+#### Chapter 24 — Why Git Works: Repositories, Objects, and History
+
+- **Purpose:** Establish the model behind Git before teaching a command workflow.
+- **Includes:** distributed repositories; `init` versus `clone`; blobs, trees, and commits; object identity; parent links; snapshots versus patches; and the commit graph.
+- **Defers:** packfile internals, cryptographic implementation details, and transport protocol mechanics.
+- **Outcome:** The reader can explain what a commit records, why history is a graph, and what a clone owns locally.
+
+#### Chapter 25 — The Working Tree, Index, and `HEAD`
+
+- **Purpose:** Make Git's three local states observable before any history-changing operation.
+- **Includes:** tracked and untracked files; the working tree; the index; `HEAD`; `status`; unstaged, staged, and committed comparisons; and the meaning of a clean tree.
+- **Defers:** recovery commands, branch integration, and remote synchronization.
+- **Outcome:** The reader can identify exactly where a change exists and predict which state an operation will affect.
+
+#### Chapter 26 — Staging and Making Coherent Commits
+
+- **Purpose:** Turn working changes into deliberate, reviewable snapshots.
+- **Includes:** author identity and configuration scope; `add`, partial staging, `diff --cached`, commit messages, commit creation, amend-before-publication, and verification after a commit.
+- **Defers:** rewriting shared history, detailed ignore policy, and pull-request review.
+- **Outcome:** The reader can build one focused commit from a mixed working tree without accidentally including unrelated changes.
+
+#### Chapter 27 — Reading History and Investigating Changes
+
+- **Purpose:** Use Git history as evidence rather than a chronological list of messages.
+- **Includes:** `log`, `show`, `diff`, revision ranges, path-limited history, blame with its limits, and `bisect` as a controlled regression search.
+- **Defers:** using blame as a measure of responsibility, repository-wide forensic tooling, and automatic root-cause claims.
+- **Outcome:** The reader can locate when behavior changed and inspect the exact change without modifying repository state.
+
+#### Chapter 28 — Tracked Content, Ignore Rules, and Portability
+
+- **Purpose:** Define what belongs in history and how content crosses machines reliably.
+- **Includes:** `.gitignore` precedence and limits, tracked-versus-ignored behavior, `.gitattributes`, text and binary classification, line endings, generated files, large-file boundaries, and avoiding secrets in commits.
+- **Defers:** deep Git LFS administration, artifact storage design, and secret-scanning operations.
+- **Outcome:** The reader can set a reviewable content policy and diagnose why a file is tracked, ignored, or transformed on checkout.
+
+### Phase 2 — References and integration
+
+#### Chapter 29 — Branches, References, Tags, and Detached `HEAD`
+
+- **Purpose:** Explain names as movable pointers into the commit graph.
+- **Includes:** branch references, `HEAD`, `switch`, branch creation and deletion, detached `HEAD`, lightweight and annotated tags, and reachability.
+- **Defers:** remote-tracking references, merge policy, and release-management processes.
+- **Outcome:** The reader can draw how a branch or tag refers to commits and switch contexts without mistaking a branch for a separate directory.
+
+#### Chapter 30 — Remotes, Tracking, Fetching, and Pushing
+
+- **Purpose:** Separate local history from the state advertised by another repository.
+- **Includes:** remote names and URLs, remote-tracking refs, upstream configuration, `fetch`, `push`, the composed behavior of `pull`, fast-forward and non-fast-forward updates, and authentication boundaries.
+- **Defers:** hosting-provider administration, Git transport internals, and pull-request policy.
+- **Outcome:** The reader can synchronize intentionally, explain ahead/behind state, and inspect a remote update before integrating it.
+
+#### Chapter 31 — Merging and Resolving Conflicts
+
+- **Purpose:** Teach integration through commit ancestry and explicit conflict resolution.
+- **Includes:** merge bases, fast-forward versus merge commits, three-way merges, conflicted index entries, conflict-marker interpretation, resolution, abort, and post-merge verification.
+- **Defers:** rebase mechanics, octopus merges, and automatic conflict-resolution policy.
+- **Outcome:** The reader can integrate two branches in a disposable repository and explain every resulting parent relationship.
+
+#### Chapter 32 — Rebasing, Cherry-Picking, and History Rewriting
+
+- **Purpose:** Show when replaying changes clarifies history and when it endangers collaboration.
+- **Includes:** commit replay, interactive rebase, `cherry-pick`, conflicts during replay, `continue` and `abort`, changed commit identities, and the published-history boundary.
+- **Defers:** broad repository-history surgery, filter tools, and force-push as a routine synchronization method.
+- **Outcome:** The reader can reorganize unpublished work, verify the result, and identify when a merge or revert is safer.
+
+#### Chapter 33 — Undoing Changes and Recovering Work
+
+- **Purpose:** Replace vague “undo” advice with state-specific and recoverability-aware choices.
+- **Includes:** `restore`, `reset` modes, `revert`, reflogs, lost commits, staged versus working-tree recovery, and the limits of recovery for untracked or expired data.
+- **Defers:** disaster recovery for corrupted object databases and backup administration.
+- **Outcome:** The reader can choose a recovery action by identifying what must be preserved and whether the affected history was shared.
+
+### Phase 3 — Collaboration and professional practice
+
+#### Chapter 34 — Pull Requests, Review, and Merge Policy
+
+- **Purpose:** Connect local Git state to collaborative change review without confusing Git with a hosting service.
+- **Includes:** feature branches, focused pull requests, review feedback, required checks, branch protection, merge/squash/rebase merge outcomes, and the repository's own publication workflow.
+- **Defers:** hosting-provider administration, CI implementation, and organization-wide governance design.
+- **Outcome:** The reader can prepare a reviewable change, interpret checks and feedback, and choose an integration method with its history consequences understood.
+
+#### Chapter 35 — Worktrees and Parallel Development
+
+- **Purpose:** Manage concurrent work without mixing unrelated changes or treating stashes as a durable filing system.
+- **Includes:** `git worktree`, shared versus per-worktree state, safe branch ownership, temporary stashes and their limits, parallel feature work, and branch cleanup after integration.
+- **Defers:** submodule-heavy architectures, monorepo scaling techniques, and complex release trains.
+- **Outcome:** The reader can keep two independent tasks isolated and cleanly retire temporary Git state after completion.
+
+#### Chapter 36 — A Complete Git Change Lifecycle
+
+- **Purpose:** Integrate Part III into a realistic, inspectable workflow from a new change through review, integration, and recovery.
+- **Includes:** a disposable local repository and bare remote; focused commits; branch synchronization; a deliberate merge conflict; review of the resulting diff and graph; a safe rollback; and final repository verification.
+- **Defers:** live publication to a hosted service, CI/CD implementation, and production release orchestration.
+- **Outcome:** The reader can explain the state and recovery path at every point in a collaborative Git change.
+
+### Part III delivery boundary
+
+The scope is a proposal until chapter drafting begins. Keep one chapter per commit, with its own table-of-contents link, verified examples in disposable repositories, and review of any destructive or history-rewriting demonstration. Do not run exercises against this handbook's live history. Part III is complete when Chapter 36 combines the local and collaborative models without turning into a Git command encyclopedia.
 
 ## Part IV — Filesystems and Operating Systems
 

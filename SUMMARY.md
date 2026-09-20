@@ -42,9 +42,24 @@
 - [Chapter 22 — Shell Startup, Configuration, and PATH](handbook/terminal/22-shell-startup-configuration-and-path.md)
 - [Chapter 23 — Building an Efficient Command-Line Workflow](handbook/terminal/23-building-an-efficient-command-line-workflow.md)
 
+## Part III — Git Mastery (Planned)
+
+- Chapter 24 — Why Git Works: Repositories, Objects, and History
+- Chapter 25 — The Working Tree, Index, and `HEAD`
+- Chapter 26 — Staging and Making Coherent Commits
+- Chapter 27 — Reading History and Investigating Changes
+- Chapter 28 — Tracked Content, Ignore Rules, and Portability
+- Chapter 29 — Branches, References, Tags, and Detached `HEAD`
+- Chapter 30 — Remotes, Tracking, Fetching, and Pushing
+- Chapter 31 — Merging and Resolving Conflicts
+- Chapter 32 — Rebasing, Cherry-Picking, and History Rewriting
+- Chapter 33 — Undoing Changes and Recovering Work
+- Chapter 34 — Pull Requests, Review, and Merge Policy
+- Chapter 35 — Worktrees and Parallel Development
+- Chapter 36 — A Complete Git Change Lifecycle
+
 ## Planned Parts
 
-- Part III — Git Mastery
 - Part IV — Filesystems and Operating Systems
 - Part V — Networking
 - Part VI — Automation and Scripting

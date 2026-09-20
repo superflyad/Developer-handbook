@@ -119,7 +119,21 @@ Part II converts the mental model from Part I into practical fluency. It progres
 
 ### Part III — Git Mastery
 
-The object model, working tree, index, commits, branches, merging, rebasing, remotes, recovery, collaboration, and professional repository workflows.
+- Chapter 24 — Why Git Works: Repositories, Objects, and History
+- Chapter 25 — The Working Tree, Index, and `HEAD`
+- Chapter 26 — Staging and Making Coherent Commits
+- Chapter 27 — Reading History and Investigating Changes
+- Chapter 28 — Tracked Content, Ignore Rules, and Portability
+- Chapter 29 — Branches, References, Tags, and Detached `HEAD`
+- Chapter 30 — Remotes, Tracking, Fetching, and Pushing
+- Chapter 31 — Merging and Resolving Conflicts
+- Chapter 32 — Rebasing, Cherry-Picking, and History Rewriting
+- Chapter 33 — Undoing Changes and Recovering Work
+- Chapter 34 — Pull Requests, Review, and Merge Policy
+- Chapter 35 — Worktrees and Parallel Development
+- Chapter 36 — A Complete Git Change Lifecycle
+
+Part III progresses from local state and history to references and integration, then to recovery and collaboration. The proposed purpose, inclusion, deferral, and outcome boundaries are in `LEARNING_ROADMAP.md`.
 
 ### Part IV — Filesystems and Operating Systems
 
