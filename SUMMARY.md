@@ -53,7 +53,7 @@
 - [Chapter 30 — Remotes, Tracking, Fetching, and Pushing](handbook/git/30-remotes-tracking-fetching-and-pushing.md)
 - [Chapter 31 — Merging and Resolving Conflicts](handbook/git/31-merging-and-resolving-conflicts.md)
 - [Chapter 32 — Rebasing, Cherry-Picking, and History Rewriting](handbook/git/32-rebasing-cherry-picking-and-history-rewriting.md)
-- Chapter 33 — Undoing Changes and Recovering Work
+- [Chapter 33 — Undoing Changes and Recovering Work](handbook/git/33-undoing-changes-and-recovering-work.md)
 - Chapter 34 — Pull Requests, Review, and Merge Policy
 - Chapter 35 — Worktrees and Parallel Development
 - Chapter 36 — A Complete Git Change Lifecycle
