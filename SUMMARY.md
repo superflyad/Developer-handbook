@@ -47,7 +47,7 @@
 - [Chapter 24 — Why Git Works: Repositories, Objects, and History](handbook/git/24-why-git-works-repositories-objects-and-history.md)
 - [Chapter 25 — The Working Tree, Index, and `HEAD`](handbook/git/25-the-working-tree-index-and-head.md)
 - [Chapter 26 — Staging and Making Coherent Commits](handbook/git/26-staging-and-making-coherent-commits.md)
-- Chapter 27 — Reading History and Investigating Changes
+- [Chapter 27 — Reading History and Investigating Changes](handbook/git/27-reading-history-and-investigating-changes.md)
 - Chapter 28 — Tracked Content, Ignore Rules, and Portability
 - Chapter 29 — Branches, References, Tags, and Detached `HEAD`
 - Chapter 30 — Remotes, Tracking, Fetching, and Pushing

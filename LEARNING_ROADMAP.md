@@ -152,7 +152,7 @@ Part III treats Git as a system for recording and integrating changes, not a col
 - **Purpose:** Use Git history as evidence rather than a chronological list of messages.
 - **Includes:** `log`, `show`, `diff`, revision ranges, path-limited history, blame with its limits, and `bisect` as a controlled regression search.
 - **Defers:** using blame as a measure of responsibility, repository-wide forensic tooling, and automatic root-cause claims.
-- **Outcome:** The reader can locate when behavior changed and inspect the exact change without modifying repository state.
+- **Outcome:** The reader can locate when behavior changed and inspect the exact change without rewriting recorded history, while recognizing that `bisect` temporarily changes checkout state.
 
 #### Chapter 28 — Tracked Content, Ignore Rules, and Portability
 
