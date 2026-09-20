@@ -50,7 +50,7 @@
 - [Chapter 27 — Reading History and Investigating Changes](handbook/git/27-reading-history-and-investigating-changes.md)
 - [Chapter 28 — Tracked Content, Ignore Rules, and Portability](handbook/git/28-tracked-content-ignore-rules-and-portability.md)
 - [Chapter 29 — Branches, References, Tags, and Detached `HEAD`](handbook/git/29-branches-references-tags-and-detached-head.md)
-- Chapter 30 — Remotes, Tracking, Fetching, and Pushing
+- [Chapter 30 — Remotes, Tracking, Fetching, and Pushing](handbook/git/30-remotes-tracking-fetching-and-pushing.md)
 - Chapter 31 — Merging and Resolving Conflicts
 - Chapter 32 — Rebasing, Cherry-Picking, and History Rewriting
 - Chapter 33 — Undoing Changes and Recovering Work
