@@ -122,7 +122,7 @@ Each chapter is implemented as a separate commit. Its commit includes the chapte
 
 ## Part III — Git Mastery
 
-Part III treats Git as a system for recording and integrating changes, not a collection of commands to memorize. The proposed sequence starts with local state, then introduces shared history and integration, and ends with recovery and team practice.
+Part III treats Git as a system for recording and integrating changes, not a collection of commands to memorize. The sequence starts with local state, then introduces shared history and integration, and ends with recovery and team practice.
 
 ### Phase 1 — Local state and history
 
@@ -223,7 +223,7 @@ Part III treats Git as a system for recording and integrating changes, not a col
 
 ### Part III delivery boundary
 
-The scope is a proposal until chapter drafting begins. Keep one chapter per commit, with its own table-of-contents link, verified examples in disposable repositories, and review of any destructive or history-rewriting demonstration. Do not run exercises against this handbook's live history. Part III is complete when Chapter 36 combines the local and collaborative models without turning into a Git command encyclopedia.
+Chapters 24–36 are drafted, one chapter per commit with its own table-of-contents link. Examples that change Git history should be verified in disposable repositories, never against this handbook's live history. Maintain the distinction between local Git mechanics and hosted review policy when revising this part.
 
 ## Part IV — Filesystems and Operating Systems
 

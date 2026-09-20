@@ -42,7 +42,7 @@
 - [Chapter 22 — Shell Startup, Configuration, and PATH](handbook/terminal/22-shell-startup-configuration-and-path.md)
 - [Chapter 23 — Building an Efficient Command-Line Workflow](handbook/terminal/23-building-an-efficient-command-line-workflow.md)
 
-## Part III — Git Mastery (Planned)
+## Part III — Git Mastery
 
 - [Chapter 24 — Why Git Works: Repositories, Objects, and History](handbook/git/24-why-git-works-repositories-objects-and-history.md)
 - [Chapter 25 — The Working Tree, Index, and `HEAD`](handbook/git/25-the-working-tree-index-and-head.md)
@@ -56,7 +56,7 @@
 - [Chapter 33 — Undoing Changes and Recovering Work](handbook/git/33-undoing-changes-and-recovering-work.md)
 - [Chapter 34 — Pull Requests, Review, and Merge Policy](handbook/git/34-pull-requests-review-and-merge-policy.md)
 - [Chapter 35 — Worktrees and Parallel Development](handbook/git/35-worktrees-and-parallel-development.md)
-- Chapter 36 — A Complete Git Change Lifecycle
+- [Chapter 36 — A Complete Git Change Lifecycle](handbook/git/36-a-complete-git-change-lifecycle.md)
 
 ## Planned Parts
 

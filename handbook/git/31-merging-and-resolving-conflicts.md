@@ -97,14 +97,14 @@ These meanings apply to an ordinary merge from the current branch. During rebase
 
 ## 6. Conflict markers are evidence, not the answer
 
-A textual conflict can appear as:
+A textual conflict can appear as below. The two-space indentation is only for display; actual marker lines begin at column zero in the file.
 
 ```text
-<<<<<<< HEAD
-mode=stable
-=======
-mode=experimental
->>>>>>> topic
+  <<<<<<< HEAD
+  mode=stable
+  =======
+  mode=experimental
+  >>>>>>> topic
 ```
 
 The resolution might choose one side, combine both, or create entirely new content. Deleting marker lines without understanding behavior merely silences the conflict signal.

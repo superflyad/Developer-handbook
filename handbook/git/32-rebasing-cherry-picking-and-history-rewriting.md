@@ -12,7 +12,7 @@ A commit identifies its tree, parents, author information, message, and other me
 
 ```text
 A ← B ← C ← D   main
-     
+     \
       E ← F     topic
 ```
 
@@ -20,7 +20,7 @@ Rebasing `topic` onto `main` takes the changes introduced by `E` and `F` and rep
 
 ```text
 A ← B ← C ← D   main
-             \ 
+             \
               E' ← F'   topic
 ```
 
