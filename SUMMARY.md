@@ -133,7 +133,7 @@
 - [Chapter 95 — EC2, AMIs, and Elastic Compute](handbook/aws/95-ec2-amis-and-elastic-compute.md)
 - [Chapter 96 — Elastic Load Balancing, Route 53, and CloudFront](handbook/aws/96-elastic-load-balancing-route-53-and-cloudfront.md)
 - [Chapter 97 — S3 Object Storage and Data Lifecycle](handbook/aws/97-s3-object-storage-and-data-lifecycle.md)
-- Chapter 98 — EBS, EFS, and Choosing Cloud Storage
+- [Chapter 98 — EBS, EFS, and Choosing Cloud Storage](handbook/aws/98-ebs-efs-and-choosing-cloud-storage.md)
 - Chapter 99 — RDS, Aurora, and Managed Relational Databases
 - Chapter 100 — DynamoDB, Caching, and NoSQL Access Patterns
 - Chapter 101 — SQS, SNS, EventBridge, and Asynchronous Workflows
