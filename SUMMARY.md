@@ -120,7 +120,7 @@
   - [Chapter 85 — Multi-Container Applications with Compose](handbook/containers/85-multi-container-applications-with-compose.md)
   - [Chapter 86 — Resource Limits, Health, Logs, and Runtime Diagnosis](handbook/containers/86-resource-limits-health-logs-and-runtime-diagnosis.md)
   - [Chapter 87 — Container Security and Least Privilege](handbook/containers/87-container-security-and-least-privilege.md)
-- Chapter 88 — Orchestration Foundations and Kubernetes Mental Models
+  - [Chapter 88 — Orchestration Foundations and Kubernetes Mental Models](handbook/containers/88-orchestration-foundations-and-kubernetes-mental-models.md)
 - Chapter 89 — A Complete Container Delivery Workflow
 
 ## Part VIII — AWS and Cloud-Native Development (Planned)
