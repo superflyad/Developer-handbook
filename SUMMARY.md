@@ -118,7 +118,7 @@
 - [Chapter 83 — Container Filesystems, Volumes, and Persistent Data](handbook/containers/83-container-filesystems-volumes-and-persistent-data.md)
   - [Chapter 84 — Container Networking, Ports, and Service Discovery](handbook/containers/84-container-networking-ports-and-service-discovery.md)
   - [Chapter 85 — Multi-Container Applications with Compose](handbook/containers/85-multi-container-applications-with-compose.md)
-- Chapter 86 — Resource Limits, Health, Logs, and Runtime Diagnosis
+  - [Chapter 86 — Resource Limits, Health, Logs, and Runtime Diagnosis](handbook/containers/86-resource-limits-health-logs-and-runtime-diagnosis.md)
 - Chapter 87 — Container Security and Least Privilege
 - Chapter 88 — Orchestration Foundations and Kubernetes Mental Models
 - Chapter 89 — A Complete Container Delivery Workflow
