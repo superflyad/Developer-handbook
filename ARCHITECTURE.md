@@ -251,7 +251,7 @@ Part IV progresses from filesystem identity and storage to process resources, ma
 - Chapter 128 — Post-Incident Learning and Continuous Improvement
 - Chapter 129 — A Complete Cross-Layer Engineering Investigation
 
-Parts V–X contain 80 planned chapters. The first edition contains 129 chapters total plus the Engineering Patterns appendix. The detailed purpose, inclusion, deferral, outcome, and delivery boundaries live in `LEARNING_ROADMAP.md`.
+Parts V–X contain 80 chapters. The first edition contains 129 chapters total plus the Engineering Patterns appendix. The detailed purpose, inclusion, deferral, outcome, and delivery boundaries live in `LEARNING_ROADMAP.md`.
 
 ## Engineering Patterns appendix
 

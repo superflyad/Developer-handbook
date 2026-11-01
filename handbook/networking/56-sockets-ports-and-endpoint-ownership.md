@@ -208,6 +208,6 @@ Sockets expose transport services, but TCP and UDP provide different contracts. 
 ## References
 
 - [Linux `socket(7)`](https://man7.org/linux/man-pages/man7/socket.7.html)
-- [Microsoft Winsock: Socket Functions](https://learn.microsoft.com/en-us/windows/win32/winsock/socket-functions)
+- [Microsoft Winsock2 API: Functions](https://learn.microsoft.com/en-us/windows/win32/api/winsock2/)
 - [RFC 6335 — Service Name and Port Number Registry Procedures](https://www.rfc-editor.org/rfc/rfc6335)
 - [IANA Service Name and Transport Protocol Port Number Registry](https://www.iana.org/assignments/service-names-port-numbers/)

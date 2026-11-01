@@ -619,4 +619,4 @@ A repeatable task still needs an owner, start policy, overlap rule, and capacity
 - [Reproducible Builds — `SOURCE_DATE_EPOCH` specification](https://reproducible-builds.org/specs/source-date-epoch/)
 - [Reproducible Builds — Timestamps](https://reproducible-builds.org/docs/timestamps/)
 - [Bazel documentation — Hermeticity](https://bazel.build/basics/hermeticity)
-- [SLSA — Build Track](https://slsa.dev/spec/v1.1/build-requirements)
+- [SLSA v1.2 — Producing Artifacts](https://slsa.dev/spec/v1.2/requirements)

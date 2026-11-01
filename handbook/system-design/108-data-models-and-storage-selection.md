@@ -656,7 +656,7 @@ Chapter 109 derives capacity and partitioning decisions from workload estimates,
 
 - [PostgreSQL — Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
 - [PostgreSQL — Indexes](https://www.postgresql.org/docs/current/indexes.html)
-- [AWS Decision Guide — Choosing a database service](https://docs.aws.amazon.com/pdfs/decision-guides/latest/databases-on-aws-how-to-choose/databases-on-aws-how-to-choose.pdf)
+- [AWS Decision Guide — Choosing a database service](https://docs.aws.amazon.com/decision-guides/latest/decision-guides/databases-on-aws-how-to-choose.html)
 - [Amazon DynamoDB — Data modeling foundations](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/data-modeling-foundations.html)
 - [MongoDB — Data modeling introduction](https://www.mongodb.com/docs/manual/data-modeling/)
 - [Neo4j — Graph database concepts](https://neo4j.com/docs/getting-started/appendix/graphdb-concepts/)

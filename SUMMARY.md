@@ -74,7 +74,7 @@
 - [Chapter 48 — Identity, Permissions, ACLs, and Privilege Boundaries](handbook/operating-systems/48-identity-permissions-acls-and-privilege-boundaries.md)
 - [Chapter 49 — A Cross-Platform Operating-System Investigation](handbook/operating-systems/49-a-cross-platform-operating-system-investigation.md)
 
-## Part V — Networking (Planned)
+## Part V — Networking
 
 - [Chapter 50 — A Packet's Journey Through the Network Stack](handbook/networking/50-a-packets-journey-through-the-network-stack.md)
 - [Chapter 51 — Links, Frames, Ethernet, and Wi-Fi](handbook/networking/51-links-frames-ethernet-and-wi-fi.md)
@@ -123,7 +123,7 @@
 - [Chapter 88 — Orchestration Foundations and Kubernetes Mental Models](handbook/containers/88-orchestration-foundations-and-kubernetes-mental-models.md)
 - [Chapter 89 — A Complete Container Delivery Workflow](handbook/containers/89-a-complete-container-delivery-workflow.md)
 
-## Part VIII — AWS and Cloud-Native Development (Planned)
+## Part VIII — AWS and Cloud-Native Development
 
 - [Chapter 90 — Cloud Computing, Shared Responsibility, and Service Models](handbook/aws/90-cloud-computing-shared-responsibility-and-service-models.md)
 - [Chapter 91 — AWS Accounts, Organizations, Regions, and Governance](handbook/aws/91-aws-accounts-organizations-regions-and-governance.md)
@@ -142,7 +142,7 @@
 - [Chapter 104 — Encryption, Secrets, Configuration, and Cloud Observability](handbook/aws/104-encryption-secrets-configuration-and-cloud-observability.md)
 - [Chapter 105 — Infrastructure as Code and a Complete AWS Delivery Lifecycle](handbook/aws/105-infrastructure-as-code-and-a-complete-aws-delivery-lifecycle.md)
 
-## Part IX — System Design (Planned)
+## Part IX — System Design
 
 - [Chapter 106 — From Requirements to a System Model](handbook/system-design/106-from-requirements-to-a-system-model.md)
 - [Chapter 107 — Interfaces, Contracts, and Evolution](handbook/system-design/107-interfaces-contracts-and-evolution.md)
@@ -157,7 +157,7 @@
 - [Chapter 116 — Architecture Decisions, Tradeoffs, and Evolution](handbook/system-design/116-architecture-decisions-tradeoffs-and-evolution.md)
 - [Chapter 117 — A Complete System Design Review](handbook/system-design/117-a-complete-system-design-review.md)
 
-## Part X — Performance, Debugging, and Observability (Planned)
+## Part X — Performance, Debugging, and Observability
 
 - [Chapter 118 — Debugging as Hypothesis Testing](handbook/observability/118-debugging-as-hypothesis-testing.md)
 - [Chapter 119 — Reproducing Failures and Building Minimal Cases](handbook/observability/119-reproducing-failures-and-building-minimal-cases.md)

@@ -12,6 +12,8 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 CHAPTERS = ROOT / "handbook"
 APPENDICES = CHAPTERS / "appendices"
+SUMMARY = ROOT / "SUMMARY.md"
+FIRST_EDITION_LAST_CHAPTER = 129
 CHAPTER_FILE = re.compile(r"^(?P<number>\d{2,3})-.+\.md$")
 CHAPTER_TITLE = re.compile(r"^# Chapter (?P<number>\d+) — .+$")
 APPENDIX_FILE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*\.md$")
@@ -87,6 +89,89 @@ def check_chapter_titles(files: list[Path]) -> list[str]:
     return errors
 
 
+def numbered_chapters(files: list[Path]) -> list[tuple[int, Path]]:
+    """Return numbered handbook chapters in chapter order."""
+    chapters: list[tuple[int, Path]] = []
+    for path in files:
+        if not path.is_relative_to(CHAPTERS) or path.is_relative_to(APPENDICES):
+            continue
+        match = CHAPTER_FILE.match(path.name)
+        if match:
+            chapters.append((int(match.group("number")), path))
+    return sorted(chapters)
+
+
+def check_chapter_sequence(files: list[Path]) -> list[str]:
+    """Validate first-edition numbering and table-of-contents coverage."""
+    errors: list[str] = []
+    chapters = numbered_chapters(files)
+    numbers = [number for number, _ in chapters]
+    expected_numbers = list(range(1, FIRST_EDITION_LAST_CHAPTER + 1))
+
+    duplicates = sorted(
+        number for number in set(numbers) if numbers.count(number) > 1
+    )
+    if duplicates:
+        errors.append(
+            "handbook: duplicate chapter numbers: "
+            + ", ".join(str(number) for number in duplicates)
+        )
+
+    missing = [number for number in expected_numbers if number not in numbers]
+    unexpected = [number for number in numbers if number not in expected_numbers]
+    if missing:
+        errors.append(
+            "handbook: missing first-edition chapters: "
+            + ", ".join(str(number) for number in missing)
+        )
+    if unexpected:
+        errors.append(
+            "handbook: numbered chapters outside the first-edition range: "
+            + ", ".join(str(number) for number in unexpected)
+        )
+
+    summary_text = SUMMARY.read_text(encoding="utf-8")
+    summary_paths: list[str] = []
+    for match in MARKDOWN_LINK.finditer(summary_text):
+        target = link_target(match.group("destination"))
+        path = Path(target)
+        if path.parts and path.parts[0] == "handbook" and CHAPTER_FILE.match(path.name):
+            summary_paths.append(path.as_posix())
+
+    expected_paths = [
+        path.relative_to(ROOT).as_posix() for _, path in chapters
+    ]
+    if summary_paths != expected_paths:
+        missing_paths = [path for path in expected_paths if path not in summary_paths]
+        duplicate_paths = sorted(
+            path for path in set(summary_paths) if summary_paths.count(path) > 1
+        )
+        extra_paths = [path for path in summary_paths if path not in expected_paths]
+        if missing_paths:
+            errors.append(
+                "SUMMARY.md: missing chapter links: " + ", ".join(missing_paths)
+            )
+        if duplicate_paths:
+            errors.append(
+                "SUMMARY.md: duplicate chapter links: "
+                + ", ".join(duplicate_paths)
+            )
+        if extra_paths:
+            errors.append(
+                "SUMMARY.md: unexpected chapter links: " + ", ".join(extra_paths)
+            )
+        if not missing_paths and not duplicate_paths and not extra_paths:
+            errors.append("SUMMARY.md: chapter links are not in numeric order")
+
+    appendix = "handbook/appendices/engineering-patterns.md"
+    if summary_text.count(f"({appendix})") != 1:
+        errors.append(
+            "SUMMARY.md: Engineering Patterns appendix must appear exactly once"
+        )
+
+    return errors
+
+
 def check_local_links(files: list[Path]) -> list[str]:
     errors: list[str] = []
 
@@ -116,7 +201,11 @@ def check_local_links(files: list[Path]) -> list[str]:
 
 def main() -> int:
     files = markdown_files()
-    errors = check_chapter_titles(files) + check_local_links(files)
+    errors = (
+        check_chapter_titles(files)
+        + check_chapter_sequence(files)
+        + check_local_links(files)
+    )
 
     if errors:
         print("Documentation checks failed:")
