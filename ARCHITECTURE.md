@@ -255,7 +255,7 @@ Parts V–X contain 80 planned chapters. The first edition contains 129 chapters
 
 ## Engineering Patterns appendix
 
-The handbook will maintain an appendix of recurring patterns that appear across technologies:
+The handbook maintains an appendix of recurring patterns that appear across technologies:
 
 - Layered systems
 - Separation of concerns
@@ -269,7 +269,7 @@ The handbook will maintain an appendix of recurring patterns that appear across 
 - Failure containment
 - Convention over unnecessary configuration
 
-Chapters should link to these patterns once the corresponding appendix entries exist.
+Chapters and integration reviews should link to these patterns when the connection improves navigation or reasoning.
 
 ## Publishing workflow
 

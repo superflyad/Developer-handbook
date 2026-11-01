@@ -172,6 +172,6 @@
 - [Chapter 128 — Post-Incident Learning and Continuous Improvement](handbook/observability/128-post-incident-learning-and-continuous-improvement.md)
 - [Chapter 129 — A Complete Cross-Layer Engineering Investigation](handbook/observability/129-a-complete-cross-layer-engineering-investigation.md)
 
-## Planned Appendix
+## Appendix
 
-- Engineering Patterns
+- [Engineering Patterns](handbook/appendices/engineering-patterns.md)

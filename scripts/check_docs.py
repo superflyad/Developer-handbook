@@ -11,8 +11,11 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 CHAPTERS = ROOT / "handbook"
+APPENDICES = CHAPTERS / "appendices"
 CHAPTER_FILE = re.compile(r"^(?P<number>\d{2,3})-.+\.md$")
 CHAPTER_TITLE = re.compile(r"^# Chapter (?P<number>\d+) — .+$")
+APPENDIX_FILE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*\.md$")
+APPENDIX_TITLE = re.compile(r"^# (?!Chapter ).+$")
 MARKDOWN_LINK = re.compile(r"(?<!!)\[[^\]]+\]\((?P<destination>[^)]+)\)")
 
 
@@ -39,6 +42,21 @@ def check_chapter_titles(files: list[Path]) -> list[str]:
 
     for path in files:
         if not path.is_relative_to(CHAPTERS):
+            continue
+
+        if path.is_relative_to(APPENDICES):
+            lines = path.read_text(encoding="utf-8").splitlines()
+            title = lines[0] if lines else ""
+            if not APPENDIX_FILE.match(path.name):
+                errors.append(
+                    f"{path.relative_to(ROOT)}: appendix filename must use "
+                    "lowercase kebab-case"
+                )
+            if not APPENDIX_TITLE.match(title):
+                errors.append(
+                    f"{path.relative_to(ROOT)}: first line must use '# Title' "
+                    "without a chapter number"
+                )
             continue
 
         filename_match = CHAPTER_FILE.match(path.name)

@@ -978,7 +978,7 @@ Part X turns uncertainty into evidence. It moves from reproducible debugging thr
 
 Performance claims require reproducible measurements and debugging claims must distinguish observation from inference. Part X and the first-edition chapter sequence are complete when Chapter 129 integrates the handbook into one evidence-driven engineering workflow.
 
-## Planned Appendix — Engineering Patterns
+## Appendix — Engineering Patterns
 
 A reusable catalog of patterns that recur across technologies. These are unnumbered reference entries rather than additional chapters:
 
