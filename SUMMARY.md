@@ -93,7 +93,7 @@
 
 ## Part VI — Automation and Scripting (Planned)
 
-- Chapter 64 — Deciding What to Automate
+- [Chapter 64 — Deciding What to Automate](handbook/automation/64-deciding-what-to-automate.md)
 - Chapter 65 — Reliable Shell Script Execution
 - Chapter 66 — Shell Control Flow, Functions, and Error Handling
 - Chapter 67 — Structured Inputs, Outputs, and Data Formats
