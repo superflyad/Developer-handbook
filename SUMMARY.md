@@ -71,7 +71,7 @@
 - [Chapter 45 — Interprocess Communication and Coordination](handbook/operating-systems/45-interprocess-communication-and-coordination.md)
 - [Chapter 46 — Services, Daemons, and Background Work](handbook/operating-systems/46-services-daemons-and-background-work.md)
 - [Chapter 47 — Boot, Startup, and Shutdown](handbook/operating-systems/47-boot-startup-and-shutdown.md)
-- Chapter 48 — Identity, Permissions, ACLs, and Privilege Boundaries
+- [Chapter 48 — Identity, Permissions, ACLs, and Privilege Boundaries](handbook/operating-systems/48-identity-permissions-acls-and-privilege-boundaries.md)
 - Chapter 49 — A Cross-Platform Operating-System Investigation
 
 ## Planned Parts
