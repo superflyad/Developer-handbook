@@ -113,7 +113,7 @@
 - [Chapter 78 — Why Containers Work: Isolation, Not Tiny Virtual Machines](handbook/containers/78-why-containers-work-isolation-not-tiny-virtual-machines.md)
 - [Chapter 79 — Images, Layers, Build Contexts, and Caches](handbook/containers/79-images-layers-build-contexts-and-caches.md)
 - [Chapter 80 — Reproducible and Efficient Container Builds](handbook/containers/80-reproducible-and-efficient-container-builds.md)
-- Chapter 81 — Registries, Tags, Digests, and Image Provenance
+- [Chapter 81 — Registries, Tags, Digests, and Image Provenance](handbook/containers/81-registries-tags-digests-and-image-provenance.md)
 - Chapter 82 — Container Processes, Signals, and Lifecycle
 - Chapter 83 — Container Filesystems, Volumes, and Persistent Data
 - Chapter 84 — Container Networking, Ports, and Service Discovery
