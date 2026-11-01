@@ -78,7 +78,7 @@
 
 - [Chapter 50 — A Packet's Journey Through the Network Stack](handbook/networking/50-a-packets-journey-through-the-network-stack.md)
 - [Chapter 51 — Links, Frames, Ethernet, and Wi-Fi](handbook/networking/51-links-frames-ethernet-and-wi-fi.md)
-- Chapter 52 — IP Addressing and Subnetting
+- [Chapter 52 — IP Addressing and Subnetting](handbook/networking/52-ip-addressing-and-subnetting.md)
 - Chapter 53 — Host Configuration, DHCP, ARP, and Neighbor Discovery
 - Chapter 54 — Routing, Gateways, and Path Selection
 - Chapter 55 — DNS and Name Resolution
