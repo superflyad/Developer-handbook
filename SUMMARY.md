@@ -86,7 +86,7 @@
 - [Chapter 57 — UDP, Datagrams, and Message Boundaries](handbook/networking/57-udp-datagrams-and-message-boundaries.md)
 - [Chapter 58 — TCP Reliability, Flow Control, and Connection State](handbook/networking/58-tcp-reliability-flow-control-and-connection-state.md)
 - [Chapter 59 — HTTP Semantics and API Behavior](handbook/networking/59-http-semantics-and-api-behavior.md)
-- Chapter 60 — TLS, Certificates, and Public-Key Trust
+- [Chapter 60 — TLS, Certificates, and Public-Key Trust](handbook/networking/60-tls-certificates-and-public-key-trust.md)
 - Chapter 61 — SSH, Tunnels, and Remote Access Boundaries
 - Chapter 62 — Firewalls, NAT, Proxies, and Traffic Distribution
 - Chapter 63 — A Complete Network Troubleshooting Workflow
