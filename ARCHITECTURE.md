@@ -285,6 +285,8 @@ Repository conventions:
 - Merge: squash unless preserving separate commits has clear value
 - Scope: one coherent chapter, revision, or structural change per PR
 
+`SUMMARY.md` is the canonical publication order. `scripts/build_book.py` assembles the reader-facing front matter, Chapters 1–129, and Engineering Patterns appendix into one revision-identified source, rewrites internal links to stable anchors, and emits a source-and-artifact hash manifest. CI renders standalone HTML, EPUB, DOCX, and PDF previews from that source. Generated files live under ignored `build/`; Markdown remains the only authored source.
+
 ## Versioning
 
 Git history is the primary revision history.

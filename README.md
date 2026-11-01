@@ -62,3 +62,21 @@ Each chapter should answer:
 - How does this reduce waste or improve efficiency?
 
 The canonical source is Markdown in this repository. PDF, Word, ebook, and website versions are generated outputs rather than independent sources.
+
+## Publication formats
+
+`SUMMARY.md` defines canonical reading order. The publication builder combines the preface, philosophy, usage guide, Chapters 1–129, and Engineering Patterns appendix; assigns stable cross-format anchors; rewrites local cross-references; and records source and artifact hashes in a manifest.
+
+Build the combined Markdown and manifest with the Python standard library:
+
+```text
+python scripts/build_book.py
+```
+
+With Pandoc 3.13 and WeasyPrint 70.0 available, build every preview format:
+
+```text
+python scripts/build_book.py --formats html epub docx pdf
+```
+
+Outputs are written to ignored `build/` and are never edited as source. The documentation workflow validates the repository, builds standalone HTML, EPUB, DOCX, and PDF previews, verifies their file signatures, records their SHA-256 digests, and uploads the complete build directory as a revision-specific CI artifact.

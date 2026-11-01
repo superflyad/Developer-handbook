@@ -1,0 +1,104 @@
+:root {
+  color-scheme: light;
+  font-family: "Noto Serif", Georgia, serif;
+  line-height: 1.55;
+}
+
+body {
+  color: #20242a;
+  margin: 0 auto;
+  max-width: 52rem;
+  padding: 2rem 3rem 4rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #14213d;
+  font-family: "Noto Sans", Arial, sans-serif;
+  line-height: 1.2;
+  page-break-after: avoid;
+}
+
+h1 {
+  border-bottom: 0.12rem solid #d9e1ec;
+  margin-top: 2.5rem;
+  padding-bottom: 0.35rem;
+}
+
+a {
+  color: #005ea8;
+}
+
+code,
+pre {
+  font-family: "Noto Sans Mono", Consolas, monospace;
+}
+
+code {
+  overflow-wrap: anywhere;
+}
+
+pre {
+  background: #f5f7fa;
+  border: 1px solid #d9e1ec;
+  border-radius: 0.25rem;
+  overflow-x: auto;
+  padding: 0.85rem;
+  white-space: pre-wrap;
+}
+
+blockquote {
+  border-left: 0.25rem solid #6b7c93;
+  color: #3c4858;
+  margin-left: 0;
+  padding-left: 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #c8d0dc;
+  padding: 0.45rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #edf2f7;
+}
+
+.page-break {
+  break-before: page;
+  page-break-before: always;
+}
+
+@page {
+  margin: 0.75in;
+  size: letter;
+}
+
+@media print {
+  body {
+    max-width: none;
+    padding: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  pre,
+  table,
+  blockquote {
+    break-inside: avoid;
+  }
+}
