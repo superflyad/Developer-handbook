@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If this handbook supports your work, please cite the edition you used."
+type: software
+title: "The Developer Handbook"
+abstract: >-
+  An open-source, systems-first guide to Unix, Git, operating systems,
+  networking, automation, containers, AWS, system design, observability,
+  debugging, and production engineering.
+authors:
+  - family-names: "Adeniken"
+    given-names: "Michael"
+    alias: "superflyad"
+repository-code: "https://github.com/superflyad/Developer-handbook"
+url: "https://superflyad.github.io/Developer-handbook/"
+version: "1.0.0"
+date-released: "2026-11-01"
+license: "MIT"
+keywords:
+  - "software engineering"
+  - "systems thinking"
+  - "Unix"
+  - "Git"
+  - "networking"
+  - "containers"
+  - "AWS"
+  - "system design"
+  - "observability"
+preferred-citation:
+  type: book
+  title: "The Developer Handbook"
+  authors:
+    - family-names: "Adeniken"
+      given-names: "Michael"
+  year: 2026
+  edition: "First edition"
+  url: "https://github.com/superflyad/Developer-handbook/releases/tag/v1.0.0"
