@@ -150,7 +150,7 @@
 - [Chapter 109 — Capacity, Partitioning, and Horizontal Scale](handbook/system-design/109-capacity-partitioning-and-horizontal-scale.md)
 - [Chapter 110 — Consistency, Transactions, and Concurrent Change](handbook/system-design/110-consistency-transactions-and-concurrent-change.md)
 - [Chapter 111 — Caching as a Consistency Tradeoff](handbook/system-design/111-caching-as-a-consistency-tradeoff.md)
-- Chapter 112 — Messaging, Events, and Asynchronous Workflows
+- [Chapter 112 — Messaging, Events, and Asynchronous Workflows](handbook/system-design/112-messaging-events-and-asynchronous-workflows.md)
 - Chapter 113 — Coordination, Leadership, and Distributed Time
 - Chapter 114 — Resilience, Timeouts, Retries, and Failure Containment
 - Chapter 115 — Security, Privacy, and Multi-Tenant Boundaries
