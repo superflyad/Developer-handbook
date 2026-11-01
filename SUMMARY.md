@@ -103,7 +103,7 @@
 - [Chapter 71 — Python Environments, Dependencies, and Packaging](handbook/automation/71-python-environments-dependencies-and-packaging.md)
 - [Chapter 72 — Configuration, Secrets, Logging, and Observability](handbook/automation/72-configuration-secrets-logging-and-observability.md)
 - [Chapter 73 — Testing, Linting, and Type Checking Automation](handbook/automation/73-testing-linting-and-type-checking-automation.md)
-- Chapter 74 — Idempotency, State, Retries, and Recovery
+- [Chapter 74 — Idempotency, State, Retries, and Recovery](handbook/automation/74-idempotency-state-retries-and-recovery.md)
 - Chapter 75 — Task Runners, Builds, and Repeatable Environments
 - Chapter 76 — Scheduling, Concurrency, and Work Queues
 - Chapter 77 — A Complete CI/CD Automation Lifecycle
