@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and learning discussions
+    url: https://github.com/superflyad/Developer-handbook/discussions
+    about: Ask questions, compare approaches, and discuss learning paths.
+  - name: Private security report
+    url: https://github.com/superflyad/Developer-handbook/security/advisories/new
+    about: Report vulnerabilities or security-sensitive unsafe guidance privately.

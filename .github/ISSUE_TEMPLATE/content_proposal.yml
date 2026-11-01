@@ -1,0 +1,72 @@
+name: Content proposal
+description: Propose a new chapter, section, example, or learning-path improvement.
+title: "[Proposal]: "
+labels:
+  - content
+  - proposal
+body:
+  - type: input
+    id: topic
+    attributes:
+      label: Proposed topic
+      placeholder: Connection pools as a bounded resource
+    validations:
+      required: true
+  - type: textarea
+    id: gap
+    attributes:
+      label: Curriculum gap
+      description: What reader need is not covered by the existing handbook?
+    validations:
+      required: true
+  - type: textarea
+    id: outcomes
+    attributes:
+      label: Learning outcomes
+      description: What should a reader be able to explain, decide, or investigate afterward?
+      placeholder: |
+        - Explain ...
+        - Distinguish ...
+        - Diagnose ...
+    validations:
+      required: true
+  - type: dropdown
+    id: size
+    attributes:
+      label: Expected scope
+      options:
+        - Existing paragraph or example
+        - Existing section
+        - New section
+        - New chapter
+        - Cross-handbook change
+    validations:
+      required: true
+  - type: textarea
+    id: placement
+    attributes:
+      label: Suggested placement
+      description: Name the part, chapter, or sequence where this belongs and explain why.
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Primary sources
+      description: List authoritative standards, manuals, documentation, or research that could support the work.
+    validations:
+      required: true
+  - type: textarea
+    id: exclusions
+    attributes:
+      label: Boundaries and exclusions
+      description: What should this proposal deliberately not try to cover?
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I reviewed the roadmap and existing chapters for overlap.
+          required: true
+        - label: I searched existing issues and discussions.
+          required: true

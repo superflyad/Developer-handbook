@@ -1,0 +1,56 @@
+name: Content problem
+description: Report an error, ambiguity, broken example, or outdated reference.
+title: "[Content]: "
+labels:
+  - content
+  - correction
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for improving the handbook. Please identify the exact passage and include authoritative evidence when the correction is technical.
+  - type: input
+    id: location
+    attributes:
+      label: Location
+      description: Chapter, heading, file path, or web URL.
+      placeholder: Chapter 58, section 4 — handbook/networking/58-...
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong or unclear?
+      description: Quote only the minimum text needed to locate the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+      description: Explain the accurate behavior or clearer wording.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Link primary documentation, standards, source code, or a reproducible result.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Relevant environment
+      description: Include operating system, tool, service, and version when behavior is platform-specific.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues and discussions.
+          required: true
+        - label: I verified this against the current web edition or main branch.
+          required: true
+        - label: This report contains no credentials, private data, or production identifiers.
+          required: true

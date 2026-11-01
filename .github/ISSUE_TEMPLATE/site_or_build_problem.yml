@@ -1,0 +1,71 @@
+name: Website or publication problem
+description: Report a failure in navigation, search, CI, or a downloadable format.
+title: "[Publication]: "
+labels:
+  - publication
+  - bug
+body:
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Affected surface
+      options:
+        - Website
+        - PDF
+        - EPUB
+        - DOCX
+        - Standalone HTML
+        - Combined Markdown
+        - Continuous integration
+        - Release download
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: URL, release, or file
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+      placeholder: |
+        1. Open ...
+        2. Select ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Browser, operating system, reader application, or build-tool versions.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Logs or screenshots
+      description: Remove credentials, private data, and production identifiers before posting.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I reproduced this against the latest website or release.
+          required: true
+        - label: I searched existing issues.
+          required: true
+        - label: This report contains no sensitive information.
+          required: true
