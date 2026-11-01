@@ -91,7 +91,7 @@
 - [Chapter 62 — Firewalls, NAT, Proxies, and Traffic Distribution](handbook/networking/62-firewalls-nat-proxies-and-traffic-distribution.md)
 - [Chapter 63 — A Complete Network Troubleshooting Workflow](handbook/networking/63-a-complete-network-troubleshooting-workflow.md)
 
-## Part VI — Automation and Scripting (Planned)
+## Part VI — Automation and Scripting
 
 - [Chapter 64 — Deciding What to Automate](handbook/automation/64-deciding-what-to-automate.md)
 - [Chapter 65 — Reliable Shell Script Execution](handbook/automation/65-reliable-shell-script-execution.md)
@@ -106,7 +106,7 @@
 - [Chapter 74 — Idempotency, State, Retries, and Recovery](handbook/automation/74-idempotency-state-retries-and-recovery.md)
 - [Chapter 75 — Task Runners, Builds, and Repeatable Environments](handbook/automation/75-task-runners-builds-and-repeatable-environments.md)
 - [Chapter 76 — Scheduling, Concurrency, and Work Queues](handbook/automation/76-scheduling-concurrency-and-work-queues.md)
-- Chapter 77 — A Complete CI/CD Automation Lifecycle
+- [Chapter 77 — A Complete CI/CD Automation Lifecycle](handbook/automation/77-a-complete-ci-cd-automation-lifecycle.md)
 
 ## Part VII — Docker and Containers (Planned)
 
