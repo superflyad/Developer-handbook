@@ -125,7 +125,7 @@
 
 ## Part VIII — AWS and Cloud-Native Development (Planned)
 
-- Chapter 90 — Cloud Computing, Shared Responsibility, and Service Models
+- [Chapter 90 — Cloud Computing, Shared Responsibility, and Service Models](handbook/aws/90-cloud-computing-shared-responsibility-and-service-models.md)
 - Chapter 91 — AWS Accounts, Organizations, Regions, and Governance
 - Chapter 92 — IAM: Principals, Policies, Roles, and Temporary Credentials
 - Chapter 93 — VPCs, Subnets, Routes, and Address Planning
