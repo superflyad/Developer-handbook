@@ -63,7 +63,7 @@
 - [Chapter 37 — Filesystems as Namespaces and Persistent State](handbook/operating-systems/37-filesystems-as-namespaces-and-persistent-state.md)
 - [Chapter 38 — The Storage Stack: Devices, Volumes, Filesystems, and Mounts](handbook/operating-systems/38-the-storage-stack-devices-volumes-filesystems-and-mounts.md)
 - [Chapter 39 — File Identity, Hard Links, and Symbolic Links](handbook/operating-systems/39-file-identity-hard-links-and-symbolic-links.md)
-- Chapter 40 — Metadata, Timestamps, Attributes, and Extended Data
+- [Chapter 40 — Metadata, Timestamps, Attributes, and Extended Data](handbook/operating-systems/40-metadata-timestamps-attributes-and-extended-data.md)
 - Chapter 41 — Space, Allocation, Caching, and Durability
 - Chapter 42 — Process Creation, Execution, and Lifecycle
 - Chapter 43 — Scheduling, Priorities, and Resource Accounting
