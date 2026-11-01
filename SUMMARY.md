@@ -140,7 +140,7 @@
 - [Chapter 102 — Lambda, API Gateway, and Serverless Execution](handbook/aws/102-lambda-api-gateway-and-serverless-execution.md)
 - [Chapter 103 — ECS, EKS, ECR, and Container Platforms on AWS](handbook/aws/103-ecs-eks-ecr-and-container-platforms-on-aws.md)
 - [Chapter 104 — Encryption, Secrets, Configuration, and Cloud Observability](handbook/aws/104-encryption-secrets-configuration-and-cloud-observability.md)
-- Chapter 105 — Infrastructure as Code and a Complete AWS Delivery Lifecycle
+- [Chapter 105 — Infrastructure as Code and a Complete AWS Delivery Lifecycle](handbook/aws/105-infrastructure-as-code-and-a-complete-aws-delivery-lifecycle.md)
 
 ## Part IX — System Design (Planned)
 
