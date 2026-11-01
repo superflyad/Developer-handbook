@@ -169,7 +169,7 @@
 - [Chapter 125 — I/O, Network, and Database Performance](handbook/observability/125-io-network-and-database-performance.md)
 - [Chapter 126 — Load Testing, Capacity Planning, and Failure Injection](handbook/observability/126-load-testing-capacity-planning-and-failure-injection.md)
 - [Chapter 127 — Incident Response and Operational Coordination](handbook/observability/127-incident-response-and-operational-coordination.md)
-- Chapter 128 — Post-Incident Learning and Continuous Improvement
+- [Chapter 128 — Post-Incident Learning and Continuous Improvement](handbook/observability/128-post-incident-learning-and-continuous-improvement.md)
 - Chapter 129 — A Complete Cross-Layer Engineering Investigation
 
 ## Planned Appendix
