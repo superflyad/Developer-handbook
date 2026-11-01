@@ -162,7 +162,7 @@
 - [Chapter 118 — Debugging as Hypothesis Testing](handbook/observability/118-debugging-as-hypothesis-testing.md)
 - [Chapter 119 — Reproducing Failures and Building Minimal Cases](handbook/observability/119-reproducing-failures-and-building-minimal-cases.md)
 - [Chapter 120 — Logs and Structured Events](handbook/observability/120-logs-and-structured-events.md)
-- Chapter 121 — Metrics, SLIs, SLOs, and Actionable Alerts
+- [Chapter 121 — Metrics, SLIs, SLOs, and Actionable Alerts](handbook/observability/121-metrics-slis-slos-and-actionable-alerts.md)
 - Chapter 122 — Traces, Profiles, and Causal Context
 - Chapter 123 — CPU Profiling and Concurrency Bottlenecks
 - Chapter 124 — Memory, Allocation, and Resource-Leak Diagnosis
