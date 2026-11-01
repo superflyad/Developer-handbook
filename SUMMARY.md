@@ -148,7 +148,7 @@
 - [Chapter 107 — Interfaces, Contracts, and Evolution](handbook/system-design/107-interfaces-contracts-and-evolution.md)
 - [Chapter 108 — Data Models and Storage Selection](handbook/system-design/108-data-models-and-storage-selection.md)
 - [Chapter 109 — Capacity, Partitioning, and Horizontal Scale](handbook/system-design/109-capacity-partitioning-and-horizontal-scale.md)
-- Chapter 110 — Consistency, Transactions, and Concurrent Change
+- [Chapter 110 — Consistency, Transactions, and Concurrent Change](handbook/system-design/110-consistency-transactions-and-concurrent-change.md)
 - Chapter 111 — Caching as a Consistency Tradeoff
 - Chapter 112 — Messaging, Events, and Asynchronous Workflows
 - Chapter 113 — Coordination, Leadership, and Distributed Time
