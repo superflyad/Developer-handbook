@@ -139,7 +139,7 @@
 - [Chapter 101 — SQS, SNS, EventBridge, and Asynchronous Workflows](handbook/aws/101-sqs-sns-eventbridge-and-asynchronous-workflows.md)
 - [Chapter 102 — Lambda, API Gateway, and Serverless Execution](handbook/aws/102-lambda-api-gateway-and-serverless-execution.md)
 - [Chapter 103 — ECS, EKS, ECR, and Container Platforms on AWS](handbook/aws/103-ecs-eks-ecr-and-container-platforms-on-aws.md)
-- Chapter 104 — Encryption, Secrets, Configuration, and Cloud Observability
+- [Chapter 104 — Encryption, Secrets, Configuration, and Cloud Observability](handbook/aws/104-encryption-secrets-configuration-and-cloud-observability.md)
 - Chapter 105 — Infrastructure as Code and a Complete AWS Delivery Lifecycle
 
 ## Part IX — System Design (Planned)
