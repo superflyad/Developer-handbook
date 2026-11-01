@@ -159,7 +159,7 @@
 
 ## Part X — Performance, Debugging, and Observability (Planned)
 
-- Chapter 118 — Debugging as Hypothesis Testing
+- [Chapter 118 — Debugging as Hypothesis Testing](handbook/observability/118-debugging-as-hypothesis-testing.md)
 - Chapter 119 — Reproducing Failures and Building Minimal Cases
 - Chapter 120 — Logs and Structured Events
 - Chapter 121 — Metrics, SLIs, SLOs, and Actionable Alerts
