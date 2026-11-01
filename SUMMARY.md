@@ -115,7 +115,7 @@
 - [Chapter 80 — Reproducible and Efficient Container Builds](handbook/containers/80-reproducible-and-efficient-container-builds.md)
 - [Chapter 81 — Registries, Tags, Digests, and Image Provenance](handbook/containers/81-registries-tags-digests-and-image-provenance.md)
 - [Chapter 82 — Container Processes, Signals, and Lifecycle](handbook/containers/82-container-processes-signals-and-lifecycle.md)
-- Chapter 83 — Container Filesystems, Volumes, and Persistent Data
+- [Chapter 83 — Container Filesystems, Volumes, and Persistent Data](handbook/containers/83-container-filesystems-volumes-and-persistent-data.md)
 - Chapter 84 — Container Networking, Ports, and Service Discovery
 - Chapter 85 — Multi-Container Applications with Compose
 - Chapter 86 — Resource Limits, Health, Logs, and Runtime Diagnosis
