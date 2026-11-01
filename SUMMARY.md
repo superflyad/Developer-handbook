@@ -58,9 +58,24 @@
 - [Chapter 35 — Worktrees and Parallel Development](handbook/git/35-worktrees-and-parallel-development.md)
 - [Chapter 36 — A Complete Git Change Lifecycle](handbook/git/36-a-complete-git-change-lifecycle.md)
 
+## Part IV — Filesystems and Operating Systems (Planned)
+
+- Chapter 37 — Filesystems as Namespaces and Persistent State
+- Chapter 38 — The Storage Stack: Devices, Volumes, Filesystems, and Mounts
+- Chapter 39 — File Identity, Hard Links, and Symbolic Links
+- Chapter 40 — Metadata, Timestamps, Attributes, and Extended Data
+- Chapter 41 — Space, Allocation, Caching, and Durability
+- Chapter 42 — Process Creation, Execution, and Lifecycle
+- Chapter 43 — Scheduling, Priorities, and Resource Accounting
+- Chapter 44 — Virtual Memory and Process Address Spaces
+- Chapter 45 — Interprocess Communication and Coordination
+- Chapter 46 — Services, Daemons, and Background Work
+- Chapter 47 — Boot, Startup, and Shutdown
+- Chapter 48 — Identity, Permissions, ACLs, and Privilege Boundaries
+- Chapter 49 — A Cross-Platform Operating-System Investigation
+
 ## Planned Parts
 
-- Part IV — Filesystems and Operating Systems
 - Part V — Networking
 - Part VI — Automation and Scripting
 - Part VII — Docker and Containers

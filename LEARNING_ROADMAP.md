@@ -227,7 +227,108 @@ Chapters 24–36 are drafted, one chapter per commit with its own table-of-conte
 
 ## Part IV — Filesystems and Operating Systems
 
-Storage, mounting, links, metadata, processes, scheduling, memory, services, startup, permissions, and platform differences across macOS, Linux, and Windows.
+Part IV moves beneath shell commands into the operating-system mechanisms that give files, processes, and services their meaning. The sequence separates namespace from storage, then connects execution, resource management, startup, and access control across Linux, macOS, and Windows.
+
+### Phase 1 — Filesystem identity and storage
+
+#### Chapter 37 — Filesystems as Namespaces and Persistent State
+
+- **Purpose:** Build a first-principles model of file objects, directory namespaces, filesystem boundaries, and persistence.
+- **Includes:** files versus names, directory entries, roots, path resolution, file descriptors and handles, filesystem responsibilities, and platform terminology.
+- **Defers:** links, mounting mechanics, storage allocation, and detailed permissions.
+- **Outcome:** The reader can distinguish a path, an open handle, an object, and the storage system that persists it.
+
+#### Chapter 38 — The Storage Stack: Devices, Volumes, Filesystems, and Mounts
+
+- **Purpose:** Explain how raw storage becomes an accessible namespace without treating a drive letter or mount point as the device itself.
+- **Includes:** physical and virtual devices, partitions, volumes, filesystem formats, mounting, Windows drive letters and volume mount paths, Linux/macOS mount trees, removable media, and safe observation.
+- **Defers:** RAID design, storage-area networks, encryption administration, and destructive formatting exercises.
+- **Outcome:** The reader can trace an accessible path down through its mount, filesystem, volume, and backing device.
+
+#### Chapter 39 — File Identity, Hard Links, and Symbolic Links
+
+- **Purpose:** Separate object identity from pathname aliases and references.
+- **Includes:** inode/file-ID mental models, hard links, symbolic links, link counts, rename and unlink behavior, dangling links, Windows link variants, and deployment consequences.
+- **Defers:** filesystem deduplication, overlay filesystems, and advanced reparse-point administration.
+- **Outcome:** The reader can predict what survives rename or deletion and choose a link type without confusing identity with navigation.
+
+#### Chapter 40 — Metadata, Timestamps, Attributes, and Extended Data
+
+- **Purpose:** Show that file content is only one part of filesystem state.
+- **Includes:** type, size, ownership, timestamps, flags, attributes, ACL presence, extended attributes, alternate data streams, metadata preservation, and portable-copy limits.
+- **Defers:** digital forensics, full ACL policy design, and application-specific metadata formats.
+- **Outcome:** The reader can inventory relevant metadata and explain why copying bytes alone may not reproduce a file's behavior.
+
+#### Chapter 41 — Space, Allocation, Caching, and Durability
+
+- **Purpose:** Explain why reported file size, free space, and successful writes do not by themselves prove durable storage.
+- **Includes:** logical versus allocated size, sparse files, free-space accounting, deleted-open files, caches and buffers, flush boundaries, atomic replace patterns, quotas, and backup boundaries.
+- **Defers:** filesystem implementation internals, database write-ahead logging, and storage-hardware benchmarking.
+- **Outcome:** The reader can distinguish logical data, allocated blocks, cached writes, and durable state while diagnosing space anomalies safely.
+
+### Phase 2 — Processes and resource management
+
+#### Chapter 42 — Process Creation, Execution, and Lifecycle
+
+- **Purpose:** Extend shell job control into the operating system's process model.
+- **Includes:** program images, process creation, arguments and environment, inherited resources, current directory, exit status, parent-child relationships, Unix fork/exec and Windows process creation, and zombie/orphan concepts.
+- **Defers:** threads, containers, debuggers, and kernel implementation details.
+- **Outcome:** The reader can explain what state a new process receives and what must be collected or cleaned up when it exits.
+
+#### Chapter 43 — Scheduling, Priorities, and Resource Accounting
+
+- **Purpose:** Explain how runnable work competes for finite CPU and how engineers observe that competition.
+- **Includes:** runnable versus waiting state, preemption, priority and niceness, CPU time versus wall time, load concepts, affinity boundaries, resource limits, and safe diagnostic tools.
+- **Defers:** real-time scheduling design, NUMA tuning, and production capacity planning.
+- **Outcome:** The reader can distinguish delay caused by CPU contention from waiting on another resource and avoid priority changes based on guesswork.
+
+#### Chapter 44 — Virtual Memory and Process Address Spaces
+
+- **Purpose:** Replace the idea that a process directly owns a fixed slice of physical RAM with a virtual-memory model.
+- **Includes:** address spaces, pages, mappings, resident versus virtual size, anonymous and file-backed memory, sharing, copy-on-write, paging, memory pressure, and out-of-memory behavior.
+- **Defers:** allocator internals, garbage collectors, kernel memory, and performance tuning recipes.
+- **Outcome:** The reader can interpret common memory measurements without adding them naively or equating virtual size with physical use.
+
+#### Chapter 45 — Interprocess Communication and Coordination
+
+- **Purpose:** Show how isolated processes exchange data and synchronize without sharing arbitrary memory.
+- **Includes:** pipes, sockets, files, shared memory, signals/events, locks, message boundaries, blocking and backpressure, ownership, cleanup, and failure containment.
+- **Defers:** distributed consensus, message brokers, and network protocol design.
+- **Outcome:** The reader can choose a local communication mechanism by data shape, lifetime, trust boundary, and failure behavior.
+
+### Phase 3 — Managed execution and access control
+
+#### Chapter 46 — Services, Daemons, and Background Work
+
+- **Purpose:** Distinguish an operating-system-managed service from an interactive background process.
+- **Includes:** service managers, declared dependencies, identities, working directories, environment, restart policy, logging, health versus liveness, systemd, launchd, and Windows Services.
+- **Defers:** container orchestration, hosted-service administration, and production deployment design.
+- **Outcome:** The reader can inspect how a service is launched and diagnose its execution context before changing its configuration.
+
+#### Chapter 47 — Boot, Startup, and Shutdown
+
+- **Purpose:** Connect firmware, kernel initialization, user-space startup, login, and orderly shutdown as a dependency sequence.
+- **Includes:** firmware and boot loaders, kernel handoff, init/service managers, targets and run states, login startup, recovery boundaries, shutdown ordering, and platform comparisons.
+- **Defers:** firmware modification, boot-loader repair procedures, secure-boot key administration, and kernel building.
+- **Outcome:** The reader can locate a failure by startup phase and avoid changing later layers when an earlier dependency never completed.
+
+#### Chapter 48 — Identity, Permissions, ACLs, and Privilege Boundaries
+
+- **Purpose:** Extend basic file modes into process credentials, ACLs, inheritance, privilege, and cross-platform authorization.
+- **Includes:** users and groups, effective credentials, Unix modes and ACLs, Windows access tokens and DACLs, inheritance, elevated authority, service identities, network filesystems, and least privilege.
+- **Defers:** enterprise directory administration, mandatory access-control policy authoring, and cloud IAM.
+- **Outcome:** The reader can trace an access decision from process identity through namespace traversal to object policy and make the narrowest safe correction.
+
+#### Chapter 49 — A Cross-Platform Operating-System Investigation
+
+- **Purpose:** Integrate Part IV through a read-mostly investigation of storage, process, memory, service, and access state.
+- **Includes:** a portable evidence plan, Linux/macOS/Windows command mappings, path-to-volume tracing, process context, memory interpretation, service launch context, permission diagnosis, and a final system model.
+- **Defers:** destructive remediation, live incident response, kernel debugging, and performance benchmarking.
+- **Outcome:** The reader can gather comparable evidence on one operating system, explain each boundary, and identify the next safe diagnostic step.
+
+### Part IV delivery boundary
+
+Keep one chapter per commit with its own table-of-contents link. Commands that modify mounts, services, startup, permissions, or storage must not be routine exercises; prefer observation, disposable files, and explicit rollback. Part IV is complete when Chapter 49 integrates the layers without implying that Linux, macOS, and Windows expose identical abstractions.
 
 ## Part V — Networking
 
