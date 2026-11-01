@@ -98,7 +98,7 @@
 - [Chapter 66 — Shell Control Flow, Functions, and Error Handling](handbook/automation/66-shell-control-flow-functions-and-error-handling.md)
 - [Chapter 67 — Structured Inputs, Outputs, and Data Formats](handbook/automation/67-structured-inputs-outputs-and-data-formats.md)
 - [Chapter 68 — Python Programs, Modules, and the Standard Library](handbook/automation/68-python-programs-modules-and-the-standard-library.md)
-- Chapter 69 — Files, Paths, Text, and Structured Data in Python
+- [Chapter 69 — Files, Paths, Text, and Structured Data in Python](handbook/automation/69-files-paths-text-and-structured-data-in-python.md)
 - Chapter 70 — Subprocesses, HTTP Clients, and External Boundaries
 - Chapter 71 — Python Environments, Dependencies, and Packaging
 - Chapter 72 — Configuration, Secrets, Logging, and Observability
