@@ -111,7 +111,7 @@
 ## Part VII — Docker and Containers (Planned)
 
 - [Chapter 78 — Why Containers Work: Isolation, Not Tiny Virtual Machines](handbook/containers/78-why-containers-work-isolation-not-tiny-virtual-machines.md)
-- Chapter 79 — Images, Layers, Build Contexts, and Caches
+- [Chapter 79 — Images, Layers, Build Contexts, and Caches](handbook/containers/79-images-layers-build-contexts-and-caches.md)
 - Chapter 80 — Reproducible and Efficient Container Builds
 - Chapter 81 — Registries, Tags, Digests, and Image Provenance
 - Chapter 82 — Container Processes, Signals, and Lifecycle
