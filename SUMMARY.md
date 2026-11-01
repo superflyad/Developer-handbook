@@ -128,7 +128,7 @@
 - [Chapter 90 — Cloud Computing, Shared Responsibility, and Service Models](handbook/aws/90-cloud-computing-shared-responsibility-and-service-models.md)
 - [Chapter 91 — AWS Accounts, Organizations, Regions, and Governance](handbook/aws/91-aws-accounts-organizations-regions-and-governance.md)
 - [Chapter 92 — IAM: Principals, Policies, Roles, and Temporary Credentials](handbook/aws/92-iam-principals-policies-roles-and-temporary-credentials.md)
-- Chapter 93 — VPCs, Subnets, Routes, and Address Planning
+- [Chapter 93 — VPCs, Subnets, Routes, and Address Planning](handbook/aws/93-vpcs-subnets-routes-and-address-planning.md)
 - Chapter 94 — VPC Security, DNS, and Hybrid Connectivity
 - Chapter 95 — EC2, AMIs, and Elastic Compute
 - Chapter 96 — Elastic Load Balancing, Route 53, and CloudFront
