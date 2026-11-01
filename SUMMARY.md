@@ -95,7 +95,7 @@
 
 - [Chapter 64 — Deciding What to Automate](handbook/automation/64-deciding-what-to-automate.md)
 - [Chapter 65 — Reliable Shell Script Execution](handbook/automation/65-reliable-shell-script-execution.md)
-- Chapter 66 — Shell Control Flow, Functions, and Error Handling
+- [Chapter 66 — Shell Control Flow, Functions, and Error Handling](handbook/automation/66-shell-control-flow-functions-and-error-handling.md)
 - Chapter 67 — Structured Inputs, Outputs, and Data Formats
 - Chapter 68 — Python Programs, Modules, and the Standard Library
 - Chapter 69 — Files, Paths, Text, and Structured Data in Python
