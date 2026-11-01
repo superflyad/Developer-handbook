@@ -58,7 +58,7 @@
 - [Chapter 35 — Worktrees and Parallel Development](handbook/git/35-worktrees-and-parallel-development.md)
 - [Chapter 36 — A Complete Git Change Lifecycle](handbook/git/36-a-complete-git-change-lifecycle.md)
 
-## Part IV — Filesystems and Operating Systems (Planned)
+## Part IV — Filesystems and Operating Systems
 
 - [Chapter 37 — Filesystems as Namespaces and Persistent State](handbook/operating-systems/37-filesystems-as-namespaces-and-persistent-state.md)
 - [Chapter 38 — The Storage Stack: Devices, Volumes, Filesystems, and Mounts](handbook/operating-systems/38-the-storage-stack-devices-volumes-filesystems-and-mounts.md)
@@ -72,7 +72,7 @@
 - [Chapter 46 — Services, Daemons, and Background Work](handbook/operating-systems/46-services-daemons-and-background-work.md)
 - [Chapter 47 — Boot, Startup, and Shutdown](handbook/operating-systems/47-boot-startup-and-shutdown.md)
 - [Chapter 48 — Identity, Permissions, ACLs, and Privilege Boundaries](handbook/operating-systems/48-identity-permissions-acls-and-privilege-boundaries.md)
-- Chapter 49 — A Cross-Platform Operating-System Investigation
+- [Chapter 49 — A Cross-Platform Operating-System Investigation](handbook/operating-systems/49-a-cross-platform-operating-system-investigation.md)
 
 ## Planned Parts
 

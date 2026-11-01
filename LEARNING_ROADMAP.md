@@ -328,7 +328,7 @@ Part IV moves beneath shell commands into the operating-system mechanisms that g
 
 ### Part IV delivery boundary
 
-Keep one chapter per commit with its own table-of-contents link. Commands that modify mounts, services, startup, permissions, or storage must not be routine exercises; prefer observation, disposable files, and explicit rollback. Part IV is complete when Chapter 49 integrates the layers without implying that Linux, macOS, and Windows expose identical abstractions.
+Chapters 37–49 are drafted, one chapter per commit with its own table-of-contents link. Commands that modify mounts, services, startup, permissions, or storage are not routine exercises; revisions should prefer observation, disposable files, and explicit rollback. Preserve the distinction between comparable responsibilities and nonidentical Linux, macOS, and Windows abstractions.
 
 ## Part V — Networking
 
