@@ -65,7 +65,7 @@
 - [Chapter 39 — File Identity, Hard Links, and Symbolic Links](handbook/operating-systems/39-file-identity-hard-links-and-symbolic-links.md)
 - [Chapter 40 — Metadata, Timestamps, Attributes, and Extended Data](handbook/operating-systems/40-metadata-timestamps-attributes-and-extended-data.md)
 - [Chapter 41 — Space, Allocation, Caching, and Durability](handbook/operating-systems/41-space-allocation-caching-and-durability.md)
-- Chapter 42 — Process Creation, Execution, and Lifecycle
+- [Chapter 42 — Process Creation, Execution, and Lifecycle](handbook/operating-systems/42-process-creation-execution-and-lifecycle.md)
 - Chapter 43 — Scheduling, Priorities, and Resource Accounting
 - Chapter 44 — Virtual Memory and Process Address Spaces
 - Chapter 45 — Interprocess Communication and Coordination
