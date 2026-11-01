@@ -152,7 +152,7 @@
 - [Chapter 111 — Caching as a Consistency Tradeoff](handbook/system-design/111-caching-as-a-consistency-tradeoff.md)
 - [Chapter 112 — Messaging, Events, and Asynchronous Workflows](handbook/system-design/112-messaging-events-and-asynchronous-workflows.md)
 - [Chapter 113 — Coordination, Leadership, and Distributed Time](handbook/system-design/113-coordination-leadership-and-distributed-time.md)
-- Chapter 114 — Resilience, Timeouts, Retries, and Failure Containment
+- [Chapter 114 — Resilience, Timeouts, Retries, and Failure Containment](handbook/system-design/114-resilience-timeouts-retries-and-failure-containment.md)
 - Chapter 115 — Security, Privacy, and Multi-Tenant Boundaries
 - Chapter 116 — Architecture Decisions, Tradeoffs, and Evolution
 - Chapter 117 — A Complete System Design Review
