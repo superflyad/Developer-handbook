@@ -129,7 +129,7 @@
 - [Chapter 91 — AWS Accounts, Organizations, Regions, and Governance](handbook/aws/91-aws-accounts-organizations-regions-and-governance.md)
 - [Chapter 92 — IAM: Principals, Policies, Roles, and Temporary Credentials](handbook/aws/92-iam-principals-policies-roles-and-temporary-credentials.md)
 - [Chapter 93 — VPCs, Subnets, Routes, and Address Planning](handbook/aws/93-vpcs-subnets-routes-and-address-planning.md)
-- Chapter 94 — VPC Security, DNS, and Hybrid Connectivity
+- [Chapter 94 — VPC Security, DNS, and Hybrid Connectivity](handbook/aws/94-vpc-security-dns-and-hybrid-connectivity.md)
 - Chapter 95 — EC2, AMIs, and Elastic Compute
 - Chapter 96 — Elastic Load Balancing, Route 53, and CloudFront
 - Chapter 97 — S3 Object Storage and Data Lifecycle
