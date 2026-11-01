@@ -11,7 +11,7 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 CHAPTERS = ROOT / "handbook"
-CHAPTER_FILE = re.compile(r"^(?P<number>\d{2})-.+\.md$")
+CHAPTER_FILE = re.compile(r"^(?P<number>\d{2,3})-.+\.md$")
 CHAPTER_TITLE = re.compile(r"^# Chapter (?P<number>\d+) — .+$")
 MARKDOWN_LINK = re.compile(r"(?<!!)\[[^\]]+\]\((?P<destination>[^)]+)\)")
 
@@ -43,7 +43,10 @@ def check_chapter_titles(files: list[Path]) -> list[str]:
 
         filename_match = CHAPTER_FILE.match(path.name)
         if not filename_match:
-            errors.append(f"{path.relative_to(ROOT)}: chapter filename needs a two-digit prefix")
+            errors.append(
+                f"{path.relative_to(ROOT)}: chapter filename needs a two- or "
+                "three-digit prefix"
+            )
             continue
 
         lines = path.read_text(encoding="utf-8").splitlines()

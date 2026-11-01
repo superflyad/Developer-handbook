@@ -135,7 +135,7 @@
 - [Chapter 97 — S3 Object Storage and Data Lifecycle](handbook/aws/97-s3-object-storage-and-data-lifecycle.md)
 - [Chapter 98 — EBS, EFS, and Choosing Cloud Storage](handbook/aws/98-ebs-efs-and-choosing-cloud-storage.md)
 - [Chapter 99 — RDS, Aurora, and Managed Relational Databases](handbook/aws/99-rds-aurora-and-managed-relational-databases.md)
-- Chapter 100 — DynamoDB, Caching, and NoSQL Access Patterns
+- [Chapter 100 — DynamoDB, Caching, and NoSQL Access Patterns](handbook/aws/100-dynamodb-caching-and-nosql-access-patterns.md)
 - Chapter 101 — SQS, SNS, EventBridge, and Asynchronous Workflows
 - Chapter 102 — Lambda, API Gateway, and Serverless Execution
 - Chapter 103 — ECS, EKS, ECR, and Container Platforms on AWS
