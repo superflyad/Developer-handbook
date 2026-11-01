@@ -80,7 +80,7 @@
 - [Chapter 51 — Links, Frames, Ethernet, and Wi-Fi](handbook/networking/51-links-frames-ethernet-and-wi-fi.md)
 - [Chapter 52 — IP Addressing and Subnetting](handbook/networking/52-ip-addressing-and-subnetting.md)
 - [Chapter 53 — Host Configuration, DHCP, ARP, and Neighbor Discovery](handbook/networking/53-host-configuration-dhcp-arp-and-neighbor-discovery.md)
-- Chapter 54 — Routing, Gateways, and Path Selection
+- [Chapter 54 — Routing, Gateways, and Path Selection](handbook/networking/54-routing-gateways-and-path-selection.md)
 - Chapter 55 — DNS and Name Resolution
 - Chapter 56 — Sockets, Ports, and Endpoint Ownership
 - Chapter 57 — UDP, Datagrams, and Message Boundaries
