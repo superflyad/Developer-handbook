@@ -1,0 +1,29 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "08:00"
+      timezone: America/Chicago
+    labels:
+      - dependencies
+      - automation
+    commit-message:
+      prefix: ci
+    open-pull-requests-limit: 5
+
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "08:15"
+      timezone: America/Chicago
+    labels:
+      - dependencies
+      - website
+    commit-message:
+      prefix: site
+    open-pull-requests-limit: 5
