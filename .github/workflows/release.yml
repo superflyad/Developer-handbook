@@ -1,0 +1,81 @@
+name: Publish release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing version tag to publish
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build and publish edition
+    runs-on: ubuntu-latest
+    env:
+      RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
+    steps:
+      - name: Check out tagged source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          fetch-depth: 0
+          ref: ${{ inputs.tag || github.ref }}
+
+      - name: Verify release tag
+        run: |
+          test -n "$RELEASE_TAG"
+          git rev-parse --verify "refs/tags/$RELEASE_TAG^{commit}"
+          test "$(git rev-parse HEAD)" = "$(git rev-parse "refs/tags/$RELEASE_TAG^{commit}")"
+
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: "3.13"
+
+      - name: Set up Pandoc
+        uses: pandoc/actions/setup@86321b6dd4675f5014c611e05088e10d4939e09e # v1
+        with:
+          version: "3.13"
+
+      - name: Install PDF renderer
+        run: python -m pip install --disable-pip-version-check weasyprint==70.0
+
+      - name: Validate tagged source
+        run: python scripts/check_docs.py
+
+      - name: Build publication formats
+        run: |
+          echo "SOURCE_REVISION=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          echo "SOURCE_DATE_EPOCH=$(git show -s --format=%ct HEAD)" >> "$GITHUB_ENV"
+          python scripts/build_book.py --formats html epub docx pdf
+
+      - name: Prepare release assets
+        run: |
+          mkdir -p dist
+          for extension in md html epub docx pdf; do
+            cp "build/developer-handbook.$extension" "dist/developer-handbook-$RELEASE_TAG.$extension"
+          done
+          cp build/publication-manifest.json "dist/publication-manifest-$RELEASE_TAG.json"
+          (
+            cd dist
+            sha256sum * > SHA256SUMS.txt
+          )
+
+      - name: Create or update GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            gh release upload "$RELEASE_TAG" dist/* --clobber
+          else
+            gh release create "$RELEASE_TAG" dist/* \
+              --verify-tag \
+              --title "The Developer Handbook $RELEASE_TAG" \
+              --generate-notes
+          fi

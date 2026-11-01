@@ -127,7 +127,11 @@ def git_value(*arguments: str) -> str:
 
 
 def source_identity() -> tuple[str, int]:
-    revision = os.environ.get("GITHUB_SHA") or git_value("rev-parse", "HEAD")
+    revision = (
+        os.environ.get("SOURCE_REVISION")
+        or os.environ.get("GITHUB_SHA")
+        or git_value("rev-parse", "HEAD")
+    )
     epoch_text = os.environ.get("SOURCE_DATE_EPOCH")
     epoch = int(epoch_text) if epoch_text else int(git_value("show", "-s", "--format=%ct", "HEAD"))
     return revision, epoch
