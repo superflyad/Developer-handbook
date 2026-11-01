@@ -74,14 +74,103 @@
 - [Chapter 48 — Identity, Permissions, ACLs, and Privilege Boundaries](handbook/operating-systems/48-identity-permissions-acls-and-privilege-boundaries.md)
 - [Chapter 49 — A Cross-Platform Operating-System Investigation](handbook/operating-systems/49-a-cross-platform-operating-system-investigation.md)
 
-## Planned Parts
+## Part V — Networking (Planned)
 
-- Part V — Networking
-- Part VI — Automation and Scripting
-- Part VII — Docker and Containers
-- Part VIII — AWS and Cloud-Native Development
-- Part IX — System Design
-- Part X — Performance, Debugging, and Observability
+- Chapter 50 — A Packet's Journey Through the Network Stack
+- Chapter 51 — Links, Frames, Ethernet, and Wi-Fi
+- Chapter 52 — IP Addressing and Subnetting
+- Chapter 53 — Host Configuration, DHCP, ARP, and Neighbor Discovery
+- Chapter 54 — Routing, Gateways, and Path Selection
+- Chapter 55 — DNS and Name Resolution
+- Chapter 56 — Sockets, Ports, and Endpoint Ownership
+- Chapter 57 — UDP, Datagrams, and Message Boundaries
+- Chapter 58 — TCP Reliability, Flow Control, and Connection State
+- Chapter 59 — HTTP Semantics and API Behavior
+- Chapter 60 — TLS, Certificates, and Public-Key Trust
+- Chapter 61 — SSH, Tunnels, and Remote Access Boundaries
+- Chapter 62 — Firewalls, NAT, Proxies, and Traffic Distribution
+- Chapter 63 — A Complete Network Troubleshooting Workflow
+
+## Part VI — Automation and Scripting (Planned)
+
+- Chapter 64 — Deciding What to Automate
+- Chapter 65 — Reliable Shell Script Execution
+- Chapter 66 — Shell Control Flow, Functions, and Error Handling
+- Chapter 67 — Structured Inputs, Outputs, and Data Formats
+- Chapter 68 — Python Programs, Modules, and the Standard Library
+- Chapter 69 — Files, Paths, Text, and Structured Data in Python
+- Chapter 70 — Subprocesses, HTTP Clients, and External Boundaries
+- Chapter 71 — Python Environments, Dependencies, and Packaging
+- Chapter 72 — Configuration, Secrets, Logging, and Observability
+- Chapter 73 — Testing, Linting, and Type Checking Automation
+- Chapter 74 — Idempotency, State, Retries, and Recovery
+- Chapter 75 — Task Runners, Builds, and Repeatable Environments
+- Chapter 76 — Scheduling, Concurrency, and Work Queues
+- Chapter 77 — A Complete CI/CD Automation Lifecycle
+
+## Part VII — Docker and Containers (Planned)
+
+- Chapter 78 — Why Containers Work: Isolation, Not Tiny Virtual Machines
+- Chapter 79 — Images, Layers, Build Contexts, and Caches
+- Chapter 80 — Reproducible and Efficient Container Builds
+- Chapter 81 — Registries, Tags, Digests, and Image Provenance
+- Chapter 82 — Container Processes, Signals, and Lifecycle
+- Chapter 83 — Container Filesystems, Volumes, and Persistent Data
+- Chapter 84 — Container Networking, Ports, and Service Discovery
+- Chapter 85 — Multi-Container Applications with Compose
+- Chapter 86 — Resource Limits, Health, Logs, and Runtime Diagnosis
+- Chapter 87 — Container Security and Least Privilege
+- Chapter 88 — Orchestration Foundations and Kubernetes Mental Models
+- Chapter 89 — A Complete Container Delivery Workflow
+
+## Part VIII — AWS and Cloud-Native Development (Planned)
+
+- Chapter 90 — Cloud Computing, Shared Responsibility, and Service Models
+- Chapter 91 — AWS Accounts, Organizations, Regions, and Governance
+- Chapter 92 — IAM: Principals, Policies, Roles, and Temporary Credentials
+- Chapter 93 — VPCs, Subnets, Routes, and Address Planning
+- Chapter 94 — VPC Security, DNS, and Hybrid Connectivity
+- Chapter 95 — EC2, AMIs, and Elastic Compute
+- Chapter 96 — Elastic Load Balancing, Route 53, and CloudFront
+- Chapter 97 — S3 Object Storage and Data Lifecycle
+- Chapter 98 — EBS, EFS, and Choosing Cloud Storage
+- Chapter 99 — RDS, Aurora, and Managed Relational Databases
+- Chapter 100 — DynamoDB, Caching, and NoSQL Access Patterns
+- Chapter 101 — SQS, SNS, EventBridge, and Asynchronous Workflows
+- Chapter 102 — Lambda, API Gateway, and Serverless Execution
+- Chapter 103 — ECS, EKS, ECR, and Container Platforms on AWS
+- Chapter 104 — Encryption, Secrets, Configuration, and Cloud Observability
+- Chapter 105 — Infrastructure as Code and a Complete AWS Delivery Lifecycle
+
+## Part IX — System Design (Planned)
+
+- Chapter 106 — From Requirements to a System Model
+- Chapter 107 — Interfaces, Contracts, and Evolution
+- Chapter 108 — Data Models and Storage Selection
+- Chapter 109 — Capacity, Partitioning, and Horizontal Scale
+- Chapter 110 — Consistency, Transactions, and Concurrent Change
+- Chapter 111 — Caching as a Consistency Tradeoff
+- Chapter 112 — Messaging, Events, and Asynchronous Workflows
+- Chapter 113 — Coordination, Leadership, and Distributed Time
+- Chapter 114 — Resilience, Timeouts, Retries, and Failure Containment
+- Chapter 115 — Security, Privacy, and Multi-Tenant Boundaries
+- Chapter 116 — Architecture Decisions, Tradeoffs, and Evolution
+- Chapter 117 — A Complete System Design Review
+
+## Part X — Performance, Debugging, and Observability (Planned)
+
+- Chapter 118 — Debugging as Hypothesis Testing
+- Chapter 119 — Reproducing Failures and Building Minimal Cases
+- Chapter 120 — Logs and Structured Events
+- Chapter 121 — Metrics, SLIs, SLOs, and Actionable Alerts
+- Chapter 122 — Traces, Profiles, and Causal Context
+- Chapter 123 — CPU Profiling and Concurrency Bottlenecks
+- Chapter 124 — Memory, Allocation, and Resource-Leak Diagnosis
+- Chapter 125 — I/O, Network, and Database Performance
+- Chapter 126 — Load Testing, Capacity Planning, and Failure Injection
+- Chapter 127 — Incident Response and Operational Coordination
+- Chapter 128 — Post-Incident Learning and Continuous Improvement
+- Chapter 129 — A Complete Cross-Layer Engineering Investigation
 
 ## Planned Appendix
 

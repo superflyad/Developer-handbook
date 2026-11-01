@@ -180,3 +180,32 @@ The learning roadmap records an explicit purpose, included scope, deferred scope
 - Shell scripting, CI/CD, and production automation remain in Part VI.
 - Filesystem and operating-system internals remain in Part IV unless Part II needs a concise practical explanation.
 - Chapter 23 must integrate the skills from Part II and establish the boundary between interactive work and automation.
+
+## ADR-010 — Define the first edition as Chapters 1–129
+
+**Status:** Accepted
+
+### Context
+
+The handbook is intentionally a living system, but an indefinitely expanding roadmap provides no measurable first-edition completion boundary. Chapters 1–49 establish foundations, command-line practice, Git, filesystems, and operating systems. The remaining networking, automation, container, cloud, system-design, and observability material needs a stable sequence before large-scale drafting begins.
+
+### Decision
+
+The first edition consists of Chapters 1 through 129 plus the unnumbered Engineering Patterns appendix. Parts V through X contain exactly 80 planned chapters:
+
+1. Part V — Networking: Chapters 50–63
+2. Part VI — Automation and Scripting: Chapters 64–77
+3. Part VII — Docker and Containers: Chapters 78–89
+4. Part VIII — AWS and Cloud-Native Development: Chapters 90–105
+5. Part IX — System Design: Chapters 106–117
+6. Part X — Performance, Debugging, and Observability: Chapters 118–129
+
+`LEARNING_ROADMAP.md` is the authoritative source for each chapter's purpose, included scope, deferred scope, outcome, dependencies, and part completion boundary.
+
+### Consequences
+
+- First-edition progress is measurable without claiming the handbook will ever stop evolving.
+- Chapter 129 integrates the full curriculum in a cross-layer engineering investigation.
+- New evidence should normally revise the canonical chapter rather than expand the first-edition sequence.
+- A new chapter number requires a deliberate roadmap and architecture decision, not merely a newly encountered tool or product.
+- First-edition release still requires cross-book technical and editorial review, verified examples, publication tooling, and a tagged release after the chapter drafts exist.

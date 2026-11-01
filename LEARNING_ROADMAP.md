@@ -332,42 +332,671 @@ Chapters 37–49 are drafted, one chapter per commit with its own table-of-conte
 
 ## Part V — Networking
 
-Protocols, addressing, routing, DNS, ports, sockets, HTTP, TLS, SSH, firewalls, troubleshooting, and cloud networking.
+Part V follows data from one process to another across local, routed, and cloud networks. It builds from frames and addressing to application protocols, security boundaries, and evidence-driven troubleshooting.
+
+### Phase 1 — Local delivery and internetworking
+
+#### Chapter 50 — A Packet's Journey Through the Network Stack
+
+- **Purpose:** Establish a layered model of encapsulation, forwarding, and endpoint processing before individual protocols.
+- **Includes:** hosts, interfaces, links, packets, frames, segments, encapsulation, protocol headers, control versus data plane, and the limits of OSI/TCP-IP diagrams.
+- **Defers:** detailed addressing, routing algorithms, packet capture syntax, and cloud-provider implementation.
+- **Outcome:** The reader can trace one application message through layers and name which device or process owns each decision.
+
+#### Chapter 51 — Links, Frames, Ethernet, and Wi-Fi
+
+- **Purpose:** Explain delivery on one local link and the constraints beneath IP.
+- **Includes:** frames, MAC addresses, switches, broadcast domains, VLAN purpose, Ethernet, Wi-Fi association, MTU, errors, and physical versus logical links.
+- **Defers:** radio engineering, switch administration, spanning-tree design, and data-center fabrics.
+- **Outcome:** The reader can distinguish a local-link failure from an IP or application failure and explain where a frame can travel.
+
+#### Chapter 52 — IP Addressing and Subnetting
+
+- **Purpose:** Make IPv4 and IPv6 prefixes, host addresses, and subnet membership predictable.
+- **Includes:** binary prefix reasoning, CIDR, network and host portions, private and special-use ranges, IPv6 notation and scopes, unicast and multicast, and subnet planning.
+- **Defers:** address-assignment protocols, route selection, provider allocation policy, and exhaustive IPv6 transition mechanisms.
+- **Outcome:** The reader can determine whether two addresses share a subnet and calculate a usable prefix without relying on memorized classful rules.
+
+#### Chapter 53 — Host Configuration, DHCP, ARP, and Neighbor Discovery
+
+- **Purpose:** Explain how a host acquires configuration and finds a next-hop link-layer destination.
+- **Includes:** static and dynamic configuration, DHCP leases, default gateways, DNS settings, ARP, IPv6 Neighbor Discovery, duplicate-address concerns, and cache inspection.
+- **Defers:** enterprise DHCP architecture, router advertisements in depth, and hostile-link attack tooling.
+- **Outcome:** The reader can separate address assignment from neighbor resolution and diagnose stale or missing local configuration.
+
+#### Chapter 54 — Routing, Gateways, and Path Selection
+
+- **Purpose:** Show how hosts and routers select the next hop across multiple networks.
+- **Includes:** routing tables, longest-prefix match, default routes, metrics, forwarding, asymmetric paths, TTL/hop limit, traceroute limits, and policy boundaries.
+- **Defers:** dynamic routing protocol administration, BGP policy design, MPLS, and software-defined networking internals.
+- **Outcome:** The reader can predict the selected route for a destination and identify where a path stops matching expectations.
+
+### Phase 2 — Names, endpoints, and transport
+
+#### Chapter 55 — DNS and Name Resolution
+
+- **Purpose:** Treat DNS as a distributed, cached naming system rather than a single lookup command.
+- **Includes:** stub and recursive resolvers, authoritative servers, zones, common record types, delegation, caching, TTLs, negative answers, search domains, hosts files, and split-horizon behavior.
+- **Defers:** authoritative-server operation, DNSSEC administration, registrar workflows, and large-scale traffic steering.
+- **Outcome:** The reader can follow a name-resolution path, distinguish resolver layers, and interpret cached success or failure correctly.
+
+#### Chapter 56 — Sockets, Ports, and Endpoint Ownership
+
+- **Purpose:** Connect process communication to network endpoints without treating a port as a program.
+- **Includes:** sockets, address families, local and remote tuples, bind, listen, connect, accept, ephemeral ports, wildcard addresses, loopback, socket state, and process ownership.
+- **Defers:** transport reliability details, asynchronous I/O frameworks, raw sockets, and socket programming language APIs.
+- **Outcome:** The reader can map a listening or connected endpoint to its process and explain why the same port number can appear in several contexts.
+
+#### Chapter 57 — UDP, Datagrams, and Message Boundaries
+
+- **Purpose:** Explain connectionless datagram transport and the reliability work left to applications.
+- **Includes:** datagram boundaries, checksums, loss, duplication, reordering, size and fragmentation concerns, timeouts, amplification risk, multicast uses, and appropriate workloads.
+- **Defers:** real-time media protocols, QUIC internals, reliable-UDP designs, and congestion-control algorithms.
+- **Outcome:** The reader can decide when UDP semantics fit and state which delivery guarantees the application must add.
+
+#### Chapter 58 — TCP Reliability, Flow Control, and Connection State
+
+- **Purpose:** Explain TCP as an ordered byte stream governed by state, acknowledgment, and capacity feedback.
+- **Includes:** handshake and teardown, sequence and acknowledgment reasoning, retransmission, flow versus congestion control, stream framing, resets, time-wait, keepalive limits, and common state displays.
+- **Defers:** congestion-control algorithm tuning, kernel implementation, high-performance networking, and QUIC.
+- **Outcome:** The reader can interpret a TCP connection lifecycle and distinguish stream semantics from application messages.
+
+### Phase 3 — Application protocols and security boundaries
+
+#### Chapter 59 — HTTP Semantics and API Behavior
+
+- **Purpose:** Teach HTTP as a request-response protocol with cache, method, status, and representation semantics.
+- **Includes:** URLs, methods, status classes, headers, bodies, content negotiation, redirects, cookies, caching, idempotency, HTTP/1.1 versus HTTP/2 and HTTP/3 boundaries, and API failure behavior.
+- **Defers:** framework-specific API construction, browser rendering, advanced CDN configuration, and exhaustive standards coverage.
+- **Outcome:** The reader can inspect an HTTP exchange, reason about safe retries and caching, and avoid treating every non-200 response alike.
+
+#### Chapter 60 — TLS, Certificates, and Public-Key Trust
+
+- **Purpose:** Explain how TLS establishes peer identity and protects transport without implying that encryption proves application trustworthiness.
+- **Includes:** handshake goals, certificates, names, chains, roots, private keys, signatures, session keys, hostname verification, expiration, revocation limits, mutual TLS, and inspection tools.
+- **Defers:** cryptographic proofs, cipher implementation, certificate-authority operation, and automated PKI administration.
+- **Outcome:** The reader can trace certificate validation, separate encryption from authentication, and diagnose common trust failures safely.
+
+#### Chapter 61 — SSH, Tunnels, and Remote Access Boundaries
+
+- **Purpose:** Treat SSH as authenticated remote transport with explicit host and user trust.
+- **Includes:** host keys, user authentication, agents, known-hosts verification, command execution, file transfer, local and remote forwarding, jump hosts, VPN comparison, and least-privilege access.
+- **Defers:** fleet key management, bastion administration, VPN protocol internals, and production zero-trust architecture.
+- **Outcome:** The reader can establish remote access without bypassing host verification and explain what each tunnel endpoint exposes.
+
+#### Chapter 62 — Firewalls, NAT, Proxies, and Traffic Distribution
+
+- **Purpose:** Map the middleboxes and policies that transform, filter, terminate, or distribute traffic.
+- **Includes:** stateful and stateless filtering, ingress and egress, NAT and port translation, forward and reverse proxies, load balancers, health checks, cloud security groups, network ACLs, and client-address preservation.
+- **Defers:** vendor rule syntax, web-application firewalls in depth, service meshes, and global traffic engineering.
+- **Outcome:** The reader can identify which component owns a traffic decision and avoid collapsing every blocked connection into “the firewall.”
+
+### Phase 4 — Integration
+
+#### Chapter 63 — A Complete Network Troubleshooting Workflow
+
+- **Purpose:** Integrate link, address, route, name, transport, TLS, and application evidence into a safe diagnostic sequence.
+- **Includes:** symptom definition, scope and timing, endpoint ownership, path tracing, DNS comparison, socket tests, packet-capture boundaries, HTTP/TLS inspection, cloud-path mapping, and evidence handoff.
+- **Defers:** destructive network changes, active offensive testing, provider-specific incident response, and production packet capture without authorization.
+- **Outcome:** The reader can locate a failure layer, support one causal hypothesis, and select the next narrow diagnostic step.
+
+### Part V delivery boundary
+
+Keep one chapter per commit and prefer read-only inspection or isolated labs. Part V is complete when Chapter 63 can diagnose a path without assuming every failure is DNS, firewall, or “the network.”
 
 ## Part VI — Automation and Scripting
 
-Shell scripting, Python automation, task runners, repeatable environment setup, scheduling, CI/CD, and replacing manual workflows with reliable systems.
+Part VI turns understood manual work into tested, observable automation. It begins with the automation decision, develops shell and Python implementation skills, and ends with scheduled and CI/CD execution.
+
+### Phase 1 — From commands to programs
+
+#### Chapter 64 — Deciding What to Automate
+
+- **Purpose:** Apply the handbook's Observe → Understand → Remove Waste → Stabilize → Automate → Measure sequence.
+- **Includes:** task frequency, variability, risk, reversibility, human judgment, interfaces, inputs and outputs, runbooks, success metrics, and automation cost.
+- **Defers:** implementation languages, orchestration platforms, and return-on-investment accounting models.
+- **Outcome:** The reader can reject premature automation and write a stable contract for work worth automating.
+
+#### Chapter 65 — Reliable Shell Script Execution
+
+- **Purpose:** Turn an interactive command sequence into an explicit shell program with predictable invocation.
+- **Includes:** shebangs, shell selection, executable files, arguments, exit status, standard streams, working directories, environment control, quoting, temporary files, traps, and portability boundaries.
+- **Defers:** advanced shell language, cross-shell polyglots, and production deployment systems.
+- **Outcome:** The reader can write a small shell script that preserves argument boundaries, reports failure, and cleans up its owned temporary state.
+
+#### Chapter 66 — Shell Control Flow, Functions, and Error Handling
+
+- **Purpose:** Build understandable shell programs without relying on folklore such as one universal “strict mode.”
+- **Includes:** tests, conditionals, loops, functions, positional parameters, command lists, pipelines, status propagation, explicit error handling, retries, traps, and diagnostics.
+- **Defers:** large shell applications, parallel execution frameworks, and complete Bash language coverage.
+- **Outcome:** The reader can explain every control-flow decision and handle expected failures without hiding unexpected ones.
+
+#### Chapter 67 — Structured Inputs, Outputs, and Data Formats
+
+- **Purpose:** Choose representations that automation can parse without corrupting data.
+- **Includes:** line and record boundaries, JSON, CSV limitations, YAML risks, null-delimited pathnames, encodings, schemas, validation, machine-readable output, and backward compatibility.
+- **Defers:** binary protocol design, schema registries, and large-scale data engineering.
+- **Outcome:** The reader can define an input/output contract and recognize when shell text processing is no longer safe.
+
+### Phase 2 — Python automation
+
+#### Chapter 68 — Python Programs, Modules, and the Standard Library
+
+- **Purpose:** Establish Python as a readable automation language after the shell boundary is understood.
+- **Includes:** execution, modules, functions, types, collections, iteration, context managers, exceptions, imports, command-line entry points, and standard-library discovery.
+- **Defers:** web frameworks, numerical computing, language implementation, and advanced object-oriented design.
+- **Outcome:** The reader can structure a small Python automation program into testable functions and a clear entry point.
+
+#### Chapter 69 — Files, Paths, Text, and Structured Data in Python
+
+- **Purpose:** Manipulate filesystem and data inputs with explicit encoding and lifecycle handling.
+- **Includes:** `pathlib`, context-managed I/O, encodings, JSON and CSV libraries, temporary directories, atomic replacement, metadata awareness, traversal, and validation.
+- **Defers:** database frameworks, large datasets, asynchronous file I/O, and archival-format internals.
+- **Outcome:** The reader can transform a directory of structured files safely without assuming paths or text are trivial strings.
+
+#### Chapter 70 — Subprocesses, HTTP Clients, and External Boundaries
+
+- **Purpose:** Interact with programs and services while preserving argument, timeout, status, and trust boundaries.
+- **Includes:** `subprocess`, argument vectors, captured streams, timeouts, cancellation limits, HTTP requests, status handling, retries, authentication boundaries, and response validation.
+- **Defers:** browser automation, distributed task queues, asynchronous networking frameworks, and API-specific SDK coverage.
+- **Outcome:** The reader can call an external command or HTTP API without shell injection, silent status loss, or unbounded waiting.
+
+#### Chapter 71 — Python Environments, Dependencies, and Packaging
+
+- **Purpose:** Make automation reproducible without confusing interpreter installation, environments, packages, and applications.
+- **Includes:** interpreter discovery, virtual environments, dependency declarations, lock strategies, package indexes and trust, editable development, project metadata, entry points, and upgrade policy.
+- **Defers:** publishing public libraries, monorepo tooling, alternative build backends in depth, and supply-chain signing operations.
+- **Outcome:** The reader can recreate an isolated automation environment and explain where each dependency came from.
+
+#### Chapter 72 — Configuration, Secrets, Logging, and Observability
+
+- **Purpose:** Separate code from runtime configuration while keeping sensitive values and operational evidence under control.
+- **Includes:** configuration precedence, environment and file boundaries, secret references, validation, structured logs, correlation IDs, metrics for batch work, redaction, and dry-run reporting.
+- **Defers:** enterprise secret-manager administration, distributed tracing platforms, and organization-wide telemetry standards.
+- **Outcome:** The reader can configure one program predictably, protect secrets, and produce evidence that explains each run.
+
+### Phase 3 — Reliability and execution systems
+
+#### Chapter 73 — Testing, Linting, and Type Checking Automation
+
+- **Purpose:** Treat automation as production code proportional to its blast radius.
+- **Includes:** unit and integration boundaries, fixtures, temporary resources, mocks and fakes, property cases, shell linting, Python linting and types, deterministic tests, and failure-path verification.
+- **Defers:** exhaustive formal verification, UI testing, and organization-wide test infrastructure.
+- **Outcome:** The reader can build a fast test suite that proves important behavior and recovery paths before automation touches real systems.
+
+#### Chapter 74 — Idempotency, State, Retries, and Recovery
+
+- **Purpose:** Make repeated or interrupted runs converge safely rather than duplicate effects.
+- **Includes:** desired versus observed state, idempotent operations, checkpoints, deduplication keys, retry classification, exponential backoff and jitter, partial failure, compensation, and resumability.
+- **Defers:** distributed consensus, exactly-once claims across arbitrary systems, and workflow-engine internals.
+- **Outcome:** The reader can describe what happens after interruption and rerun an automation without guessing which effects already occurred.
+
+#### Chapter 75 — Task Runners, Builds, and Repeatable Environments
+
+- **Purpose:** Encode developer workflows as named, discoverable tasks with dependency and cache boundaries.
+- **Includes:** task runners, build graphs, inputs and outputs, incremental work, environment bootstrapping, tool versions, local versus CI parity, generated artifacts, and cleanup.
+- **Defers:** compiler construction, remote build farms, and one prescribed task-runner product.
+- **Outcome:** The reader can replace tribal command sequences with a small task interface that remains inspectable and reproducible.
+
+#### Chapter 76 — Scheduling, Concurrency, and Work Queues
+
+- **Purpose:** Run automation at the right time and rate without overlapping unsafely or losing ownership.
+- **Includes:** cron and platform schedulers, service timers, time zones, missed runs, locks, concurrency limits, worker queues, backpressure, deadlines, leases, and run history.
+- **Defers:** distributed scheduler administration, real-time systems, and message-broker product deep dives.
+- **Outcome:** The reader can schedule work with explicit overlap, retry, and ownership policy and diagnose a missed or duplicated run.
+
+#### Chapter 77 — A Complete CI/CD Automation Lifecycle
+
+- **Purpose:** Integrate code, tests, artifacts, approvals, deployment, and rollback into a trustworthy pipeline.
+- **Includes:** triggers, immutable revisions, runners, caches, artifacts, credentials, environments, required checks, promotion, deployment strategies, rollback, auditability, and post-deployment verification.
+- **Defers:** one vendor's complete syntax, production platform administration, and organization-wide release governance.
+- **Outcome:** The reader can move a manual workflow into CI/CD while explaining identity, evidence, failure, and recovery at every stage.
+
+### Part VI delivery boundary
+
+Examples must run in disposable directories or isolated test systems and expose dry-run or preview behavior where meaningful. Part VI is complete when Chapter 77 automates a stable workflow rather than merely relocating unexplained commands into YAML.
 
 ## Part VII — Docker and Containers
 
-Images, layers, registries, namespaces, control groups, networking, volumes, security, orchestration foundations, and production container practices.
+Part VII explains containers as constrained processes packaged with filesystem content. It progresses from image construction through runtime state, security, multi-container systems, and orchestration.
+
+### Phase 1 — Images and execution
+
+#### Chapter 78 — Why Containers Work: Isolation, Not Tiny Virtual Machines
+
+- **Purpose:** Build the process, namespace, control-group, and filesystem model beneath container tools.
+- **Includes:** host kernels, namespaces, resource control, capabilities, images versus containers, virtual-machine comparison, rootless boundaries, and portability limits.
+- **Defers:** kernel implementation, alternate runtimes in depth, and orchestrator administration.
+- **Outcome:** The reader can explain what a container isolates, what it shares, and why an image cannot guarantee identical behavior everywhere.
+
+#### Chapter 79 — Images, Layers, Build Contexts, and Caches
+
+- **Purpose:** Explain image identity and construction as content-addressed, layered filesystem state.
+- **Includes:** layers, manifests, configuration, build context, cache keys, copy-on-write, image history, architecture variants, and the difference between image and container state.
+- **Defers:** registry operation, Dockerfile design, and snapshotter internals.
+- **Outcome:** The reader can predict which source change invalidates a build step and locate unexpected image content.
+
+#### Chapter 80 — Reproducible and Efficient Container Builds
+
+- **Purpose:** Turn a Dockerfile or equivalent build recipe into a deterministic, reviewable supply-chain step.
+- **Includes:** base-image selection, pinned identities, instruction ordering, multi-stage builds, dependency caching, `.dockerignore`, noninteractive builds, metadata, small-runtime images, and build verification.
+- **Defers:** language-specific optimization catalogs, custom builders, and hermetic build research.
+- **Outcome:** The reader can build a minimal image whose source, dependencies, and runtime entry point are explainable.
+
+#### Chapter 81 — Registries, Tags, Digests, and Image Provenance
+
+- **Purpose:** Separate convenient names from immutable image identity and distribution trust.
+- **Includes:** repositories, registries, tags, digests, push and pull, authentication, retention, multi-platform indexes, vulnerability scanning boundaries, signatures, attestations, SBOM purpose, and promotion.
+- **Defers:** registry administration, policy-engine implementation, and complete software-supply-chain frameworks.
+- **Outcome:** The reader can deploy by verified identity, trace an image to its build, and avoid treating a mutable tag as evidence.
+
+#### Chapter 82 — Container Processes, Signals, and Lifecycle
+
+- **Purpose:** Apply process lifecycle and service principles inside a container runtime.
+- **Includes:** entrypoints and commands, PID 1 behavior, foreground processes, signal forwarding, exit status, stop timeouts, restart policy, init helpers, exec sessions, and immutable replacement.
+- **Defers:** orchestration controllers, application framework shutdown details, and process-supervisor product comparisons.
+- **Outcome:** The reader can design a container that starts, reports failure, and stops cleanly without hiding its main process.
+
+### Phase 2 — Runtime state and composition
+
+#### Chapter 83 — Container Filesystems, Volumes, and Persistent Data
+
+- **Purpose:** Separate ephemeral writable layers, bind mounts, managed volumes, and external storage.
+- **Includes:** mount ownership, copy-up behavior, persistence lifecycle, host-path coupling, permissions, backup boundaries, read-only roots, temporary storage, and database considerations.
+- **Defers:** storage-driver internals, Kubernetes storage administration, and database backup design in depth.
+- **Outcome:** The reader can place each kind of state deliberately and predict what survives container replacement.
+
+#### Chapter 84 — Container Networking, Ports, and Service Discovery
+
+- **Purpose:** Map container interfaces and published ports onto the host and surrounding network.
+- **Includes:** network namespaces, bridge networks, port publishing, loopback scope, DNS-based discovery, ingress and egress, host networking, IPv6 considerations, and troubleshooting from both namespaces.
+- **Defers:** CNI plugin internals, service meshes, overlay implementation, and cloud load-balancer administration.
+- **Outcome:** The reader can trace a connection from client to host to container and identify where address translation or name resolution occurs.
+
+#### Chapter 85 — Multi-Container Applications with Compose
+
+- **Purpose:** Describe a local multi-service system without turning startup order into false readiness.
+- **Includes:** services, networks, volumes, environment, secrets boundaries, dependencies, health checks, profiles, overrides, logs, teardown, and development versus production limits.
+- **Defers:** Compose specification exhaustiveness, orchestrator migration recipes, and production cluster management.
+- **Outcome:** The reader can run a reproducible local system and explain every service's identity, dependency, state, and endpoint.
+
+#### Chapter 86 — Resource Limits, Health, Logs, and Runtime Diagnosis
+
+- **Purpose:** Operate containers as constrained processes with observable failure modes.
+- **Includes:** CPU and memory limits, OOM behavior, process and filesystem inspection, health versus readiness, logs, runtime events, metrics, exec boundaries, and host-versus-container evidence.
+- **Defers:** full observability stacks, kernel tracing, and performance benchmarking.
+- **Outcome:** The reader can distinguish application failure from runtime policy, host pressure, or health-check design.
+
+### Phase 3 — Security and production direction
+
+#### Chapter 87 — Container Security and Least Privilege
+
+- **Purpose:** Reduce the authority and supply-chain risk of containerized workloads.
+- **Includes:** non-root users, capabilities, seccomp and mandatory-policy awareness, read-only filesystems, secret injection, image provenance, device and socket exposure, rootless execution, patching, and escape boundaries.
+- **Defers:** offensive container security, custom policy authoring, and compliance certification.
+- **Outcome:** The reader can produce a threat-informed hardening plan without assuming a container is a security boundary by default.
+
+#### Chapter 88 — Orchestration Foundations and Kubernetes Mental Models
+
+- **Purpose:** Explain why controllers, desired state, scheduling, and service discovery appear when containers span hosts.
+- **Includes:** clusters, nodes, pods, deployments, services, configuration and secrets, reconciliation, health probes, scheduling, rolling updates, stateful boundaries, and Kubernetes vocabulary.
+- **Defers:** cluster installation, YAML encyclopedias, advanced controllers, service meshes, and production Kubernetes administration.
+- **Outcome:** The reader can translate a multi-container application into orchestration responsibilities and decide whether the complexity is justified.
+
+#### Chapter 89 — A Complete Container Delivery Workflow
+
+- **Purpose:** Integrate build, provenance, test, registry, runtime, networking, persistence, security, and rollback.
+- **Includes:** a small application, multi-stage build, dependency and vulnerability checks, immutable tagging, Compose validation, runtime limits, health, logs, secret boundaries, publication simulation, and replacement rollback.
+- **Defers:** live production deployment, public registry mutation, and cluster administration.
+- **Outcome:** The reader can explain and verify a container artifact from source revision to a safely retired runtime instance.
+
+### Part VII delivery boundary
+
+Labs use disposable images, networks, volumes, and local registries or simulations with explicit cleanup. Part VII is complete when Chapter 89 demonstrates containers as an operated supply chain and process lifecycle, not just `docker run` commands.
 
 ## Part VIII — AWS and Cloud-Native Development
 
-Identity, networking, compute, storage, databases, observability, infrastructure as code, deployment patterns, reliability, cost, and operational ownership.
+Part VIII applies prior operating-system, network, automation, and container models to AWS. It emphasizes shared responsibility, identity-first design, managed-service tradeoffs, infrastructure as code, reliability, cost, and operational ownership.
+
+### Phase 1 — Cloud boundaries and identity
+
+#### Chapter 90 — Cloud Computing, Shared Responsibility, and Service Models
+
+- **Purpose:** Establish what changes—and what does not—when infrastructure becomes an API-driven service.
+- **Includes:** IaaS/PaaS/SaaS boundaries, elasticity, regions and Availability Zones, control and data planes, shared responsibility, quotas, failure domains, metering, and managed-service tradeoffs.
+- **Defers:** specific AWS service configuration, multicloud strategy, and procurement policy.
+- **Outcome:** The reader can assign ownership for security, reliability, data, and cost instead of treating “managed” as “someone else handles everything.”
+
+#### Chapter 91 — AWS Accounts, Organizations, Regions, and Governance
+
+- **Purpose:** Make account and region boundaries deliberate units of ownership, isolation, and cost.
+- **Includes:** accounts, Organizations, organizational units, service control policies concept, region selection, Availability Zones, tagging, quotas, budgets, consolidated billing, environments, and break-glass boundaries.
+- **Defers:** enterprise landing-zone implementation, tax and contract management, and Control Tower administration.
+- **Outcome:** The reader can propose an account and region structure with explicit blast radius, authority, and cost ownership.
+
+#### Chapter 92 — IAM: Principals, Policies, Roles, and Temporary Credentials
+
+- **Purpose:** Apply identity-before-authority to AWS access decisions.
+- **Includes:** users, roles, federation, temporary credentials, policy statements, actions and resources, conditions, identity and resource policies, permission boundaries, explicit deny, role assumption, and least privilege.
+- **Defers:** external identity-provider administration, every AWS policy type, and automated entitlement-governance products.
+- **Outcome:** The reader can trace an AWS authorization decision and design workloads without long-lived embedded credentials.
+
+### Phase 2 — Networking and compute
+
+#### Chapter 93 — VPCs, Subnets, Routes, and Address Planning
+
+- **Purpose:** Map AWS virtual networking to the addressing and routing model from Part V.
+- **Includes:** VPC CIDRs, public and private subnets, route tables, internet and NAT gateways, elastic network interfaces, IPv4/IPv6 planning, Availability Zone placement, and route inspection.
+- **Defers:** transit architectures, hybrid routing protocols, network-firewall administration, and global enterprise IPAM.
+- **Outcome:** The reader can trace an instance path and explain why a subnet is not inherently public or private without its routes and addresses.
+
+#### Chapter 94 — VPC Security, DNS, and Hybrid Connectivity
+
+- **Purpose:** Combine network policy, name resolution, and connections beyond one VPC.
+- **Includes:** security groups, network ACLs, VPC endpoints, Route 53 Resolver concepts, peering and Transit Gateway boundaries, VPN and Direct Connect purpose, flow logs, and shared-VPC tradeoffs.
+- **Defers:** production hybrid-network implementation, advanced routing, Network Firewall policy, and multi-region mesh design.
+- **Outcome:** The reader can locate which AWS control filters or resolves traffic and choose a connectivity pattern by scope and trust.
+
+#### Chapter 95 — EC2, AMIs, and Elastic Compute
+
+- **Purpose:** Treat virtual machines as replaceable, policy-managed compute rather than manually curated servers.
+- **Includes:** instance types, AMIs, user data, metadata-service security, roles, EBS attachment, placement, purchase models, Auto Scaling concepts, launch templates, patching, and immutable versus in-place operations.
+- **Defers:** every instance family, deep autoscaling tuning, bare metal, and fleet-management administration.
+- **Outcome:** The reader can launch and operate an instance with explicit identity, network, storage, bootstrap, replacement, and cost assumptions.
+
+#### Chapter 96 — Elastic Load Balancing, Route 53, and CloudFront
+
+- **Purpose:** Explain how AWS distributes, names, and caches traffic across failure domains.
+- **Includes:** load-balancer families, listeners and target groups, health checks, TLS termination, DNS records and routing policy, CDN origins and caching, client identity, session state, and multi-AZ design.
+- **Defers:** edge compute, advanced global failover, WAF rule authoring, and detailed cache optimization.
+- **Outcome:** The reader can trace an external request to a healthy target and identify where naming, TLS, caching, and load decisions occur.
+
+### Phase 3 — Storage and data
+
+#### Chapter 97 — S3 Object Storage and Data Lifecycle
+
+- **Purpose:** Teach object storage semantics instead of treating buckets as remote disks.
+- **Includes:** buckets and keys, request authorization, versioning, consistency model, storage classes, lifecycle rules, encryption, replication, events, multipart operations, static content, and public-access controls.
+- **Defers:** data-lake architecture, cross-account enterprise policy, and petabyte-scale transfer operations.
+- **Outcome:** The reader can design an S3 data lifecycle with ownership, recovery, access, durability, and cost boundaries.
+
+#### Chapter 98 — EBS, EFS, and Choosing Cloud Storage
+
+- **Purpose:** Compare block, shared file, object, and ephemeral storage by semantics rather than brand.
+- **Includes:** EBS volumes and snapshots, attachment and Availability Zone scope, EFS shared filesystems, instance storage, performance dimensions, encryption, backup, resizing, and failure behavior.
+- **Defers:** FSx families in depth, storage-gateway administration, RAID tuning, and database-specific storage optimization.
+- **Outcome:** The reader can choose storage by access model, latency, sharing, lifecycle, recovery, and cost and explain migration consequences.
+
+#### Chapter 99 — RDS, Aurora, and Managed Relational Databases
+
+- **Purpose:** Separate relational data requirements from the operational work a managed database assumes.
+- **Includes:** engines, instances and storage, Multi-AZ, read replicas, backups and point-in-time recovery, parameter boundaries, connections, failover, maintenance, monitoring, encryption, and schema ownership.
+- **Defers:** SQL instruction, engine-specific tuning, data warehousing, and zero-downtime migration recipes.
+- **Outcome:** The reader can design a relational service with explicit availability, recovery, scaling, connection, and change-management assumptions.
+
+#### Chapter 100 — DynamoDB, Caching, and NoSQL Access Patterns
+
+- **Purpose:** Design key-value and document storage from known access patterns rather than relational habits.
+- **Includes:** partition and sort keys, items, indexes, capacity modes, consistency choices, transactions, conditional writes, streams, TTL, hot partitions, DAX/cache boundaries, and cost reasoning.
+- **Defers:** single-table design dogma, every NoSQL service, search engines, and analytics platforms.
+- **Outcome:** The reader can model a workload's reads and writes, avoid unbounded scans and hot keys, and state consistency tradeoffs.
+
+### Phase 4 — Events, platforms, and operations
+
+#### Chapter 101 — SQS, SNS, EventBridge, and Asynchronous Workflows
+
+- **Purpose:** Choose AWS messaging and event services by delivery, ordering, fan-out, routing, and ownership semantics.
+- **Includes:** queues, topics, event buses, visibility timeouts, dead-letter queues, retries, duplicate delivery, ordering boundaries, filters, schemas, backpressure, and Step Functions purpose.
+- **Defers:** Kafka/MSK administration, complex workflow language, and organization-wide event governance.
+- **Outcome:** The reader can design consumers that tolerate duplicates and failure and select a service without assuming “event-driven” guarantees exactly once.
+
+#### Chapter 102 — Lambda, API Gateway, and Serverless Execution
+
+- **Purpose:** Explain request- and event-driven compute with explicit concurrency, identity, and lifecycle constraints.
+- **Includes:** function packages, execution roles, invocation models, cold starts, concurrency, timeouts, retries, destinations, API Gateway integration, configuration, ephemeral state, observability, and cost.
+- **Defers:** every serverless service, framework-specific deployment, edge functions, and large serverless architectures.
+- **Outcome:** The reader can design a bounded serverless function and predict retry, scaling, state, and failure behavior.
+
+#### Chapter 103 — ECS, EKS, ECR, and Container Platforms on AWS
+
+- **Purpose:** Map container artifacts and orchestration responsibilities onto AWS-managed platforms.
+- **Includes:** ECR identity, ECS tasks and services, Fargate versus EC2, EKS responsibility boundaries, networking, roles, load balancing, secrets, logs, scaling, and platform-selection criteria.
+- **Defers:** production EKS administration, service meshes, custom controllers, and every ECS deployment option.
+- **Outcome:** The reader can choose an AWS container platform and trace image, identity, network, runtime, scaling, and operational ownership.
+
+#### Chapter 104 — Encryption, Secrets, Configuration, and Cloud Observability
+
+- **Purpose:** Connect key management and runtime configuration to logs, metrics, traces, audit, and security evidence.
+- **Includes:** KMS concepts, envelope encryption, Secrets Manager, Parameter Store, rotation boundaries, CloudWatch, CloudTrail, AWS Config purpose, alarms, log retention, correlation, and redaction.
+- **Defers:** cryptographic key ceremonies, SIEM administration, organization-wide telemetry platforms, and compliance certification.
+- **Outcome:** The reader can keep secrets out of artifacts, trace control-plane and workload events, and define evidence retention without exposing sensitive values.
+
+#### Chapter 105 — Infrastructure as Code and a Complete AWS Delivery Lifecycle
+
+- **Purpose:** Integrate governance, identity, network, compute, data, observability, deployment, reliability, and cost through reviewed infrastructure code.
+- **Includes:** declarative state, plans and change sets, CloudFormation/CDK/Terraform boundaries, state ownership, modules, policy checks, drift, environment promotion, deployment strategies, rollback, backups, SLOs, cost review, and teardown.
+- **Defers:** one tool's complete language, live production deployment, enterprise platform engineering, and multicloud abstraction.
+- **Outcome:** The reader can review and safely apply a small AWS system, verify service and business outcomes, and account for security, reliability, recovery, and cost.
+
+### Part VIII delivery boundary
+
+AWS examples favor local validation, emulation where faithful, free or low-cost isolated accounts, budgets, and explicit teardown. Part VIII is complete when Chapter 105 treats cloud infrastructure as owned, reviewed software with continuing operational and cost responsibility.
 
 ## Part IX — System Design
 
-Requirements, tradeoffs, interfaces, data models, scalability, consistency, caching, messaging, resilience, security, and architecture decision records.
+Part IX develops a repeatable design method for systems whose requirements exceed one component. It emphasizes explicit constraints, tradeoffs, failure modes, evolution, and decision records over interview-style memorization.
+
+### Phase 1 — Requirements and boundaries
+
+#### Chapter 106 — From Requirements to a System Model
+
+- **Purpose:** Turn an ambiguous product request into measurable functional and quality requirements.
+- **Includes:** actors, use cases, workloads, data, latency, availability, durability, security, compliance, cost, growth, constraints, assumptions, and success measures.
+- **Defers:** component selection, diagramming notation catalogs, and estimation interview tricks.
+- **Outcome:** The reader can produce a bounded problem statement and identify the uncertainties that could change the architecture.
+
+#### Chapter 107 — Interfaces, Contracts, and Evolution
+
+- **Purpose:** Design boundaries that components and teams can change without coordinated rewrites.
+- **Includes:** APIs and events, preconditions and postconditions, schemas, errors, idempotency, versioning, compatibility, deprecation, consumer ownership, and contract testing.
+- **Defers:** protocol-specific API tutorials, governance bureaucracy, and formal specification languages.
+- **Outcome:** The reader can define a stable interface, predict breaking changes, and plan an evidence-based migration.
+
+#### Chapter 108 — Data Models and Storage Selection
+
+- **Purpose:** Choose representations and storage engines from access, consistency, lifecycle, and operational requirements.
+- **Includes:** entities and relationships, keys, normalization and denormalization, relational, key-value, document, graph, search, object, and time-series models, indexing, retention, and migration.
+- **Defers:** database product administration, query-language instruction, and one universal polyglot-persistence recipe.
+- **Outcome:** The reader can map each critical access pattern to a data model and explain the cost of duplicated or derived state.
+
+### Phase 2 — Scale, state, and coordination
+
+#### Chapter 109 — Capacity, Partitioning, and Horizontal Scale
+
+- **Purpose:** Derive scale decisions from workload estimates and bottleneck evidence.
+- **Includes:** throughput and concurrency estimates, Little's Law intuition, vertical versus horizontal scale, partition keys, sharding, hotspots, replication purpose, stateless tiers, autoscaling lag, and rebalancing.
+- **Defers:** precise capacity planning, distributed-database internals, and vendor-specific scaling limits.
+- **Outcome:** The reader can estimate an order-of-magnitude design, identify its first bottleneck, and choose a partition strategy with known failure modes.
+
+#### Chapter 110 — Consistency, Transactions, and Concurrent Change
+
+- **Purpose:** Make correctness guarantees explicit when state is read and written concurrently or across replicas.
+- **Includes:** invariants, isolation anomalies, optimistic and pessimistic control, transactions, replication lag, linearizability and eventual consistency intuition, conflict resolution, and read-your-writes.
+- **Defers:** formal distributed-systems proofs, database-engine implementation, and consensus algorithms in depth.
+- **Outcome:** The reader can state the consistency required by each invariant and recognize when an asynchronous design violates it.
+
+#### Chapter 111 — Caching as a Consistency Tradeoff
+
+- **Purpose:** Use caches deliberately without treating them as free speed.
+- **Includes:** cache locations, keys, TTLs, invalidation, cache-aside and write strategies, stampedes, negative caching, eviction, consistency, observability, and bypass/failure behavior.
+- **Defers:** CPU cache architecture, CDN product configuration, and one prescribed caching library.
+- **Outcome:** The reader can explain which source is authoritative, when cached data may be stale, and how the system behaves when the cache fails.
+
+#### Chapter 112 — Messaging, Events, and Asynchronous Workflows
+
+- **Purpose:** Design work that crosses time and service boundaries with explicit delivery and ownership.
+- **Includes:** commands versus events, queues and logs, ordering, partitioning, duplicate delivery, outbox pattern, sagas and compensation, dead letters, backpressure, schema evolution, and replay.
+- **Defers:** broker administration, event-sourcing dogma, stream-processing internals, and distributed transactions across arbitrary systems.
+- **Outcome:** The reader can create an asynchronous workflow whose retries, duplicates, ordering, and partial failures preserve business invariants.
+
+#### Chapter 113 — Coordination, Leadership, and Distributed Time
+
+- **Purpose:** Explain why clocks, leases, locks, and membership become difficult across machines.
+- **Includes:** partial failure, clock skew, logical ordering, leases, fencing tokens, leader election purpose, quorum intuition, consensus boundaries, split brain, and managed-coordination services.
+- **Defers:** implementing consensus algorithms, formal proofs, and custom distributed-lock services.
+- **Outcome:** The reader can identify when coordination is necessary, reject unsafe timestamp or lock assumptions, and prefer proven managed primitives.
+
+### Phase 3 — Resilience, security, and decisions
+
+#### Chapter 114 — Resilience, Timeouts, Retries, and Failure Containment
+
+- **Purpose:** Keep a local failure from becoming an unbounded system failure.
+- **Includes:** failure modes, deadlines, timeout budgets, retry storms, backoff and jitter, circuit breakers, bulkheads, load shedding, graceful degradation, health, redundancy, recovery objectives, and chaos experiments.
+- **Defers:** disaster-recovery runbooks for one platform, formal reliability modeling, and chaos-tool administration.
+- **Outcome:** The reader can design bounded failure behavior and prove that recovery mechanisms do not amplify the incident.
+
+#### Chapter 115 — Security, Privacy, and Multi-Tenant Boundaries
+
+- **Purpose:** Integrate threat, identity, data, and tenant isolation into architecture rather than add controls afterward.
+- **Includes:** assets, actors, trust boundaries, threat modeling, authentication and authorization, least privilege, encryption, secret lifecycle, audit, privacy and retention, abuse cases, and tenant isolation.
+- **Defers:** compliance-framework implementation, cryptographic engineering, penetration testing, and legal advice.
+- **Outcome:** The reader can produce a threat-informed design and connect each control to a concrete risk and owner.
+
+#### Chapter 116 — Architecture Decisions, Tradeoffs, and Evolution
+
+- **Purpose:** Preserve why a design was chosen and how it can change as evidence improves.
+- **Includes:** ADRs, options, forces, assumptions, reversibility, migration seams, build-versus-buy, technical debt, deprecation, fitness functions, review cadence, and diagram maintenance.
+- **Defers:** enterprise architecture governance, portfolio management, and one diagramming standard.
+- **Outcome:** The reader can write a decision record that enables future engineers to revise the design without rediscovering its constraints.
+
+#### Chapter 117 — A Complete System Design Review
+
+- **Purpose:** Integrate requirements, interfaces, data, scale, consistency, messaging, resilience, security, operations, and cost into one reviewable proposal.
+- **Includes:** a realistic service scenario, estimates, diagrams, API and data contracts, failure analysis, deployment model, observability, recovery, threat model, alternatives, ADRs, risks, and staged evolution.
+- **Defers:** production implementation, vendor procurement, and claims that one reference design is universally correct.
+- **Outcome:** The reader can defend a design with evidence, identify its weakest assumptions, and propose the next validation experiment.
+
+### Part IX delivery boundary
+
+Each design chapter must show competing options and failure consequences, not only a preferred pattern. Part IX is complete when Chapter 117 can be reviewed by product, application, security, data, and operations stakeholders using one shared model.
 
 ## Part X — Performance, Debugging, and Observability
 
-Systematic debugging, profiling, metrics, logs, traces, failure analysis, capacity planning, incident response, and continuous engineering improvement.
+Part X turns uncertainty into evidence. It moves from reproducible debugging through telemetry and profiling to incident response, learning, and a complete cross-layer investigation.
+
+### Phase 1 — Reproduction and observability
+
+#### Chapter 118 — Debugging as Hypothesis Testing
+
+- **Purpose:** Replace random changes with a scientific loop of observation, hypothesis, prediction, experiment, and revision.
+- **Includes:** symptom definition, scope, timelines, known-good comparisons, invariants, binary search, evidence preservation, controlled variables, confidence, and stopping criteria.
+- **Defers:** language-specific debuggers, performance profiling, and incident command.
+- **Outcome:** The reader can maintain a ranked hypothesis set and design the smallest experiment that distinguishes alternatives.
+
+#### Chapter 119 — Reproducing Failures and Building Minimal Cases
+
+- **Purpose:** Separate the failing behavior from incidental environment and data.
+- **Includes:** deterministic reproduction, environment capture, input minimization, bisection, feature flags, race and timing concerns, record/replay boundaries, disposable environments, and regression fixtures.
+- **Defers:** formal delta debugging, production traffic replay, and vendor-specific test labs.
+- **Outcome:** The reader can produce a safe minimal reproduction or state precisely why the failure remains production-only.
+
+#### Chapter 120 — Logs and Structured Events
+
+- **Purpose:** Design logs as bounded operational evidence rather than narrative print statements.
+- **Includes:** event schemas, severity, timestamps, correlation and request IDs, context, structured fields, errors and stack traces, redaction, sampling, retention, cardinality, and log-level change policy.
+- **Defers:** log-vendor administration, organization-wide schemas, and SIEM operation.
+- **Outcome:** The reader can instrument a workflow so one failed request can be reconstructed without exposing secrets or drowning in noise.
+
+#### Chapter 121 — Metrics, SLIs, SLOs, and Actionable Alerts
+
+- **Purpose:** Measure system behavior against user outcomes and alert only when action is required.
+- **Includes:** counters, gauges, histograms, rates, dimensions, cardinality, RED/USE methods, SLIs, SLOs, error budgets, burn rates, dashboards, alert ownership, and missing-data behavior.
+- **Defers:** one metrics platform, statistical process control in depth, and organization-wide reliability governance.
+- **Outcome:** The reader can define a service objective, choose valid measurements, and create an alert with a clear response.
+
+#### Chapter 122 — Traces, Profiles, and Causal Context
+
+- **Purpose:** Connect work across threads and services while distinguishing request tracing from resource profiling.
+- **Includes:** spans and context propagation, sampling, baggage risks, trace-log-metric correlation, continuous versus on-demand profiling, stack samples, overhead, clock issues, and privacy.
+- **Defers:** telemetry vendor configuration, tracing protocol internals, and profiling every language runtime.
+- **Outcome:** The reader can choose tracing or profiling for the question and interpret missing or sampled evidence honestly.
+
+### Phase 2 — Performance investigation
+
+#### Chapter 123 — CPU Profiling and Concurrency Bottlenecks
+
+- **Purpose:** Locate where execution time and runnable contention accumulate before optimizing code.
+- **Includes:** sampling versus instrumentation, wall versus CPU time, call trees and flame graphs, hot paths, locks, context switches, thread pools, parallelism limits, benchmark distortion, and before/after validation.
+- **Defers:** assembly optimization, compiler internals, real-time scheduling, and language-specific profiler catalogs.
+- **Outcome:** The reader can identify a CPU or contention bottleneck and demonstrate an improvement in workload-level terms.
+
+#### Chapter 124 — Memory, Allocation, and Resource-Leak Diagnosis
+
+- **Purpose:** Distinguish retained application objects, resident growth, fragmentation, caches, handles, and true leaks.
+- **Includes:** heap and native memory, allocation rate, object retention, garbage collection, RSS/working set, file descriptors and handles, snapshots, growth experiments, OOM evidence, and containment limits.
+- **Defers:** allocator implementation, garbage-collector tuning catalogs, kernel leaks, and memory forensics.
+- **Outcome:** The reader can attribute resource growth to an owner and avoid calling every high-water mark a leak.
+
+#### Chapter 125 — I/O, Network, and Database Performance
+
+- **Purpose:** Diagnose latency beyond CPU by following queues and waits through storage, network, and data services.
+- **Includes:** latency decomposition, throughput, concurrency, queue depth, batching, cache effects, disk and filesystem waits, network round trips, connection pools, query plans, indexes, lock waits, and downstream limits.
+- **Defers:** storage firmware tuning, network benchmark engineering, database-engine internals, and vendor-specific performance recipes.
+- **Outcome:** The reader can locate the dominant wait boundary and choose an experiment that changes one capacity or latency variable.
+
+#### Chapter 126 — Load Testing, Capacity Planning, and Failure Injection
+
+- **Purpose:** Validate behavior under expected and exceptional demand before users discover the limit.
+- **Includes:** workload models, open versus closed load, warm-up, coordinated omission, percentiles, saturation, capacity headroom, scaling lag, soak tests, fault injection, recovery verification, safety limits, and cost.
+- **Defers:** internet-scale traffic generation, destructive production chaos, and precise forecasting models.
+- **Outcome:** The reader can run a bounded representative test, identify the first limit, and connect capacity to an SLO and recovery objective.
+
+### Phase 3 — Incidents and learning
+
+#### Chapter 127 — Incident Response and Operational Coordination
+
+- **Purpose:** Stabilize service while preserving evidence, ownership, communication, and safe decision-making.
+- **Includes:** severity, roles, command, timelines, containment, mitigation versus repair, change control, communication, handoffs, evidence, escalation, recovery verification, and security-incident boundaries.
+- **Defers:** one organization's incident policy, legal notification advice, and emergency-service procedures.
+- **Outcome:** The reader can participate in or lead a technical incident without multiplying changes or losing accountability.
+
+#### Chapter 128 — Post-Incident Learning and Continuous Improvement
+
+- **Purpose:** Convert failures and near misses into durable improvements without blame or shallow action items.
+- **Includes:** timelines, contributing conditions, counterfactual caution, five-whys limits, systemic causes, detection gaps, action ownership, priority, verification, runbook changes, recurring-pattern analysis, and knowledge maintenance.
+- **Defers:** human-resources processes, legal investigation, and universal postmortem templates.
+- **Outcome:** The reader can produce an evidence-based review whose actions reduce recurrence or impact and are later verified.
+
+#### Chapter 129 — A Complete Cross-Layer Engineering Investigation
+
+- **Purpose:** Complete the first-edition curriculum by investigating a realistic failure from user symptom through application, network, operating system, cloud, and design layers.
+- **Includes:** reproduction, hypothesis management, Git history, automation evidence, container and cloud context, logs/metrics/traces, CPU/memory/I/O profiles, authorization, mitigation, root contributors, design revision, and post-incident actions.
+- **Defers:** live production intervention and the claim that one lab represents every incident.
+- **Outcome:** The reader can lead an end-to-end investigation, defend conclusions with evidence, recover safely, and feed learning back into the handbook.
+
+### Part X delivery boundary
+
+Performance claims require reproducible measurements and debugging claims must distinguish observation from inference. Part X and the first-edition chapter sequence are complete when Chapter 129 integrates the handbook into one evidence-driven engineering workflow.
 
 ## Planned Appendix — Engineering Patterns
 
-A reusable catalog of patterns that recur across technologies:
+A reusable catalog of patterns that recur across technologies. These are unnumbered reference entries rather than additional chapters:
 
-- Layered systems
-- Separation of concerns
-- Composition over complexity
-- Stable interfaces
-- Least privilege
-- Identity before authority
-- Small tools, loosely coupled
-- Automate repetitive work
-- Explicit state and ownership
-- Failure containment
+- **Layered Systems:** locate responsibility and failure at the narrowest abstraction boundary.
+- **Separation of Concerns:** keep policy, mechanism, data, presentation, and lifecycle independently understandable.
+- **Composition over Complexity:** build larger behavior from bounded components with inspectable contracts.
+- **Stable Interfaces:** protect consumers from internal change while evolving contracts deliberately.
+- **Least Privilege:** grant the minimum operation, resource, scope, and duration required.
+- **Identity Before Authority:** establish which principal is acting before analyzing what it may do.
+- **Small Tools, Loosely Coupled:** prefer focused capabilities connected through explicit data and failure boundaries.
+- **Automate Repetitive Work:** automate only after observing, simplifying, and stabilizing the manual process.
+- **Explicit State and Ownership:** make current state, desired state, authority, and cleanup responsibility visible.
+- **Failure Containment:** bound time, retries, queues, resources, dependencies, and blast radius.
+- **Convention over Unnecessary Configuration:** use a documented default until requirements justify another choice.
+
+### First-edition completion boundary
+
+The first edition comprises Chapters 1–129 plus the Engineering Patterns appendix. Completion requires all planned chapters, cross-part links, tested or reasoned examples, primary-source references, one integration chapter per part, a whole-book editorial and technical audit, generated publication formats, and a tagged release. Completion establishes a maintained baseline; it does not freeze the content.
 
 ## Roadmap maintenance
 
