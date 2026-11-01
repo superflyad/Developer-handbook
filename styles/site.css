@@ -1,0 +1,129 @@
+:root,
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #071a2d;
+  --md-primary-fg-color--light: #12395c;
+  --md-primary-fg-color--dark: #030d18;
+  --md-accent-fg-color: #007f9f;
+  --md-typeset-a-color: #007792;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #07121f;
+  --md-default-bg-color--light: #0b1a2b;
+  --md-default-fg-color: #f1efe8;
+  --md-primary-fg-color: #061523;
+  --md-accent-fg-color: #54d7f5;
+  --md-typeset-a-color: #66d9ef;
+}
+
+.md-header,
+.md-tabs {
+  background: #071a2d;
+}
+
+.md-header {
+  border-bottom: 1px solid rgb(75 205 235 / 22%);
+}
+
+.md-announce {
+  background: #0b304a;
+  color: #f4f1e8;
+  font-size: 0.72rem;
+}
+
+.md-announce a {
+  color: #72dcf4;
+  font-weight: 600;
+}
+
+.md-grid {
+  max-width: 92rem;
+}
+
+.md-typeset {
+  color: var(--md-default-fg-color);
+  font-size: 0.82rem;
+  line-height: 1.72;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  color: var(--md-default-fg-color);
+  font-weight: 720;
+  letter-spacing: -0.025em;
+}
+
+.md-typeset h1 {
+  max-width: 24ch;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.04;
+  margin-bottom: 1.2rem;
+}
+
+.md-typeset h2 {
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+  margin-top: 2.8rem;
+  padding-top: 1.15rem;
+}
+
+.md-typeset blockquote {
+  border-left: 0.18rem solid #16b8d8;
+  color: var(--md-default-fg-color);
+  font-size: 1.02rem;
+}
+
+.md-typeset code {
+  border-radius: 0.22rem;
+}
+
+.md-typeset pre > code {
+  font-size: 0.72rem;
+  line-height: 1.65;
+}
+
+.md-typeset table:not([class]) {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  box-shadow: none;
+}
+
+.md-typeset table:not([class]) th {
+  background: rgb(0 127 159 / 10%);
+}
+
+.md-typeset img[alt^="The Developer Handbook"] {
+  border: 1px solid rgb(51 189 220 / 28%);
+  border-radius: 0.45rem;
+  box-shadow: 0 1.5rem 4rem rgb(3 13 24 / 16%);
+  margin: 0.75rem 0 1.8rem;
+  width: 100%;
+}
+
+.md-nav__link--active {
+  font-weight: 700;
+}
+
+.md-footer {
+  background: #061523;
+}
+
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary {
+    border-right: 1px solid var(--md-default-fg-color--lightest);
+    padding-right: 0.6rem;
+  }
+
+  .md-sidebar--secondary {
+    border-left: 1px solid var(--md-default-fg-color--lightest);
+    padding-left: 0.6rem;
+  }
+}
+
+@media print {
+  .md-header,
+  .md-sidebar,
+  .md-footer,
+  .md-announce {
+    display: none;
+  }
+}

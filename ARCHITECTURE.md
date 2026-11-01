@@ -46,6 +46,9 @@ Update the existing chapter as practical experience deepens. Prefer improving th
 
 ```text
 Developer-handbook/
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   └── workflows/
 ├── README.md
 ├── PREFACE.md
 ├── PHILOSOPHY.md
@@ -55,6 +58,14 @@ Developer-handbook/
 ├── ARCHITECTURE.md
 ├── EDITORIAL_GUIDE.md
 ├── DECISIONS.md
+├── CONTRIBUTING.md
+├── GOVERNANCE.md
+├── SECURITY.md
+├── SUPPORT.md
+├── assets/
+├── scripts/
+├── site/
+├── styles/
 ├── handbook/
 │   ├── foundations/
 │   ├── terminal/
@@ -63,11 +74,11 @@ Developer-handbook/
 │   ├── networking/
 │   ├── automation/
 │   ├── containers/
-│   ├── cloud/
+│   ├── aws/
 │   ├── system-design/
-│   └── debugging-performance-observability/
-└── appendices/
-    └── engineering-patterns/
+│   ├── observability/
+│   └── appendices/
+└── build/                 # generated and ignored
 ```
 
 Directories may be introduced when their first chapter is published. Empty scaffolding is unnecessary.
@@ -285,7 +296,15 @@ Repository conventions:
 - Merge: squash unless preserving separate commits has clear value
 - Scope: one coherent chapter, revision, or structural change per PR
 
-`SUMMARY.md` is the canonical publication order. `scripts/build_book.py` assembles the reader-facing front matter, Chapters 1–129, and Engineering Patterns appendix into one revision-identified source, rewrites internal links to stable anchors, and emits a source-and-artifact hash manifest. CI renders standalone HTML, EPUB, DOCX, and PDF previews from that source. Generated files live under ignored `build/`; Markdown remains the only authored source.
+`SUMMARY.md` is the canonical publication order.
+
+`scripts/build_site.py` creates an isolated source tree, derives website navigation from `SUMMARY.md`, and builds the searchable GitHub Pages edition. The site provides persistent part and chapter navigation, full-text search, edit links, light and dark themes, previous and next navigation, social metadata, and responsive reading layouts. Website source customizations live under `site/` and `styles/site.css`.
+
+`scripts/build_book.py` assembles the reader-facing front matter, Chapters 1–129, and Engineering Patterns appendix into one revision-identified source, rewrites internal links to stable anchors, and emits a source-and-artifact hash manifest. CI renders standalone HTML, EPUB, DOCX, and PDF previews from that source.
+
+Changes pushed to `main` validate Markdown, build both publication paths, and deploy the website through GitHub Pages. Version tags invoke the release workflow, which rebuilds the five downloadable formats, records checksums, and attaches permanent artifacts to the corresponding GitHub Release.
+
+Generated files live under ignored `build/`; Markdown remains the only authored content source. Website and publication builds must be reproducible from a clean checkout.
 
 ## Versioning
 
