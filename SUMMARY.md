@@ -145,7 +145,7 @@
 ## Part IX — System Design (Planned)
 
 - [Chapter 106 — From Requirements to a System Model](handbook/system-design/106-from-requirements-to-a-system-model.md)
-- Chapter 107 — Interfaces, Contracts, and Evolution
+- [Chapter 107 — Interfaces, Contracts, and Evolution](handbook/system-design/107-interfaces-contracts-and-evolution.md)
 - Chapter 108 — Data Models and Storage Selection
 - Chapter 109 — Capacity, Partitioning, and Horizontal Scale
 - Chapter 110 — Consistency, Transactions, and Concurrent Change
