@@ -144,7 +144,7 @@
 
 ## Part IX — System Design (Planned)
 
-- Chapter 106 — From Requirements to a System Model
+- [Chapter 106 — From Requirements to a System Model](handbook/system-design/106-from-requirements-to-a-system-model.md)
 - Chapter 107 — Interfaces, Contracts, and Evolution
 - Chapter 108 — Data Models and Storage Selection
 - Chapter 109 — Capacity, Partitioning, and Horizontal Scale
