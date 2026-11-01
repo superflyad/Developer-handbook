@@ -164,7 +164,7 @@
 - [Chapter 120 — Logs and Structured Events](handbook/observability/120-logs-and-structured-events.md)
 - [Chapter 121 — Metrics, SLIs, SLOs, and Actionable Alerts](handbook/observability/121-metrics-slis-slos-and-actionable-alerts.md)
 - [Chapter 122 — Traces, Profiles, and Causal Context](handbook/observability/122-traces-profiles-and-causal-context.md)
-- Chapter 123 — CPU Profiling and Concurrency Bottlenecks
+- [Chapter 123 — CPU Profiling and Concurrency Bottlenecks](handbook/observability/123-cpu-profiling-and-concurrency-bottlenecks.md)
 - Chapter 124 — Memory, Allocation, and Resource-Leak Diagnosis
 - Chapter 125 — I/O, Network, and Database Performance
 - Chapter 126 — Load Testing, Capacity Planning, and Failure Injection
