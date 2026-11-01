@@ -89,7 +89,7 @@
 - [Chapter 60 — TLS, Certificates, and Public-Key Trust](handbook/networking/60-tls-certificates-and-public-key-trust.md)
 - [Chapter 61 — SSH, Tunnels, and Remote Access Boundaries](handbook/networking/61-ssh-tunnels-and-remote-access-boundaries.md)
 - [Chapter 62 — Firewalls, NAT, Proxies, and Traffic Distribution](handbook/networking/62-firewalls-nat-proxies-and-traffic-distribution.md)
-- Chapter 63 — A Complete Network Troubleshooting Workflow
+- [Chapter 63 — A Complete Network Troubleshooting Workflow](handbook/networking/63-a-complete-network-troubleshooting-workflow.md)
 
 ## Part VI — Automation and Scripting (Planned)
 
