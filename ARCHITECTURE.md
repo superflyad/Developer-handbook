@@ -133,11 +133,25 @@ Part II converts the mental model from Part I into practical fluency. It progres
 - Chapter 35 — Worktrees and Parallel Development
 - Chapter 36 — A Complete Git Change Lifecycle
 
-Part III progresses from local state and history to references and integration, then to recovery and collaboration. The proposed purpose, inclusion, deferral, and outcome boundaries are in `LEARNING_ROADMAP.md`.
+Part III progresses from local state and history to references and integration, then to recovery and collaboration. Detailed purpose, inclusion, deferral, and outcome boundaries are in `LEARNING_ROADMAP.md`.
 
 ### Part IV — Filesystems and Operating Systems
 
-Storage, mounting, links, metadata, processes, scheduling, memory, services, startup, security boundaries, and platform comparisons.
+- Chapter 37 — Filesystems as Namespaces and Persistent State
+- Chapter 38 — The Storage Stack: Devices, Volumes, Filesystems, and Mounts
+- Chapter 39 — File Identity, Hard Links, and Symbolic Links
+- Chapter 40 — Metadata, Timestamps, Attributes, and Extended Data
+- Chapter 41 — Space, Allocation, Caching, and Durability
+- Chapter 42 — Process Creation, Execution, and Lifecycle
+- Chapter 43 — Scheduling, Priorities, and Resource Accounting
+- Chapter 44 — Virtual Memory and Process Address Spaces
+- Chapter 45 — Interprocess Communication and Coordination
+- Chapter 46 — Services, Daemons, and Background Work
+- Chapter 47 — Boot, Startup, and Shutdown
+- Chapter 48 — Identity, Permissions, ACLs, and Privilege Boundaries
+- Chapter 49 — A Cross-Platform Operating-System Investigation
+
+Part IV progresses from filesystem identity and storage to process resources, managed startup, and authorization. It ends with a read-mostly investigation that preserves comparable questions without pretending Linux, macOS, and Windows expose identical implementations. Detailed boundaries are in `LEARNING_ROADMAP.md`.
 
 ### Part V — Networking
 
