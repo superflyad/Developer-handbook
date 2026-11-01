@@ -131,7 +131,7 @@
 - [Chapter 93 — VPCs, Subnets, Routes, and Address Planning](handbook/aws/93-vpcs-subnets-routes-and-address-planning.md)
 - [Chapter 94 — VPC Security, DNS, and Hybrid Connectivity](handbook/aws/94-vpc-security-dns-and-hybrid-connectivity.md)
 - [Chapter 95 — EC2, AMIs, and Elastic Compute](handbook/aws/95-ec2-amis-and-elastic-compute.md)
-- Chapter 96 — Elastic Load Balancing, Route 53, and CloudFront
+- [Chapter 96 — Elastic Load Balancing, Route 53, and CloudFront](handbook/aws/96-elastic-load-balancing-route-53-and-cloudfront.md)
 - Chapter 97 — S3 Object Storage and Data Lifecycle
 - Chapter 98 — EBS, EFS, and Choosing Cloud Storage
 - Chapter 99 — RDS, Aurora, and Managed Relational Databases
