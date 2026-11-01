@@ -154,7 +154,7 @@
 - [Chapter 113 — Coordination, Leadership, and Distributed Time](handbook/system-design/113-coordination-leadership-and-distributed-time.md)
 - [Chapter 114 — Resilience, Timeouts, Retries, and Failure Containment](handbook/system-design/114-resilience-timeouts-retries-and-failure-containment.md)
 - [Chapter 115 — Security, Privacy, and Multi-Tenant Boundaries](handbook/system-design/115-security-privacy-and-multi-tenant-boundaries.md)
-- Chapter 116 — Architecture Decisions, Tradeoffs, and Evolution
+- [Chapter 116 — Architecture Decisions, Tradeoffs, and Evolution](handbook/system-design/116-architecture-decisions-tradeoffs-and-evolution.md)
 - Chapter 117 — A Complete System Design Review
 
 ## Part X — Performance, Debugging, and Observability (Planned)
