@@ -116,12 +116,12 @@
 - [Chapter 81 — Registries, Tags, Digests, and Image Provenance](handbook/containers/81-registries-tags-digests-and-image-provenance.md)
 - [Chapter 82 — Container Processes, Signals, and Lifecycle](handbook/containers/82-container-processes-signals-and-lifecycle.md)
 - [Chapter 83 — Container Filesystems, Volumes, and Persistent Data](handbook/containers/83-container-filesystems-volumes-and-persistent-data.md)
-  - [Chapter 84 — Container Networking, Ports, and Service Discovery](handbook/containers/84-container-networking-ports-and-service-discovery.md)
-  - [Chapter 85 — Multi-Container Applications with Compose](handbook/containers/85-multi-container-applications-with-compose.md)
-  - [Chapter 86 — Resource Limits, Health, Logs, and Runtime Diagnosis](handbook/containers/86-resource-limits-health-logs-and-runtime-diagnosis.md)
-  - [Chapter 87 — Container Security and Least Privilege](handbook/containers/87-container-security-and-least-privilege.md)
-  - [Chapter 88 — Orchestration Foundations and Kubernetes Mental Models](handbook/containers/88-orchestration-foundations-and-kubernetes-mental-models.md)
-  - [Chapter 89 — A Complete Container Delivery Workflow](handbook/containers/89-a-complete-container-delivery-workflow.md)
+- [Chapter 84 — Container Networking, Ports, and Service Discovery](handbook/containers/84-container-networking-ports-and-service-discovery.md)
+- [Chapter 85 — Multi-Container Applications with Compose](handbook/containers/85-multi-container-applications-with-compose.md)
+- [Chapter 86 — Resource Limits, Health, Logs, and Runtime Diagnosis](handbook/containers/86-resource-limits-health-logs-and-runtime-diagnosis.md)
+- [Chapter 87 — Container Security and Least Privilege](handbook/containers/87-container-security-and-least-privilege.md)
+- [Chapter 88 — Orchestration Foundations and Kubernetes Mental Models](handbook/containers/88-orchestration-foundations-and-kubernetes-mental-models.md)
+- [Chapter 89 — A Complete Container Delivery Workflow](handbook/containers/89-a-complete-container-delivery-workflow.md)
 
 ## Part VIII — AWS and Cloud-Native Development (Planned)
 
