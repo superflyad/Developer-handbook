@@ -81,7 +81,7 @@
 - [Chapter 52 — IP Addressing and Subnetting](handbook/networking/52-ip-addressing-and-subnetting.md)
 - [Chapter 53 — Host Configuration, DHCP, ARP, and Neighbor Discovery](handbook/networking/53-host-configuration-dhcp-arp-and-neighbor-discovery.md)
 - [Chapter 54 — Routing, Gateways, and Path Selection](handbook/networking/54-routing-gateways-and-path-selection.md)
-- Chapter 55 — DNS and Name Resolution
+- [Chapter 55 — DNS and Name Resolution](handbook/networking/55-dns-and-name-resolution.md)
 - Chapter 56 — Sockets, Ports, and Endpoint Ownership
 - Chapter 57 — UDP, Datagrams, and Message Boundaries
 - Chapter 58 — TCP Reliability, Flow Control, and Connection State
