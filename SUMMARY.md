@@ -167,7 +167,7 @@
 - [Chapter 123 — CPU Profiling and Concurrency Bottlenecks](handbook/observability/123-cpu-profiling-and-concurrency-bottlenecks.md)
 - [Chapter 124 — Memory, Allocation, and Resource-Leak Diagnosis](handbook/observability/124-memory-allocation-and-resource-leak-diagnosis.md)
 - [Chapter 125 — I/O, Network, and Database Performance](handbook/observability/125-io-network-and-database-performance.md)
-- Chapter 126 — Load Testing, Capacity Planning, and Failure Injection
+- [Chapter 126 — Load Testing, Capacity Planning, and Failure Injection](handbook/observability/126-load-testing-capacity-planning-and-failure-injection.md)
 - Chapter 127 — Incident Response and Operational Coordination
 - Chapter 128 — Post-Incident Learning and Continuous Improvement
 - Chapter 129 — A Complete Cross-Layer Engineering Investigation
