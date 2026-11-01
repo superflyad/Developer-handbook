@@ -170,7 +170,7 @@
 - [Chapter 126 — Load Testing, Capacity Planning, and Failure Injection](handbook/observability/126-load-testing-capacity-planning-and-failure-injection.md)
 - [Chapter 127 — Incident Response and Operational Coordination](handbook/observability/127-incident-response-and-operational-coordination.md)
 - [Chapter 128 — Post-Incident Learning and Continuous Improvement](handbook/observability/128-post-incident-learning-and-continuous-improvement.md)
-- Chapter 129 — A Complete Cross-Layer Engineering Investigation
+- [Chapter 129 — A Complete Cross-Layer Engineering Investigation](handbook/observability/129-a-complete-cross-layer-engineering-investigation.md)
 
 ## Planned Appendix
 
