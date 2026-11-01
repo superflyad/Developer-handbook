@@ -108,7 +108,7 @@
 - [Chapter 76 — Scheduling, Concurrency, and Work Queues](handbook/automation/76-scheduling-concurrency-and-work-queues.md)
 - [Chapter 77 — A Complete CI/CD Automation Lifecycle](handbook/automation/77-a-complete-ci-cd-automation-lifecycle.md)
 
-## Part VII — Docker and Containers (Planned)
+## Part VII — Docker and Containers
 
 - [Chapter 78 — Why Containers Work: Isolation, Not Tiny Virtual Machines](handbook/containers/78-why-containers-work-isolation-not-tiny-virtual-machines.md)
 - [Chapter 79 — Images, Layers, Build Contexts, and Caches](handbook/containers/79-images-layers-build-contexts-and-caches.md)
@@ -121,7 +121,7 @@
   - [Chapter 86 — Resource Limits, Health, Logs, and Runtime Diagnosis](handbook/containers/86-resource-limits-health-logs-and-runtime-diagnosis.md)
   - [Chapter 87 — Container Security and Least Privilege](handbook/containers/87-container-security-and-least-privilege.md)
   - [Chapter 88 — Orchestration Foundations and Kubernetes Mental Models](handbook/containers/88-orchestration-foundations-and-kubernetes-mental-models.md)
-- Chapter 89 — A Complete Container Delivery Workflow
+  - [Chapter 89 — A Complete Container Delivery Workflow](handbook/containers/89-a-complete-container-delivery-workflow.md)
 
 ## Part VIII — AWS and Cloud-Native Development (Planned)
 
