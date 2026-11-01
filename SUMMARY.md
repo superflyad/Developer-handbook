@@ -117,7 +117,7 @@
 - [Chapter 82 — Container Processes, Signals, and Lifecycle](handbook/containers/82-container-processes-signals-and-lifecycle.md)
 - [Chapter 83 — Container Filesystems, Volumes, and Persistent Data](handbook/containers/83-container-filesystems-volumes-and-persistent-data.md)
   - [Chapter 84 — Container Networking, Ports, and Service Discovery](handbook/containers/84-container-networking-ports-and-service-discovery.md)
-- Chapter 85 — Multi-Container Applications with Compose
+  - [Chapter 85 — Multi-Container Applications with Compose](handbook/containers/85-multi-container-applications-with-compose.md)
 - Chapter 86 — Resource Limits, Health, Logs, and Runtime Diagnosis
 - Chapter 87 — Container Security and Least Privilege
 - Chapter 88 — Orchestration Foundations and Kubernetes Mental Models
