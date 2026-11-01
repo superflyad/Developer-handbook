@@ -67,7 +67,7 @@
 - [Chapter 41 — Space, Allocation, Caching, and Durability](handbook/operating-systems/41-space-allocation-caching-and-durability.md)
 - [Chapter 42 — Process Creation, Execution, and Lifecycle](handbook/operating-systems/42-process-creation-execution-and-lifecycle.md)
 - [Chapter 43 — Scheduling, Priorities, and Resource Accounting](handbook/operating-systems/43-scheduling-priorities-and-resource-accounting.md)
-- Chapter 44 — Virtual Memory and Process Address Spaces
+- [Chapter 44 — Virtual Memory and Process Address Spaces](handbook/operating-systems/44-virtual-memory-and-process-address-spaces.md)
 - Chapter 45 — Interprocess Communication and Coordination
 - Chapter 46 — Services, Daemons, and Background Work
 - Chapter 47 — Boot, Startup, and Shutdown
