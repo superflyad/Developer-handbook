@@ -544,7 +544,7 @@ Chapter 115 treats assets, identities, trust boundaries, privacy, abuse, and ten
 - [Google SRE Book — Addressing Cascading Failures](https://sre.google/sre-book/addressing-cascading-failures/)
 - [Google SRE Book — Handling Overload](https://sre.google/sre-book/handling-overload/)
 - [AWS Builders' Library — Timeouts, retries, and backoff with jitter](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/)
-- [AWS Well-Architected — Control and limit retry calls](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_mitigate_interaction_failure_limit_retries.html)
+- [AWS Well-Architected — Control and limit retry calls](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel05-bp03.html)
 - [Microsoft Azure Architecture Center — Circuit Breaker](https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker)
 - [Microsoft Azure Architecture Center — Bulkhead](https://learn.microsoft.com/en-us/azure/architecture/patterns/bulkhead)
 - [Principles of Chaos Engineering](https://principlesofchaos.org/)
