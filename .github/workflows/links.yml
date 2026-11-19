@@ -82,12 +82,7 @@ jobs:
             echo "[Workflow run]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID)"
             echo
             if [ -f "$RUNNER_TEMP/link-audit/second.md" ]; then
-              awk '/^### Errors in / { errors = 1 } /^## Redirects per input/ { errors = 0 } errors' "$RUNNER_TEMP/link-audit/second.md" > "$RUNNER_TEMP/link-errors.md"
-              if [ -s "$RUNNER_TEMP/link-errors.md" ]; then
-                cat "$RUNNER_TEMP/link-errors.md"
-              else
-                echo "The link checker failed without a parsed error list. Inspect the workflow logs and saved reports."
-              fi
+              cat "$RUNNER_TEMP/link-audit/second.md"
             else
               echo "The link checker did not produce a report. Inspect the workflow logs."
             fi
