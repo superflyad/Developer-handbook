@@ -4,7 +4,13 @@ A bucket can hold billions of durable objects, yet a careless design can still l
 
 The central idea is:
 
-> Treat every object as an immutable value identified by bucket, key, and version, then design authorization, recovery, retention, replication, events, and cost around that identity.
+> Treat each stored object version as a distinct value. Design authorization, recovery, retention, replication, events, and cost around the bucket, key, and, when available, version ID.
+
+## In brief
+
+- **Model:** A bucket and key address the current state, which can be a delete marker in a versioned bucket. A version ID can identify a particular stored value when versioning is enabled.
+- **Use:** Define ownership, overwrite behavior, recovery, retention, and cost before relying on a bucket as durable application state.
+- **Limit:** Strong consistency for object operations does not make a group of keys transactional, and event notifications can arrive more than once or out of order.
 
 ## 1. Object storage is not a remote filesystem
 
@@ -69,7 +75,7 @@ Do not infer business truth solely from a listing convention. Store a manifest, 
 
 ## 4. S3 is strongly consistent, but not multi-object transactional
 
-S3 provides strong read-after-write consistency for object `PUT` and `DELETE` operations in all Regions. After a successful write, subsequent reads and listings observe it. Updating one key is atomic: a concurrent reader gets the old value or the new value, not partial bytes.
+[S3 provides strong read-after-write consistency](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html) for object `PUT` and `DELETE` operations in all Regions. After a successful write, subsequent reads and listings observe it. Updating one key is atomic: a concurrent reader gets the old value or the new value, not partial bytes.
 
 Strong consistency does not make this sequence atomic:
 
@@ -162,7 +168,7 @@ Require HTTPS with policy conditions. At-rest encryption does not protect plaint
 
 ## 10. Versioning makes current state recoverable
 
-With versioning enabled, each successful overwrite creates a new version. A simple `DELETE` normally inserts a delete marker as the current version instead of permanently erasing prior versions. Removing that marker can reveal the previous version.
+[With versioning enabled](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html), each successful overwrite creates a new version. A simple `DELETE` normally inserts a delete marker as the current version instead of permanently erasing prior versions. Removing that marker can reveal the previous version.
 
 Versioning changes operations:
 
@@ -296,7 +302,7 @@ Classify metadata as carefully as object bytes. Do not put secrets or unnecessar
 
 ## 18. Events require idempotent, order-aware consumers
 
-S3 can send event notifications to supported SNS topics, SQS queues, Lambda functions, and EventBridge. Notifications are designed for at-least-once delivery and are not guaranteed to arrive in event order. Rare duplicates are expected behavior.
+S3 can send event notifications to supported SNS topics, SQS queues, Lambda functions, and EventBridge. [Notifications are designed for at-least-once delivery](https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-event-types-and-destinations.html) and are not guaranteed to arrive in event order. Rare duplicates are expected behavior.
 
 An event consumer should:
 

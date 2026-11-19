@@ -87,6 +87,14 @@ Prioritize concepts that remain useful when tools, versions, and vendors change.
 
 Avoid memorable claims that are only approximately true. Qualify simplifications and distinguish mental models from exact implementations.
 
+### Make evidence traceable
+
+Use primary standards, vendor documentation, source code, or reproducible experiments for technical claims. Put a source near a consequential or version-sensitive claim so a reader can identify what it supports; a References list is an index, not proof that every sentence was checked. State the platform, version, and conditions when behavior depends on them. Record what was verified and any unresolved uncertainty in the pull request. Do not label a whole chapter "expert reviewed" after checking only selected claims.
+
+### Support human and agent recaps
+
+Open with the central model and its important boundary. A short chapter brief may help when the topic has several layers, but it must add orientation rather than repeat the introduction. Keep headings descriptive, examples self-contained, and qualifications next to the claims they limit. The Engineering Review should let a reader or assistant recover when the model applies, when it fails, and what evidence matters. Do not maintain a separate AI-written version of a chapter.
+
 ### Write directly
 
 Prefer a specific observation, mechanism, or decision over a generic claim about what a chapter teaches. Remove repeated stock phrases and self-referential transitions when the surrounding explanation already makes the point. Keep the six review questions useful rather than giving them the same answer pattern in every chapter.

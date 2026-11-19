@@ -24,6 +24,22 @@ Use the handbook as an operating manual:
 - convert production lessons into reusable knowledge,
 - refine personal standards when a better practice is proven.
 
+## With an AI assistant
+
+Give the assistant a link to the relevant chapter or the [machine-readable chapter index](https://superflyad.github.io/Developer-handbook/llms.txt). Ask for a recap before a deeper explanation, then use the chapter's example or practice section to test your understanding. The Markdown chapter remains the source of truth; an answer produced by an assistant is a reading aid.
+
+For example:
+
+```text
+Read this handbook chapter as your source. Summarize its central model in one
+paragraph. List when to use it, when to avoid it, and one failure mode. Cite the
+chapter sections and any primary references you rely on. Mark claims that may
+depend on a product version or current service behavior. Tell me what the
+chapter does not establish. Then give me one scenario to reason through.
+```
+
+Check the cited passage when an answer affects a production change, security boundary, data recovery plan, or cost decision. Follow the chapter's primary references for behavior that may have changed since publication. If the answer cannot identify supporting text, treat the claim as unverified and report the gap through the chapter's edit link.
+
 ## Content workflow
 
 Conversation and experimentation are the drafting environment. GitHub is the publication environment.

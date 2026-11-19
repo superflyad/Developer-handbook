@@ -14,10 +14,12 @@ The project uses tagged editions for stable publication artifacts and records co
 - Updated references moved by the AWS Well-Architected Framework.
 - Pointed Linux kernel references at the current documentation host.
 - Weekly publication health checks with automatic tracking of failed builds.
+- A generated agent navigation index, an assisted-reading workflow, and a reusable answer evaluation set.
 
 ### Changed
 
 - Standardized handbook headings and punctuation, removed formulaic chapter closings, and added an editorial check for em dashes.
+- Began source-backed chapter reviews with Unix, DNS, and S3 examples.
 
 ## [1.0.0]: 2026-11-01
 

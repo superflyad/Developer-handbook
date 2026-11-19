@@ -310,6 +310,8 @@ Repository conventions:
 
 `scripts/build_site.py` creates an isolated source tree, derives website navigation from `SUMMARY.md`, and builds the searchable GitHub Pages edition. The site provides persistent part and chapter navigation, full-text search, edit links, light and dark themes, previous and next navigation, social metadata, and responsive reading layouts. Website source customizations live under `site/` and `styles/site.css`.
 
+The website build also generates `llms.txt` from that navigation. It points to the canonical Markdown files on `main` and contains no parallel chapter text. Assisted-reading guidance and answer evaluations use those chapters and their primary references as evidence.
+
 `scripts/build_book.py` assembles the reader-facing front matter, Chapters 1–129, and Engineering Patterns appendix into one revision-identified source, rewrites internal links to stable anchors, and emits a source-and-artifact hash manifest. CI renders standalone HTML, EPUB, DOCX, and PDF previews from that source.
 
 Changes pushed to `main` validate Markdown, build both publication paths, and deploy the website through GitHub Pages. Version tags invoke the release workflow, which rebuilds the five downloadable formats, records checksums, and attaches permanent artifacts to the corresponding GitHub Release.

@@ -6,6 +6,12 @@ The central idea is:
 
 > Trace a name through the application's resolver, local policy, recursive cache, delegation, and authoritative data. Keep the queried name, type, and time together.
 
+## In brief
+
+- **Model:** A DNS answer depends on the queried name and type, the resolver's view, and the lifetime of cached data.
+- **Use:** Reproduce an application's lookup path before comparing recursive and authoritative answers.
+- **Limit:** A DNS answer does not prove that the endpoint is reachable or that the application has authenticated it.
+
 ## 1. DNS is a tree of names and delegated authority
 
 DNS names are sequences of labels beneath the root. The fully qualified name `api.example.test.` ends with an explicit root label represented by the trailing dot. User interfaces commonly omit that final dot.
@@ -17,7 +23,7 @@ DNS names are sequences of labels beneath the root. The fully qualified name `ap
         └── api.example.test.
 ```
 
-The example above is conceptual; `.test` is reserved for testing and is not ordinary public DNS data.
+The example above is conceptual; [`.test` is reserved for testing](https://www.rfc-editor.org/rfc/rfc2606) and is not ordinary public DNS data.
 
 A **zone** is an administrative portion of the namespace served authoritatively. It is not necessarily the same as every domain beneath a name. A parent zone delegates a child by publishing name-server information; the child zone then owns its authoritative data.
 
@@ -102,7 +108,7 @@ Important outcomes include:
 - **REFUSED:** the server declined the query under policy;
 - timeout or transport failure: no useful DNS response arrived.
 
-Negative answers can be cached using zone authority data. Modern requirements also allow or require bounded caching of several resolution failures to avoid retry storms. Repeated querying can therefore reproduce a cached failure after the authoritative problem is repaired.
+[Negative answers can be cached](https://www.rfc-editor.org/rfc/rfc2308) using zone authority data. [Bounded caching of resolution failures](https://www.rfc-editor.org/rfc/rfc9520) can also prevent retry storms. Repeated querying can therefore reproduce a cached failure after the authoritative problem is repaired.
 
 Do not say “DNS says it does not exist” for every empty result. Preserve response code, query type, server, flags, and authority section.
 
@@ -126,7 +132,7 @@ Split DNS can return different answers based on resolver, client network, identi
 
 Classic DNS commonly uses UDP and falls back or switches to TCP when necessary; modern DNS also uses EDNS and encrypted transports such as DNS over TLS or HTTPS. Encryption protects the client-to-resolver channel from ordinary observation or modification on that segment. It does not prove the underlying zone data is correct or that the resolved application is trustworthy.
 
-DNSSEC lets validating resolvers verify signatures and authenticated denial for signed portions of the DNS hierarchy. It provides origin authentication and integrity for DNS data, not confidentiality. Deployment gaps, unsigned zones, validation policy, and clock correctness affect what can be proven.
+[DNSSEC](https://www.rfc-editor.org/rfc/rfc4033) lets validating resolvers verify signatures and authenticated denial for signed portions of the DNS hierarchy. It provides origin authentication and integrity for DNS data, not confidentiality. Deployment gaps, unsigned zones, validation policy, and clock correctness affect what can be proven.
 
 Applications still authenticate services with mechanisms such as TLS certificate validation or SSH host keys. A signed address record does not authorize the application operation.
 
@@ -225,3 +231,5 @@ DNS produces candidate addresses, but a process still needs a socket endpoint. C
 - [RFC 9499: DNS Terminology](https://www.rfc-editor.org/rfc/rfc9499)
 - [RFC 2308: Negative Caching of DNS Queries](https://www.rfc-editor.org/rfc/rfc2308)
 - [RFC 9520: Negative Caching of DNS Resolution Failures](https://www.rfc-editor.org/rfc/rfc9520)
+- [RFC 2606: Reserved Top Level DNS Names](https://www.rfc-editor.org/rfc/rfc2606)
+- [RFC 4033: DNS Security Introduction and Requirements](https://www.rfc-editor.org/rfc/rfc4033)
