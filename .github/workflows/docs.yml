@@ -158,7 +158,7 @@ jobs:
           } > "$report"
 
           if [ -n "$issue_number" ]; then
-            gh issue edit "$issue_number" --repo "$GITHUB_REPOSITORY" --body-file "$report"
+            gh issue edit "$issue_number" --repo "$GITHUB_REPOSITORY" --body-file "$report" --add-assignee superflyad
           else
-            gh issue create --repo "$GITHUB_REPOSITORY" --title "$title" --body-file "$report"
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$title" --body-file "$report" --assignee superflyad
           fi

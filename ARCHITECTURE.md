@@ -20,7 +20,7 @@ Pull requests validate chapter structure, local links, Markdown, and publication
 
 A separate weekly external-link audit checks references outside the repository. It waits and checks again after a failed scan to filter out short-lived responses. If the second scan fails, the workflow saves both reports and opens or updates one tracking issue. A clean run closes that issue.
 
-Dependabot proposes weekly website-dependency and GitHub Actions updates, while main-branch rules require a pull request and passing checks. Maintainers review and merge those proposals according to [project governance](GOVERNANCE.md).
+Dependabot proposes weekly website-dependency and GitHub Actions updates and assigns them to the maintainer. Automation issues are assigned to the maintainer as well. Main-branch rules require a pull request and passing checks. Maintainers review and merge those proposals according to [project governance](GOVERNANCE.md).
 
 External responses can change or block automated clients. Review the report and the cited source before replacing a reference or excluding a domain; the audit does not rewrite citations automatically.
 
