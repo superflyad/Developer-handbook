@@ -28,7 +28,7 @@ These layers are related, but they are not interchangeable.
 
 - The **terminal** displays text and carries keyboard input.
 - The **shell** interprets command language and launches programs.
-- A **program** is executable code stored on disk.
+- A **program** is executable code stored as a file.
 - A **process** is a running instance of a program.
 - The **kernel** manages hardware and enforces system rules.
 
@@ -49,7 +49,7 @@ Unix-like systems expose one filesystem tree rooted at:
 Typical macOS paths include:
 
 ```text
-/Users/michael
+/Users/alex
 /Applications
 /System
 /Library
@@ -98,7 +98,7 @@ Terminal
     └── git
 ```
 
-A child commonly inherits parts of its parent's environment, current directory, credentials, and open channels. This is why setting an environment variable in a shell can affect commands launched from that shell.
+A child commonly inherits parts of its parent's environment, current directory, credentials, and open channels. On Unix-like systems, [process creation](https://man7.org/linux/man-pages/man2/fork.2.html) and [program execution](https://man7.org/linux/man-pages/man2/execve.2.html) define these boundaries. This is why setting an environment variable in a shell can affect commands launched from that shell.
 
 The child cannot normally change the parent's environment after it has started. That detail explains several shell behaviors we will encounter later.
 
@@ -134,7 +134,7 @@ This abstraction provides:
 - virtual memory,
 - more flexible use of physical RAM.
 
-Your 48 GB MacBook Pro can run many processes because the operating system schedules CPU time and manages memory across them. High memory capacity does not remove the need to understand leaks, pressure, caching, or process behavior; it merely raises the point at which poor behavior becomes visible.
+A machine with ample RAM can run many processes because the operating system schedules CPU time and manages memory across them. More memory does not remove the need to understand leaks, pressure, caching, or process behavior; it can delay when poor behavior becomes visible.
 
 ## 7. Devices and file-like interfaces
 
@@ -157,7 +157,7 @@ macOS and Linux differ in the exact virtual filesystems and device interfaces th
 
 The shell is a user-space program that interprets command language.
 
-On current macOS installations, the default interactive shell is typically `zsh`. Common alternatives include `bash`, `sh`, and `fish`.
+[macOS uses `zsh` as its default interactive shell](https://support.apple.com/guide/terminal/trml113/mac). Common alternatives include `bash`, `sh`, and `fish`.
 
 The shell performs work such as:
 
@@ -219,9 +219,9 @@ This model gives you a debugging map. A failure could come from shell parsing, p
 | Common interactive shell | PowerShell | zsh | Often Bash; distribution-dependent |
 | Filesystem roots | Drive letters and mounted volumes | One `/` tree | One `/` tree |
 | User model | Users, groups, ACLs, access tokens | Unix users/groups plus ACLs and platform security layers | Unix users/groups plus capabilities, ACLs, and distribution security layers |
-| Primary server presence | Significant, especially Microsoft ecosystems | Uncommon as a general-purpose server OS | Dominant in cloud, containers, and infrastructure |
+| Primary server presence | Significant, especially Microsoft ecosystems | Uncommon as a general-purpose server OS | Common in cloud, containers, and infrastructure |
 
-PowerShell is not merely a Windows imitation of a Unix shell. It passes structured .NET objects through pipelines rather than treating text streams as the primary interchange format. That offers major advantages for Windows administration, though it creates different composition rules from traditional Unix tools.
+PowerShell passes [structured .NET objects through pipelines](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pipelines) rather than treating text streams as the primary interchange format. That offers advantages for administration, though it creates different composition rules from traditional Unix tools.
 
 ## 12. Connection to modern engineering
 
@@ -281,3 +281,11 @@ Do not memorize the output yet. Identify only:
 - the process identifiers shown beside them.
 
 Then answer: which item is the stored program, which item is the running process, and which process launched the other?
+
+## References
+
+- [Linux manual: `fork(2)`](https://man7.org/linux/man-pages/man2/fork.2.html)
+- [Linux manual: `execve(2)`](https://man7.org/linux/man-pages/man2/execve.2.html)
+- [Linux manual: `proc(5)`](https://man7.org/linux/man-pages/man5/proc.5.html)
+- [Apple Support: Change the default shell in Terminal](https://support.apple.com/guide/terminal/trml113/mac)
+- [Microsoft Learn: PowerShell pipelines](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pipelines)

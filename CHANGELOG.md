@@ -20,6 +20,7 @@ The project uses tagged editions for stable publication artifacts and records co
 
 - Standardized handbook headings and punctuation, removed formulaic chapter closings, and added an editorial check for em dashes.
 - Began source-backed chapter reviews with Unix, DNS, and S3 examples.
+- Added primary references and neutral examples to the Unix process and filesystem foundations.
 
 ## [1.0.0]: 2026-11-01
 
