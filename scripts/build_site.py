@@ -156,6 +156,7 @@ def prepare_sources(summary_sources: list[Path]) -> None:
     asset_destination = STAGING / "assets" / "social-preview.png"
     asset_destination.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(ROOT / "assets" / "social-preview.png", asset_destination)
+    shutil.copy2(ROOT / "assets" / "favicon.svg", STAGING / "assets" / "favicon.svg")
 
 
 def write_config(navigation: list[dict[str, object]]) -> None:
@@ -182,8 +183,8 @@ def write_config(navigation: list[dict[str, object]]) -> None:
             "name": "material",
             "custom_dir": str(ROOT / "site" / "overrides"),
             "language": "en",
-            "logo": "material/book-open-page-variant",
-            "favicon": "material/book-open-page-variant",
+            "icon": {"logo": "material/book-open-page-variant"},
+            "favicon": "assets/favicon.svg",
             "features": [
                 "announce.dismiss",
                 "content.action.edit",
@@ -290,7 +291,8 @@ def build() -> None:
     )
     index = OUTPUT / "index.html"
     search = OUTPUT / "search" / "search_index.json"
-    if not index.is_file() or not search.is_file():
+    favicon = OUTPUT / "assets" / "favicon.svg"
+    if not index.is_file() or not search.is_file() or not favicon.is_file():
         raise RuntimeError("website build did not produce its index and search data")
     print(
         f"Built searchable website from {len(sources) + len(COMMUNITY_PAGES) + 2} "
