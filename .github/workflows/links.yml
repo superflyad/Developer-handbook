@@ -7,6 +7,11 @@ on:
 
 permissions:
   contents: read
+  issues: write
+
+concurrency:
+  group: external-link-audit
+  cancel-in-progress: false
 
 jobs:
   links:
@@ -17,15 +22,93 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Check links
+        id: first_check
+        continue-on-error: true
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
           args: >-
             --root-dir "${{ github.workspace }}"
             --cache
             --max-cache-age 1d
+            --max-concurrency 16
+            --max-retries 3
+            --retry-wait-time 3
             --no-progress
-            --verbose
             "./**/*.md"
-          fail: true
+          output: lychee/first.md
           jobSummary: true
           token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Wait before confirming failures
+        if: steps.first_check.outcome == 'failure'
+        run: sleep 45
+
+      - name: Confirm failed links
+        if: steps.first_check.outcome == 'failure'
+        id: second_check
+        continue-on-error: true
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: >-
+            --root-dir "${{ github.workspace }}"
+            --max-concurrency 16
+            --max-retries 3
+            --retry-wait-time 3
+            --no-progress
+            "./**/*.md"
+          output: lychee/second.md
+          jobSummary: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Save link reports
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: external-link-audit-${{ github.run_id }}
+          path: lychee/*.md
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Open or update link audit issue
+        if: github.ref == 'refs/heads/main' && steps.second_check.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          title="[Automation] External link audit needs review"
+          report="$RUNNER_TEMP/link-audit-issue.md"
+          {
+            echo "The external link audit failed twice on the current main branch. Check the links below before changing a citation or excluding a site."
+            echo
+            echo "[Workflow run]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID)"
+            echo
+            if [ -f lychee/second.md ]; then
+              awk '/^### Errors in / { errors = 1 } /^## Redirects per input/ { errors = 0 } errors' lychee/second.md > "$RUNNER_TEMP/link-errors.md"
+              if [ -s "$RUNNER_TEMP/link-errors.md" ]; then
+                cat "$RUNNER_TEMP/link-errors.md"
+              else
+                echo "The link checker failed without a parsed error list. Inspect the workflow logs and saved reports."
+              fi
+            else
+              echo "The link checker did not produce a report. Inspect the workflow logs."
+            fi
+          } > "$report"
+          issue_number="$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --limit 100 --json number,title --jq '.[] | select(.title == "[Automation] External link audit needs review") | .number' | head -n 1)"
+          if [ -n "$issue_number" ]; then
+            gh issue edit "$issue_number" --repo "$GITHUB_REPOSITORY" --body-file "$report"
+          else
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$title" --body-file "$report"
+          fi
+
+      - name: Close resolved link audit issue
+        if: github.ref == 'refs/heads/main' && (steps.first_check.outcome == 'success' || steps.second_check.outcome == 'success')
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          issue_number="$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --limit 100 --json number,title --jq '.[] | select(.title == "[Automation] External link audit needs review") | .number' | head -n 1)"
+          if [ -n "$issue_number" ]; then
+            gh issue close "$issue_number" --repo "$GITHUB_REPOSITORY" --reason completed
+          fi
+
+      - name: Fail on confirmed link errors
+        if: steps.second_check.outcome == 'failure'
+        run: exit 1

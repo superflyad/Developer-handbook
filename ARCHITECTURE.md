@@ -14,6 +14,12 @@ Markdown in this repository is the canonical source.
 
 PDF, Word, ebook, and website editions are generated publication formats. They must not become independent versions of the handbook.
 
+## Maintenance checks
+
+Pull requests validate chapter structure, local links, Markdown, and publication builds. A weekly external-link audit checks references outside the repository. It waits and checks again after a failed scan to filter out short-lived responses. If the second scan fails, the workflow saves both reports and opens or updates one tracking issue. A clean run closes that issue.
+
+External responses can change or block automated clients. Review the report and the cited source before replacing a reference or excluding a domain; the audit does not rewrite citations automatically.
+
 ## Content lifecycle
 
 Every chapter follows this lifecycle:

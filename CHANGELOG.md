@@ -10,6 +10,7 @@ The project uses tagged editions for stable publication artifacts and records co
 
 - Public contribution, support, security, and governance infrastructure.
 - Searchable GitHub Pages edition and permanent release automation.
+- External-link audit retry, saved reports, and automatic tracking of persistent failures.
 
 ## [1.0.0] — 2026-11-01
 
