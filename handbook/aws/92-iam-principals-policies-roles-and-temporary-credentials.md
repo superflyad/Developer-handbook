@@ -1,4 +1,4 @@
-# Chapter 92 — IAM: Principals, Policies, Roles, and Temporary Credentials
+# Chapter 92: IAM: Principals, Policies, Roles, and Temporary Credentials
 
 An application receives `AccessDenied` while reading one object. Adding `s3:*` appears to fix it. That change also lets the application delete unrelated buckets, alter access controls, and retrieve data it never needed. The symptom disappeared because the authority boundary disappeared with it.
 
@@ -345,7 +345,7 @@ Review the combined path, not `PassRole` in isolation.
 
 ## 23. Least privilege is an iterative control loop
 
-Least privilege means enough authority for required work under expected conditions—no more, and no longer than necessary.
+Least privilege means granting enough authority for required work under expected conditions, with no more access or duration than necessary.
 
 A practical loop is:
 
@@ -682,7 +682,7 @@ It reduces leaked-key response, duplicated IAM users, unexplained access failure
 
 ## Handbook Principle #92
 
-> Grant a named principal the smallest tested request path through a short-lived session—never solve uncertainty by erasing the boundary.
+> Grant a named principal the smallest tested request path through a short-lived session. Do not erase the boundary to resolve uncertainty.
 
 ## Practical Observation
 
@@ -694,13 +694,13 @@ Identity determines who may request network changes, but it does not determine w
 
 ## References
 
-- [AWS IAM — Security best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
-- [AWS IAM — IAM roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html)
-- [AWS IAM — Temporary security credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html)
-- [AWS IAM — Policy evaluation logic](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html)
-- [AWS IAM — How enforcement evaluates allow or deny](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic_policy-eval-denyallow.html)
-- [AWS IAM — JSON policy element reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html)
-- [AWS IAM — Permissions boundaries](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html)
-- [AWS IAM — Access to AWS accounts owned by third parties](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-party.html)
-- [AWS IAM — Validate policies with IAM Access Analyzer](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-policy-validation.html)
-- [AWS IAM — Troubleshoot access denied errors](https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_access-denied.html)
+- [AWS IAM: Security best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
+- [AWS IAM: IAM roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html)
+- [AWS IAM: Temporary security credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html)
+- [AWS IAM: Policy evaluation logic](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html)
+- [AWS IAM: How enforcement evaluates allow or deny](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic_policy-eval-denyallow.html)
+- [AWS IAM: JSON policy element reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html)
+- [AWS IAM: Permissions boundaries](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html)
+- [AWS IAM: Access to AWS accounts owned by third parties](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_common-scenarios_third-party.html)
+- [AWS IAM: Validate policies with IAM Access Analyzer](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-policy-validation.html)
+- [AWS IAM: Troubleshoot access denied errors](https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_access-denied.html)

@@ -1,4 +1,4 @@
-# Chapter 15 — Finding Files and Inspecting Metadata
+# Chapter 15: Finding Files and Inspecting Metadata
 
 Filesystem discovery answers questions about names and objects. It is different from searching the bytes stored inside regular files.
 

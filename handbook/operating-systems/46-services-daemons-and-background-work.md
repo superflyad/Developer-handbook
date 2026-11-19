@@ -1,4 +1,4 @@
-# Chapter 46 — Services, Daemons, and Background Work
+# Chapter 46: Services, Daemons, and Background Work
 
 Appending `&` or closing a terminal does not create a reliable service. Long-lived work needs a declared identity, environment, dependencies, restart policy, logs, and shutdown contract. Operating-system service managers provide that lifecycle boundary.
 

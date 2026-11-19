@@ -1,4 +1,4 @@
-# Chapter 30 — Remotes, Tracking, Fetching, and Pushing
+# Chapter 30: Remotes, Tracking, Fetching, and Pushing
 
 Git is distributed: each repository has its own objects and references. Collaboration requires transferring objects and deciding which local and remote names should advance.
 

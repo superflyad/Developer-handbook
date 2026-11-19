@@ -1,4 +1,4 @@
-# Chapter 106 — From Requirements to a System Model
+# Chapter 106: From Requirements to a System Model
 
 “Design a task-management system” is not a requirement. It does not say who manages tasks, what a task means, which operations matter, how many people collaborate, how quickly changes must appear, what may be lost, what must remain private, or what failure the business can tolerate.
 
@@ -298,7 +298,7 @@ Do not inherit a dependency's advertised availability as the user's availability
 
 ## 14. Draw trust and authority boundaries early
 
-Record who authenticates each actor, who authorizes each operation, what tenant or ownership context applies, and where untrusted data enters. Include administrators, support tools, background jobs, deployment identities, and data pipelines—not only end users.
+Record who authenticates each actor, who authorizes each operation, what tenant or ownership context applies, and where untrusted data enters. Include administrators, support tools, background jobs, deployment identities, and data pipelines, not only end users.
 
 For each boundary, ask:
 
@@ -725,7 +725,7 @@ Do not create a large requirements packet for a tiny reversible change with obvi
 
 ### How does this make me a better engineer?
 
-It teaches you to ask measurable questions, separate facts from assumptions, model state and failure before products, and make uncertainty actionable.
+You can ask measurable questions, separate facts from assumptions, model state and failure before products, and make uncertainty actionable.
 
 ### How does this reduce waste?
 
@@ -733,7 +733,7 @@ It prevents premature services, invented scale, unused features, unowned data co
 
 ## Handbook Principle #106
 
-> Design begins when ambiguous intent becomes a falsifiable model of actors, state, workload, quality, constraints, and uncertainty—not when the first component is chosen.
+> Design begins when ambiguous intent becomes a falsifiable model of actors, state, workload, quality, constraints, and uncertainty, not when the first component is chosen.
 
 ## Practical Observation
 
@@ -745,12 +745,12 @@ The system model defines observable behavior and constraints. Chapter 107 turns 
 
 ## References
 
-- [Software Engineering Institute — Deriving Architectural Tactics: A Step Toward Methodical Architectural Design](https://www.sei.cmu.edu/documents/704/2003_005_001_14213.pdf)
-- [Software Engineering Institute — Robustness Scenarios](https://resources.sei.cmu.edu/asset_files/TechnicalReport/2022_005_001_875746.pdf)
-- [Software Engineering Institute — Scenario-Based Analysis of Software Architecture](https://insights.sei.cmu.edu/library/scenario-based-analysis-of-software-architecture/)
-- [Software Engineering Institute — Architecture Tradeoff Analysis Method collection](https://www.sei.cmu.edu/library/architecture-tradeoff-analysis-method-collection/)
-- [Google SRE Workbook — Implementing SLOs](https://sre.google/workbook/implementing-slos/)
-- [Google SRE Workbook — Example SLO document](https://sre.google/workbook/slo-document/)
-- [NIST NCCoE — Secure software requirements and risk modeling](https://pages.nist.gov/nccoe-devsecops/example-implementation-1-2/appendix-c.html)
-- [IETF BCP 14 — Key words for use in RFCs](https://www.rfc-editor.org/rfc/rfc2119.html)
-- [Chapter 105 — Infrastructure as Code and a Complete AWS Delivery Lifecycle](../aws/105-infrastructure-as-code-and-a-complete-aws-delivery-lifecycle.md)
+- [Software Engineering Institute: Deriving Architectural Tactics: A Step Toward Methodical Architectural Design](https://www.sei.cmu.edu/documents/704/2003_005_001_14213.pdf)
+- [Software Engineering Institute: Robustness Scenarios](https://resources.sei.cmu.edu/asset_files/TechnicalReport/2022_005_001_875746.pdf)
+- [Software Engineering Institute: Scenario-Based Analysis of Software Architecture](https://insights.sei.cmu.edu/library/scenario-based-analysis-of-software-architecture/)
+- [Software Engineering Institute: Architecture Tradeoff Analysis Method collection](https://www.sei.cmu.edu/library/architecture-tradeoff-analysis-method-collection/)
+- [Google SRE Workbook: Implementing SLOs](https://sre.google/workbook/implementing-slos/)
+- [Google SRE Workbook: Example SLO document](https://sre.google/workbook/slo-document/)
+- [NIST NCCoE: Secure software requirements and risk modeling](https://pages.nist.gov/nccoe-devsecops/example-implementation-1-2/appendix-c.html)
+- [IETF BCP 14: Key words for use in RFCs](https://www.rfc-editor.org/rfc/rfc2119.html)
+- [Chapter 105: Infrastructure as Code and a Complete AWS Delivery Lifecycle](../aws/105-infrastructure-as-code-and-a-complete-aws-delivery-lifecycle.md)

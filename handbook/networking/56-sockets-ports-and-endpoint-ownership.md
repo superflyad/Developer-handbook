@@ -1,10 +1,10 @@
-# Chapter 56 — Sockets, Ports, and Endpoint Ownership
+# Chapter 56: Sockets, Ports, and Endpoint Ownership
 
 An IP address brings a packet to a host interface. A transport protocol and port help the operating system deliver it to a socket owned by a process. The socket is the live endpoint; the port number is only one field in its identity.
 
 The central idea is:
 
-> Identify an endpoint by protocol, local address, local port, remote peer, namespace, and owning process—not by port number alone.
+> Identify an endpoint by protocol, local address, local port, remote peer, namespace, and owning process, not by port number alone.
 
 ## 1. A socket is an operating-system communication object
 
@@ -209,5 +209,5 @@ Sockets expose transport services, but TCP and UDP provide different contracts. 
 
 - [Linux `socket(7)`](https://man7.org/linux/man-pages/man7/socket.7.html)
 - [Microsoft Winsock2 API: Functions](https://learn.microsoft.com/en-us/windows/win32/api/winsock2/)
-- [RFC 6335 — Service Name and Port Number Registry Procedures](https://www.rfc-editor.org/rfc/rfc6335)
+- [RFC 6335: Service Name and Port Number Registry Procedures](https://www.rfc-editor.org/rfc/rfc6335)
 - [IANA Service Name and Transport Protocol Port Number Registry](https://www.iana.org/assignments/service-names-port-numbers/)

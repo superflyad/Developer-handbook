@@ -1,4 +1,4 @@
-# Chapter 81 — Registries, Tags, Digests, and Image Provenance
+# Chapter 81: Registries, Tags, Digests, and Image Provenance
 
 A registry reference can look like a stable image identity while naming a mutable tag. A scanner can report no known critical vulnerabilities while describing yesterday's tag, an incomplete package inventory, or an artifact built by an untrusted workflow.
 
@@ -639,7 +639,7 @@ Avoid treating optional or unverifiable evidence as a mandatory gate; first esta
 
 ### How does this make me a better engineer?
 
-It teaches you to distinguish identity, origin, inventory, vulnerability observation, authorization, and naming instead of compressing them into “trusted image.”
+You can distinguish identity, origin, inventory, vulnerability observation, authorization, and naming instead of compressing them into “trusted image.”
 
 ### How does this reduce waste?
 
@@ -662,8 +662,8 @@ Verified images eventually become running processes. Chapter 82 follows the cont
 - [OCI Distribution Specification](https://github.com/opencontainers/distribution-spec/blob/main/spec.md)
 - [OCI Image Format Specification](https://github.com/opencontainers/image-spec)
 - [OCI Image Manifest Specification](https://github.com/opencontainers/image-spec/blob/main/manifest.md)
-- [SLSA v1.2 — Provenance](https://slsa.dev/spec/v1.2/provenance)
-- [SLSA v1.2 — Verifying artifacts](https://slsa.dev/spec/v1.2/verifying-artifacts)
-- [Sigstore Cosign — Verifying signatures](https://docs.sigstore.dev/cosign/verifying/verify/)
-- [CISA — Minimum Elements for an SBOM](https://www.cisa.gov/sites/default/files/2025-08/2025_CISA_SBOM_Minimum_Elements.pdf)
-- [NIST SP 800-190 — Application Container Security Guide](https://csrc.nist.gov/pubs/sp/800/190/final)
+- [SLSA v1.2: Provenance](https://slsa.dev/spec/v1.2/provenance)
+- [SLSA v1.2: Verifying artifacts](https://slsa.dev/spec/v1.2/verifying-artifacts)
+- [Sigstore Cosign: Verifying signatures](https://docs.sigstore.dev/cosign/verifying/verify/)
+- [CISA: Minimum Elements for an SBOM](https://www.cisa.gov/sites/default/files/2025-08/2025_CISA_SBOM_Minimum_Elements.pdf)
+- [NIST SP 800-190: Application Container Security Guide](https://csrc.nist.gov/pubs/sp/800/190/final)

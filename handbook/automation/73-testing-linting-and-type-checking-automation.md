@@ -1,4 +1,4 @@
-# Chapter 73 — Testing, Linting, and Type Checking Automation
+# Chapter 73: Testing, Linting, and Type Checking Automation
 
 Automation can change many systems quickly and without a person watching. A script that passes a happy-path demonstration may still delete the wrong objects, conceal a partial failure, or behave differently in a scheduler.
 
@@ -504,7 +504,7 @@ Avoid costly test layers that cannot exercise a meaningful contract, and avoid d
 
 ### How does this make me a better engineer?
 
-It teaches you to express invariants, isolate authority, design explicit boundaries, and distinguish confidence from evidence.
+You can express invariants, isolate authority, design explicit boundaries, and distinguish confidence from evidence.
 
 ### How does this reduce waste?
 

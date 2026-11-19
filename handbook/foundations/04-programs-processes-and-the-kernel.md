@@ -1,4 +1,4 @@
-# Chapter 4 — Programs, Processes, and the Kernel
+# Chapter 4: Programs, Processes, and the Kernel
 
 So far, the handbook has established three ideas:
 

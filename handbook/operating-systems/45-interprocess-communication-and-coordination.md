@@ -1,10 +1,10 @@
-# Chapter 45 — Interprocess Communication and Coordination
+# Chapter 45: Interprocess Communication and Coordination
 
 Process isolation prevents one program from casually reading or changing another's memory. Useful systems still need processes to exchange data, signal events, and coordinate ownership. Interprocess communication (IPC) creates explicit channels across that isolation boundary.
 
 The central idea is:
 
-> Choose IPC by data shape, lifetime, trust, flow control, and failure behavior—not by raw speed alone.
+> Choose IPC by data shape, lifetime, trust, flow control, and failure behavior, not by raw speed alone.
 
 ## 1. Communication and synchronization are separate needs
 

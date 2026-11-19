@@ -1,4 +1,4 @@
-# Chapter 76 — Scheduling, Concurrency, and Work Queues
+# Chapter 76: Scheduling, Concurrency, and Work Queues
 
 Making a command run every hour is easy. Deciding what happens after downtime, overlap, slow work, clock changes, worker crashes, or duplicate delivery is the engineering work.
 
@@ -540,7 +540,7 @@ Save it as `test_queue.py` in a disposable directory and run:
 python -m unittest -v test_queue.py
 ```
 
-The queue rejects a stale acknowledgement after lease expiry because the reclaimed job has a newer token. In a real distributed system, the protected resource—not only the queue—must also enforce a fencing token or equivalent conditional write.
+The queue rejects a stale acknowledgement after lease expiry because the reclaimed job has a newer token. In a real distributed system, the protected resource, not only the queue, must also enforce a fencing token or equivalent conditional write.
 
 The model is deliberately single-process and not thread-safe. Production claiming, acknowledgement, and token generation require transactional atomicity in a durable queue or database. Its purpose is to make the state transitions testable before introducing product syntax.
 
@@ -614,7 +614,7 @@ Avoid distributed queues and leases when one supervised local process with bound
 
 ### How does this make me a better engineer?
 
-It teaches you to reason about time, ownership generations, saturation, fairness, and duplicates as normal system states.
+You can reason about time, ownership generations, saturation, fairness, and duplicates as normal system states.
 
 ### How does this reduce waste?
 

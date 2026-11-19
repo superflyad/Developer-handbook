@@ -14,7 +14,11 @@ The project uses tagged editions for stable publication artifacts and records co
 - Updated references moved by the AWS Well-Architected Framework.
 - Pointed Linux kernel references at the current documentation host.
 
-## [1.0.0] — 2026-11-01
+### Changed
+
+- Standardized handbook headings and punctuation, removed formulaic chapter closings, and added an editorial check for em dashes.
+
+## [1.0.0]: 2026-11-01
 
 ### Added
 

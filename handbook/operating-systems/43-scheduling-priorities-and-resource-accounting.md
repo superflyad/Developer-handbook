@@ -1,4 +1,4 @@
-# Chapter 43 — Scheduling, Priorities, and Resource Accounting
+# Chapter 43: Scheduling, Priorities, and Resource Accounting
 
 A slow process is not necessarily waiting for CPU. It may be sleeping for disk, a network response, a lock, a timer, or another process. Scheduler reasoning begins by distinguishing runnable work from blocked work and CPU time from elapsed time.
 

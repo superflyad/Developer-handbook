@@ -1,4 +1,4 @@
-# Chapter 80 — Reproducible and Efficient Container Builds
+# Chapter 80: Reproducible and Efficient Container Builds
 
 A Dockerfile can produce a running image while still hiding mutable dependencies, leaking build context, retaining compilers and credentials, or changing output between identical source revisions. A build is a supply-chain transformation, not merely a packaging command.
 
@@ -613,7 +613,7 @@ Avoid complexity that lacks a measured build, security, or operational benefit, 
 
 ### How does this make me a better engineer?
 
-It teaches you to treat build systems as privileged dependency graphs and to distinguish fast output from trustworthy output.
+You can treat build systems as privileged dependency graphs and to distinguish fast output from trustworthy output.
 
 ### How does this reduce waste?
 
@@ -621,7 +621,7 @@ It prevents repeated dependency resolution, oversized images, leaked tools and s
 
 ## Handbook Principle #80
 
-> Pin every upstream identity, isolate build authority by stage, and prove the final runtime artifact—not merely the step that compiled it.
+> Pin every upstream identity, isolate build authority by stage, and prove the final runtime artifact, not merely the step that compiled it.
 
 ## Practical Observation
 
@@ -639,5 +639,5 @@ A reproducible image still needs distribution names, immutable registry identity
 - [Docker build secrets](https://docs.docker.com/build/building/secrets/)
 - [Docker build cache invalidation](https://docs.docker.com/build/cache/invalidation/)
 - [Docker build checks](https://docs.docker.com/reference/build-checks/)
-- [Reproducible Builds — `SOURCE_DATE_EPOCH`](https://reproducible-builds.org/specs/source-date-epoch/)
+- [Reproducible Builds: `SOURCE_DATE_EPOCH`](https://reproducible-builds.org/specs/source-date-epoch/)
 - [OCI Image Format Specification](https://github.com/opencontainers/image-spec)

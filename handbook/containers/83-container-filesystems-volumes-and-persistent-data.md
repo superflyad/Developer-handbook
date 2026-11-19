@@ -1,10 +1,10 @@
-# Chapter 83 — Container Filesystems, Volumes, and Persistent Data
+# Chapter 83: Container Filesystems, Volumes, and Persistent Data
 
 A process can write `/data/report.db` successfully without that data surviving container replacement. The pathname describes the view inside the container, not the storage lifetime, owner, durability, or backup boundary behind it.
 
 The central idea is:
 
-> Place every writable path according to its required lifetime and owner, and verify persistence by replacing the container and restoring the data—not by inspecting one running instance.
+> Place every writable path according to its required lifetime and owner, and verify persistence by replacing the container and restoring the data, not by inspecting one running instance.
 
 ## 1. Classify state before choosing a mount
 
@@ -575,7 +575,7 @@ Avoid local persistent volumes when the required availability, sharing, or failu
 
 ### How does this make me a better engineer?
 
-It teaches you to reason from data lifetime and consistency to storage choice instead of treating a container pathname as durability.
+You can reason from data lifetime and consistency to storage choice instead of treating a container pathname as durability.
 
 ### How does this reduce waste?
 
@@ -587,7 +587,7 @@ It prevents accidental data loss, orphaned volumes, permission workarounds, copy
 
 ## Practical Observation
 
-Run the filesystem model and then the disposable engine lab where available. Record which paths survive process restart, container replacement, volume removal, and host replacement. For durable data, produce a backup manifest, restore elsewhere, and validate it with the application—not only a checksum.
+Run the filesystem model and then the disposable engine lab where available. Record which paths survive process restart, container replacement, volume removal, and host replacement. For durable data, produce a backup manifest, restore elsewhere, and validate it with the application, not only a checksum.
 
 ## Looking Ahead
 
@@ -600,6 +600,6 @@ Storage mounts connect containers to data; network paths connect them to clients
 - [Docker Engine bind mounts](https://docs.docker.com/engine/storage/bind-mounts/)
 - [Docker Engine tmpfs mounts](https://docs.docker.com/engine/storage/tmpfs/)
 - [Docker Engine storage drivers](https://docs.docker.com/engine/storage/drivers/)
-- [Linux kernel documentation — Overlay Filesystem](https://docs.kernel.org/filesystems/overlayfs.html)
-- [OCI Runtime Specification — Mount configuration](https://specs.opencontainers.org/runtime-spec/config/#mounts)
+- [Linux kernel documentation: Overlay Filesystem](https://docs.kernel.org/filesystems/overlayfs.html)
+- [OCI Runtime Specification: Mount configuration](https://specs.opencontainers.org/runtime-spec/config/#mounts)
 - [Linux `fsync(2)` manual page](https://man7.org/linux/man-pages/man2/fsync.2.html)

@@ -1,4 +1,4 @@
-# Chapter 36 — A Complete Git Change Lifecycle
+# Chapter 36: A Complete Git Change Lifecycle
 
 A Git command is meaningful only in the state where it runs. This exercise follows one change from local work through a simulated review, integration, and rollback. It uses a temporary bare repository as `origin` and two disposable clones. No GitHub account, hosted PR, or change to this handbook is involved.
 

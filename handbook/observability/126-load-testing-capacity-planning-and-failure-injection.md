@@ -1,4 +1,4 @@
-# Chapter 126 — Load Testing, Capacity Planning, and Failure Injection
+# Chapter 126: Load Testing, Capacity Planning, and Failure Injection
 
 A system is not ready merely because it handles today's average traffic. It must satisfy its user contract during peaks, growth, dependency loss, deployments, cache churn, and the delay before new capacity becomes useful. Load testing turns those expectations into experiments. Capacity planning converts the evidence into operating headroom. Failure injection verifies that the system degrades and recovers as designed.
 
@@ -103,7 +103,7 @@ Use named phases:
 6. observe recovery and drain;
 7. return to baseline and verify cleanup.
 
-Define “warm” with evidence—stable compilation activity, cache hit ratio, connection count, and latency—not an arbitrary sleep. Run separate cold-start, empty-cache, and scale-from-minimum scenarios when those transitions matter in production.
+Define “warm” with evidence such as stable compilation activity, cache hit ratio, connection count, and latency rather than an arbitrary sleep. Run separate cold-start, empty-cache, and scale-from-minimum scenarios when those transitions matter in production.
 
 ## 7. Measure distributions and bad outcomes
 
@@ -632,12 +632,12 @@ Chapter 127 turns the SLO, capacity, failure, and recovery signals into incident
 
 ## References
 
-- [Grafana k6 documentation — Open and closed models](https://grafana.com/docs/k6/latest/using-k6/scenarios/concepts/open-vs-closed/)
-- [Google SRE — Production Services Best Practices](https://sre.google/sre-book/service-best-practices/)
-- [Google SRE — Addressing Cascading Failures](https://sre.google/sre-book/addressing-cascading-failures/)
-- [Google SRE — Launch Coordination Checklist](https://sre.google/sre-book/launch-checklist/)
-- [Kubernetes documentation — Horizontal Pod Autoscaling](https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/)
+- [Grafana k6 documentation: Open and closed models](https://grafana.com/docs/k6/latest/using-k6/scenarios/concepts/open-vs-closed/)
+- [Google SRE: Production Services Best Practices](https://sre.google/sre-book/service-best-practices/)
+- [Google SRE: Addressing Cascading Failures](https://sre.google/sre-book/addressing-cascading-failures/)
+- [Google SRE: Launch Coordination Checklist](https://sre.google/sre-book/launch-checklist/)
+- [Kubernetes documentation: Horizontal Pod Autoscaling](https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/)
 - [Principles of Chaos Engineering](https://principlesofchaos.org/)
-- [Chapter 114 — Resilience, Timeouts, Retries, and Failure Containment](../system-design/114-resilience-timeouts-retries-and-failure-containment.md)
-- [Chapter 121 — Metrics, SLIs, SLOs, and Actionable Alerts](121-metrics-slis-slos-and-actionable-alerts.md)
-- [Chapter 125 — I/O, Network, and Database Performance](125-io-network-and-database-performance.md)
+- [Chapter 114: Resilience, Timeouts, Retries, and Failure Containment](../system-design/114-resilience-timeouts-retries-and-failure-containment.md)
+- [Chapter 121: Metrics, SLIs, SLOs, and Actionable Alerts](121-metrics-slis-slos-and-actionable-alerts.md)
+- [Chapter 125: I/O, Network, and Database Performance](125-io-network-and-database-performance.md)

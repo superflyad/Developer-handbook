@@ -4,7 +4,7 @@ This file records durable decisions about how the Developer Handbook is designed
 
 Each decision includes its status, context, decision, and consequences. Replaced decisions remain in the history rather than disappearing.
 
-## ADR-001 — Treat the handbook as a living system
+## ADR-001: Treat the handbook as a living system
 
 **Status:** Accepted
 
@@ -22,7 +22,7 @@ The handbook will be continuously revised. Existing chapters should be improved 
 - Git history preserves how guidance evolved.
 - Corrections are expected and documented rather than hidden.
 
-## ADR-002 — Teach principles before commands
+## ADR-002: Teach principles before commands
 
 **Status:** Accepted
 
@@ -40,7 +40,7 @@ Introduce the problem, system model, and design rationale before teaching comman
 - Chapters may intentionally defer procedures until prerequisites are established.
 - Commands are taught as interfaces to known mechanisms rather than magic incantations.
 
-## ADR-003 — Use GitHub pull requests as the publication workflow
+## ADR-003: Use GitHub pull requests as the publication workflow
 
 **Status:** Accepted
 
@@ -59,7 +59,7 @@ Published changes flow through feature branches and pull requests. Draft pull re
 - Changes have reviewable scope and durable history.
 - Approved changes are normally squash-merged into `main`.
 
-## ADR-004 — Organize published material into Parts and Chapters
+## ADR-004: Organize published material into Parts and Chapters
 
 **Status:** Accepted
 
@@ -77,7 +77,7 @@ Published content uses **Part** and **Chapter** terminology. **Lesson** may desc
 - Future chapter titles use `Chapter N` internally where numbered headings are appropriate.
 - Existing content may be standardized during editorial revisions.
 
-## ADR-005 — Use Unix as a vehicle for transferable engineering concepts
+## ADR-005: Use Unix as a vehicle for transferable engineering concepts
 
 **Status:** Accepted
 
@@ -95,7 +95,7 @@ Unix chapters must surface reusable concepts such as process isolation, stable i
 - The handbook avoids becoming a catalog of Unix trivia.
 - A planned Engineering Patterns appendix collects recurring principles.
 
-## ADR-006 — Make Markdown the canonical source
+## ADR-006: Make Markdown the canonical source
 
 **Status:** Accepted
 
@@ -113,7 +113,7 @@ Markdown in this repository is the source of truth. Other formats are generated 
 - Publication tooling can evolve without rewriting the source.
 - Generated outputs should not be edited independently.
 
-## ADR-007 — Separate discussion, drafting, publishing, and merging
+## ADR-007: Separate discussion, drafting, publishing, and merging
 
 **Status:** Accepted
 
@@ -136,7 +136,7 @@ Use these workflow meanings:
 - Completion claims must be backed by actual tool results.
 - PR links are returned only after GitHub confirms creation.
 
-## ADR-008 — Prefer focused, coherent pull requests
+## ADR-008: Prefer focused, coherent pull requests
 
 **Status:** Accepted
 
@@ -154,7 +154,7 @@ Each pull request should represent one coherent chapter, related chapter pair, s
 - Unrelated changes are separated.
 - Commit and PR history should communicate the handbook's evolution clearly.
 
-## ADR-009 — Progress from command literacy to integrated Unix workflows
+## ADR-009: Progress from command literacy to integrated Unix workflows
 
 **Status:** Accepted
 
@@ -181,7 +181,7 @@ The learning roadmap records an explicit purpose, included scope, deferred scope
 - Filesystem and operating-system internals remain in Part IV unless Part II needs a concise practical explanation.
 - Chapter 23 must integrate the skills from Part II and establish the boundary between interactive work and automation.
 
-## ADR-010 — Define the first edition as Chapters 1–129
+## ADR-010: Define the first edition as Chapters 1–129
 
 **Status:** Accepted
 
@@ -193,12 +193,12 @@ The handbook is intentionally a living system, but an indefinitely expanding roa
 
 The first edition consists of Chapters 1 through 129 plus the unnumbered Engineering Patterns appendix. Parts V through X contain exactly 80 planned chapters:
 
-1. Part V — Networking: Chapters 50–63
-2. Part VI — Automation and Scripting: Chapters 64–77
-3. Part VII — Docker and Containers: Chapters 78–89
-4. Part VIII — AWS and Cloud-Native Development: Chapters 90–105
-5. Part IX — System Design: Chapters 106–117
-6. Part X — Performance, Debugging, and Observability: Chapters 118–129
+1. Part V: Networking: Chapters 50–63
+2. Part VI: Automation and Scripting: Chapters 64–77
+3. Part VII: Docker and Containers: Chapters 78–89
+4. Part VIII: AWS and Cloud-Native Development: Chapters 90–105
+5. Part IX: System Design: Chapters 106–117
+6. Part X: Performance, Debugging, and Observability: Chapters 118–129
 
 `LEARNING_ROADMAP.md` is the authoritative source for each chapter's purpose, included scope, deferred scope, outcome, dependencies, and part completion boundary.
 
@@ -210,7 +210,7 @@ The first edition consists of Chapters 1 through 129 plus the unnumbered Enginee
 - A new chapter number requires a deliberate roadmap and architecture decision, not merely a newly encountered tool or product.
 - First-edition release still requires cross-book technical and editorial review, verified examples, publication tooling, and a tagged release after the chapter drafts exist.
 
-## ADR-011 — Publish one source through distinct reading and release surfaces
+## ADR-011: Publish one source through distinct reading and release surfaces
 
 **Status:** Accepted
 

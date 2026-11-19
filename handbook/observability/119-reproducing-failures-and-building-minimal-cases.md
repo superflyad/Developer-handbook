@@ -1,4 +1,4 @@
-# Chapter 119 — Reproducing Failures and Building Minimal Cases
+# Chapter 119: Reproducing Failures and Building Minimal Cases
 
 A reproduction converts a one-time observation into a repeatable experiment. A minimal case removes everything not required for the same failure mechanism. Together they make a bug safe to study, cheap to share, and permanent as a regression fixture.
 
@@ -140,7 +140,7 @@ Race conditions depend on ordering. Arbitrary sleeps make the window wider but r
 
 For deadlocks, coordinate each participant to hold one resource before requesting the other. For queue races, pause between message claim and acknowledgement. For initialization races, barrier concurrent first requests.
 
-Instrumentation can change scheduling—the observer effect. Keep a lower-intrusion mode and compare the original signature. Stress repetition, scheduler variation, sanitizers, and record/replay tools may help, but each has boundaries.
+Instrumentation can change scheduling. This is the observer effect. Keep a lower-intrusion mode and compare the original signature. Stress repetition, scheduler variation, sanitizers, and record/replay tools may help, but each has boundaries.
 
 ## 9. Capture data shape without copying sensitive data
 
@@ -537,10 +537,10 @@ Chapter 120 designs logs as bounded structured evidence so a failed request can 
 
 ## References
 
-- [Chromium — Bug reporting guidelines](https://www.chromium.org/for-testers/bug-reporting-guidelines/)
-- [Chromium — Reproducing ClusterFuzz bugs](https://www.chromium.org/Home/chromium-security/bugs/reproducing-clusterfuzz-bugs/)
-- [Git documentation — git-bisect](https://git-scm.com/docs/git-bisect)
-- [Python documentation — Notes on reproducibility for random](https://docs.python.org/3/library/random.html#notes-on-reproducibility)
-- [Docker documentation — Build context](https://docs.docker.com/build/concepts/context/)
-- [Docker documentation — Building best practices](https://docs.docker.com/build/building/best-practices/)
-- [Chapter 118 — Debugging as Hypothesis Testing](118-debugging-as-hypothesis-testing.md)
+- [Chromium: Bug reporting guidelines](https://www.chromium.org/for-testers/bug-reporting-guidelines/)
+- [Chromium: Reproducing ClusterFuzz bugs](https://www.chromium.org/Home/chromium-security/bugs/reproducing-clusterfuzz-bugs/)
+- [Git documentation: git-bisect](https://git-scm.com/docs/git-bisect)
+- [Python documentation: Notes on reproducibility for random](https://docs.python.org/3/library/random.html#notes-on-reproducibility)
+- [Docker documentation: Build context](https://docs.docker.com/build/concepts/context/)
+- [Docker documentation: Building best practices](https://docs.docker.com/build/building/best-practices/)
+- [Chapter 118: Debugging as Hypothesis Testing](118-debugging-as-hypothesis-testing.md)

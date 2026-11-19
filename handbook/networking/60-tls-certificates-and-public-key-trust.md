@@ -1,4 +1,4 @@
-# Chapter 60 — TLS, Certificates, and Public-Key Trust
+# Chapter 60: TLS, Certificates, and Public-Key Trust
 
 Transport Layer Security (TLS) protects application data against passive observation, undetected modification, and message forgery while authenticating one or both endpoints according to an application trust model. It does not decide whether the application or its data is trustworthy.
 
@@ -179,7 +179,7 @@ TLS provides a general protected channel. Chapter 61 examines SSH, which combine
 
 ## References
 
-- [RFC 9846 — The Transport Layer Security (TLS) Protocol Version 1.3](https://www.rfc-editor.org/rfc/rfc9846)
-- [RFC 5280 — Internet X.509 Public Key Infrastructure Certificate and CRL Profile](https://www.rfc-editor.org/rfc/rfc5280)
-- [RFC 9525 — Service Identity in TLS](https://www.rfc-editor.org/rfc/rfc9525)
-- [RFC 9325 — Recommendations for Secure Use of TLS and DTLS](https://www.rfc-editor.org/rfc/rfc9325)
+- [RFC 9846: The Transport Layer Security (TLS) Protocol Version 1.3](https://www.rfc-editor.org/rfc/rfc9846)
+- [RFC 5280: Internet X.509 Public Key Infrastructure Certificate and CRL Profile](https://www.rfc-editor.org/rfc/rfc5280)
+- [RFC 9525: Service Identity in TLS](https://www.rfc-editor.org/rfc/rfc9525)
+- [RFC 9325: Recommendations for Secure Use of TLS and DTLS](https://www.rfc-editor.org/rfc/rfc9325)

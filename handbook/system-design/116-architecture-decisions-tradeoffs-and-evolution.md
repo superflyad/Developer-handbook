@@ -1,4 +1,4 @@
-# Chapter 116 — Architecture Decisions, Tradeoffs, and Evolution
+# Chapter 116: Architecture Decisions, Tradeoffs, and Evolution
 
 An architecture is a sequence of decisions made with incomplete information. Requirements change, traffic grows, incidents expose false assumptions, products disappear, regulations shift, and teams learn. A design that cannot evolve safely becomes a constraint even if it was correct when chosen.
 
@@ -556,10 +556,10 @@ Chapter 117 integrates the complete Part IX method into one system design review
 
 ## References
 
-- [AWS Prescriptive Guidance — Architectural decision record process](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html)
-- [AWS Prescriptive Guidance — Best practices for architectural decision records](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html)
-- [The GDS Way — Documenting architecture decisions](https://gds-way.digital.cabinet-office.gov.uk/standards/architecture-decisions.html)
+- [AWS Prescriptive Guidance: Architectural decision record process](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/adr-process.html)
+- [AWS Prescriptive Guidance: Best practices for architectural decision records](https://docs.aws.amazon.com/prescriptive-guidance/latest/architectural-decision-records/best-practices.html)
+- [The GDS Way: Documenting architecture decisions](https://gds-way.digital.cabinet-office.gov.uk/standards/architecture-decisions.html)
 - [Architectural Decision Records organization](https://adr.github.io/)
-- [Thoughtworks — Fitness function-driven development](https://www.thoughtworks.com/insights/articles/fitness-function-driven-development)
-- [RFC 9745 — The Deprecation HTTP Response Header Field](https://www.rfc-editor.org/rfc/rfc9745.html)
-- [RFC 8594 — The Sunset HTTP Header Field](https://www.rfc-editor.org/rfc/rfc8594.html)
+- [Thoughtworks: Fitness function-driven development](https://www.thoughtworks.com/insights/articles/fitness-function-driven-development)
+- [RFC 9745: The Deprecation HTTP Response Header Field](https://www.rfc-editor.org/rfc/rfc9745.html)
+- [RFC 8594: The Sunset HTTP Header Field](https://www.rfc-editor.org/rfc/rfc8594.html)

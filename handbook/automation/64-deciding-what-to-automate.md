@@ -1,4 +1,4 @@
-# Chapter 64 — Deciding What to Automate
+# Chapter 64: Deciding What to Automate
 
 Automation multiplies a procedure. If the procedure is understood and bounded, that multiplication creates consistency and capacity. If it is unstable or wrong, automation spreads ambiguity and damage faster.
 
@@ -251,7 +251,7 @@ Automation is **policy encoded as a repeatable state transition**. A sound desig
 
 ## From the Field
 
-A team automates deletion of “unused” cloud volumes using age alone. The script removes dormant disaster-recovery data because the manual operator had always checked backup inventory and legal holds—an undocumented judgment step. Replacing deletion with evidence collection and a reviewed candidate plan reveals the missing policy; only then can tightly scoped deletion cases be automated.
+A team automates deletion of “unused” cloud volumes using age alone. The script removes dormant disaster-recovery data because the manual operator had also checked backup inventory and legal holds, a judgment the script did not capture. Replacing deletion with evidence collection and a reviewed candidate plan reveals the missing policy; only then can tightly scoped deletion cases be automated.
 
 ## Engineering Review
 
@@ -273,7 +273,7 @@ Do not use a score or time calculation to override unresolved policy, essential 
 
 ### How does this make me a better engineer?
 
-It makes you design the state transition and ownership model before choosing a language or tool.
+You can design the state transition and ownership model before choosing a language or tool.
 
 ### How does this reduce waste?
 
@@ -293,6 +293,6 @@ Once a bounded task is worth automating, execution details become part of its co
 
 ## References
 
-- [Google SRE Book — Eliminating Toil](https://sre.google/sre-book/eliminating-toil/)
-- [Google SRE Book — The Evolution of Automation at Google](https://sre.google/sre-book/automation-at-google/)
-- [Google SRE Workbook — Eliminating Toil](https://sre.google/workbook/eliminating-toil/)
+- [Google SRE Book: Eliminating Toil](https://sre.google/sre-book/eliminating-toil/)
+- [Google SRE Book: The Evolution of Automation at Google](https://sre.google/sre-book/automation-at-google/)
+- [Google SRE Workbook: Eliminating Toil](https://sre.google/workbook/eliminating-toil/)

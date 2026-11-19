@@ -1,4 +1,4 @@
-# Chapter 105 — Infrastructure as Code and a Complete AWS Delivery Lifecycle
+# Chapter 105: Infrastructure as Code and a Complete AWS Delivery Lifecycle
 
 A template can be syntactically valid and still replace a database. A plan can be approved and become stale before it runs. A deployment can report success while customers cannot complete the business operation. A retained bucket can survive teardown and quietly incur charges for years.
 
@@ -67,7 +67,7 @@ An S3 backend can use a lock file and should use S3 versioning for recovery. Do 
 
 ### Do not create two writers
 
-One resource must have one authoritative infrastructure owner. Do not let Terraform manage a security group while CloudFormation also manages its rules, or let a console automation continuously overwrite a property owned by a stack. Cross-tool references should use stable published interfaces such as parameter names, DNS names, event contracts, or deliberately governed remote outputs—not shared mutation.
+One resource must have one authoritative infrastructure owner. Do not let Terraform manage a security group while CloudFormation also manages its rules, or let a console automation continuously overwrite a property owned by a stack. Cross-tool references should use stable published interfaces such as parameter names, DNS names, event contracts, or deliberately governed remote outputs, not shared mutation.
 
 If ownership moves between tools, design an adoption migration: inventory the live object, protect data, import or adopt it, compare every property, remove the old owner without deleting the object, and prove the new owner can plan a no-op before changing it.
 
@@ -689,11 +689,11 @@ Use this lifecycle for every shared or production AWS system and scale the contr
 
 ### When should I avoid it?
 
-Avoid copying enterprise ceremony into a disposable individual lab. Keep the same invariants—isolated target, bounded cost, no sensitive data, visible plan, and verified teardown—using lighter mechanisms.
+Avoid copying enterprise ceremony into a disposable individual lab. Keep the same invariants: isolated target, bounded cost, no sensitive data, visible plan, and verified teardown. Use lighter mechanisms.
 
 ### How does this make me a better engineer?
 
-It teaches you to reason about change as a state transition, review generated consequences, bind approval to immutable evidence, and treat recovery and removal as design work.
+You can reason about change as a state transition, review generated consequences, bind approval to immutable evidence, and treat recovery and removal as design work.
 
 ### How does this reduce waste?
 
@@ -717,23 +717,23 @@ Part IX steps back from one cloud and develops system design as a disciplined re
 
 ## References
 
-- [AWS CloudFormation — Change sets](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html)
-- [AWS CloudFormation — Drift detection](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html)
-- [AWS CloudFormation — Drift-aware change sets](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/drift-aware-change-sets.html)
-- [AWS CloudFormation — Stack policies](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html)
-- [AWS CloudFormation — Resource import](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html)
-- [AWS CloudFormation — `DeletionPolicy`](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-attribute-deletionpolicy.html)
-- [AWS CloudFormation — `UpdateReplacePolicy`](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-attribute-updatereplacepolicy.html)
-- [AWS CDK — Deploy applications](https://docs.aws.amazon.com/cdk/v2/guide/deploy.html)
-- [AWS CDK — Configure environments](https://docs.aws.amazon.com/cdk/v2/guide/configure-env.html)
-- [AWS CDK — Bootstrap environments](https://docs.aws.amazon.com/cdk/v2/guide/bootstrapping-env.html)
-- [Terraform — Purpose of state](https://developer.hashicorp.com/terraform/language/state/purpose)
-- [Terraform — Create a plan](https://developer.hashicorp.com/terraform/cli/commands/plan)
-- [Terraform — State locking](https://developer.hashicorp.com/terraform/language/state/locking)
-- [Terraform — S3 backend](https://developer.hashicorp.com/terraform/language/backend/s3)
-- [Terraform — Manage sensitive data](https://developer.hashicorp.com/terraform/language/manage-sensitive-data)
-- [Terraform — Module development](https://developer.hashicorp.com/terraform/language/modules/develop)
-- [AWS Well-Architected — Back up data](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/back-up-data.html)
-- [AWS Backup — Restore testing](https://docs.aws.amazon.com/aws-backup/latest/devguide/restore-testing.html)
-- [AWS Budgets — Managing costs](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html)
-- [Chapter 104 — Encryption, Secrets, Configuration, and Cloud Observability](104-encryption-secrets-configuration-and-cloud-observability.md)
+- [AWS CloudFormation: Change sets](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html)
+- [AWS CloudFormation: Drift detection](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html)
+- [AWS CloudFormation: Drift-aware change sets](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/drift-aware-change-sets.html)
+- [AWS CloudFormation: Stack policies](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html)
+- [AWS CloudFormation: Resource import](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import.html)
+- [AWS CloudFormation: `DeletionPolicy`](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-attribute-deletionpolicy.html)
+- [AWS CloudFormation: `UpdateReplacePolicy`](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-attribute-updatereplacepolicy.html)
+- [AWS CDK: Deploy applications](https://docs.aws.amazon.com/cdk/v2/guide/deploy.html)
+- [AWS CDK: Configure environments](https://docs.aws.amazon.com/cdk/v2/guide/configure-env.html)
+- [AWS CDK: Bootstrap environments](https://docs.aws.amazon.com/cdk/v2/guide/bootstrapping-env.html)
+- [Terraform: Purpose of state](https://developer.hashicorp.com/terraform/language/state/purpose)
+- [Terraform: Create a plan](https://developer.hashicorp.com/terraform/cli/commands/plan)
+- [Terraform: State locking](https://developer.hashicorp.com/terraform/language/state/locking)
+- [Terraform: S3 backend](https://developer.hashicorp.com/terraform/language/backend/s3)
+- [Terraform: Manage sensitive data](https://developer.hashicorp.com/terraform/language/manage-sensitive-data)
+- [Terraform: Module development](https://developer.hashicorp.com/terraform/language/modules/develop)
+- [AWS Well-Architected: Back up data](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/back-up-data.html)
+- [AWS Backup: Restore testing](https://docs.aws.amazon.com/aws-backup/latest/devguide/restore-testing.html)
+- [AWS Budgets: Managing costs](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html)
+- [Chapter 104: Encryption, Secrets, Configuration, and Cloud Observability](104-encryption-secrets-configuration-and-cloud-observability.md)

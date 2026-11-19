@@ -1,4 +1,4 @@
-# Chapter 37 — Filesystems as Namespaces and Persistent State
+# Chapter 37: Filesystems as Namespaces and Persistent State
 
 A path looks like a file's identity, but it is an instruction for finding an object through a namespace. The distinction matters whenever a file is renamed, deleted while open, mounted from another volume, or accessed through more than one name.
 

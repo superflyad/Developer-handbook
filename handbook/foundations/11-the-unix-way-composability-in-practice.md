@@ -1,4 +1,4 @@
-# Chapter 11 — The Unix Way: Composability in Practice
+# Chapter 11: The Unix Way: Composability in Practice
 
 Part I began with the idea that Unix developers compose small tools through stable interfaces. The intervening chapters supplied the machinery behind that idea: files, processes, the kernel, shells, terminals, identities, standard streams, pipes, and environments.
 
@@ -530,7 +530,7 @@ The transferable skill is not memorizing filters. It is designing explicit respo
 
 ## From the Field
 
-A release workflow grows from one interactive pipeline. Months later it downloads metadata, rewrites configuration, uploads artifacts, deploys services, and posts notifications—all in one shell line.
+A release workflow grows from one interactive pipeline. Months later it downloads metadata, rewrites configuration, uploads artifacts, deploys services, and posts notifications in one shell line.
 
 An upload fails halfway through. The final notification command succeeds, so the pipeline reports success. A retry duplicates an earlier side effect. No intermediate state was preserved, and diagnostics were mixed into the data stream.
 
@@ -558,7 +558,7 @@ Avoid stretching a simple stream pipeline across requirements that need transact
 
 ### How does this make me a better engineer?
 
-It teaches you to design around responsibilities, interfaces, data representation, failure semantics, state, and operational boundaries rather than around familiar tools.
+You can design around responsibilities, interfaces, data representation, failure semantics, state, and operational boundaries rather than around familiar tools.
 
 ### How does this reduce waste?
 
@@ -566,7 +566,7 @@ Reusable stages eliminate duplicated work, while explicit contracts and appropri
 
 ## Handbook Principle #11
 
-> Compose systems at stable boundaries, preserve the information required for correctness, and let guarantees—not cleverness—determine the size of the solution.
+> Compose systems at stable boundaries, preserve the information required for correctness, and let guarantees rather than cleverness determine the size of the solution.
 
 ## Practical Observation
 

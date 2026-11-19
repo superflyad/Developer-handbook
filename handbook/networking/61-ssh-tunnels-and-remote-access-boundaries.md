@@ -1,4 +1,4 @@
-# Chapter 61 — SSH, Tunnels, and Remote Access Boundaries
+# Chapter 61: SSH, Tunnels, and Remote Access Boundaries
 
 Secure Shell (SSH) combines an encrypted transport, server host authentication, client user authentication, and multiplexed channels for remote commands, file transfer, and forwarding. Each function crosses a distinct trust boundary.
 
@@ -154,7 +154,7 @@ Avoid ad hoc SSH tunnels as undocumented permanent infrastructure or unrestricte
 
 ### How does this make me a better engineer?
 
-It teaches you to name both authenticated parties and trace where every command, credential operation, and forwarded connection actually executes.
+You can name both authenticated parties and trace where every command, credential operation, and forwarded connection actually executes.
 
 ### How does this reduce waste?
 
@@ -174,8 +174,8 @@ SSH can intentionally proxy selected traffic. Chapter 62 broadens the view to fi
 
 ## References
 
-- [RFC 4251 — The Secure Shell (SSH) Protocol Architecture](https://www.rfc-editor.org/rfc/rfc4251)
-- [RFC 4252 — The Secure Shell (SSH) Authentication Protocol](https://www.rfc-editor.org/rfc/rfc4252)
-- [RFC 4253 — The Secure Shell (SSH) Transport Layer Protocol](https://www.rfc-editor.org/rfc/rfc4253)
+- [RFC 4251: The Secure Shell (SSH) Protocol Architecture](https://www.rfc-editor.org/rfc/rfc4251)
+- [RFC 4252: The Secure Shell (SSH) Authentication Protocol](https://www.rfc-editor.org/rfc/rfc4252)
+- [RFC 4253: The Secure Shell (SSH) Transport Layer Protocol](https://www.rfc-editor.org/rfc/rfc4253)
 - [OpenBSD `ssh(1)` manual](https://man.openbsd.org/ssh)
 - [OpenBSD `ssh_config(5)` manual](https://man.openbsd.org/ssh_config)

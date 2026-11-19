@@ -1,4 +1,4 @@
-# Chapter 41 — Space, Allocation, Caching, and Durability
+# Chapter 41: Space, Allocation, Caching, and Durability
 
 A successful write can be visible to the application before it is durable on storage. A one-terabyte logical file can consume almost no blocks, while a deleted file can continue consuming space. Storage measurements answer different questions and must not be treated as interchangeable.
 
@@ -120,7 +120,7 @@ Avoid forcing flushes or deleting files based on one metric without understandin
 
 ### How does this make me a better engineer?
 
-It makes you state which bytes are allocated, visible, ordered, and durable at each boundary.
+You can state which bytes are allocated, visible, ordered, and durable at each boundary.
 
 ### How does this reduce waste?
 

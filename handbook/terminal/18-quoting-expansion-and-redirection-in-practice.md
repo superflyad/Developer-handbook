@@ -1,4 +1,4 @@
-# Chapter 18 — Quoting, Expansion, and Redirection in Practice
+# Chapter 18: Quoting, Expansion, and Redirection in Practice
 
 The shell command line is source code. Before a utility receives arguments, the shell parses syntax, performs expansions, removes quoting syntax, and establishes redirections.
 

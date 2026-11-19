@@ -1,4 +1,4 @@
-# Chapter 59 — HTTP Semantics and API Behavior
+# Chapter 59: HTTP Semantics and API Behavior
 
 HTTP is an application protocol for asking a recipient to act on a resource and return a response. Its familiar text-like vocabulary can hide precise rules about methods, representations, caching, retries, and intermediaries.
 
@@ -200,9 +200,9 @@ HTTPS carries HTTP through a protected channel, but protection depends on crypto
 
 ## References
 
-- [RFC 9110 — HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110)
-- [RFC 9111 — HTTP Caching](https://www.rfc-editor.org/rfc/rfc9111)
-- [RFC 9112 — HTTP/1.1](https://www.rfc-editor.org/rfc/rfc9112)
-- [RFC 9113 — HTTP/2](https://www.rfc-editor.org/rfc/rfc9113)
-- [RFC 9114 — HTTP/3](https://www.rfc-editor.org/rfc/rfc9114)
-- [RFC 9205 — Building Protocols with HTTP](https://www.rfc-editor.org/rfc/rfc9205)
+- [RFC 9110: HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110)
+- [RFC 9111: HTTP Caching](https://www.rfc-editor.org/rfc/rfc9111)
+- [RFC 9112: HTTP/1.1](https://www.rfc-editor.org/rfc/rfc9112)
+- [RFC 9113: HTTP/2](https://www.rfc-editor.org/rfc/rfc9113)
+- [RFC 9114: HTTP/3](https://www.rfc-editor.org/rfc/rfc9114)
+- [RFC 9205: Building Protocols with HTTP](https://www.rfc-editor.org/rfc/rfc9205)

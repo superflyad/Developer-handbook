@@ -5,9 +5,9 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-0b7189.svg)](LICENSE)
 [![Read online](https://img.shields.io/badge/read-online-06b6d4.svg)](https://superflyad.github.io/Developer-handbook/)
 
-![The Developer Handbook — Systems thinking for working engineers](assets/social-preview.png)
+![The Developer Handbook: Systems thinking for working engineers](assets/social-preview.png)
 
-An open-source, systems-first guide to becoming a stronger software engineer—from Unix and Git to networking, containers, cloud architecture, system design, and production debugging.
+An open-source, systems-first guide to becoming a stronger software engineer. It covers Unix and Git, networking, containers, cloud architecture, system design, and production debugging.
 
 > **Understand systems. Build mental models. Automate everything worth repeating.**
 
@@ -16,7 +16,7 @@ An open-source, systems-first guide to becoming a stronger software engineer—f
 | Experience | Where to begin |
 | --- | --- |
 | Read the complete handbook | **[Open the searchable web edition](https://superflyad.github.io/Developer-handbook/)** |
-| Build the foundations in order | [Chapter 1 — Thinking Like a Unix Developer](handbook/foundations/01-thinking-like-a-unix-developer.md) |
+| Build the foundations in order | [Chapter 1: Thinking Like a Unix Developer](handbook/foundations/01-thinking-like-a-unix-developer.md) |
 | Choose a focused learning path | [Learning Roadmap](LEARNING_ROADMAP.md) |
 | Understand the teaching method | [How to Use This Handbook](HOW_TO_USE_THIS_HANDBOOK.md) |
 | Download PDF, EPUB, DOCX, HTML, or Markdown | [Latest release](https://github.com/superflyad/Developer-handbook/releases/latest) |

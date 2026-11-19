@@ -1,4 +1,4 @@
-# Chapter 14 — Safe File and Directory Operations
+# Chapter 14: Safe File and Directory Operations
 
 Navigation establishes context. File operations change persistent names and content, so their scope, overwrite behavior, and recovery path must be understood before execution.
 
@@ -320,7 +320,7 @@ Avoid basic commands when the job needs transactions, synchronization, durable b
 
 ### How does this make me a better engineer?
 
-It teaches you to reason about scope, state-dependent behavior, atomicity, and recovery before mutation.
+You can reason about scope, state-dependent behavior, atomicity, and recovery before mutation.
 
 ### How does this reduce waste?
 

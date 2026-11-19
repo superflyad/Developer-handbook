@@ -1,4 +1,4 @@
-# Chapter 12 — Command-Line Grammar and Getting Help
+# Chapter 12: Command-Line Grammar and Getting Help
 
 Part I explained what the shell, processes, streams, and environment are. Part II begins by learning how to investigate commands without treating their syntax as magic.
 

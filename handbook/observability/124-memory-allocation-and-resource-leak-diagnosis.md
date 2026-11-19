@@ -1,4 +1,4 @@
-# Chapter 124 — Memory, Allocation, and Resource-Leak Diagnosis
+# Chapter 124: Memory, Allocation, and Resource-Leak Diagnosis
 
 A process that uses more memory than expected does not necessarily leak, and a process with a stable managed heap can still approach its memory limit. Live objects, allocation churn, native arenas, mapped files, shared pages, runtime metadata, thread stacks, buffers, allocator fragmentation, file descriptors, sockets, and GPU or device resources all contribute differently.
 
@@ -225,7 +225,7 @@ Measure:
 - counts per operation, tenant, pool, or dependency;
 - cleanup on success, error, cancellation, timeout, and retry.
 
-Use structured ownership constructs—context managers, `defer`, `finally`, RAII, or equivalent—but test exceptional paths. A wrapper collected by a runtime may still leave a native resource open until delayed finalization.
+Use structured ownership constructs such as context managers, `defer`, `finally`, or RAII, and test exceptional paths. A wrapper collected by a runtime may still leave a native resource open until delayed finalization.
 
 An increasing descriptor count can be the clearest evidence even when heap profiles are inconclusive.
 
@@ -595,10 +595,10 @@ Chapter 125 follows latency through I/O queues, network round trips, connection 
 
 ## References
 
-- [Linux kernel documentation — The `/proc` filesystem](https://docs.kernel.org/filesystems/proc.html)
-- [Microsoft Learn — Working Set](https://learn.microsoft.com/en-us/windows/win32/memory/working-set)
-- [Microsoft Learn — Memory Performance Information](https://learn.microsoft.com/en-us/windows/win32/memory/memory-performance-information)
-- [Go documentation — Diagnostics](https://go.dev/doc/diagnostics)
+- [Linux kernel documentation: The `/proc` filesystem](https://docs.kernel.org/filesystems/proc.html)
+- [Microsoft Learn: Working Set](https://learn.microsoft.com/en-us/windows/win32/memory/working-set)
+- [Microsoft Learn: Memory Performance Information](https://learn.microsoft.com/en-us/windows/win32/memory/memory-performance-information)
+- [Go documentation: Diagnostics](https://go.dev/doc/diagnostics)
 - [Go runtime pprof package](https://pkg.go.dev/runtime/pprof)
-- [Python documentation — `tracemalloc`](https://docs.python.org/3/library/tracemalloc.html)
-- [Chapter 123 — CPU Profiling and Concurrency Bottlenecks](123-cpu-profiling-and-concurrency-bottlenecks.md)
+- [Python documentation: `tracemalloc`](https://docs.python.org/3/library/tracemalloc.html)
+- [Chapter 123: CPU Profiling and Concurrency Bottlenecks](123-cpu-profiling-and-concurrency-bottlenecks.md)

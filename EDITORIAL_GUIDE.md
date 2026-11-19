@@ -87,6 +87,14 @@ Prioritize concepts that remain useful when tools, versions, and vendors change.
 
 Avoid memorable claims that are only approximately true. Qualify simplifications and distinguish mental models from exact implementations.
 
+### Write directly
+
+Prefer a specific observation, mechanism, or decision over a generic claim about what a chapter teaches. Remove repeated stock phrases and self-referential transitions when the surrounding explanation already makes the point. Keep the six review questions useful rather than giving them the same answer pattern in every chapter.
+
+### Use restrained punctuation
+
+Do not use em dashes. Use a full sentence, comma, colon, or semicolon as the grammar requires. Chapter titles use `Chapter N: Title`. Rewrite the sentence when a punctuation swap would make it awkward.
+
 ### Show boundaries
 
 Explain when a technique should not be used. Every useful abstraction has limits.

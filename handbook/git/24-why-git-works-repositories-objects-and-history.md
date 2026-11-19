@@ -1,4 +1,4 @@
-# Chapter 24 — Why Git Works: Repositories, Objects, and History
+# Chapter 24: Why Git Works: Repositories, Objects, and History
 
 Part II taught us to inspect system state before changing it. Git applies that discipline to a project's history. Its commands become easier to predict once the stored model is clear.
 
@@ -208,7 +208,7 @@ Correct object-model reasoning prevents lost local work, mistaken branch assumpt
 
 ## Handbook Principle #24
 
-> Treat commits as immutable recorded states, ancestry as a graph, and branch names as movable references—not as copies of directories.
+> Treat commits as immutable recorded states, ancestry as a graph, and branch names as movable references, not as copies of directories.
 
 ## Practical Observation
 

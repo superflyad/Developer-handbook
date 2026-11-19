@@ -1,4 +1,4 @@
-# Chapter 104 — Encryption, Secrets, Configuration, and Cloud Observability
+# Chapter 104: Encryption, Secrets, Configuration, and Cloud Observability
 
 An application can encrypt every disk and still leak a credential into a log. It can retain years of audit events and still page nobody when production fails. It can rotate a secret on schedule and still keep using the old value from a cache until every request is denied.
 
@@ -200,7 +200,7 @@ Do not use dynamic configuration to bypass code review or make a breaking data-m
 
 One signal cannot replace the others. A trace sample may miss a rare failure; logs may be too expensive to scan for every alert; a metric can show latency without explaining which dependency caused it.
 
-Start with user or business outcomes, then platform saturation. Use RED for request paths—rate, errors, duration—and queue age or completion for asynchronous work. Use resource metrics to explain a symptom, not as the only definition of health.
+Start with user or business outcomes, then platform saturation. Use RED metrics for request paths: rate, errors, and duration. For asynchronous work, measure queue age or completion. Use resource metrics to explain a symptom, not as the only definition of health.
 
 Standardize service name, environment, Region, version or image digest, operation, outcome, correlation ID, trace context, and safe tenant class across telemetry.
 
@@ -241,7 +241,7 @@ Redact before emission. Do not log passwords, secret values, access tokens, cook
 
 Create log groups through infrastructure code with explicit retention, KMS choice, deletion protection where required, access controls, subscription or centralization, tags, and cost alarms. CloudWatch Logs otherwise stores log data indefinitely by default.
 
-Retention follows investigation, security, legal, and privacy needs—not “forever just in case.” Test that deletion, export, and legal-hold procedures match the policy.
+Retention follows investigation, security, legal, and privacy needs, not “forever just in case.” Test that deletion, export, and legal-hold procedures match the policy.
 
 ## 16. Instrument new traces with OpenTelemetry
 
@@ -284,7 +284,7 @@ An alarm needs:
 
 CloudWatch alarms change among `OK`, `ALARM`, and `INSUFFICIENT_DATA`. Missing telemetry can mean an idle resource, a broken emitter, or a failed collection path. Choose behavior per metric rather than treating all missing data as good.
 
-Use composite alarms to reduce noise when several signals must agree. Page for urgent, actionable user impact; create tickets for capacity trends or hygiene. Alert on telemetry-pipeline and alarm-action failures too—CloudWatch does not validate that every configured action will succeed.
+Use composite alarms to reduce noise when several signals must agree. Page for urgent, actionable user impact; create tickets for capacity trends or hygiene. Alert on telemetry-pipeline and alarm-action failures too. CloudWatch does not validate that every configured action will succeed.
 
 Relate alarms to service-level objectives where possible. CPU at 80 percent is not an incident when latency and errors remain healthy; one percent failed payments may be urgent at low CPU.
 
@@ -586,7 +586,7 @@ Avoid adding a customer managed key, secret store, dynamic flag platform, or tel
 
 ### How does this make me a better engineer?
 
-It teaches you to separate encryption from authorization, treat rotation as compatibility work, design observability from questions, and preserve evidence outside the workload's blast radius.
+You can separate encryption from authorization, treat rotation as compatibility work, design observability from questions, and preserve evidence outside the workload's blast radius.
 
 ### How does this reduce waste?
 
@@ -606,24 +606,24 @@ The AWS chapters now have governance, identity, network, compute, storage, data,
 
 ## References
 
-- [AWS KMS — Key types and concepts](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html)
-- [AWS KMS — Cryptography and envelope encryption](https://docs.aws.amazon.com/kms/latest/developerguide/kms-cryptography.html)
-- [AWS KMS — Key policies](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html)
-- [AWS KMS — Encryption context](https://docs.aws.amazon.com/kms/latest/developerguide/encrypt_context.html)
-- [AWS KMS — Key rotation](https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html)
-- [AWS Secrets Manager — What is Secrets Manager?](https://docs.aws.amazon.com/secretsmanager/latest/userguide/)
-- [AWS Secrets Manager — Rotation](https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html)
-- [AWS Secrets Manager — Rotation functions](https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_lambda-functions.html)
-- [AWS Secrets Manager — Best practices and caching](https://docs.aws.amazon.com/secretsmanager/latest/userguide/best-practices.html)
-- [Systems Manager — Parameter Store reference](https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-a-parameter.html)
-- [AWS AppConfig — What is AppConfig?](https://docs.aws.amazon.com/appconfig/latest/userguide/)
-- [AWS AppConfig — Deployment strategies](https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-deployment-strategy.html)
-- [Amazon CloudWatch — Metrics concepts](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html)
-- [Amazon CloudWatch Logs — Log groups and retention](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html)
-- [Amazon CloudWatch Logs — Sensitive-data protection](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/mask-sensitive-data.html)
-- [Amazon CloudWatch — Alarms](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Alarms.html)
-- [AWS X-Ray — Migrating instrumentation to OpenTelemetry](https://docs.aws.amazon.com/xray/latest/devguide/xray-sdk-migration.html)
-- [AWS CloudTrail — Concepts](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html)
-- [AWS CloudTrail — Event history](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html)
-- [AWS Config — How AWS Config works](https://docs.aws.amazon.com/config/latest/developerguide/how-does-config-work.html)
-- [Chapter 103 — ECS, EKS, ECR, and Container Platforms on AWS](103-ecs-eks-ecr-and-container-platforms-on-aws.md)
+- [AWS KMS: Key types and concepts](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html)
+- [AWS KMS: Cryptography and envelope encryption](https://docs.aws.amazon.com/kms/latest/developerguide/kms-cryptography.html)
+- [AWS KMS: Key policies](https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html)
+- [AWS KMS: Encryption context](https://docs.aws.amazon.com/kms/latest/developerguide/encrypt_context.html)
+- [AWS KMS: Key rotation](https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html)
+- [AWS Secrets Manager: What is Secrets Manager?](https://docs.aws.amazon.com/secretsmanager/latest/userguide/)
+- [AWS Secrets Manager: Rotation](https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html)
+- [AWS Secrets Manager: Rotation functions](https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_lambda-functions.html)
+- [AWS Secrets Manager: Best practices and caching](https://docs.aws.amazon.com/secretsmanager/latest/userguide/best-practices.html)
+- [Systems Manager: Parameter Store reference](https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-a-parameter.html)
+- [AWS AppConfig: What is AppConfig?](https://docs.aws.amazon.com/appconfig/latest/userguide/)
+- [AWS AppConfig: Deployment strategies](https://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-creating-deployment-strategy.html)
+- [Amazon CloudWatch: Metrics concepts](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html)
+- [Amazon CloudWatch Logs: Log groups and retention](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html)
+- [Amazon CloudWatch Logs: Sensitive-data protection](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/mask-sensitive-data.html)
+- [Amazon CloudWatch: Alarms](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Alarms.html)
+- [AWS X-Ray: Migrating instrumentation to OpenTelemetry](https://docs.aws.amazon.com/xray/latest/devguide/xray-sdk-migration.html)
+- [AWS CloudTrail: Concepts](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html)
+- [AWS CloudTrail: Event history](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html)
+- [AWS Config: How AWS Config works](https://docs.aws.amazon.com/config/latest/developerguide/how-does-config-work.html)
+- [Chapter 103: ECS, EKS, ECR, and Container Platforms on AWS](103-ecs-eks-ecr-and-container-platforms-on-aws.md)

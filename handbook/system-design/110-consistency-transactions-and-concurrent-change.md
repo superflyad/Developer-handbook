@@ -1,4 +1,4 @@
-# Chapter 110 — Consistency, Transactions, and Concurrent Change
+# Chapter 110: Consistency, Transactions, and Concurrent Change
 
 Two operators read that one reviewer remains on call. Each independently removes a different reviewer. Both writes succeed because they update different rows, leaving nobody on call. Every row update was atomic; the business invariant still failed.
 
@@ -590,7 +590,7 @@ Do not require global coordination for data whose stale or conflicting states ar
 
 ### How does this make me a better engineer?
 
-It teaches you to reason in histories, distinguish consistency scopes, detect write skew, and treat retries and authorization as part of the transaction contract.
+You can reason in histories, distinguish consistency scopes, detect write skew, and treat retries and authorization as part of the transaction contract.
 
 ### How does this reduce waste?
 
@@ -610,12 +610,12 @@ Caches are intentionally stale replicas with eviction and failure behavior. Chap
 
 ## References
 
-- [PostgreSQL — Transaction isolation](https://www.postgresql.org/docs/current/transaction-iso.html)
-- [PostgreSQL — Serialization failure handling](https://www.postgresql.org/docs/current/mvcc-serialization-failure-handling.html)
-- [Jepsen — Consistency models](https://jepsen.io/consistency/models)
-- [Jepsen — Linearizability](https://jepsen.io/consistency/models/linearizable)
-- [Amazon DynamoDB — Read consistency](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html)
-- [Amazon DynamoDB — Optimistic locking](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/BestPractices_OptimisticLocking.html)
-- [Amazon DynamoDB — Transactions](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transactions.html)
-- [Chapter 107 — Interfaces, Contracts, and Evolution](107-interfaces-contracts-and-evolution.md)
-- [Chapter 109 — Capacity, Partitioning, and Horizontal Scale](109-capacity-partitioning-and-horizontal-scale.md)
+- [PostgreSQL: Transaction isolation](https://www.postgresql.org/docs/current/transaction-iso.html)
+- [PostgreSQL: Serialization failure handling](https://www.postgresql.org/docs/current/mvcc-serialization-failure-handling.html)
+- [Jepsen: Consistency models](https://jepsen.io/consistency/models)
+- [Jepsen: Linearizability](https://jepsen.io/consistency/models/linearizable)
+- [Amazon DynamoDB: Read consistency](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html)
+- [Amazon DynamoDB: Optimistic locking](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/BestPractices_OptimisticLocking.html)
+- [Amazon DynamoDB: Transactions](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transactions.html)
+- [Chapter 107: Interfaces, Contracts, and Evolution](107-interfaces-contracts-and-evolution.md)
+- [Chapter 109: Capacity, Partitioning, and Horizontal Scale](109-capacity-partitioning-and-horizontal-scale.md)

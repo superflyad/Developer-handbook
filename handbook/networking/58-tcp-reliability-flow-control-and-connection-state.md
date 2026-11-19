@@ -1,4 +1,4 @@
-# Chapter 58 — TCP Reliability, Flow Control, and Connection State
+# Chapter 58: TCP Reliability, Flow Control, and Connection State
 
 The Transmission Control Protocol (TCP) gives two endpoints a reliable, ordered, full-duplex byte stream over an unreliable packet network. It detects loss, retransmits data, rejects duplicates, restores order, and adapts how much data it sends.
 
@@ -197,7 +197,7 @@ It prevents futile socket tuning, unsafe retries, false leak investigations, and
 
 ## Handbook Principle #58
 
-> Treat TCP as an ordered byte stream with shared state—never as proof of application completion, identity, or message boundaries.
+> Treat TCP as an ordered byte stream with shared state. It does not prove application completion, identity, or message boundaries.
 
 ## Practical Observation
 
@@ -209,7 +209,7 @@ TCP supplies an ordered stream but does not define requests, responses, cache be
 
 ## References
 
-- [RFC 9293 — Transmission Control Protocol](https://www.rfc-editor.org/rfc/rfc9293)
-- [RFC 5681 — TCP Congestion Control](https://www.rfc-editor.org/rfc/rfc5681)
-- [RFC 6298 — Computing TCP's Retransmission Timer](https://www.rfc-editor.org/rfc/rfc6298)
+- [RFC 9293: Transmission Control Protocol](https://www.rfc-editor.org/rfc/rfc9293)
+- [RFC 5681: TCP Congestion Control](https://www.rfc-editor.org/rfc/rfc5681)
+- [RFC 6298: Computing TCP's Retransmission Timer](https://www.rfc-editor.org/rfc/rfc6298)
 - [Linux `tcp(7)`](https://man7.org/linux/man-pages/man7/tcp.7.html)

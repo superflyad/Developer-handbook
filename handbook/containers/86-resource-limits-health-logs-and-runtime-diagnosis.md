@@ -1,4 +1,4 @@
-# Chapter 86 — Resource Limits, Health, Logs, and Runtime Diagnosis
+# Chapter 86: Resource Limits, Health, Logs, and Runtime Diagnosis
 
 A container that disappears under load may have crashed, been killed by its memory cgroup, received an operator signal, failed a health policy, lost its host, or been replaced by reconciliation. The last application log line rarely distinguishes those outcomes by itself.
 
@@ -421,7 +421,7 @@ Host or runtime evidence can answer:
 - whether storage, networking, or the daemon failed;
 - what other workloads contended at the same time.
 
-If the container cannot see a cause, that may be correct isolation—not missing application instrumentation.
+If the container cannot see a cause, that may be correct isolation, not missing application instrumentation.
 
 ## 29. Safe engine lab: observe health and a bounded OOM
 
@@ -585,7 +585,7 @@ Avoid applying Linux cgroup file names or Docker metric definitions unchanged to
 
 ### How does this make me a better engineer?
 
-It teaches you to distinguish configured policy from effective enforcement, saturation from pressure, signal status from cause, and convenient runtime output from durable evidence.
+You can distinguish configured policy from effective enforcement, saturation from pressure, signal status from cause, and convenient runtime output from durable evidence.
 
 ### How does this reduce waste?
 
@@ -593,7 +593,7 @@ It prevents blind limit increases, noisy restart loops, oversized diagnostic ima
 
 ## Handbook Principle #86
 
-> A container failure has a resource path and a lifecycle path—preserve both before changing the system.
+> A container failure has a resource path and a lifecycle path. Preserve both before changing the system.
 
 ## Practical Observation
 
@@ -615,4 +615,4 @@ Resource controls limit consumption, but they do not establish least privilege o
 - [Docker Engine logging-driver configuration](https://docs.docker.com/engine/logging/configure/)
 - [Linux kernel cgroup v2 documentation](https://docs.kernel.org/admin-guide/cgroup-v2.html)
 - [Linux kernel Pressure Stall Information](https://docs.kernel.org/accounting/psi.html)
-- [OCI Runtime Specification — Linux control groups](https://specs.opencontainers.org/runtime-spec/config-linux/#control-groups)
+- [OCI Runtime Specification: Linux control groups](https://specs.opencontainers.org/runtime-spec/config-linux/#control-groups)

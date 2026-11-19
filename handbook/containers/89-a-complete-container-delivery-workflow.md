@@ -1,4 +1,4 @@
-# Chapter 89 — A Complete Container Delivery Workflow
+# Chapter 89: A Complete Container Delivery Workflow
 
 A successful image build is not a release. A releasable container has traceable source, tested contents, policy evidence, immutable registry identity, constrained runtime configuration, verified service behavior, observable failure handling, rollback evidence, and an owner after deployment.
 
@@ -947,7 +947,7 @@ Avoid copying the example commands unchanged into a platform whose registry, att
 
 ### How does this make me a better engineer?
 
-It teaches you to connect source, artifact, policy, runtime, data, failure, and retirement as one operated system instead of treating an image build as delivery.
+You can connect source, artifact, policy, runtime, data, failure, and retirement as one operated system instead of treating an image build as delivery.
 
 ### How does this reduce waste?
 
@@ -963,7 +963,7 @@ Run the application and release-packet tests locally. On an approved disposable 
 
 ## Looking Ahead
 
-Container delivery makes infrastructure portable, but cloud platforms add accounts, regions, metered APIs, managed services, quotas, and a shared-responsibility boundary. Chapter 90 begins Part VIII by showing what changes—and what remains an engineering obligation—when infrastructure becomes an on-demand service.
+Container delivery makes infrastructure portable, but cloud platforms add accounts, regions, metered APIs, managed services, quotas, and a shared-responsibility boundary. Chapter 90 begins Part VIII by showing what changes, and what remains an engineering obligation, when infrastructure becomes an on-demand service.
 
 ## References
 

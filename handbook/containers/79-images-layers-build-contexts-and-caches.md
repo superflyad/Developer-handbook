@@ -1,4 +1,4 @@
-# Chapter 79 — Images, Layers, Build Contexts, and Caches
+# Chapter 79: Images, Layers, Build Contexts, and Caches
 
 A container image often appears to be one filesystem archive. In an OCI-compatible system, it is a graph of content-addressed documents and filesystem changesets. That distinction explains image identity, cache behavior, deletion, sharing, and unexpected content.
 
@@ -182,7 +182,7 @@ Record both the selected manifest digest and platform when reproducibility matte
 
 The build context is the set of files and metadata available to the builder for context-dependent operations such as copying source.
 
-The context may be a local directory, archive, repository, URL, or product-specific named source. A remote builder receives only the context supplied through that interface—not every path on the client machine.
+The context may be a local directory, archive, repository, URL, or product-specific named source. A remote builder receives only the context supplied through that interface, not every path on the client machine.
 
 Choose the narrowest directory that contains required inputs. Using a repository's parent directory can expose unrelated projects, credentials, caches, and large generated trees to the builder.
 
@@ -685,4 +685,4 @@ Understanding the object graph explains what a build produces. Chapter 80 design
 - [OCI Image Layout](https://github.com/opencontainers/image-spec/blob/main/image-layout.md)
 - [Docker build context](https://docs.docker.com/build/concepts/context/)
 - [Docker build cache invalidation](https://docs.docker.com/build/cache/invalidation/)
-- [Linux kernel documentation — Overlay Filesystem](https://docs.kernel.org/filesystems/overlayfs.html)
+- [Linux kernel documentation: Overlay Filesystem](https://docs.kernel.org/filesystems/overlayfs.html)

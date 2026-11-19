@@ -1,10 +1,10 @@
-# Chapter 87 — Container Security and Least Privilege
+# Chapter 87: Container Security and Least Privilege
 
 An image can be minimal, signed, and free of known vulnerabilities while its container still mounts the host root, controls the runtime socket, runs privileged, or receives broad credentials. Artifact quality and runtime authority are separate security questions.
 
 The central idea is:
 
-> Give a verified image the smallest identity, kernel authority, filesystem access, device access, network reach, credentials, and runtime control needed for one role—and assume every isolation layer can fail.
+> Give a verified image the smallest identity, kernel authority, filesystem access, device access, network reach, credentials, and runtime control needed for one role, and assume every isolation layer can fail.
 
 ## 1. Begin with a workload threat model
 
@@ -621,7 +621,7 @@ Avoid assuming these controls alone are sufficient for hostile multi-tenancy or 
 
 ### How does this make me a better engineer?
 
-It teaches you to measure authority across artifacts, kernel mechanisms, data, networks, credentials, and control planes instead of equating a non-root UID or vulnerability scan with security.
+You can measure authority across artifacts, kernel mechanisms, data, networks, credentials, and control planes instead of equating a non-root UID or vulnerability scan with security.
 
 ### How does this reduce waste?
 
@@ -629,7 +629,7 @@ It prevents blanket privilege, emergency host rebuilds, leaked credentials, unre
 
 ## Handbook Principle #87
 
-> Harden the authority around the process, not the label on the container—and preserve a stronger boundary for what you cannot safely grant.
+> Harden the authority around the process, not the label on the container, and preserve a stronger boundary for what you cannot safely grant.
 
 ## Practical Observation
 
@@ -637,7 +637,7 @@ Run the disposable hardening lab on an approved Linux engine and save the inspec
 
 ## Looking Ahead
 
-A single host can apply these controls directly. Across hosts, a system must continuously choose placement, reconcile desired state, route to changing replicas, coordinate rollouts, and attach policy to workload identity. Chapter 88 explains why orchestration introduces controllers, pods, services, probes, and scheduling—and when that complexity is justified.
+A single host can apply these controls directly. Across hosts, a system must continuously choose placement, reconcile desired state, route to changing replicas, coordinate rollouts, and attach policy to workload identity. Chapter 88 explains why orchestration introduces controllers, pods, services, probes, and scheduling, and when that complexity is justified.
 
 ## References
 
@@ -650,7 +650,7 @@ A single host can apply these controls directly. Across hosts, a system must con
 - [Docker Engine daemon socket protection](https://docs.docker.com/engine/security/protect-access/)
 - [Docker build secrets](https://docs.docker.com/build/building/secrets/)
 - [Docker Compose secrets reference](https://docs.docker.com/reference/compose-file/secrets/)
-- [OCI Runtime Specification — Linux process capabilities](https://specs.opencontainers.org/runtime-spec/config-linux/#process)
+- [OCI Runtime Specification: Linux process capabilities](https://specs.opencontainers.org/runtime-spec/config-linux/#process)
 - [Linux `capabilities(7)` manual page](https://man7.org/linux/man-pages/man7/capabilities.7.html)
 - [Linux `seccomp(2)` manual page](https://man7.org/linux/man-pages/man2/seccomp.2.html)
 - [Linux kernel `no_new_privs` documentation](https://docs.kernel.org/userspace-api/no_new_privs.html)

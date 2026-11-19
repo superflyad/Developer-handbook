@@ -1,4 +1,4 @@
-# Chapter 108 — Data Models and Storage Selection
+# Chapter 108: Data Models and Storage Selection
 
 A database can store nearly any bytes. That does not make it a good model for the questions, invariants, concurrency, retention, and recovery the system owns. A normalized schema can preserve truth while missing a latency objective. A denormalized document can serve one screen quickly while making every update a repair problem. A search index can answer rich text queries while returning stale or incomplete business state.
 
@@ -42,7 +42,7 @@ Conversely, do not pretend physical layout is an invisible implementation detail
 
 ## 3. Define authority before duplication
 
-For every datum, name the system of record—the authority permitted to decide its current business truth. Other forms may be:
+For every datum, name its system of record: the authority permitted to decide its current business truth. Other forms may be:
 
 - synchronous replicas;
 - caches;
@@ -630,7 +630,7 @@ Do not add a specialized store for a hypothetical query. Use the simplest owned 
 
 ### How does this make me a better engineer?
 
-It teaches you to distinguish meaning from layout, trace every copy to an authority, choose indexes from operations, and include deletion and restore in data design.
+You can distinguish meaning from layout, trace every copy to an authority, choose indexes from operations, and include deletion and restore in data design.
 
 ### How does this reduce waste?
 
@@ -654,14 +654,14 @@ Chapter 109 derives capacity and partitioning decisions from workload estimates,
 
 ## References
 
-- [PostgreSQL — Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
-- [PostgreSQL — Indexes](https://www.postgresql.org/docs/current/indexes.html)
-- [AWS Decision Guide — Choosing a database service](https://docs.aws.amazon.com/decision-guides/latest/decision-guides/databases-on-aws-how-to-choose.html)
-- [Amazon DynamoDB — Data modeling foundations](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/data-modeling-foundations.html)
-- [MongoDB — Data modeling introduction](https://www.mongodb.com/docs/manual/data-modeling/)
-- [Neo4j — Graph database concepts](https://neo4j.com/docs/getting-started/appendix/graphdb-concepts/)
-- [Elasticsearch — Mapping and field data types](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html)
-- [InfluxDB — Schema design](https://docs.influxdata.com/influxdb3/core/write-data/best-practices/schema-design/)
-- [Amazon S3 — Data protection and lifecycle](https://docs.aws.amazon.com/AmazonS3/latest/userguide/data-protection.html)
-- [Chapter 100 — DynamoDB, Caching, and NoSQL Access Patterns](../aws/100-dynamodb-caching-and-nosql-access-patterns.md)
-- [Chapter 107 — Interfaces, Contracts, and Evolution](107-interfaces-contracts-and-evolution.md)
+- [PostgreSQL: Constraints](https://www.postgresql.org/docs/current/ddl-constraints.html)
+- [PostgreSQL: Indexes](https://www.postgresql.org/docs/current/indexes.html)
+- [AWS Decision Guide: Choosing a database service](https://docs.aws.amazon.com/decision-guides/latest/decision-guides/databases-on-aws-how-to-choose.html)
+- [Amazon DynamoDB: Data modeling foundations](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/data-modeling-foundations.html)
+- [MongoDB: Data modeling introduction](https://www.mongodb.com/docs/manual/data-modeling/)
+- [Neo4j: Graph database concepts](https://neo4j.com/docs/getting-started/appendix/graphdb-concepts/)
+- [Elasticsearch: Mapping and field data types](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping.html)
+- [InfluxDB: Schema design](https://docs.influxdata.com/influxdb3/core/write-data/best-practices/schema-design/)
+- [Amazon S3: Data protection and lifecycle](https://docs.aws.amazon.com/AmazonS3/latest/userguide/data-protection.html)
+- [Chapter 100: DynamoDB, Caching, and NoSQL Access Patterns](../aws/100-dynamodb-caching-and-nosql-access-patterns.md)
+- [Chapter 107: Interfaces, Contracts, and Evolution](107-interfaces-contracts-and-evolution.md)

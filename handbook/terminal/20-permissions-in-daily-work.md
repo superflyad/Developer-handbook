@@ -1,4 +1,4 @@
-# Chapter 20 — Permissions in Daily Work
+# Chapter 20: Permissions in Daily Work
 
 [Chapter 7](../foundations/07-identity-authentication-authorization-and-permissions.md) separated identity, authentication, authorization, and permissions. This chapter applies that model to ordinary Unix filesystem work.
 

@@ -1,4 +1,4 @@
-# Chapter 101 — SQS, SNS, EventBridge, and Asynchronous Workflows
+# Chapter 101: SQS, SNS, EventBridge, and Asynchronous Workflows
 
 An asynchronous boundary can absorb a traffic spike, isolate a failing dependency, and let several consumers react independently. It can also hide a growing backlog, deliver the same work twice, lose an event after retries expire, or serialize an entire workload behind one poisoned message.
 
@@ -297,7 +297,7 @@ Classify failures:
 - throttle, temporary unavailability, and selected network errors can be retried with backoff and jitter;
 - invalid input, unsupported schema, failed authorization, and violated business rules normally should not be retried unchanged;
 - timeout after an external request may have an unknown outcome and requires lookup or reconciliation;
-- exhausted retry should enter compensation, manual review, or terminal failure—not restart forever.
+- exhausted retry should enter compensation, manual review, or terminal failure, not restart forever.
 
 Retries multiply. An SDK, Lambda runtime, state machine, EventBridge target, and SQS consumer can all retry the same request. Assign one layer as the primary retry owner, bound every other layer, and calculate the worst-case attempts and elapsed time. Respect the caller's deadline and the downstream recovery objective.
 
@@ -558,7 +558,7 @@ Avoid asynchronous boundaries when the caller requires one immediate atomic resu
 
 ### How does this make me a better engineer?
 
-It teaches you to distinguish transport claims from business outcomes, narrow ordering, quantify backlog, assign retry ownership, and design recovery before failure.
+You can distinguish transport claims from business outcomes, narrow ordering, quantify backlog, assign retry ownership, and design recovery before failure.
 
 ### How does this reduce waste?
 
@@ -578,23 +578,23 @@ Queues and event routes need compute that scales, times out, handles batches, an
 
 ## References
 
-- [Amazon SQS — Developer Guide](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
-- [Amazon SQS — Standard queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html)
-- [Amazon SQS — Visibility timeout](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html)
-- [Amazon SQS — FIFO delivery logic](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html)
-- [Amazon SQS — Dead-letter queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html)
-- [Amazon SQS — Short and long polling](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-short-and-long-polling.html)
-- [Amazon SNS — What is Amazon SNS?](https://docs.aws.amazon.com/sns/latest/dg/welcome.html)
-- [Amazon SNS — Message filtering](https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html)
-- [Amazon SNS — Message delivery retries](https://docs.aws.amazon.com/sns/latest/dg/sns-message-delivery-retries.html)
-- [Amazon SNS — Dead-letter queues](https://docs.aws.amazon.com/sns/latest/dg/sns-dead-letter-queues.html)
-- [Amazon SNS — FIFO message deduplication](https://docs.aws.amazon.com/sns/latest/dg/fifo-message-dedup.html)
-- [Amazon EventBridge — Event buses](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html)
-- [Amazon EventBridge — Event patterns](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html)
-- [Amazon EventBridge — Schemas](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-schema.html)
-- [Amazon EventBridge — Target retry policy](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rule-retry-policy.html)
-- [Amazon EventBridge — Replaying archived events](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-replay-archived-event.html)
-- [AWS Step Functions — Choosing a workflow type](https://docs.aws.amazon.com/step-functions/latest/dg/choosing-workflow-type.html)
-- [AWS Step Functions — Service integration patterns](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html)
-- [AWS Step Functions — Error handling](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-error-handling.html)
-- [Chapter 100 — DynamoDB, Caching, and NoSQL Access Patterns](100-dynamodb-caching-and-nosql-access-patterns.md)
+- [Amazon SQS: Developer Guide](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
+- [Amazon SQS: Standard queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html)
+- [Amazon SQS: Visibility timeout](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html)
+- [Amazon SQS: FIFO delivery logic](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html)
+- [Amazon SQS: Dead-letter queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html)
+- [Amazon SQS: Short and long polling](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-short-and-long-polling.html)
+- [Amazon SNS: What is Amazon SNS?](https://docs.aws.amazon.com/sns/latest/dg/welcome.html)
+- [Amazon SNS: Message filtering](https://docs.aws.amazon.com/sns/latest/dg/sns-message-filtering.html)
+- [Amazon SNS: Message delivery retries](https://docs.aws.amazon.com/sns/latest/dg/sns-message-delivery-retries.html)
+- [Amazon SNS: Dead-letter queues](https://docs.aws.amazon.com/sns/latest/dg/sns-dead-letter-queues.html)
+- [Amazon SNS: FIFO message deduplication](https://docs.aws.amazon.com/sns/latest/dg/fifo-message-dedup.html)
+- [Amazon EventBridge: Event buses](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html)
+- [Amazon EventBridge: Event patterns](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html)
+- [Amazon EventBridge: Schemas](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-schema.html)
+- [Amazon EventBridge: Target retry policy](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-rule-retry-policy.html)
+- [Amazon EventBridge: Replaying archived events](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-replay-archived-event.html)
+- [AWS Step Functions: Choosing a workflow type](https://docs.aws.amazon.com/step-functions/latest/dg/choosing-workflow-type.html)
+- [AWS Step Functions: Service integration patterns](https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html)
+- [AWS Step Functions: Error handling](https://docs.aws.amazon.com/step-functions/latest/dg/concepts-error-handling.html)
+- [Chapter 100: DynamoDB, Caching, and NoSQL Access Patterns](100-dynamodb-caching-and-nosql-access-patterns.md)

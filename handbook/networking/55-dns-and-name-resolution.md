@@ -1,10 +1,10 @@
-# Chapter 55 — DNS and Name Resolution
+# Chapter 55: DNS and Name Resolution
 
 Applications usually begin with a name, but the network routes to addresses. The Domain Name System (DNS) is a distributed, delegated database that maps names to typed data and caches answers across several layers. A lookup result is therefore evidence from a resolution path, not a permanent property of a hostname.
 
 The central idea is:
 
-> Trace a name through the application's resolver, local policy, recursive cache, delegation, and authoritative data—keeping the queried name, type, and time together.
+> Trace a name through the application's resolver, local policy, recursive cache, delegation, and authoritative data. Keep the queried name, type, and time together.
 
 ## 1. DNS is a tree of names and delegated authority
 
@@ -208,7 +208,7 @@ It prevents repeated record edits and cache flushing when the observed differenc
 
 ## Handbook Principle #55
 
-> A DNS result is a typed, timed answer from a specific resolution path—not a timeless property of a name.
+> A DNS result is a typed, timed answer from a specific resolution path, not a timeless property of a name.
 
 ## Practical Observation
 
@@ -220,8 +220,8 @@ DNS produces candidate addresses, but a process still needs a socket endpoint. C
 
 ## References
 
-- [RFC 1034 — Domain Names: Concepts and Facilities](https://www.rfc-editor.org/rfc/rfc1034)
-- [RFC 1035 — Domain Names: Implementation and Specification](https://www.rfc-editor.org/rfc/rfc1035)
-- [RFC 9499 — DNS Terminology](https://www.rfc-editor.org/rfc/rfc9499)
-- [RFC 2308 — Negative Caching of DNS Queries](https://www.rfc-editor.org/rfc/rfc2308)
-- [RFC 9520 — Negative Caching of DNS Resolution Failures](https://www.rfc-editor.org/rfc/rfc9520)
+- [RFC 1034: Domain Names: Concepts and Facilities](https://www.rfc-editor.org/rfc/rfc1034)
+- [RFC 1035: Domain Names: Implementation and Specification](https://www.rfc-editor.org/rfc/rfc1035)
+- [RFC 9499: DNS Terminology](https://www.rfc-editor.org/rfc/rfc9499)
+- [RFC 2308: Negative Caching of DNS Queries](https://www.rfc-editor.org/rfc/rfc2308)
+- [RFC 9520: Negative Caching of DNS Resolution Failures](https://www.rfc-editor.org/rfc/rfc9520)
