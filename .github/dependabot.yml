@@ -10,6 +10,8 @@ updates:
     labels:
       - dependencies
       - automation
+    assignees:
+      - superflyad
     commit-message:
       prefix: ci
     open-pull-requests-limit: 5
@@ -24,6 +26,8 @@ updates:
     labels:
       - dependencies
       - website
+    assignees:
+      - superflyad
     commit-message:
       prefix: site
     open-pull-requests-limit: 5

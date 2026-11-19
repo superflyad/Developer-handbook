@@ -13,6 +13,7 @@ The project uses tagged editions for stable publication artifacts and records co
 - External-link audit retry, saved reports, and automatic tracking of persistent failures.
 - Updated references moved by the AWS Well-Architected Framework.
 - Pointed Linux kernel references at the current documentation host.
+- Weekly publication health checks with automatic tracking of failed builds.
 
 ### Changed
 
