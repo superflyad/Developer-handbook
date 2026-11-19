@@ -14,7 +14,7 @@ body:
     attributes:
       label: Location
       description: Chapter, heading, file path, or web URL.
-      placeholder: Chapter 58, section 4 — handbook/networking/58-...
+      placeholder: Chapter 58, section 4: handbook/networking/58-...
     validations:
       required: true
   - type: textarea

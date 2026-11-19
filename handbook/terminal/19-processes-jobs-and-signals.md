@@ -1,4 +1,4 @@
-# Chapter 19 — Processes, Jobs, and Signals
+# Chapter 19: Processes, Jobs, and Signals
 
 Chapter 4 introduced processes as running program instances. Interactive shells add a job-control layer that groups processes and coordinates their relationship with a terminal.
 

@@ -1,4 +1,4 @@
-# Chapter 113 — Coordination, Leadership, and Distributed Time
+# Chapter 113: Coordination, Leadership, and Distributed Time
 
 A worker acquires a 30-second lease, pauses for garbage collection, and resumes after the lease expired. Another worker now holds the lease. Both believe they may write because the first worker did not observe time passing while paused. The lock service behaved correctly; the protected resource still accepted a stale owner.
 
@@ -529,7 +529,7 @@ Avoid global coordination when stable partitioning, idempotency, commutative ope
 
 ### How does this make me a better engineer?
 
-It teaches you to treat timeouts as suspicion, separate clocks from authority, require fencing, and recognize consensus as a managed infrastructure boundary.
+You can treat timeouts as suspicion, separate clocks from authority, require fencing, and recognize consensus as a managed infrastructure boundary.
 
 ### How does this reduce waste?
 
@@ -553,12 +553,12 @@ Chapter 114 turns these failure mechanisms into containment design: deadlines, b
 
 ## References
 
-- [Ongaro and Ousterhout — In Search of an Understandable Consensus Algorithm](https://raft.github.io/raft.pdf)
-- [Raft project — Publications and implementations](https://raft.github.io/)
-- [Apache ZooKeeper — Recipes and Solutions](https://zookeeper.apache.org/doc/current/recipes.html)
-- [etcd — Concurrency API](https://etcd.io/docs/latest/dev-guide/api_concurrency_reference_v3/)
-- [Kubernetes — Leases](https://kubernetes.io/docs/concepts/architecture/leases/)
-- [Kubernetes — Coordinated leader election](https://kubernetes.io/docs/concepts/cluster-administration/coordinated-leader-election/)
-- [Google Research — Spanner: Google's Globally-Distributed Database](https://research.google/pubs/spanner-googles-globally-distributed-database/)
-- [Chapter 110 — Consistency, Transactions, and Concurrent Change](110-consistency-transactions-and-concurrent-change.md)
-- [Chapter 112 — Messaging, Events, and Asynchronous Workflows](112-messaging-events-and-asynchronous-workflows.md)
+- [Ongaro and Ousterhout: In Search of an Understandable Consensus Algorithm](https://raft.github.io/raft.pdf)
+- [Raft project: Publications and implementations](https://raft.github.io/)
+- [Apache ZooKeeper: Recipes and Solutions](https://zookeeper.apache.org/doc/current/recipes.html)
+- [etcd: Concurrency API](https://etcd.io/docs/latest/dev-guide/api_concurrency_reference_v3/)
+- [Kubernetes: Leases](https://kubernetes.io/docs/concepts/architecture/leases/)
+- [Kubernetes: Coordinated leader election](https://kubernetes.io/docs/concepts/cluster-administration/coordinated-leader-election/)
+- [Google Research: Spanner: Google's Globally-Distributed Database](https://research.google/pubs/spanner-googles-globally-distributed-database/)
+- [Chapter 110: Consistency, Transactions, and Concurrent Change](110-consistency-transactions-and-concurrent-change.md)
+- [Chapter 112: Messaging, Events, and Asynchronous Workflows](112-messaging-events-and-asynchronous-workflows.md)

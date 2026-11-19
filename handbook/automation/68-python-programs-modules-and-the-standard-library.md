@@ -1,4 +1,4 @@
-# Chapter 68 — Python Programs, Modules, and the Standard Library
+# Chapter 68: Python Programs, Modules, and the Standard Library
 
 Python becomes useful for automation when a command is separated into testable computation, controlled input and output, and a thin process entry point. Saving shell commands inside a Python file does not create that structure automatically.
 
@@ -435,7 +435,7 @@ Avoid replacing a clear one-command or short pipeline with a Python application 
 
 ### How does this make me a better engineer?
 
-It teaches you to separate computation from effects and to design entry points as adapters rather than the entire program.
+You can separate computation from effects and to design entry points as adapters rather than the entire program.
 
 ### How does this reduce waste?
 

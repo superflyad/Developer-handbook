@@ -1,4 +1,4 @@
-# Chapter 28 — Tracked Content, Ignore Rules, and Portability
+# Chapter 28: Tracked Content, Ignore Rules, and Portability
 
 A repository is not a mirror of every file in its directory. It is a curated record. Deciding what belongs in that record affects review quality, security, clone size, and cross-platform behavior.
 

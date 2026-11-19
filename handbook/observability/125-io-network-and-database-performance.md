@@ -1,4 +1,4 @@
-# Chapter 125 — I/O, Network, and Database Performance
+# Chapter 125: I/O, Network, and Database Performance
 
 When CPU is not the limit, latency usually accumulates while work waits: for a socket, connection, lock, queue, device, page, remote response, or durable commit. “I/O is slow” is not a diagnosis. The engineer must follow one workload across layers, decompose elapsed time, identify the first saturated or serialized resource, and verify the fix at the user boundary.
 
@@ -217,7 +217,7 @@ Track:
 
 An oversized pool can overwhelm the dependency or consume descriptors. An undersized pool serializes work. A long-lived pool can pin traffic to obsolete endpoints or retain revoked credentials.
 
-Size by measured concurrency, dependency limits, service time, and failure containment—not by the maximum number of application threads.
+Size by measured concurrency, dependency limits, service time, and failure containment, not by the maximum number of application threads.
 
 ## 12. Treat the connection pool as a resource boundary
 
@@ -234,7 +234,7 @@ Instrument active, idle, maximum, waiters, acquisition duration, timeouts, creat
 
 The pool is a bulkhead. Separate critical and background work when one can starve the other. Bound queues and shed load before every caller occupies a waiter.
 
-Leaks may be logical—transactions left open, results not consumed, cancellation paths skipping return—even when the underlying socket remains valid.
+Logical leaks include transactions left open, results not consumed, and cancellation paths that skip return, even when the underlying socket remains valid.
 
 ## 13. Start database diagnosis with wait categories
 
@@ -647,10 +647,10 @@ Chapter 126 builds representative open and closed load models, exposes saturatio
 
 ## References
 
-- [RFC 9293 — Transmission Control Protocol](https://www.rfc-editor.org/rfc/rfc9293.html)
-- [PostgreSQL documentation — Using `EXPLAIN`](https://www.postgresql.org/docs/current/using-explain.html)
-- [PostgreSQL documentation — Indexes](https://www.postgresql.org/docs/current/indexes.html)
-- [PostgreSQL documentation — Viewing Locks](https://www.postgresql.org/docs/current/monitoring-locks.html)
-- [PostgreSQL documentation — Monitoring Database Activity](https://www.postgresql.org/docs/current/monitoring.html)
-- [Chapter 111 — Caching as a Consistency Tradeoff](../system-design/111-caching-as-a-consistency-tradeoff.md)
-- [Chapter 124 — Memory, Allocation, and Resource-Leak Diagnosis](124-memory-allocation-and-resource-leak-diagnosis.md)
+- [RFC 9293: Transmission Control Protocol](https://www.rfc-editor.org/rfc/rfc9293.html)
+- [PostgreSQL documentation: Using `EXPLAIN`](https://www.postgresql.org/docs/current/using-explain.html)
+- [PostgreSQL documentation: Indexes](https://www.postgresql.org/docs/current/indexes.html)
+- [PostgreSQL documentation: Viewing Locks](https://www.postgresql.org/docs/current/monitoring-locks.html)
+- [PostgreSQL documentation: Monitoring Database Activity](https://www.postgresql.org/docs/current/monitoring.html)
+- [Chapter 111: Caching as a Consistency Tradeoff](../system-design/111-caching-as-a-consistency-tradeoff.md)
+- [Chapter 124: Memory, Allocation, and Resource-Leak Diagnosis](124-memory-allocation-and-resource-leak-diagnosis.md)

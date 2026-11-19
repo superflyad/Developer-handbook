@@ -1,4 +1,4 @@
-# Chapter 115 — Security, Privacy, and Multi-Tenant Boundaries
+# Chapter 115: Security, Privacy, and Multi-Tenant Boundaries
 
 Security is not a box attached to an otherwise complete architecture. It changes what the system may store, who may act, where data may travel, how administrators recover it, and which failures are acceptable. Privacy adds a second question: even when processing is authorized and protected from attackers, can it still create harm for the people represented by the data?
 
@@ -564,11 +564,11 @@ Chapter 116 turns choices such as isolation tier, authorization model, encryptio
 
 ## References
 
-- [OWASP — Threat Modeling Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html)
-- [OWASP — Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
-- [OWASP — Multi-Tenant Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Multi_Tenant_Security_Cheat_Sheet.html)
-- [OWASP — Application Security Verification Standard 5.0](https://asvs.owasp.org/)
-- [NIST SP 800-207 — Zero Trust Architecture](https://csrc.nist.gov/pubs/sp/800/207/final)
-- [NIST SP 800-63B-4 — Authentication and Authenticator Management](https://csrc.nist.gov/pubs/sp/800/63/B/4/final)
-- [NIST — Privacy Framework](https://www.nist.gov/privacy-framework)
-- [NIST SP 1800-28 — Data Confidentiality: Identifying and Protecting Assets Against Data Breaches](https://csrc.nist.gov/pubs/sp/1800/28/final)
+- [OWASP: Threat Modeling Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html)
+- [OWASP: Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
+- [OWASP: Multi-Tenant Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Multi_Tenant_Security_Cheat_Sheet.html)
+- [OWASP: Application Security Verification Standard 5.0](https://asvs.owasp.org/)
+- [NIST SP 800-207: Zero Trust Architecture](https://csrc.nist.gov/pubs/sp/800/207/final)
+- [NIST SP 800-63B-4: Authentication and Authenticator Management](https://csrc.nist.gov/pubs/sp/800/63/B/4/final)
+- [NIST: Privacy Framework](https://www.nist.gov/privacy-framework)
+- [NIST SP 1800-28: Data Confidentiality: Identifying and Protecting Assets Against Data Breaches](https://csrc.nist.gov/pubs/sp/1800/28/final)

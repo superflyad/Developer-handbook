@@ -1,4 +1,4 @@
-# Chapter 29 — Branches, References, Tags, and Detached `HEAD`
+# Chapter 29: Branches, References, Tags, and Detached `HEAD`
 
 Once a commit graph exists, humans need stable names for points of interest. Git uses references, while the working tree shows one selected state at a time.
 

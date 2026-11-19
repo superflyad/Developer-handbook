@@ -1,4 +1,4 @@
-# Chapter 99 — RDS, Aurora, and Managed Relational Databases
+# Chapter 99: RDS, Aurora, and Managed Relational Databases
 
 A managed database can replace failed infrastructure, take backups, and apply engine maintenance while an application still overwhelms its connections, deploys an incompatible schema, reads stale replicas, or cannot restore within its recovery objective. Management changes who performs work; it does not erase the database contract.
 
@@ -241,7 +241,7 @@ An RDS point-in-time restore creates a new DB instance; Aurora restores a new cl
 - replication and Multi-AZ topology;
 - tags, backups, alarms, and deletion protection.
 
-Then validate schema, row-level business invariants, dependent systems, and missing events before cutover. Restore time includes creation, storage initialization, validation, application reconfiguration, and reconciliation—not just the API reaching `available`.
+Then validate schema, row-level business invariants, dependent systems, and missing events before cutover. Restore time includes creation, storage initialization, validation, application reconfiguration, and reconciliation, not just the API reaching `available`.
 
 ## 17. Availability is not disaster recovery
 
@@ -546,7 +546,7 @@ Avoid a relational engine when the workload does not need its transaction and qu
 
 ### How does this make me a better engineer?
 
-It teaches you to distinguish infrastructure availability from transaction correctness, budget connections across a fleet, reason about replica visibility, and prove recovery by restoring a usable application.
+You can distinguish infrastructure availability from transaction correctness, budget connections across a fleet, reason about replica visibility, and prove recovery by restoring a usable application.
 
 ### How does this reduce waste?
 
@@ -566,18 +566,18 @@ Relational modeling starts from normalized relationships and flexible queries. C
 
 ## References
 
-- [Amazon RDS — What is Amazon RDS?](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)
-- [Amazon RDS — Multi-AZ deployments](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html)
-- [Amazon RDS — Read replicas](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html)
-- [Amazon RDS — Automated backups](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html)
-- [Amazon RDS — Point-in-time recovery](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIT.html)
-- [Amazon RDS — Parameter groups](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/parameter-groups-overview.html)
-- [Amazon RDS — Maintaining a DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html)
-- [Amazon RDS — Database authentication](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/database-authentication.html)
-- [Amazon RDS — Monitoring](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Monitoring.html)
-- [Amazon RDS Proxy — Connection and failover use cases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy-best-practices.usage-scenarios.html)
-- [Amazon Aurora — Cluster architecture](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.html)
-- [Amazon Aurora — Storage reliability](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html)
-- [Amazon Aurora — Replication and replicas](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Replication.html)
-- [Amazon Aurora — Endpoints](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.Endpoints.html)
-- [Chapter 98 — EBS, EFS, and Choosing Cloud Storage](98-ebs-efs-and-choosing-cloud-storage.md)
+- [Amazon RDS: What is Amazon RDS?](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html)
+- [Amazon RDS: Multi-AZ deployments](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZ.html)
+- [Amazon RDS: Read replicas](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html)
+- [Amazon RDS: Automated backups](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html)
+- [Amazon RDS: Point-in-time recovery](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIT.html)
+- [Amazon RDS: Parameter groups](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/parameter-groups-overview.html)
+- [Amazon RDS: Maintaining a DB instance](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html)
+- [Amazon RDS: Database authentication](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/database-authentication.html)
+- [Amazon RDS: Monitoring](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Monitoring.html)
+- [Amazon RDS Proxy: Connection and failover use cases](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-proxy-best-practices.usage-scenarios.html)
+- [Amazon Aurora: Cluster architecture](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.html)
+- [Amazon Aurora: Storage reliability](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html)
+- [Amazon Aurora: Replication and replicas](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Replication.html)
+- [Amazon Aurora: Endpoints](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.Endpoints.html)
+- [Chapter 98: EBS, EFS, and Choosing Cloud Storage](98-ebs-efs-and-choosing-cloud-storage.md)

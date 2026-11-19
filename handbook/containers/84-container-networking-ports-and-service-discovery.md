@@ -1,10 +1,10 @@
-# Chapter 84 — Container Networking, Ports, and Service Discovery
+# Chapter 84: Container Networking, Ports, and Service Discovery
 
 A service can listen successfully on port `8080` inside a container and still be unreachable from another container, the host, or a remote client. A port number has meaning only together with a network namespace, address, protocol, and path.
 
 The central idea is:
 
-> Trace every connection hop by hop—from client resolution through host policy and namespace routing to the listening socket—and treat publication, discovery, and application readiness as separate contracts.
+> Trace every connection from client resolution through host policy and namespace routing to the listening socket. Treat publication, discovery, and application readiness as separate contracts.
 
 ## 1. Name every endpoint completely
 
@@ -470,7 +470,7 @@ Container networking is **graph reachability across isolated namespaces under na
 
 ## From the Field
 
-An API reports that it is listening on `127.0.0.1:8080` inside its container. The host publishes port 8080 and the dashboard shows a healthy process, yet every peer receives a refusal. The publication reaches the container interface, but no socket listens there. Changing the application to its intended container-interface binding—and retaining a narrow host publication—fixes the actual boundary without opening unrelated host interfaces.
+An API reports that it is listening on `127.0.0.1:8080` inside its container. The host publishes port 8080 and the dashboard shows a healthy process, yet every peer receives a refusal. The publication reaches the container interface, but no socket listens there. Changing the application to its intended container-interface binding while retaining a narrow host publication fixes the actual boundary without opening unrelated host interfaces.
 
 ## Engineering Review
 
@@ -492,7 +492,7 @@ Avoid assuming this particular Linux bridge path for host networking, overlay ne
 
 ### How does this make me a better engineer?
 
-It teaches you to turn “the network is broken” into testable claims about resolution, routes, translations, listeners, and application state in named namespaces.
+You can turn “the network is broken” into testable claims about resolution, routes, translations, listeners, and application state in named namespaces.
 
 ### How does this reduce waste?
 
@@ -500,7 +500,7 @@ It prevents broad firewall changes, hard-coded addresses, unnecessary publicatio
 
 ## Handbook Principle #84
 
-> A reachable service is a verified path through names, namespaces, routes, policy, and a listening application—not a port number written in configuration.
+> A reachable service is a verified path through names, namespaces, routes, policy, and a listening application, not a port number written in configuration.
 
 ## Practical Observation
 

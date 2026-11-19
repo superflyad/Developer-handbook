@@ -1,4 +1,4 @@
-# Chapter 66 — Shell Control Flow, Functions, and Error Handling
+# Chapter 66: Shell Control Flow, Functions, and Error Handling
 
 Shell control flow is built around command exit status. That makes small programs expressive, but it also means expected false conditions, operational failures, pipelines, and language context can look deceptively similar.
 
@@ -398,7 +398,7 @@ Avoid growing shell into a large stateful application when richer types, process
 
 ### How does this make me a better engineer?
 
-It makes you classify failure and recovery at each operation rather than relying on folklore options or optimistic continuation.
+You can classify failure and recovery at each operation rather than relying on folklore options or optimistic continuation.
 
 ### How does this reduce waste?
 
@@ -406,7 +406,7 @@ It prevents false-success pipelines, infinite retries, hidden status loss, subsh
 
 ## Handbook Principle #66
 
-> Interpret status at the command boundary, bound every loop and retry, and use shell options as tools—not as a substitute for an error model.
+> Interpret status at the command boundary, bound every loop and retry, and use shell options as tools, not as a substitute for an error model.
 
 ## Practical Observation
 
@@ -418,7 +418,7 @@ Correct control flow still fails when records are represented ambiguously. Chapt
 
 ## References
 
-- [GNU Bash Reference Manual — Conditional Constructs](https://www.gnu.org/software/bash/manual/html_node/Conditional-Constructs.html)
-- [GNU Bash Reference Manual — Pipelines](https://www.gnu.org/software/bash/manual/html_node/Pipelines.html)
-- [GNU Bash Reference Manual — The Set Builtin](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html)
+- [GNU Bash Reference Manual: Conditional Constructs](https://www.gnu.org/software/bash/manual/html_node/Conditional-Constructs.html)
+- [GNU Bash Reference Manual: Pipelines](https://www.gnu.org/software/bash/manual/html_node/Pipelines.html)
+- [GNU Bash Reference Manual: The Set Builtin](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html)
 - [POSIX Shell Command Language](https://pubs.opengroup.org/onlinepubs/9799919799/utilities/V3_chap02.html)

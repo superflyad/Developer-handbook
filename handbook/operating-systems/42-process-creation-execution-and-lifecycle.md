@@ -1,10 +1,10 @@
-# Chapter 42 — Process Creation, Execution, and Lifecycle
+# Chapter 42: Process Creation, Execution, and Lifecycle
 
 A program file is passive content. A process is a running execution context containing an address space, threads, credentials, open resources, environment, and lifecycle state. Starting a command constructs that context; ending it requires the operating system and its parent or manager to collect the result.
 
 The central idea is:
 
-> Process creation is context construction, and process exit is a protocol—not merely a program disappearing.
+> Process creation is context construction, and process exit is a protocol, not merely a program disappearing.
 
 ## 1. Program, process, and thread are different
 

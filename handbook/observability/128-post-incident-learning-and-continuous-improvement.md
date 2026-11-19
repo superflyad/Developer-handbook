@@ -1,6 +1,6 @@
-# Chapter 128 — Post-Incident Learning and Continuous Improvement
+# Chapter 128: Post-Incident Learning and Continuous Improvement
 
-Restoring service ends the emergency, not the engineering work. An incident exposes how software, infrastructure, procedures, incentives, information, and human decisions interacted under real conditions. If the organization records only a proximate fault—“the deployment broke the database”—it preserves neither the decision context nor the conditions that allowed one change to become broad user harm.
+Restoring service ends the emergency, not the engineering work. An incident exposes how software, infrastructure, procedures, incentives, information, and human decisions interacted under real conditions. If the organization records only a proximate fault, such as “the deployment broke the database,” it preserves neither the decision context nor the conditions that allowed one change to become broad user harm.
 
 A useful post-incident review reconstructs evidence, describes impact, separates triggers from contributing conditions, examines detection and response, identifies where the system was resilient or merely lucky, and converts learning into prioritized work with owners and verifiable outcomes. The review is complete only when its actions change the future system and that change is checked.
 
@@ -549,7 +549,7 @@ The review records that the scoped rollback and data reconciliation worked well.
 
 The team chooses four actions: stop canaries on tenant-level SLOs, add connection acquisition to the trace budget, cap retry amplification, and rehearse rollback with secondary on-call access. Each has an owner, priority, target date, experiment, and verifier. The dashboard is not called done when merged; the team replays the skewed workload and proves the correct rollout stops at 8% scope.
 
-The review changes the future delivery and response system. That—not the document's completion—is the evidence of learning.
+The review changes the future delivery and response system. Completed documentation alone does not demonstrate learning.
 
 ## 23. Review the review
 
@@ -644,7 +644,7 @@ It prevents repeated incidents, unactioned documents, alert proliferation, narro
 
 ## Practical Observation
 
-Take one completed post-incident action and ask for the evidence that its intended control works. If the answer is only a pull request, dashboard link, or ticket status, the action is implemented—not verified. Design the smallest safe replay or failure injection that can close the gap.
+Take one completed post-incident action and ask for the evidence that its intended control works. If the answer is only a pull request, dashboard link, or ticket status, the action is implemented, not verified. Design the smallest safe replay or failure injection that can close the gap.
 
 ## Looking Ahead
 
@@ -652,10 +652,10 @@ Chapter 129 completes the curriculum with one investigation that follows a reali
 
 ## References
 
-- [Google SRE Workbook — Postmortem Culture: Learning from Failure](https://sre.google/workbook/postmortem-culture/)
-- [Google SRE Book — Postmortem Culture: Learning from Failure](https://sre.google/sre-book/postmortem-culture/)
-- [Google SRE Book — Production Services Best Practices](https://sre.google/sre-book/service-best-practices/)
-- [Microsoft Azure Well-Architected Framework — Incident Management](https://learn.microsoft.com/en-us/azure/well-architected/design-guides/incident-management)
-- [NIST SP 800-61 Rev. 3 — Incident Response Recommendations and Considerations for Cybersecurity Risk Management](https://csrc.nist.gov/pubs/sp/800/61/r3/final)
-- [Chapter 121 — Metrics, SLIs, SLOs, and Actionable Alerts](121-metrics-slis-slos-and-actionable-alerts.md)
-- [Chapter 127 — Incident Response and Operational Coordination](127-incident-response-and-operational-coordination.md)
+- [Google SRE Workbook: Postmortem Culture: Learning from Failure](https://sre.google/workbook/postmortem-culture/)
+- [Google SRE Book: Postmortem Culture: Learning from Failure](https://sre.google/sre-book/postmortem-culture/)
+- [Google SRE Book: Production Services Best Practices](https://sre.google/sre-book/service-best-practices/)
+- [Microsoft Azure Well-Architected Framework: Incident Management](https://learn.microsoft.com/en-us/azure/well-architected/design-guides/incident-management)
+- [NIST SP 800-61 Rev. 3: Incident Response Recommendations and Considerations for Cybersecurity Risk Management](https://csrc.nist.gov/pubs/sp/800/61/r3/final)
+- [Chapter 121: Metrics, SLIs, SLOs, and Actionable Alerts](121-metrics-slis-slos-and-actionable-alerts.md)
+- [Chapter 127: Incident Response and Operational Coordination](127-incident-response-and-operational-coordination.md)

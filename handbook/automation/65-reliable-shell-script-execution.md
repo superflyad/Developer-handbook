@@ -1,10 +1,10 @@
-# Chapter 65 — Reliable Shell Script Execution
+# Chapter 65: Reliable Shell Script Execution
 
 An interactive command inherits a person's shell, current directory, environment, attention, and recovery decisions. A reliable shell script must make those dependencies explicit enough to run again without the original terminal session.
 
 The central idea is:
 
-> A shell script is a program with an interpreter, argument contract, process environment, streams, exit status, and owned state—not a saved transcript.
+> A shell script is a program with an interpreter, argument contract, process environment, streams, exit status, and owned state, not a saved transcript.
 
 ## 1. Choose the language before writing syntax
 
@@ -354,7 +354,7 @@ Avoid shell when complex structured data, concurrency, large state models, or st
 
 ### How does this make me a better engineer?
 
-It makes you see invocation and cleanup as public interfaces rather than incidental syntax.
+You can treat invocation and cleanup as public interfaces rather than incidental syntax.
 
 ### How does this reduce waste?
 

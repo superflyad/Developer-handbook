@@ -1,4 +1,4 @@
-# Chapter 85 — Multi-Container Applications with Compose
+# Chapter 85: Multi-Container Applications with Compose
 
 A folder containing three container commands is not yet a reproducible system. The commands need one shared model for service identity, networks, state, configuration, dependency conditions, diagnostics, and teardown.
 
@@ -17,7 +17,7 @@ The Compose Specification describes a platform-neutral application model. A proj
 - profiles that activate optional parts of the model;
 - project metadata and implementation-specific extensions.
 
-The Compose file is input. The resolved model—after file merge, interpolation, path resolution, defaults, and normalization—is what the implementation applies.
+The Compose file is input. The implementation applies the resolved model after file merge, interpolation, path resolution, defaults, and normalization.
 
 This chapter uses Docker Compose commands because they provide a common local implementation. Other Compose implementations can support different subsets or platform behavior. Validate against the implementation and version that will run the project.
 
@@ -614,7 +614,7 @@ Avoid treating Compose alone as a solution for multi-host scheduling, automatic 
 
 ### How does this make me a better engineer?
 
-It teaches you to distinguish graph order from readiness, interpolation from runtime environment, project ownership from external resources, and local reproducibility from distributed operations.
+You can distinguish graph order from readiness, interpolation from runtime environment, project ownership from external resources, and local reproducibility from distributed operations.
 
 ### How does this reduce waste?
 
@@ -622,7 +622,7 @@ It prevents port collisions, hand-run startup races, duplicated scripts, leaked 
 
 ## Handbook Principle #85
 
-> Compose the application as an owned, inspectable graph—and make every dependency condition, network path, state lifetime, and teardown decision explicit.
+> Compose the application as an owned, inspectable graph, and make every dependency condition, network path, state lifetime, and teardown decision explicit.
 
 ## Practical Observation
 

@@ -1,4 +1,4 @@
-# Chapter 129 — A Complete Cross-Layer Engineering Investigation
+# Chapter 129: A Complete Cross-Layer Engineering Investigation
 
 This chapter completes the first-edition curriculum by applying its methods to one failure. The goal is not to demonstrate every command. It is to show how an engineer moves from a user symptom to a defensible cross-layer explanation while controlling changes, preserving security boundaries, restoring service, and verifying the design revision.
 
@@ -637,7 +637,7 @@ The learning review creates a small outcome-based portfolio:
 | cancellation did not stop work | propagate deadline and cancel pending calls | abandoned-request test releases pool capacity |
 | rollback access was fragile | provide reviewed secondary role and rehearsal | second on-call restores stable digest within objective |
 
-Each action has a tracking ID, owner, priority, target date, verification owner, and evidence. A merged telemetry change remains implemented—not verified—until the replay demonstrates the intended diagnostic outcome.
+Each action has a tracking ID, owner, priority, target date, verification owner, and evidence. A merged telemetry change is implemented, but verification requires a replay that demonstrates the intended diagnostic outcome.
 
 Search prior incidents for the same N+1, cache identity, cohort aggregation, and downstream amplification patterns. Generalize only where the mechanism is shared.
 
@@ -735,7 +735,7 @@ This investigation combines abstraction, causality, and invariants. Each layer e
 
 ## From the Field
 
-Teams often find the first plausible bottleneck and stop. In this case, a composite index could improve a graph while leaving 240 calls, retry amplification, and cross-tenant cache reuse intact. A cross-layer investigation asks which work should exist, which identity makes it safe, which queue fails first, and which evidence proves the user contract—not merely which knob makes one chart smaller.
+Teams often find the first plausible bottleneck and stop. In this case, a composite index could improve a graph while leaving 240 calls, retry amplification, and cross-tenant cache reuse intact. A cross-layer investigation asks which work should exist, which identity makes it safe, which queue fails first, and which evidence proves the user contract, not merely which knob makes one chart smaller.
 
 ## Engineering Review
 
@@ -773,17 +773,17 @@ For the next difficult failure, draw two lines on one page: the request path fro
 
 ## Looking Ahead
 
-The first-edition chapter sequence is complete. The Engineering Patterns appendix turns recurring reasoning structures—identity, boundaries, invariants, queues, idempotency, evidence, reversibility, and feedback—into a compact cross-reference for continued practice. The handbook itself must keep evolving as tools, platforms, standards, threats, and operating experience change.
+The first-edition chapter sequence is complete. The Engineering Patterns appendix turns recurring reasoning structures into a compact cross-reference for continued practice: identity, boundaries, invariants, queues, idempotency, evidence, reversibility, and feedback. The handbook itself must keep evolving as tools, platforms, standards, threats, and operating experience change.
 
 ## References
 
-- [OpenTelemetry documentation — Context Propagation](https://opentelemetry.io/docs/concepts/context-propagation/)
-- [Docker documentation — Runtime Metrics](https://docs.docker.com/engine/containers/runmetrics/)
-- [PostgreSQL documentation — Using `EXPLAIN`](https://www.postgresql.org/docs/current/using-explain.html)
-- [PostgreSQL documentation — Monitoring Database Activity](https://www.postgresql.org/docs/current/monitoring.html)
-- [OWASP Cheat Sheet Series — Authorization](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
-- [Google SRE Book — Effective Troubleshooting](https://sre.google/sre-book/effective-troubleshooting/)
-- [Chapter 115 — Security, Privacy, and Multi-Tenant Boundaries](../system-design/115-security-privacy-and-multi-tenant-boundaries.md)
-- [Chapter 118 — Debugging as Hypothesis Testing](118-debugging-as-hypothesis-testing.md)
-- [Chapter 127 — Incident Response and Operational Coordination](127-incident-response-and-operational-coordination.md)
-- [Chapter 128 — Post-Incident Learning and Continuous Improvement](128-post-incident-learning-and-continuous-improvement.md)
+- [OpenTelemetry documentation: Context Propagation](https://opentelemetry.io/docs/concepts/context-propagation/)
+- [Docker documentation: Runtime Metrics](https://docs.docker.com/engine/containers/runmetrics/)
+- [PostgreSQL documentation: Using `EXPLAIN`](https://www.postgresql.org/docs/current/using-explain.html)
+- [PostgreSQL documentation: Monitoring Database Activity](https://www.postgresql.org/docs/current/monitoring.html)
+- [OWASP Cheat Sheet Series: Authorization](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
+- [Google SRE Book: Effective Troubleshooting](https://sre.google/sre-book/effective-troubleshooting/)
+- [Chapter 115: Security, Privacy, and Multi-Tenant Boundaries](../system-design/115-security-privacy-and-multi-tenant-boundaries.md)
+- [Chapter 118: Debugging as Hypothesis Testing](118-debugging-as-hypothesis-testing.md)
+- [Chapter 127: Incident Response and Operational Coordination](127-incident-response-and-operational-coordination.md)
+- [Chapter 128: Post-Incident Learning and Continuous Improvement](128-post-incident-learning-and-continuous-improvement.md)

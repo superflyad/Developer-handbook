@@ -15,7 +15,11 @@ The project uses tagged editions for stable publication artifacts and records co
 - Pointed Linux kernel references at the current documentation host.
 - Weekly publication health checks with automatic tracking of failed builds.
 
-## [1.0.0] — 2026-11-01
+### Changed
+
+- Standardized handbook headings and punctuation, removed formulaic chapter closings, and added an editorial check for em dashes.
+
+## [1.0.0]: 2026-11-01
 
 ### Added
 

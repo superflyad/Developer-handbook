@@ -1,4 +1,4 @@
-# Chapter 120 — Logs and Structured Events
+# Chapter 120: Logs and Structured Events
 
 A log is an event record emitted because a future operator, developer, security responder, or automated system may need evidence about what happened. It is not a transcript of every line executed and not a substitute for metrics or traces.
 
@@ -595,10 +595,10 @@ Chapter 121 converts user journeys into metrics, service-level indicators, objec
 
 ## References
 
-- [OpenTelemetry — Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/)
-- [OpenTelemetry — Semantic conventions for events](https://opentelemetry.io/docs/specs/semconv/general/events/)
-- [W3C — Trace Context](https://www.w3.org/TR/trace-context/)
-- [OWASP — Logging Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html)
-- [RFC 3339 — Date and Time on the Internet: Timestamps](https://www.rfc-editor.org/rfc/rfc3339.html)
-- [Chapter 115 — Security, Privacy, and Multi-Tenant Boundaries](../system-design/115-security-privacy-and-multi-tenant-boundaries.md)
-- [Chapter 119 — Reproducing Failures and Building Minimal Cases](119-reproducing-failures-and-building-minimal-cases.md)
+- [OpenTelemetry: Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/)
+- [OpenTelemetry: Semantic conventions for events](https://opentelemetry.io/docs/specs/semconv/general/events/)
+- [W3C: Trace Context](https://www.w3.org/TR/trace-context/)
+- [OWASP: Logging Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html)
+- [RFC 3339: Date and Time on the Internet: Timestamps](https://www.rfc-editor.org/rfc/rfc3339.html)
+- [Chapter 115: Security, Privacy, and Multi-Tenant Boundaries](../system-design/115-security-privacy-and-multi-tenant-boundaries.md)
+- [Chapter 119: Reproducing Failures and Building Minimal Cases](119-reproducing-failures-and-building-minimal-cases.md)

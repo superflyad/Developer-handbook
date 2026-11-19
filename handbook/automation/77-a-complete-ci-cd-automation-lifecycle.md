@@ -1,4 +1,4 @@
-# Chapter 77 — A Complete CI/CD Automation Lifecycle
+# Chapter 77: A Complete CI/CD Automation Lifecycle
 
 A pipeline is not trustworthy because its YAML is long or every stage is green. Trust comes from preserving identity, evidence, authority, and recovery from source review through the deployed artifact.
 
@@ -672,7 +672,7 @@ Avoid automatic production promotion until checks, identity, observability, stop
 
 ### How does this make me a better engineer?
 
-It teaches you to design delivery as a stateful, security-sensitive system rather than a list of commands in YAML.
+You can design delivery as a stateful, security-sensitive system rather than a list of commands in YAML.
 
 ### How does this reduce waste?
 
@@ -688,15 +688,15 @@ Run the example and print the staging and production histories. Then substitute 
 
 ## Looking Ahead
 
-Part VI has moved stable work from manual commands into tested, observable, recoverable automation and a complete delivery lifecycle. Part VII begins by explaining what container isolation actually provides—and what an image, runtime, and host kernel still share.
+Part VI has moved stable work from manual commands into tested, observable, recoverable automation and a complete delivery lifecycle. Part VII begins by explaining what container isolation actually provides, and what an image, runtime, and host kernel still share.
 
 ## References
 
 - [SLSA v1.2 specification](https://slsa.dev/spec/v1.2/)
-- [SLSA v1.2 — Verifying artifacts](https://slsa.dev/spec/v1.2/verifying-artifacts)
-- [NIST SP 800-218 — Secure Software Development Framework](https://csrc.nist.gov/pubs/sp/800/218/final)
-- [NIST SP 800-204D — Software Supply Chain Security in CI/CD Pipelines](https://csrc.nist.gov/pubs/sp/800/204/d/final)
-- [GitHub Actions — Secure use reference](https://docs.github.com/en/actions/reference/security/secure-use)
-- [GitHub Actions — Artifact attestations](https://docs.github.com/en/actions/concepts/security/artifact-attestations)
-- [GitHub Actions — Deployments and environments](https://docs.github.com/en/actions/reference/workflows-and-actions/deployments-and-environments)
+- [SLSA v1.2: Verifying artifacts](https://slsa.dev/spec/v1.2/verifying-artifacts)
+- [NIST SP 800-218: Secure Software Development Framework](https://csrc.nist.gov/pubs/sp/800/218/final)
+- [NIST SP 800-204D: Software Supply Chain Security in CI/CD Pipelines](https://csrc.nist.gov/pubs/sp/800/204/d/final)
+- [GitHub Actions: Secure use reference](https://docs.github.com/en/actions/reference/security/secure-use)
+- [GitHub Actions: Artifact attestations](https://docs.github.com/en/actions/concepts/security/artifact-attestations)
+- [GitHub Actions: Deployments and environments](https://docs.github.com/en/actions/reference/workflows-and-actions/deployments-and-environments)
 - [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html)

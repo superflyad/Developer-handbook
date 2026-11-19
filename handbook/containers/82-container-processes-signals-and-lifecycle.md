@@ -1,4 +1,4 @@
-# Chapter 82 — Container Processes, Signals, and Lifecycle
+# Chapter 82: Container Processes, Signals, and Lifecycle
 
 A container can start successfully while hiding its real service behind a shell, ignoring termination, leaking zombie children, or converting failures into exit status zero. The runtime manages processes, not application intent.
 
@@ -418,7 +418,7 @@ USER 65532:65532
 ENTRYPOINT ["python", "/app/service.py", "--serve"]
 ```
 
-Start it, wait for `READY`, issue the platform's graceful stop, and measure the interval to `STOPPED`. Then start with `--fail`, verify exit status 7, and inspect—not guess—how the selected restart policy responds.
+Start it, wait for `READY`, issue the platform's graceful stop, and measure the interval to `STOPPED`. Then start with `--fail`, verify exit status 7, and inspect how the selected restart policy responds instead of guessing.
 
 ## 21. Test every lifecycle boundary
 
@@ -501,7 +501,7 @@ Avoid adding wrappers or init systems when the application can already run in th
 
 ### How does this make me a better engineer?
 
-It teaches you to debug containers as process trees and state transitions rather than opaque running boxes.
+You can debug containers as process trees and state transitions rather than opaque running boxes.
 
 ### How does this reduce waste?
 
@@ -521,11 +521,11 @@ Process replacement is safe only when state has a deliberate home. Chapter 83 se
 
 ## References
 
-- [Dockerfile reference — `ENTRYPOINT`, `CMD`, and `STOPSIGNAL`](https://docs.docker.com/reference/dockerfile/)
-- [Docker Engine — Running containers](https://docs.docker.com/engine/containers/run/)
-- [Docker Engine — Start containers automatically](https://docs.docker.com/engine/containers/start-containers-automatically/)
-- [Docker CLI — `docker container exec`](https://docs.docker.com/reference/cli/docker/container/exec/)
-- [OCI Runtime Specification — Runtime and lifecycle](https://specs.opencontainers.org/runtime-spec/runtime/)
+- [Dockerfile reference: `ENTRYPOINT`, `CMD`, and `STOPSIGNAL`](https://docs.docker.com/reference/dockerfile/)
+- [Docker Engine: Running containers](https://docs.docker.com/engine/containers/run/)
+- [Docker Engine: Start containers automatically](https://docs.docker.com/engine/containers/start-containers-automatically/)
+- [Docker CLI: `docker container exec`](https://docs.docker.com/reference/cli/docker/container/exec/)
+- [OCI Runtime Specification: Runtime and lifecycle](https://specs.opencontainers.org/runtime-spec/runtime/)
 - [Linux `pid_namespaces(7)` manual page](https://man7.org/linux/man-pages/man7/pid_namespaces.7.html)
 - [Linux `signal(7)` manual page](https://man7.org/linux/man-pages/man7/signal.7.html)
 - [Linux `wait(2)` manual page](https://man7.org/linux/man-pages/man2/wait.2.html)

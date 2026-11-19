@@ -1,4 +1,4 @@
-# Chapter 27 — Reading History and Investigating Changes
+# Chapter 27: Reading History and Investigating Changes
 
 Git's graph is useful only when we can ask precise questions of it. Investigation should begin with a hypothesis and a comparison, not with an indiscriminate scroll through commit messages.
 

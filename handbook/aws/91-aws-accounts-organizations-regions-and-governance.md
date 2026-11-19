@@ -1,4 +1,4 @@
-# Chapter 91 — AWS Accounts, Organizations, Regions, and Governance
+# Chapter 91: AWS Accounts, Organizations, Regions, and Governance
 
 A single AWS account can contain a surprising amount of infrastructure. That convenience becomes dangerous when production, experiments, security evidence, organization administration, and unrelated cost owners all share the same credentials, quotas, and failure boundary.
 
@@ -825,7 +825,7 @@ Avoid copying a large enterprise OU diagram into a small environment without cor
 
 ### How does this make me a better engineer?
 
-It teaches you to design administrative topology from authority, blast radius, failure, lifecycle, and cost instead of accepting a collection of accounts as accidental structure.
+You can design administrative topology from authority, blast radius, failure, lifecycle, and cost instead of accepting a collection of accounts as accidental structure.
 
 ### How does this reduce waste?
 
@@ -845,14 +845,14 @@ Accounts and SCPs establish coarse boundaries, but applications and operators st
 
 ## References
 
-- [AWS Account Management — What is an AWS account?](https://docs.aws.amazon.com/accounts/latest/reference/)
-- [AWS Organizations — Best practices for a multi-account environment](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_best-practices.html)
-- [AWS Whitepaper — Organizing Your AWS Environment Using Multiple Accounts](https://docs.aws.amazon.com/whitepapers/latest/organizing-your-aws-environment/organizing-your-aws-environment.html)
-- [AWS Organizations — Service control policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html)
-- [AWS Organizations — Best practices for the management account](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_best-practices_mgmt-acct.html)
-- [AWS Account Management — Enable or disable AWS Regions](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html)
+- [AWS Account Management: What is an AWS account?](https://docs.aws.amazon.com/accounts/latest/reference/)
+- [AWS Organizations: Best practices for a multi-account environment](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_best-practices.html)
+- [AWS Whitepaper: Organizing Your AWS Environment Using Multiple Accounts](https://docs.aws.amazon.com/whitepapers/latest/organizing-your-aws-environment/organizing-your-aws-environment.html)
+- [AWS Organizations: Service control policies](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html)
+- [AWS Organizations: Best practices for the management account](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_best-practices_mgmt-acct.html)
+- [AWS Account Management: Enable or disable AWS Regions](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html)
 - [AWS Regions and Availability Zones](https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions-availability-zones.html)
-- [AWS Tagging — Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-- [AWS Billing — Consolidating billing for AWS Organizations](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/consolidated-billing.html)
-- [AWS Cost Management — Managing your costs with AWS Budgets](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html)
-- [AWS IAM Identity Center — Set up emergency access to the AWS Management Console](https://docs.aws.amazon.com/singlesignon/latest/userguide/emergency-access.html)
+- [AWS Tagging: Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
+- [AWS Billing: Consolidating billing for AWS Organizations](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/consolidated-billing.html)
+- [AWS Cost Management: Managing your costs with AWS Budgets](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html)
+- [AWS IAM Identity Center: Set up emergency access to the AWS Management Console](https://docs.aws.amazon.com/singlesignon/latest/userguide/emergency-access.html)

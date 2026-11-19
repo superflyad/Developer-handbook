@@ -1,4 +1,4 @@
-# Chapter 26 — Staging and Making Coherent Commits
+# Chapter 26: Staging and Making Coherent Commits
 
 The index allows a commit to express one coherent change even when the working tree contains several unfinished ideas. The discipline is to review the proposed snapshot, not merely to run `git add` and hope.
 
@@ -160,7 +160,7 @@ Commit metadata is not the same as push authentication or cryptographic signing.
 
 ## Core Computer Science Concept
 
-The index is a **transaction-preparation boundary**: select a coherent candidate state, validate it, then make that state durable as a new commit. The analogy is useful but incomplete—Git does not automatically guarantee application tests, external consistency, or remote replication.
+The index is a **transaction-preparation boundary**: select a coherent candidate state, validate it, then make that state durable as a new commit. The analogy is useful but incomplete. Git does not automatically guarantee application tests, external consistency, or remote replication.
 
 ## Engineering Connections
 

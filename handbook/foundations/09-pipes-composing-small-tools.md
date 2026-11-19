@@ -1,4 +1,4 @@
-# Chapter 9 — Pipes: Composing Small Tools
+# Chapter 9: Pipes: Composing Small Tools
 
 Chapter 8 separated a process's standard input, standard output, standard error, and exit status. A pipe lets the shell connect those interfaces between processes.
 
@@ -479,7 +479,7 @@ Avoid pipes when the workflow requires persistence, transactions, acknowledgment
 
 ### How does this make me a better engineer?
 
-It trains you to reason about process boundaries, data contracts, concurrency, backpressure, failure propagation, and representation.
+You can reason about process boundaries, data contracts, concurrency, backpressure, failure propagation, and representation.
 
 ### How does this reduce waste?
 

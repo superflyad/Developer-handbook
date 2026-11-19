@@ -1,4 +1,4 @@
-# Chapter 118 — Debugging as Hypothesis Testing
+# Chapter 118: Debugging as Hypothesis Testing
 
 Debugging is the process of turning an unexplained observation into a tested explanation. Random edits sometimes make a symptom disappear, but they destroy evidence, combine variables, and teach nothing about recurrence. A disciplined investigation cycles through **observation, model, hypothesis, prediction, experiment, and revision**.
 
@@ -161,7 +161,7 @@ Prematurely choosing one explanation creates confirmation bias. Keep a small ran
 4. the release leaking connections on an exception path;
 5. telemetry attributing errors to the wrong cell.
 
-Rank by explanatory coverage, prior evidence, recency of relevant change, and experiment cost—not by who proposed it. Add an “unknown mechanism” category when the model may be incomplete.
+Rank by explanatory coverage, prior evidence, recency of relevant change, and experiment cost, not by who proposed it. Add an “unknown mechanism” category when the model may be incomplete.
 
 Do not keep dozens of vague possibilities. Merge equivalent mechanisms and remove hypotheses contradicted by reliable evidence, recording why.
 
@@ -555,11 +555,11 @@ Before your next debugging command, write two hypotheses and one result that wou
 
 ## Looking Ahead
 
-Chapter 119 turns an observed failure into a deterministic, minimized, shareable case—or documents exactly which production-only dimensions still resist reproduction.
+Chapter 119 turns an observed failure into a deterministic, minimized, shareable case, or documents exactly which production-only dimensions still resist reproduction.
 
 ## References
 
-- [Google SRE Book — Effective Troubleshooting](https://sre.google/sre-book/effective-troubleshooting/)
-- [Git documentation — git-bisect](https://git-scm.com/docs/git-bisect)
-- [Python documentation — pdb](https://docs.python.org/3/library/pdb.html)
-- [Chapter 117 — A Complete System Design Review](../system-design/117-a-complete-system-design-review.md)
+- [Google SRE Book: Effective Troubleshooting](https://sre.google/sre-book/effective-troubleshooting/)
+- [Git documentation: git-bisect](https://git-scm.com/docs/git-bisect)
+- [Python documentation: pdb](https://docs.python.org/3/library/pdb.html)
+- [Chapter 117: A Complete System Design Review](../system-design/117-a-complete-system-design-review.md)

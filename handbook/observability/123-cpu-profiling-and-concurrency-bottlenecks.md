@@ -1,8 +1,8 @@
-# Chapter 123 — CPU Profiling and Concurrency Bottlenecks
+# Chapter 123: CPU Profiling and Concurrency Bottlenecks
 
 Performance work begins with a user-visible outcome and a resource hypothesis, not a hot-looking function. A slow request may be waiting on a database, a lock, a thread pool, the scheduler, or CPU. CPU profiling locates where execution samples accumulate while code is on a processor. Concurrency evidence explains why runnable work cannot make progress or why added parallelism stops helping.
 
-The objective is to demonstrate an improvement in workload terms—throughput, latency distribution, resource cost, or capacity—while preserving correctness. Reducing a function's benchmark time is not enough if the end-to-end limit lies elsewhere.
+The objective is to demonstrate an improvement in workload terms such as throughput, latency distribution, resource cost, or capacity while preserving correctness. Reducing a function's benchmark time is not enough if the end-to-end limit lies elsewhere.
 
 This chapter does not teach assembly optimization, compiler internals, real-time scheduling, or a catalog of language-specific profilers.
 
@@ -603,7 +603,7 @@ It prevents speculative rewrites, meaningless flame-graph interpretation, excess
 
 ## Practical Observation
 
-For one slow operation, place wall duration, CPU time, runnable delay, lock wait, and I/O wait in a table—even if some values are initially unknown. The largest unknown is usually a better next measurement than the most interesting function in the first profile.
+For one slow operation, place wall duration, CPU time, runnable delay, lock wait, and I/O wait in a table, even if some values are initially unknown. The largest unknown is usually a better next measurement than the most interesting function in the first profile.
 
 ## Looking Ahead
 
@@ -611,9 +611,9 @@ Chapter 124 separates allocation rate, retained heap, resident memory, fragmenta
 
 ## References
 
-- [Linux kernel documentation — Workload tracing with perf](https://docs.kernel.org/admin-guide/workload-tracing.html)
-- [Go documentation — Diagnostics](https://go.dev/doc/diagnostics)
-- [Python documentation — Profiling](https://docs.python.org/3/library/profiling.html)
-- [Brendan Gregg — CPU Flame Graphs](https://www.brendangregg.com/FlameGraphs/cpuflamegraphs.html)
-- [Linux kernel documentation — False sharing](https://docs.kernel.org/kernel-hacking/false-sharing.html)
-- [Chapter 122 — Traces, Profiles, and Causal Context](122-traces-profiles-and-causal-context.md)
+- [Linux kernel documentation: Workload tracing with perf](https://docs.kernel.org/admin-guide/workload-tracing.html)
+- [Go documentation: Diagnostics](https://go.dev/doc/diagnostics)
+- [Python documentation: Profiling](https://docs.python.org/3/library/profiling.html)
+- [Brendan Gregg: CPU Flame Graphs](https://www.brendangregg.com/FlameGraphs/cpuflamegraphs.html)
+- [Linux kernel documentation: False sharing](https://docs.kernel.org/kernel-hacking/false-sharing.html)
+- [Chapter 122: Traces, Profiles, and Causal Context](122-traces-profiles-and-causal-context.md)

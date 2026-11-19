@@ -1,4 +1,4 @@
-# Chapter 2 — The Unix Mental Model
+# Chapter 2: The Unix Mental Model
 
 Chapter 1 described how Unix developers compose tools. This chapter explains the operating-system model underneath those tools.
 

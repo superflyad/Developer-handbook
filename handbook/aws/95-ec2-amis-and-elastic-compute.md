@@ -1,4 +1,4 @@
-# Chapter 95 — EC2, AMIs, and Elastic Compute
+# Chapter 95: EC2, AMIs, and Elastic Compute
 
 A virtual machine can run for years while operators patch it, copy files into it, and forget which changes were made. It appears stable until replacement is urgent and nobody can reproduce it. EC2 provides elastic virtual servers; the customer still owns the operating system and the path from image to replaceable capacity.
 
@@ -572,7 +572,7 @@ Avoid EC2 when a managed service meets the workload contract with materially les
 
 ### How does this make me a better engineer?
 
-It teaches you to design a machine from reproducible inputs, bounded identity, explicit storage, measurable health, and replacement behavior rather than from its current in-place condition.
+You can design a machine from reproducible inputs, bounded identity, explicit storage, measurable health, and replacement behavior rather than from its current in-place condition.
 
 ### How does this reduce waste?
 
@@ -592,16 +592,16 @@ Replaceable instances still need stable ingress, health-aware distribution, glob
 
 ## References
 
-- [Amazon EC2 — Instances and instance types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Instances.html)
-- [Amazon EC2 — Instance state changes](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html)
-- [Amazon EC2 — AMI lifecycle](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-lifecycle.html)
-- [Amazon EC2 — Launch templates](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html)
-- [Amazon EC2 — User data](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html)
-- [Amazon EC2 — Configure instance metadata options](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html)
-- [Amazon EC2 — Retrieve role credentials from instance metadata](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-metadata-security-credentials.html)
-- [Amazon EBS — EBS volume lifecycle](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-lifecycle.html)
-- [Amazon EC2 — Placement groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html)
-- [Amazon EC2 — Billing and purchasing options](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html)
-- [Amazon EC2 — Spot best practices](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html)
-- [Amazon EC2 Auto Scaling — Replace instances](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-group-replacing-instances.html)
-- [AWS Systems Manager — Patch Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager.html)
+- [Amazon EC2: Instances and instance types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Instances.html)
+- [Amazon EC2: Instance state changes](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html)
+- [Amazon EC2: AMI lifecycle](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-lifecycle.html)
+- [Amazon EC2: Launch templates](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html)
+- [Amazon EC2: User data](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html)
+- [Amazon EC2: Configure instance metadata options](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html)
+- [Amazon EC2: Retrieve role credentials from instance metadata](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-metadata-security-credentials.html)
+- [Amazon EBS: EBS volume lifecycle](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-lifecycle.html)
+- [Amazon EC2: Placement groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html)
+- [Amazon EC2: Billing and purchasing options](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html)
+- [Amazon EC2: Spot best practices](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html)
+- [Amazon EC2 Auto Scaling: Replace instances](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-group-replacing-instances.html)
+- [AWS Systems Manager: Patch Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager.html)

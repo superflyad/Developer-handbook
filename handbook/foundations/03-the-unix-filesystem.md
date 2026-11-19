@@ -1,4 +1,4 @@
-# Chapter 3 — The Unix Filesystem
+# Chapter 3: The Unix Filesystem
 
 Chapter 2 introduced the operating system as a resource manager. The filesystem is one of its most important interfaces: it gives programs and people a stable way to name, organize, inspect, and share persistent data.
 
@@ -200,12 +200,12 @@ The namespace can expose more than regular files and directories.
 
 Common Unix object types include:
 
-- **regular files** — stored data such as source code, images, and executables,
-- **directories** — mappings from names to objects,
-- **symbolic links** — objects containing a path to another location,
-- **device nodes** — interfaces to certain devices,
-- **named pipes** — filesystem-visible communication channels,
-- **sockets** — endpoints that processes can use for communication.
+- **regular files**: stored data such as source code, images, and executables,
+- **directories**: mappings from names to objects,
+- **symbolic links**: objects containing a path to another location,
+- **device nodes**: interfaces to certain devices,
+- **named pipes**: filesystem-visible communication channels,
+- **sockets**: endpoints that processes can use for communication.
 
 This supports the broader Unix preference for a small set of familiar interfaces. It does not mean that every resource is literally a regular file.
 

@@ -1,4 +1,4 @@
-# Chapter 70 — Subprocesses, HTTP Clients, and External Boundaries
+# Chapter 70: Subprocesses, HTTP Clients, and External Boundaries
 
 Calling a program or service crosses into a separately scheduled, versioned, authenticated, and failure-prone system. A function call cannot make that boundary local or reliable.
 
@@ -429,7 +429,7 @@ Avoid a generic wrapper when the target protocol requires richer streaming, auth
 
 ### How does this make me a better engineer?
 
-It makes you preserve the exact boundary contract instead of treating every external failure as an exception to retry.
+You can preserve the exact boundary contract instead of treating every external failure as an exception to retry.
 
 ### How does this reduce waste?
 
@@ -452,4 +452,4 @@ External calls depend on the exact interpreter and libraries available. Chapter 
 - [Python `subprocess` documentation](https://docs.python.org/3.14/library/subprocess.html)
 - [Python `urllib.request` documentation](https://docs.python.org/3.14/library/urllib.request.html)
 - [Python `urllib.error` documentation](https://docs.python.org/3.14/library/urllib.error.html)
-- [RFC 9110 — HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110)
+- [RFC 9110: HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110)

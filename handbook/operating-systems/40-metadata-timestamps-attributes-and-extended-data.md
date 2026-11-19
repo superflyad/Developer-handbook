@@ -1,4 +1,4 @@
-# Chapter 40 — Metadata, Timestamps, Attributes, and Extended Data
+# Chapter 40: Metadata, Timestamps, Attributes, and Extended Data
 
 Two files can contain identical visible bytes yet behave differently because their metadata differs. Ownership, access policy, timestamps, flags, link state, extended attributes, and alternate streams can affect execution, synchronization, backup, and security.
 
@@ -79,7 +79,7 @@ NTFS can associate multiple named data streams with one file. The default unname
 Get-Item -LiteralPath path -Stream *
 ```
 
-Copying to a filesystem without stream support can lose named streams. Archive and transfer tools vary. Stream presence is not inherently malicious—Windows uses related metadata mechanisms for legitimate features—but hidden or unexpected data belongs in the security model.
+Copying to a filesystem without stream support can lose named streams. Archive and transfer tools vary. Stream presence is not inherently malicious. Windows uses related metadata mechanisms for legitimate features, but hidden or unexpected data belongs in the security model.
 
 Extended attributes and alternate data streams are not identical implementations, even though both attach data beyond the primary visible content.
 
@@ -93,7 +93,7 @@ Extended attributes and alternate data streams are not identical implementations
 4. preserve ACLs, flags, links, extended data, and sparse layout;
 5. reproduce an application-consistent point in time.
 
-No generic copy command guarantees all five across every source and destination. Before migration or backup, define required metadata, confirm tool support, run a representative test, and verify the restored result—not merely the copy command's exit status.
+No generic copy command guarantees all five across every source and destination. Before migration or backup, define required metadata, confirm tool support, run a representative test, and verify the restored result, not merely the copy command's exit status.
 
 Checksums of primary content do not validate ACLs, streams, or attributes. Conversely, metadata differences do not necessarily mean primary bytes changed. Select evidence for the property you need to prove.
 
@@ -139,7 +139,7 @@ Avoid inferring business events from timestamps alone or changing unfamiliar att
 
 ### How does this make me a better engineer?
 
-It makes you define what “same file” and “successful copy” mean for the system at hand.
+You can define what “same file” and “successful copy” mean for the system at hand.
 
 ### How does this reduce waste?
 

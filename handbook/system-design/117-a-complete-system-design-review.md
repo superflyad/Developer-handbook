@@ -1,4 +1,4 @@
-# Chapter 117 — A Complete System Design Review
+# Chapter 117: A Complete System Design Review
 
 A system design review is not a performance in which one engineer presents a finished diagram and senior people approve it. It is a structured attempt to find unsupported assumptions while change is still affordable. The proposal connects user outcomes to interfaces, data, scale, failure behavior, security, operations, cost, and an evidence plan.
 
@@ -400,7 +400,7 @@ Rank by consequence and uncertainty, not numerical precision alone. An untested 
 
 ## 21. Stage delivery and learning
 
-### Stage 0 — Prove dangerous assumptions
+### Stage 0: Prove dangerous assumptions
 
 - prototype optimistic updates and atomic outbox behavior;
 - test tenant-scoped restore at projected two-year data volume;
@@ -408,7 +408,7 @@ Rank by consequence and uncertainty, not numerical precision alone. An untested 
 - verify identity revocation and queue authentication;
 - price representative attachment, search, and observability volume.
 
-### Stage 1 — Internal and design-partner release
+### Stage 1: Internal and design-partner release
 
 - one region, multi-zone runtime;
 - task, membership, attachment, and audit fundamentals;
@@ -416,14 +416,14 @@ Rank by consequence and uncertainty, not numerical precision alone. An untested 
 - synthetic journeys, security tests, and manual recovery exercise;
 - feature flags for search and notifications.
 
-### Stage 2 — Public launch
+### Stage 2: Public launch
 
 - verified SLOs, on-call ownership, runbooks, deletion, export, quotas, and cost allocation;
 - capacity headroom demonstrated at peak model;
 - threat mitigations and dependency failure modes tested;
 - regional backup recovery demonstrated within objectives.
 
-### Stage 3 — Evidence-driven evolution
+### Stage 3: Evidence-driven evolution
 
 - add tenant cells only when scale, isolation, or restore evidence justifies them;
 - extract services only with clear ownership or scaling benefit;
@@ -723,15 +723,15 @@ Read a design proposal and underline every adjective: scalable, secure, resilien
 
 ## Looking Ahead
 
-Part X begins with debugging as hypothesis testing. The same discipline used here—state a claim, predict evidence, run a bounded experiment, and revise the model—will guide investigation from logs and metrics through profiles, incidents, and post-incident learning.
+Part X begins with debugging as hypothesis testing. The discipline is to state a claim, predict evidence, run a bounded experiment, and revise the model. It guides investigation from logs and metrics through profiles, incidents, and post-incident learning.
 
 ## References
 
-- [AWS — Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/)
-- [AWS Well-Architected — Preparing for a framework review](https://docs.aws.amazon.com/wellarchitected/latest/userguide/preparing-for-a-wafr.html)
-- [Google Cloud — Well-Architected Framework](https://docs.cloud.google.com/architecture/framework)
-- [C4 Model — Visualising software architecture](https://c4model.com/)
-- [Google SRE Book — Service Best Practices](https://sre.google/sre-book/service-best-practices/)
-- [Google SRE Workbook — Non-Abstract Large System Design](https://sre.google/workbook/non-abstract-design/)
-- [Chapter 106 — From Requirements to a System Model](106-from-requirements-to-a-system-model.md)
-- [Chapter 116 — Architecture Decisions, Tradeoffs, and Evolution](116-architecture-decisions-tradeoffs-and-evolution.md)
+- [AWS: Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/)
+- [AWS Well-Architected: Preparing for a framework review](https://docs.aws.amazon.com/wellarchitected/latest/userguide/preparing-for-a-wafr.html)
+- [Google Cloud: Well-Architected Framework](https://docs.cloud.google.com/architecture/framework)
+- [C4 Model: Visualising software architecture](https://c4model.com/)
+- [Google SRE Book: Service Best Practices](https://sre.google/sre-book/service-best-practices/)
+- [Google SRE Workbook: Non-Abstract Large System Design](https://sre.google/workbook/non-abstract-design/)
+- [Chapter 106: From Requirements to a System Model](106-from-requirements-to-a-system-model.md)
+- [Chapter 116: Architecture Decisions, Tradeoffs, and Evolution](116-architecture-decisions-tradeoffs-and-evolution.md)

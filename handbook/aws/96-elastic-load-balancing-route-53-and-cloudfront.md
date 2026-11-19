@@ -1,4 +1,4 @@
-# Chapter 96 — Elastic Load Balancing, Route 53, and CloudFront
+# Chapter 96: Elastic Load Balancing, Route 53, and CloudFront
 
 A public request may cross recursive DNS caches, an authoritative DNS service, a content-delivery edge, a load balancer, and several application targets before it produces a response. Calling that entire path “the network” hides who made each decision and makes outages harder to diagnose.
 
@@ -54,7 +54,7 @@ Common record types include:
 - `TXT` for verification and policy data;
 - Route 53 **alias records** for supported AWS resources and other records in the same hosted zone.
 
-An alias record resembles a CNAME from an operator's perspective, but Route 53 can create one at the zone apex and can point it to resources such as an ELB load balancer or CloudFront distribution. Use the resource's assigned DNS name or an alias—not discovered load-balancer node addresses, which can change.
+An alias record resembles a CNAME from an operator's perspective, but Route 53 can create one at the zone apex and can point it to resources such as an ELB load balancer or CloudFront distribution. Use the resource's assigned DNS name or an alias, not discovered load-balancer node addresses, which can change.
 
 Ownership matters. Record the hosted-zone owner, registrar owner, delegation, certificate validation records, and change path. A perfectly configured load balancer remains unreachable if delegation points elsewhere or a validation record is removed.
 
@@ -79,7 +79,7 @@ Write the intent before choosing the policy. “Send users to the best endpoint�
 
 ## 5. TTL is a convergence contract
 
-DNS time to live controls how long a resolver may cache an answer. A lower TTL can reduce—but does not eliminate—change propagation delay. It also increases query frequency and cannot force every client, browser, operating system, or intermediary to discard an answer immediately.
+DNS time to live controls how long a resolver may cache an answer. A lower TTL can reduce change propagation delay, but it cannot eliminate it. It also increases query frequency and cannot force every client, browser, operating system, or intermediary to discard an answer immediately.
 
 Choose TTL from an operational contract:
 
@@ -644,7 +644,7 @@ Traffic delivery combines **indirection, partial observation, and memoization**.
 
 ## From the Field
 
-A team caches `/account` at the edge and forwards the session cookie so the origin can authenticate. The cookie is absent from the cache key. The first signed-in response fills the cache, and later users receive that account page because forwarding a value did not vary the representation. A caching-disabled API behavior—or a carefully reviewed identity-aware key—plus a two-user isolation test would have exposed the design before release.
+A team caches `/account` at the edge and forwards the session cookie so the origin can authenticate. The cookie is absent from the cache key. The first signed-in response fills the cache, and later users receive that account page because forwarding a value did not vary the representation. Disabling API caching, or carefully designing an identity-aware key and testing with two users, would have exposed the design before release.
 
 ## Engineering Review
 
@@ -666,7 +666,7 @@ Avoid adding a layer without a measured need and an operational owner. A CDN, DN
 
 ### How does this make me a better engineer?
 
-It teaches you to trace who chose an endpoint or representation, what evidence informed the choice, how long it remains valid, and which failure behavior users actually observe.
+You can trace who chose an endpoint or representation, what evidence informed the choice, how long it remains valid, and which failure behavior users actually observe.
 
 ### How does this reduce waste?
 
@@ -686,21 +686,21 @@ Delivery paths move bytes, but they do not define the bytes' durable ownership o
 
 ## References
 
-- [Elastic Load Balancing — How Elastic Load Balancing works](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html)
-- [Elastic Load Balancing — Load-balancer families](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html)
-- [Elastic Load Balancing — Network Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html)
-- [Elastic Load Balancing — Gateway Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/introduction.html)
-- [Application Load Balancer — Listeners](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html)
-- [Application Load Balancer — Target groups](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html)
-- [Application Load Balancer — Target-group health checks](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html)
-- [Application Load Balancer — HTTP and forwarded headers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/x-forwarded-headers.html)
-- [Route 53 — Routing traffic to an ELB load balancer](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-elb-load-balancer.html)
-- [Route 53 — Choosing a routing policy](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html)
-- [Route 53 — How health checks influence record selection](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-how-route-53-chooses-records.html)
-- [CloudFront — Control the cache key with a policy](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html)
-- [CloudFront — Understand cache policy TTLs](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cache-key-understand-cache-policy.html)
-- [CloudFront — Control origin requests with a policy](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html)
-- [CloudFront — Manage content expiration](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html)
-- [CloudFront — Request and response behavior for custom origins](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html)
-- [CloudFront — Restrict access to an Amazon S3 origin](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html)
-- [CloudFront — Invalidate files](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html)
+- [Elastic Load Balancing: How Elastic Load Balancing works](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html)
+- [Elastic Load Balancing: Load-balancer families](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html)
+- [Elastic Load Balancing: Network Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/introduction.html)
+- [Elastic Load Balancing: Gateway Load Balancers](https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/introduction.html)
+- [Application Load Balancer: Listeners](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html)
+- [Application Load Balancer: Target groups](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html)
+- [Application Load Balancer: Target-group health checks](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html)
+- [Application Load Balancer: HTTP and forwarded headers](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/x-forwarded-headers.html)
+- [Route 53: Routing traffic to an ELB load balancer](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-elb-load-balancer.html)
+- [Route 53: Choosing a routing policy](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy.html)
+- [Route 53: How health checks influence record selection](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/health-checks-how-route-53-chooses-records.html)
+- [CloudFront: Control the cache key with a policy](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html)
+- [CloudFront: Understand cache policy TTLs](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cache-key-understand-cache-policy.html)
+- [CloudFront: Control origin requests with a policy](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html)
+- [CloudFront: Manage content expiration](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html)
+- [CloudFront: Request and response behavior for custom origins](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html)
+- [CloudFront: Restrict access to an Amazon S3 origin](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html)
+- [CloudFront: Invalidate files](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html)

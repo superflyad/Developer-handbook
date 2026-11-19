@@ -1,4 +1,4 @@
-# Chapter 112 — Messaging, Events, and Asynchronous Workflows
+# Chapter 112: Messaging, Events, and Asynchronous Workflows
 
 A producer commits an order and crashes before publishing its event. A worker charges a card, loses its acknowledgment, and receives the message again. An operator replays six months of events into a consumer whose idempotency records last seven days. Every component can behave according to its local contract while the business outcome is missing or duplicated.
 
@@ -92,7 +92,7 @@ If the key already exists with the same fingerprint, return the recorded outcome
 
 Idempotency retention must cover normal retry, delayed delivery, queue retention, dead-letter residence, archive replay, backup restoration, and manual recovery.
 
-If events can replay for one year and deduplication records expire after seven days, side effects are protected for seven days—not one year.
+If events can replay for one year and deduplication records expire after seven days, side effects are protected for seven days, not one year.
 
 Permanent deduplication can be expensive. Alternatives include a durable business state that naturally rejects repetition, monotonic entity versions, replay into a side-effect-disabled rebuild path, or a new replay namespace with explicit transformation.
 
@@ -522,7 +522,7 @@ Avoid it when the caller requires an immediate atomic result and the work fits o
 
 ### How does this make me a better engineer?
 
-It teaches you to reason across time, distinguish facts from requests, align deduplication with replay, and make compensation and backlog visible.
+You can reason across time, distinguish facts from requests, align deduplication with replay, and make compensation and backlog visible.
 
 ### How does this reduce waste?
 
@@ -542,11 +542,11 @@ Queues and workflows rely on time, ownership, membership, and exclusive action. 
 
 ## References
 
-- [Apache Kafka — Design and delivery semantics](https://kafka.apache.org/documentation/#design)
-- [CloudEvents — Specification](https://github.com/cloudevents/spec)
-- [AWS Prescriptive Guidance — Transactional outbox](https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html)
-- [AWS Prescriptive Guidance — Saga patterns](https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/saga-patterns.html)
-- [Microsoft Azure Architecture Center — Competing Consumers](https://learn.microsoft.com/en-us/azure/architecture/patterns/competing-consumers)
-- [Microsoft Azure Architecture Center — Queue-Based Load Leveling](https://learn.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling)
-- [Chapter 101 — SQS, SNS, EventBridge, and Asynchronous Workflows](../aws/101-sqs-sns-eventbridge-and-asynchronous-workflows.md)
-- [Chapter 110 — Consistency, Transactions, and Concurrent Change](110-consistency-transactions-and-concurrent-change.md)
+- [Apache Kafka: Design and delivery semantics](https://kafka.apache.org/documentation/#design)
+- [CloudEvents: Specification](https://github.com/cloudevents/spec)
+- [AWS Prescriptive Guidance: Transactional outbox](https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html)
+- [AWS Prescriptive Guidance: Saga patterns](https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/saga-patterns.html)
+- [Microsoft Azure Architecture Center: Competing Consumers](https://learn.microsoft.com/en-us/azure/architecture/patterns/competing-consumers)
+- [Microsoft Azure Architecture Center: Queue-Based Load Leveling](https://learn.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling)
+- [Chapter 101: SQS, SNS, EventBridge, and Asynchronous Workflows](../aws/101-sqs-sns-eventbridge-and-asynchronous-workflows.md)
+- [Chapter 110: Consistency, Transactions, and Concurrent Change](110-consistency-transactions-and-concurrent-change.md)

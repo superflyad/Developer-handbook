@@ -1,4 +1,4 @@
-# Chapter 71 — Python Environments, Dependencies, and Packaging
+# Chapter 71: Python Environments, Dependencies, and Packaging
 
 A Python program is reproducible only when another machine can select a compatible interpreter, obtain the intended distributions from trusted sources, install them into an isolated environment, and expose the same entry point.
 
@@ -36,7 +36,7 @@ Use `python -m pip` so the chosen interpreter imports and runs its `pip` module.
 
 On Windows, `py --list-paths` inventories registered interpreters and `py -3.14` selects one. On Unix-like systems, names such as `python3.14` depend on installation and distribution policy.
 
-Record implementation, major and minor version, architecture, operating system, and—when native extensions matter—the relevant ABI and platform. A lock produced for one platform may not describe artifacts for another.
+Record implementation, major and minor version, architecture, operating system, and, when native extensions matter, the relevant ABI and platform. A lock produced for one platform may not describe artifacts for another.
 
 ## 3. Virtual environments isolate installations
 
@@ -155,7 +155,7 @@ Source distributions can execute build-backend code to create a wheel. Wheels av
 
 An installer can query public and private indexes or direct artifact locations. Project names share a resolution namespace across those sources.
 
-Using an extra public index alongside a private index can enable dependency confusion: an attacker publishes the same internal project name with a version the resolver prefers. Isolation requires index policy, unique naming, or an internal repository that controls upstream proxying—not merely another URL flag.
+Using an extra public index alongside a private index can enable dependency confusion: an attacker publishes the same internal project name with a version the resolver prefers. Isolation requires index policy, unique naming, or an internal repository that controls upstream proxying, not merely another URL flag.
 
 Protect index credentials, TLS validation, and configuration files. Do not embed secrets in requirement URLs, command history, or committed `pip.conf` files.
 
@@ -324,7 +324,7 @@ It prevents environment drift, wrong-interpreter installs, source-tree-only succ
 
 ## Handbook Principle #71
 
-> Rebuild environments from declared runtime constraints, reviewed locks, verified artifacts, and tested entry points—never from the memory of an existing installation.
+> Rebuild environments from declared runtime constraints, reviewed locks, verified artifacts, and tested entry points. Never rely on memory of an existing installation.
 
 ## Practical Observation
 
@@ -337,8 +337,8 @@ Reproducible code still needs predictable runtime inputs and controlled evidence
 ## References
 
 - [Python `venv` documentation](https://docs.python.org/3.14/library/venv.html)
-- [Python Packaging User Guide — `pyproject.toml` specification](https://packaging.python.org/en/latest/specifications/pyproject-toml/)
-- [Python Packaging User Guide — `pylock.toml` specification](https://packaging.python.org/en/latest/specifications/pylock-toml/)
-- [Python Packaging User Guide — Entry points specification](https://packaging.python.org/en/latest/specifications/entry-points/)
-- [pip — Repeatable installs](https://pip.pypa.io/en/stable/topics/repeatable-installs/)
-- [pip — Secure installs](https://pip.pypa.io/en/stable/topics/secure-installs/)
+- [Python Packaging User Guide: `pyproject.toml` specification](https://packaging.python.org/en/latest/specifications/pyproject-toml/)
+- [Python Packaging User Guide: `pylock.toml` specification](https://packaging.python.org/en/latest/specifications/pylock-toml/)
+- [Python Packaging User Guide: Entry points specification](https://packaging.python.org/en/latest/specifications/entry-points/)
+- [pip: Repeatable installs](https://pip.pypa.io/en/stable/topics/repeatable-installs/)
+- [pip: Secure installs](https://pip.pypa.io/en/stable/topics/secure-installs/)

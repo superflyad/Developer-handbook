@@ -1,4 +1,4 @@
-# Chapter 54 — Routing, Gateways, and Path Selection
+# Chapter 54: Routing, Gateways, and Path Selection
 
 Once a host knows a destination address, it must decide where to send the packet next. Hosts and routers make that decision from forwarding state, choosing the most specific applicable prefix before considering policy and preference among comparable paths.
 
@@ -103,7 +103,7 @@ Routing loops arise when devices have inconsistent next-hop beliefs. Symptoms ca
 
 Traceroute-style tools send probes with increasing TTL or Hop Limit. Each expiring hop may return ICMP Time Exceeded; the destination responds according to the probe method. Implementations use UDP, ICMP Echo, TCP, or selectable modes.
 
-An output line means a response associated with a probe was observed. An asterisk can mean filtering, rate limiting, loss, an unresponsive router, or a return-path issue—not necessarily that forward traffic stopped there. Load balancing can show different addresses across probes, and the response path can differ from the probe path.
+An output line means a response associated with a probe was observed. An asterisk can mean filtering, rate limiting, loss, an unresponsive router, or a return-path issue, not necessarily that forward traffic stopped there. Load balancing can show different addresses across probes, and the response path can differ from the probe path.
 
 The final responding router is not proof of physical geography or organizational ownership. MPLS, tunnels, anycast, and private addresses can obscure or reshape the visible sequence.
 
@@ -212,8 +212,8 @@ Routes operate on addresses, while applications usually begin with names. Chapte
 
 ## References
 
-- [RFC 1812 — Requirements for IP Version 4 Routers](https://www.rfc-editor.org/rfc/rfc1812)
-- [RFC 8200 — Internet Protocol, Version 6](https://www.rfc-editor.org/rfc/rfc8200)
-- [RFC 6724 — Default Address Selection for IPv6](https://www.rfc-editor.org/rfc/rfc6724)
+- [RFC 1812: Requirements for IP Version 4 Routers](https://www.rfc-editor.org/rfc/rfc1812)
+- [RFC 8200: Internet Protocol, Version 6](https://www.rfc-editor.org/rfc/rfc8200)
+- [RFC 6724: Default Address Selection for IPv6](https://www.rfc-editor.org/rfc/rfc6724)
 - [Linux `ip-route(8)`](https://man7.org/linux/man-pages/man8/ip-route.8.html)
 - [Microsoft PowerShell: `Get-NetRoute`](https://learn.microsoft.com/en-us/powershell/module/nettcpip/get-netroute)

@@ -1,4 +1,4 @@
-# Chapter 10 — Environment Variables
+# Chapter 10: Environment Variables
 
 Chapters 8 and 9 examined inherited data channels. A process also begins with a collection of named values called its environment.
 
@@ -544,7 +544,7 @@ Avoid using the environment for large data, live shared state, complex nested co
 
 ### How does this make me a better engineer?
 
-It teaches you to identify configuration scope, launcher ownership, inheritance, precedence, validation, and security exposure.
+You can identify configuration scope, launcher ownership, inheritance, precedence, validation, and security exposure.
 
 ### How does this reduce waste?
 

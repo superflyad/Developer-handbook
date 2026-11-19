@@ -1,4 +1,4 @@
-# Chapter 62 — Firewalls, NAT, Proxies, and Traffic Distribution
+# Chapter 62: Firewalls, NAT, Proxies, and Traffic Distribution
 
 Network paths often contain components that filter packets, translate endpoints, terminate protocols, or choose backends. These functions can share one appliance or service, but they make different decisions from different evidence.
 
@@ -185,8 +185,8 @@ The networking chapters have built evidence at every layer. Chapter 63 combines 
 
 ## References
 
-- [RFC 3022 — Traditional IP Network Address Translator](https://www.rfc-editor.org/rfc/rfc3022)
-- [RFC 4787 — NAT Behavioral Requirements for Unicast UDP](https://www.rfc-editor.org/rfc/rfc4787)
-- [RFC 7239 — Forwarded HTTP Extension](https://www.rfc-editor.org/rfc/rfc7239)
-- [RFC 9110 — HTTP Semantics: Intermediaries](https://www.rfc-editor.org/rfc/rfc9110)
-- [NIST SP 800-41 Rev. 1 — Guidelines on Firewalls and Firewall Policy](https://csrc.nist.gov/pubs/sp/800/41/r1/final)
+- [RFC 3022: Traditional IP Network Address Translator](https://www.rfc-editor.org/rfc/rfc3022)
+- [RFC 4787: NAT Behavioral Requirements for Unicast UDP](https://www.rfc-editor.org/rfc/rfc4787)
+- [RFC 7239: Forwarded HTTP Extension](https://www.rfc-editor.org/rfc/rfc7239)
+- [RFC 9110: HTTP Semantics: Intermediaries](https://www.rfc-editor.org/rfc/rfc9110)
+- [NIST SP 800-41 Rev. 1: Guidelines on Firewalls and Firewall Policy](https://csrc.nist.gov/pubs/sp/800/41/r1/final)

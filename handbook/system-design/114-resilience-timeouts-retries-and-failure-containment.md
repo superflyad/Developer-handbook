@@ -1,4 +1,4 @@
-# Chapter 114 — Resilience, Timeouts, Retries, and Failure Containment
+# Chapter 114: Resilience, Timeouts, Retries, and Failure Containment
 
 A dependency slows from 50 milliseconds to 20 seconds. Callers keep their requests open, exhaust connection and worker pools, fail health checks, and retry through several layers. One slow service becomes a system-wide outage even though no machine originally crashed.
 
@@ -29,14 +29,14 @@ A pattern name is not evidence. A circuit breaker can isolate a slow dependency 
 
 Useful classes include:
 
-- **permanent input failure** — correct the request; do not retry;
-- **authorization or policy failure** — stop or reauthorize;
-- **optimistic conflict** — refresh or resolve under domain rules;
-- **transient dependency failure** — a bounded retry may help;
-- **overload or throttling** — reduce offered load and respect retry guidance;
-- **unknown outcome** — query status or reconcile before repeating effects;
-- **persistent component failure** — isolate, fail over, or degrade;
-- **data corruption** — stop writes, preserve evidence, and recover deliberately.
+- **permanent input failure**: correct the request; do not retry;
+- **authorization or policy failure**: stop or reauthorize;
+- **optimistic conflict**: refresh or resolve under domain rules;
+- **transient dependency failure**: a bounded retry may help;
+- **overload or throttling**: reduce offered load and respect retry guidance;
+- **unknown outcome**: query status or reconcile before repeating effects;
+- **persistent component failure**: isolate, fail over, or degrade;
+- **data corruption**: stop writes, preserve evidence, and recover deliberately.
 
 Do not map every exception to “transient.” Retrying invalid schema, revoked access, an invariant failure, or a deterministic bug amplifies harm.
 
@@ -119,9 +119,9 @@ When the budget is exhausted, fail explicitly or queue under a business deadline
 
 A circuit breaker normally has:
 
-- **closed** — requests flow while recent outcomes are measured;
-- **open** — calls fail fast or degrade for a cooldown;
-- **half-open** — a limited number of probes test recovery.
+- **closed**: requests flow while recent outcomes are measured;
+- **open**: calls fail fast or degrade for a cooldown;
+- **half-open**: a limited number of probes test recovery.
 
 Scope a breaker to an independently failing resource: shard, region, endpoint, or dependency. One global breaker can block healthy partitions because another failed.
 
@@ -521,7 +521,7 @@ Avoid adding complex breakers or fallbacks to simple local operations with no sh
 
 ### How does this make me a better engineer?
 
-It teaches you to budget time end to end, inventory hidden retries, design overload behavior, distinguish health signals, and treat recovery as load.
+You can budget time end to end, inventory hidden retries, design overload behavior, distinguish health signals, and treat recovery as load.
 
 ### How does this reduce waste?
 
@@ -537,16 +537,16 @@ Trace one request through every timeout and retrying layer. Multiply maximum att
 
 ## Looking Ahead
 
-Chapter 115 treats assets, identities, trust boundaries, privacy, abuse, and tenant isolation as architecture inputs—and verifies that normal, degraded, administrative, and recovery paths preserve them.
+Chapter 115 treats assets, identities, trust boundaries, privacy, abuse, and tenant isolation as architecture inputs, and verifies that normal, degraded, administrative, and recovery paths preserve them.
 
 ## References
 
-- [Google SRE Book — Addressing Cascading Failures](https://sre.google/sre-book/addressing-cascading-failures/)
-- [Google SRE Book — Handling Overload](https://sre.google/sre-book/handling-overload/)
-- [AWS Builders' Library — Timeouts, retries, and backoff with jitter](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/)
-- [AWS Well-Architected — Control and limit retry calls](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel05-bp03.html)
-- [Microsoft Azure Architecture Center — Circuit Breaker](https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker)
-- [Microsoft Azure Architecture Center — Bulkhead](https://learn.microsoft.com/en-us/azure/architecture/patterns/bulkhead)
+- [Google SRE Book: Addressing Cascading Failures](https://sre.google/sre-book/addressing-cascading-failures/)
+- [Google SRE Book: Handling Overload](https://sre.google/sre-book/handling-overload/)
+- [AWS Builders' Library: Timeouts, retries, and backoff with jitter](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/)
+- [AWS Well-Architected: Control and limit retry calls](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel05-bp03.html)
+- [Microsoft Azure Architecture Center: Circuit Breaker](https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker)
+- [Microsoft Azure Architecture Center: Bulkhead](https://learn.microsoft.com/en-us/azure/architecture/patterns/bulkhead)
 - [Principles of Chaos Engineering](https://principlesofchaos.org/)
-- [Chapter 109 — Capacity, Partitioning, and Horizontal Scale](109-capacity-partitioning-and-horizontal-scale.md)
-- [Chapter 113 — Coordination, Leadership, and Distributed Time](113-coordination-leadership-and-distributed-time.md)
+- [Chapter 109: Capacity, Partitioning, and Horizontal Scale](109-capacity-partitioning-and-horizontal-scale.md)
+- [Chapter 113: Coordination, Leadership, and Distributed Time](113-coordination-leadership-and-distributed-time.md)

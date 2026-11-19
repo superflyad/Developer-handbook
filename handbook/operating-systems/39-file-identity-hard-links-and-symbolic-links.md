@@ -1,4 +1,4 @@
-# Chapter 39 — File Identity, Hard Links, and Symbolic Links
+# Chapter 39: File Identity, Hard Links, and Symbolic Links
 
 A directory name can refer directly to a filesystem object or indirectly to another path. Hard links and symbolic links exploit that difference. They are useful for deduplication, stable releases, configuration, and compatibility, but they fail in different ways.
 
@@ -147,7 +147,7 @@ Avoid links where tools cannot preserve their semantics, where aliasing surprise
 
 ### How does this make me a better engineer?
 
-It teaches you to reason about identity, aliases, resolution time, and object lifetime separately.
+You can reason about identity, aliases, resolution time, and object lifetime separately.
 
 ### How does this reduce waste?
 

@@ -1,4 +1,4 @@
-# Chapter 57 — UDP, Datagrams, and Message Boundaries
+# Chapter 57: UDP, Datagrams, and Message Boundaries
 
 The User Datagram Protocol (UDP) adds ports, length, and integrity checking to IP while preserving message boundaries. It does not establish a connection, guarantee delivery, order messages, prevent duplicates, or control congestion for the application.
 
@@ -195,7 +195,7 @@ UDP delegates reliability upward. Chapter 58 examines TCP's different choice: co
 
 ## References
 
-- [RFC 768 — User Datagram Protocol](https://www.rfc-editor.org/rfc/rfc768)
-- [RFC 8085 — UDP Usage Guidelines](https://www.rfc-editor.org/rfc/rfc8085)
-- [RFC 8899 — Datagram Packetization Layer Path MTU Discovery](https://www.rfc-editor.org/rfc/rfc8899)
+- [RFC 768: User Datagram Protocol](https://www.rfc-editor.org/rfc/rfc768)
+- [RFC 8085: UDP Usage Guidelines](https://www.rfc-editor.org/rfc/rfc8085)
+- [RFC 8899: Datagram Packetization Layer Path MTU Discovery](https://www.rfc-editor.org/rfc/rfc8899)
 - [Linux `udp(7)`](https://man7.org/linux/man-pages/man7/udp.7.html)

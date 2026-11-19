@@ -1,4 +1,4 @@
-# Chapter 103 — ECS, EKS, ECR, and Container Platforms on AWS
+# Chapter 103: ECS, EKS, ECR, and Container Platforms on AWS
 
 A container image can run on a laptop, an ECS task, or a Kubernetes Pod. That does not make those environments operationally equivalent. The scheduler, identity model, network attachment, health protocol, rollout controller, node owner, storage, and upgrade burden determine whether the same image becomes a reliable service.
 
@@ -42,7 +42,7 @@ Start with ECS on Fargate when an AWS-hosted application needs ordinary containe
 
 Choose EKS when Kubernetes compatibility, APIs, operators, admission controls, ecosystem tooling, or an established Kubernetes platform team create concrete value. “We might be multicloud later” rarely pays for Kubernetes day-two work today.
 
-AWS adds platform modes over time—currently including ECS Managed Instances and EKS Auto Mode. Re-evaluate current responsibility tables rather than assuming only the older EC2-versus-Fargate choice exists.
+AWS adds platform modes over time, currently including ECS Managed Instances and EKS Auto Mode. Re-evaluate current responsibility tables rather than assuming only the older EC2-versus-Fargate choice exists.
 
 ## 3. ECR stores content-addressed artifacts
 
@@ -502,7 +502,7 @@ Avoid containers when a managed service or bounded function meets the requiremen
 
 ### How does this make me a better engineer?
 
-It teaches you to distinguish packaging from orchestration, identify scheduler constraints, separate platform and workload identity, and price control against ownership.
+You can distinguish packaging from orchestration, identify scheduler constraints, separate platform and workload identity, and price control against ownership.
 
 ### How does this reduce waste?
 
@@ -522,22 +522,22 @@ Every compute platform depends on keys, configuration, secrets, logs, metrics, t
 
 ## References
 
-- [Amazon ECR — Tag immutability](https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html)
-- [Amazon ECR — Image scanning](https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html)
-- [Amazon ECR — Lifecycle policies](https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html)
-- [Amazon ECS — Task definitions](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html)
-- [Amazon ECS — Services](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html)
-- [Amazon ECS — Launch types and capacity providers](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/capacity-launch-type-comparison.html)
-- [Amazon ECS — Fargate task-definition differences](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-tasks-services.html)
-- [Amazon ECS — IAM role best practices](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security-iam-roles.html)
-- [Amazon ECS — `awsvpc` task networking](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking-awsvpc.html)
-- [Amazon ECS — Service Auto Scaling](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html)
-- [Amazon ECS — Deployment circuit breaker](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-circuit-breaker.html)
-- [Amazon ECS — Environment variables and sensitive values](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html)
-- [Amazon EKS — What is Amazon EKS?](https://docs.aws.amazon.com/eks/latest/userguide/)
-- [Amazon EKS — EKS on Fargate](https://docs.aws.amazon.com/eks/latest/userguide/fargate.html)
-- [Amazon EKS — Pod Identity](https://docs.aws.amazon.com/eks/latest/userguide/pod-identities.html)
-- [Amazon EKS — Kubernetes version lifecycle](https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html)
-- [Amazon EKS — Updating a cluster](https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html)
-- [Amazon EKS — Updating managed node groups](https://docs.aws.amazon.com/eks/latest/userguide/update-managed-node-group.html)
-- [Chapter 102 — Lambda, API Gateway, and Serverless Execution](102-lambda-api-gateway-and-serverless-execution.md)
+- [Amazon ECR: Tag immutability](https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html)
+- [Amazon ECR: Image scanning](https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html)
+- [Amazon ECR: Lifecycle policies](https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html)
+- [Amazon ECS: Task definitions](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html)
+- [Amazon ECS: Services](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html)
+- [Amazon ECS: Launch types and capacity providers](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/capacity-launch-type-comparison.html)
+- [Amazon ECS: Fargate task-definition differences](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-tasks-services.html)
+- [Amazon ECS: IAM role best practices](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security-iam-roles.html)
+- [Amazon ECS: `awsvpc` task networking](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking-awsvpc.html)
+- [Amazon ECS: Service Auto Scaling](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html)
+- [Amazon ECS: Deployment circuit breaker](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-circuit-breaker.html)
+- [Amazon ECS: Environment variables and sensitive values](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html)
+- [Amazon EKS: What is Amazon EKS?](https://docs.aws.amazon.com/eks/latest/userguide/)
+- [Amazon EKS: EKS on Fargate](https://docs.aws.amazon.com/eks/latest/userguide/fargate.html)
+- [Amazon EKS: Pod Identity](https://docs.aws.amazon.com/eks/latest/userguide/pod-identities.html)
+- [Amazon EKS: Kubernetes version lifecycle](https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-versions.html)
+- [Amazon EKS: Updating a cluster](https://docs.aws.amazon.com/eks/latest/userguide/update-cluster.html)
+- [Amazon EKS: Updating managed node groups](https://docs.aws.amazon.com/eks/latest/userguide/update-managed-node-group.html)
+- [Chapter 102: Lambda, API Gateway, and Serverless Execution](102-lambda-api-gateway-and-serverless-execution.md)

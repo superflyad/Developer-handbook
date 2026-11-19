@@ -1,4 +1,4 @@
-# Chapter 75 — Task Runners, Builds, and Repeatable Environments
+# Chapter 75: Task Runners, Builds, and Repeatable Environments
 
 A workflow known only as a sequence in one developer's shell history is not an engineering interface. It cannot be reviewed, discovered, or reproduced reliably by a new contributor or CI worker.
 
@@ -593,7 +593,7 @@ Avoid wrappers that add no stable contract, duplicate native tool behavior, or c
 
 ### How does this make me a better engineer?
 
-It teaches you to model workflows as explicit dependencies and to recognize ambient state as an input rather than luck.
+You can model workflows as explicit dependencies and to recognize ambient state as an input rather than luck.
 
 ### How does this reduce waste?
 
@@ -614,9 +614,9 @@ A repeatable task still needs an owner, start policy, overlap rule, and capacity
 ## References
 
 - [GNU Make manual](https://www.gnu.org/software/make/manual/make.html)
-- [GNU Make — Phony Targets](https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html)
-- [Python Packaging User Guide — `pyproject.toml` specification](https://packaging.python.org/en/latest/specifications/pyproject-toml/)
-- [Reproducible Builds — `SOURCE_DATE_EPOCH` specification](https://reproducible-builds.org/specs/source-date-epoch/)
-- [Reproducible Builds — Timestamps](https://reproducible-builds.org/docs/timestamps/)
-- [Bazel documentation — Hermeticity](https://bazel.build/basics/hermeticity)
-- [SLSA v1.2 — Producing Artifacts](https://slsa.dev/spec/v1.2/requirements)
+- [GNU Make: Phony Targets](https://www.gnu.org/software/make/manual/html_node/Phony-Targets.html)
+- [Python Packaging User Guide: `pyproject.toml` specification](https://packaging.python.org/en/latest/specifications/pyproject-toml/)
+- [Reproducible Builds: `SOURCE_DATE_EPOCH` specification](https://reproducible-builds.org/specs/source-date-epoch/)
+- [Reproducible Builds: Timestamps](https://reproducible-builds.org/docs/timestamps/)
+- [Bazel documentation: Hermeticity](https://bazel.build/basics/hermeticity)
+- [SLSA v1.2: Producing Artifacts](https://slsa.dev/spec/v1.2/requirements)

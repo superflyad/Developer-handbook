@@ -1,4 +1,4 @@
-# Chapter 50 — A Packet's Journey Through the Network Stack
+# Chapter 50: A Packet's Journey Through the Network Stack
 
 When an application sends data to another process, the bytes cross several contracts. The application names an endpoint, a transport protocol identifies conversations, IP moves datagrams between networks, and a link carries frames across one local segment. Troubleshooting becomes systematic when each responsibility stays visible.
 
@@ -152,7 +152,7 @@ Protocol layering is **abstraction through encapsulation**. Each layer exposes a
 
 ## From the Field
 
-A client reaches a load balancer and completes TLS, but receives an HTTP `503`. The evidence already proves interface, routing, transport, and client-side certificate validation through the load balancer. The next useful boundary is the load balancer's target health and application path—not a general claim that “the network is down.”
+A client reaches a load balancer and completes TLS, but receives an HTTP `503`. The evidence already proves interface, routing, transport, and client-side certificate validation through the load balancer. The next useful boundary is the load balancer's target health and application path, not a general claim that “the network is down.”
 
 ## Engineering Review
 
@@ -194,6 +194,6 @@ Chapter 51 examines the first delivery boundary in detail: links, frames, Ethern
 
 ## References
 
-- [RFC 1122 — Requirements for Internet Hosts: Communication Layers](https://www.rfc-editor.org/rfc/rfc1122)
-- [RFC 8200 — Internet Protocol, Version 6](https://www.rfc-editor.org/rfc/rfc8200)
+- [RFC 1122: Requirements for Internet Hosts: Communication Layers](https://www.rfc-editor.org/rfc/rfc1122)
+- [RFC 8200: Internet Protocol, Version 6](https://www.rfc-editor.org/rfc/rfc8200)
 - [Linux `packet(7)`](https://man7.org/linux/man-pages/man7/packet.7.html)

@@ -1,4 +1,4 @@
-# Chapter 72 — Configuration, Secrets, Logging, and Observability
+# Chapter 72: Configuration, Secrets, Logging, and Observability
 
 Automation needs runtime choices, authority, and evidence. Mixing those concerns into source code or unstructured print statements makes behavior difficult to reproduce and dangerous to diagnose.
 
@@ -162,7 +162,7 @@ Define the whole lifecycle:
 - revocation and incident containment;
 - deletion from logs, artifacts, backups, and history after exposure.
 
-Do not compare or print a secret to diagnose authentication. Log the reference category, credential version identifier if safe, provider outcome, and remote status—not the credential bytes.
+Do not compare or print a secret to diagnose authentication. Log the reference category, credential version identifier if safe, provider outcome, and remote status, not the credential bytes.
 
 If a secret appears in a log or commit, assume exposure. Redaction after the fact does not revoke the copied value; rotate or revoke it.
 
@@ -585,7 +585,7 @@ Avoid adding configurable modes or high-cardinality telemetry without an operati
 
 ### How does this make me a better engineer?
 
-It makes you design runtime control, authority, and evidence as explicit interfaces instead of incidental strings.
+You can design runtime control, authority, and evidence as explicit interfaces instead of incidental strings.
 
 ### How does this reduce waste?
 

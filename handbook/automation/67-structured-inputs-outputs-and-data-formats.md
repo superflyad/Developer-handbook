@@ -1,4 +1,4 @@
-# Chapter 67 — Structured Inputs, Outputs, and Data Formats
+# Chapter 67: Structured Inputs, Outputs, and Data Formats
 
 Automation exchanges bytes, but engineers reason about records, fields, identifiers, numbers, and states. A data format is reliable only when both producer and consumer agree on how those meanings are represented and validated.
 
@@ -325,7 +325,7 @@ Avoid inventing a custom text grammar when a maintained format and parser alread
 
 ### How does this make me a better engineer?
 
-It teaches you to distinguish parsing from validation and to preserve every meaningful state through serialization.
+You can distinguish parsing from validation and to preserve every meaningful state through serialization.
 
 ### How does this reduce waste?
 
@@ -333,7 +333,7 @@ It prevents delimiter corruption, encoding incidents, parser disagreement, incom
 
 ## Handbook Principle #67
 
-> Choose a format only after defining its boundaries, encoding, schema, limits, and compatibility behavior—and stop using shell text parsing when those rules exceed lines.
+> Choose a format only after defining its boundaries, encoding, schema, limits, and compatibility behavior, and stop using shell text parsing when those rules exceed lines.
 
 ## Practical Observation
 
@@ -345,9 +345,9 @@ Structured data often marks the boundary where shell stops being the clearest to
 
 ## References
 
-- [RFC 8259 — The JavaScript Object Notation Data Interchange Format](https://www.rfc-editor.org/rfc/rfc8259)
-- [RFC 7493 — The I-JSON Message Format](https://www.rfc-editor.org/rfc/rfc7493)
-- [RFC 7464 — JSON Text Sequences](https://www.rfc-editor.org/rfc/rfc7464)
-- [RFC 4180 — Common Format and MIME Type for CSV Files](https://www.rfc-editor.org/rfc/rfc4180)
+- [RFC 8259: The JavaScript Object Notation Data Interchange Format](https://www.rfc-editor.org/rfc/rfc8259)
+- [RFC 7493: The I-JSON Message Format](https://www.rfc-editor.org/rfc/rfc7493)
+- [RFC 7464: JSON Text Sequences](https://www.rfc-editor.org/rfc/rfc7464)
+- [RFC 4180: Common Format and MIME Type for CSV Files](https://www.rfc-editor.org/rfc/rfc4180)
 - [YAML 1.2.2 Specification](https://yaml.org/spec/1.2.2/)
 - [JSON Schema Draft 2020-12](https://json-schema.org/draft/2020-12)

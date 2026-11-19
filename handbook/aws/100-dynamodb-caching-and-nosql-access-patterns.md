@@ -1,4 +1,4 @@
-# Chapter 100 — DynamoDB, Caching, and NoSQL Access Patterns
+# Chapter 100: DynamoDB, Caching, and NoSQL Access Patterns
 
 A DynamoDB table can scale without the application managing servers, yet one celebrity key can still throttle, one filter can still read a whole table, and one cache can still return a value the business can no longer accept. NoSQL removes neither modeling nor correctness; it moves them into access patterns and keys.
 
@@ -108,7 +108,7 @@ For each index, define:
 - access pattern it serves;
 - key cardinality and hot-key risk;
 - projected attributes;
-- items that appear—especially sparse-index conditions;
+- items that appear, especially sparse-index conditions;
 - write amplification and capacity;
 - backfill behavior;
 - consistency and lag tolerance;
@@ -220,7 +220,7 @@ DynamoDB Streams retains item-level change records for 24 hours and can include 
 
 Consumers must be idempotent because the delivery system invoking them can retry batches. They must handle poison records, partial batch failures, lag approaching retention, shard lineage, resharding, and replay limits.
 
-Use Streams for projections, search indexing, notifications, audit enrichment, and integration—not as proof that an external side effect happened exactly once. Store business events transactionally when omission would violate an invariant, then reconcile downstream state.
+Use Streams for projections, search indexing, notifications, audit enrichment, and integration, not as proof that an external side effect happened exactly once. Store business events transactionally when omission would violate an invariant, then reconcile downstream state.
 
 ## 17. Global tables add multi-Region conflict semantics
 
@@ -549,7 +549,7 @@ Avoid DynamoDB when essential requests are exploratory, join-heavy, unbounded, o
 
 ### How does this make me a better engineer?
 
-It teaches you to quantify access before storage, recognize heat hidden by averages, encode invariants atomically, and separate authoritative state from asynchronous projections and caches.
+You can quantify access before storage, recognize heat hidden by averages, encode invariants atomically, and separate authoritative state from asynchronous projections and caches.
 
 ### How does this reduce waste?
 
@@ -561,7 +561,7 @@ It reduces scans, overprovisioning, unused indexes, oversized items, retry storm
 
 ## Practical Observation
 
-Take the ten busiest operations against one existing table. For each, write its complete key condition, index, page bound, average item bytes, consistency, and peak demand for the hottest key—not the average key. Compare that catalog with consumed capacity, throttling reasons, and Contributor Insights. Any operation labeled “filter,” “search,” or “list all” without a bounded key path is the next modeling task.
+Take the ten busiest operations against one existing table. For each, write its complete key condition, index, page bound, average item bytes, consistency, and peak demand for the hottest key, not the average key. Compare that catalog with consumed capacity, throttling reasons, and Contributor Insights. Any operation labeled “filter,” “search,” or “list all” without a bounded key path is the next modeling task.
 
 ## Looking Ahead
 
@@ -569,19 +569,19 @@ Streams can announce state changes, but applications also need queues, fan-out t
 
 ## References
 
-- [DynamoDB — Core components](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html)
-- [DynamoDB — Partitions and data distribution](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.Partitions.html)
-- [DynamoDB — Partition-key design](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html)
-- [DynamoDB — Query](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.html)
-- [DynamoDB — Scan](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html)
-- [DynamoDB — Read consistency](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html)
-- [DynamoDB — Secondary-index guidelines](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-indexes-general.html)
-- [DynamoDB — Read and write capacity consumption](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/read-write-operations.html)
-- [DynamoDB — Concurrent-update strategies](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/BestPractices_ImplementingVersionControl.html)
-- [DynamoDB — Transactions](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transactions.html)
-- [DynamoDB — Capacity-mode selection](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/CostOptimization_TableCapacityMode.html)
-- [DynamoDB — Throttling diagnosis](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TroubleshootingThrottling.html)
-- [DynamoDB — Time to Live](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html)
-- [DynamoDB — Streams](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html)
-- [DynamoDB — DAX consistency](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.consistency.html)
-- [Chapter 99 — RDS, Aurora, and Managed Relational Databases](99-rds-aurora-and-managed-relational-databases.md)
+- [DynamoDB: Core components](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html)
+- [DynamoDB: Partitions and data distribution](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.Partitions.html)
+- [DynamoDB: Partition-key design](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html)
+- [DynamoDB: Query](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.html)
+- [DynamoDB: Scan](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html)
+- [DynamoDB: Read consistency](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html)
+- [DynamoDB: Secondary-index guidelines](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-indexes-general.html)
+- [DynamoDB: Read and write capacity consumption](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/read-write-operations.html)
+- [DynamoDB: Concurrent-update strategies](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/BestPractices_ImplementingVersionControl.html)
+- [DynamoDB: Transactions](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transactions.html)
+- [DynamoDB: Capacity-mode selection](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/CostOptimization_TableCapacityMode.html)
+- [DynamoDB: Throttling diagnosis](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TroubleshootingThrottling.html)
+- [DynamoDB: Time to Live](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html)
+- [DynamoDB: Streams](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html)
+- [DynamoDB: DAX consistency](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.consistency.html)
+- [Chapter 99: RDS, Aurora, and Managed Relational Databases](99-rds-aurora-and-managed-relational-databases.md)

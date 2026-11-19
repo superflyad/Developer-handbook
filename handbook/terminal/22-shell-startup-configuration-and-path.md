@@ -1,4 +1,4 @@
-# Chapter 22 — Shell Startup, Configuration, and `PATH`
+# Chapter 22: Shell Startup, Configuration, and `PATH`
 
 A shell session begins with program defaults, invocation mode, inherited environment, and selected startup files. Configuration is executable code that changes every later command.
 

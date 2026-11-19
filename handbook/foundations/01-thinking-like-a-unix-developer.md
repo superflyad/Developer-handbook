@@ -1,4 +1,4 @@
-# Chapter 1 — Thinking Like a Unix Developer
+# Chapter 1: Thinking Like a Unix Developer
 
 Unix is not primarily a collection of commands. It is a way of designing and operating systems.
 
@@ -82,9 +82,9 @@ Text is not always the most compact or fastest representation. Binary formats ar
 
 Unix tools compose because they commonly agree on three data channels:
 
-- **standard input (`stdin`)** — incoming data,
-- **standard output (`stdout`)** — normal results,
-- **standard error (`stderr`)** — diagnostics and failures.
+- **standard input (`stdin`)**: incoming data,
+- **standard output (`stdout`)**: normal results,
+- **standard error (`stderr`)**: diagnostics and failures.
 
 A program that respects these interfaces can participate in pipelines without knowing which program came before or after it.
 
@@ -168,7 +168,7 @@ Avoid forcing pipelines onto tasks that require rich interaction, transactions a
 
 ### How does this make me a better engineer?
 
-It trains you to design software around explicit responsibilities and interfaces rather than hidden coupling.
+You can design software around explicit responsibilities and interfaces rather than hidden coupling.
 
 ### How does this reduce waste?
 

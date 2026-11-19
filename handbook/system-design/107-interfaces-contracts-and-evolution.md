@@ -1,4 +1,4 @@
-# Chapter 107 — Interfaces, Contracts, and Evolution
+# Chapter 107: Interfaces, Contracts, and Evolution
 
 Two programs can exchange valid JSON and still disagree about whether an omitted field means false, unknown, unchanged, or invalid. A producer can add an optional enum value without breaking the wire format while crashing every consumer that assumes the old set is exhaustive. An API can return success before its effect is durable, leaving callers unable to retry safely after a timeout.
 
@@ -6,7 +6,7 @@ Syntax is only one layer of an interface.
 
 The central idea is:
 
-> A stable interface defines meaning, authority, state transitions, failure, time, repetition, and evolution—not merely fields and endpoints—and it changes safely only when real consumers prove they can coexist.
+> A stable interface defines meaning, authority, state transitions, failure, time, repetition, and evolution, not merely fields and endpoints, and it changes safely only when real consumers prove they can coexist.
 
 ## 1. A boundary creates a contract
 
@@ -59,12 +59,12 @@ Consumers own correct use: bounded retries, deadlines, tolerant parsing where pr
 
 Compatibility has layers:
 
-1. **transport compatibility** — peers can connect and frame messages;
-2. **wire compatibility** — old and new parsers can decode the representation;
-3. **schema compatibility** — required fields and types remain acceptable;
-4. **behavioral compatibility** — the same input produces behavior consumers can still use;
-5. **business compatibility** — workflows and outcomes remain valid;
-6. **operational compatibility** — latency, load, quotas, security, and observability remain supportable.
+1. **transport compatibility**: peers can connect and frame messages;
+2. **wire compatibility**: old and new parsers can decode the representation;
+3. **schema compatibility**: required fields and types remain acceptable;
+4. **behavioral compatibility**: the same input produces behavior consumers can still use;
+5. **business compatibility**: workflows and outcomes remain valid;
+6. **operational compatibility**: latency, load, quotas, security, and observability remain supportable.
 
 Adding a response field may be wire-compatible. It is behaviorally breaking if a strict JSON consumer rejects unknown fields. Adding an enum value may parse correctly but break exhaustive application logic. Changing a default page size may preserve the schema while making an old client silently process only part of the collection. Tightening a rate limit can preserve every payload and still break a batch workflow.
 
@@ -255,7 +255,7 @@ Events are durable integration products. Owners must classify their data, contro
 
 ## 14. State delivery, ordering, and replay honestly
 
-At-least-once delivery means consumers can receive duplicates. Ordering is normally scoped to a partition, entity, or session—not the universe. Redelivery can make an older event arrive after a newer observation. Replay can occur long after ordinary retry windows.
+At-least-once delivery means consumers can receive duplicates. Ordering is normally scoped to a partition, entity, or session, not the universe. Redelivery can make an older event arrive after a newer observation. Replay can occur long after ordinary retry windows.
 
 Define:
 
@@ -644,7 +644,7 @@ This chapter applies **design by contract, state machines, partial failure, alge
 
 ## From the Field
 
-A list endpoint originally returns every project. The provider adds optional `page_size` and `page_token` fields, defaulting to 100 to protect itself. The schema checker calls this additive. Old clients ignore the new response token, process the first 100 projects, and report successful incomplete exports. Had the original contract bounded collections—or the change preserved old default behavior and measured consumer pagination capability—the provider could have avoided a silent business break.
+A list endpoint originally returns every project. The provider adds optional `page_size` and `page_token` fields, defaulting to 100 to protect itself. The schema checker calls this additive. Old clients ignore the new response token, process the first 100 projects, and report successful incomplete exports. The provider could have avoided a silent business break by bounding collections in the original contract or preserving the old default while measuring consumer pagination capability.
 
 ## Engineering Review
 
@@ -666,7 +666,7 @@ Do not publish an interface merely to decouple code inside one cohesive process.
 
 ### How does this make me a better engineer?
 
-It teaches you to distinguish parseability from meaning, reason through ambiguous outcomes, predict compatibility in both directions, and migrate from observed consumer behavior.
+You can distinguish parseability from meaning, reason through ambiguous outcomes, predict compatibility in both directions, and migrate from observed consumer behavior.
 
 ### How does this reduce waste?
 
@@ -674,7 +674,7 @@ It reduces accidental public surfaces, duplicate effects, client-specific workar
 
 ## Handbook Principle #107
 
-> An interface is stable when its meaning under success, failure, repetition, and change is explicit—and its evolution is proven against deployed consumers, not assumed from syntax.
+> An interface is stable when its meaning under success, failure, repetition, and change is explicit, and its evolution is proven against deployed consumers, not assumed from syntax.
 
 ## Practical Observation
 
@@ -686,13 +686,13 @@ Interfaces define the operations and observations a system must support. Chapter
 
 ## References
 
-- [Google AIP-180 — Backwards compatibility](https://google.aip.dev/180)
-- [Google AIP-203 — Field behavior documentation](https://google.aip.dev/203)
-- [Protocol Buffers — Proto3 language guide and message evolution](https://protobuf.dev/programming-guides/proto3/)
-- [Protocol Buffers — Proto best practices](https://protobuf.dev/best-practices/dos-donts/)
-- [RFC 9745 — The Deprecation HTTP Response Header Field](https://www.rfc-editor.org/rfc/rfc9745.html)
-- [RFC 8594 — The Sunset HTTP Header Field](https://www.rfc-editor.org/rfc/rfc8594.html)
-- [Pact — Consumer-driven contract testing](https://docs.pact.io/)
-- [Chapter 74 — Idempotency, State, Retries, and Recovery](../automation/74-idempotency-state-retries-and-recovery.md)
-- [Chapter 101 — SQS, SNS, EventBridge, and Asynchronous Workflows](../aws/101-sqs-sns-eventbridge-and-asynchronous-workflows.md)
-- [Chapter 106 — From Requirements to a System Model](106-from-requirements-to-a-system-model.md)
+- [Google AIP-180: Backwards compatibility](https://google.aip.dev/180)
+- [Google AIP-203: Field behavior documentation](https://google.aip.dev/203)
+- [Protocol Buffers: Proto3 language guide and message evolution](https://protobuf.dev/programming-guides/proto3/)
+- [Protocol Buffers: Proto best practices](https://protobuf.dev/best-practices/dos-donts/)
+- [RFC 9745: The Deprecation HTTP Response Header Field](https://www.rfc-editor.org/rfc/rfc9745.html)
+- [RFC 8594: The Sunset HTTP Header Field](https://www.rfc-editor.org/rfc/rfc8594.html)
+- [Pact: Consumer-driven contract testing](https://docs.pact.io/)
+- [Chapter 74: Idempotency, State, Retries, and Recovery](../automation/74-idempotency-state-retries-and-recovery.md)
+- [Chapter 101: SQS, SNS, EventBridge, and Asynchronous Workflows](../aws/101-sqs-sns-eventbridge-and-asynchronous-workflows.md)
+- [Chapter 106: From Requirements to a System Model](106-from-requirements-to-a-system-model.md)

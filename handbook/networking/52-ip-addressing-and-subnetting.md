@@ -1,4 +1,4 @@
-# Chapter 52 — IP Addressing and Subnetting
+# Chapter 52: IP Addressing and Subnetting
 
 An IP address identifies an interface within an addressing scope. A prefix says which leading bits describe a network. Together they let a host decide whether a destination is directly reachable and let routers aggregate many destinations into manageable forwarding entries.
 
@@ -204,7 +204,7 @@ An address and prefix may be configured manually or learned. Chapter 53 explains
 
 ## References
 
-- [RFC 4632 — Classless Inter-domain Routing](https://www.rfc-editor.org/rfc/rfc4632)
-- [RFC 4291 — IPv6 Addressing Architecture](https://www.rfc-editor.org/rfc/rfc4291)
-- [RFC 3021 — Using 31-Bit Prefixes on IPv4 Point-to-Point Links](https://www.rfc-editor.org/rfc/rfc3021)
+- [RFC 4632: Classless Inter-domain Routing](https://www.rfc-editor.org/rfc/rfc4632)
+- [RFC 4291: IPv6 Addressing Architecture](https://www.rfc-editor.org/rfc/rfc4291)
+- [RFC 3021: Using 31-Bit Prefixes on IPv4 Point-to-Point Links](https://www.rfc-editor.org/rfc/rfc3021)
 - [IANA IPv4 and IPv6 Special-Purpose Address Registries](https://www.iana.org/assignments/iana-ipv4-special-registry/iana-ipv4-special-registry.xhtml)

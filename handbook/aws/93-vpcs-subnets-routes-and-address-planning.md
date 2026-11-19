@@ -1,4 +1,4 @@
-# Chapter 93 — VPCs, Subnets, Routes, and Address Planning
+# Chapter 93: VPCs, Subnets, Routes, and Address Planning
 
 An instance has a private address in a subnet named `private-a`, yet it reaches the internet. Another instance has a public IPv4 address in a subnet named `public-b`, yet it cannot. The names describe intent; addresses, route tables, gateways, and return paths determine behavior.
 
@@ -692,7 +692,7 @@ Avoid treating this chapter as a complete network-security or hybrid-routing des
 
 ### How does this make me a better engineer?
 
-It teaches you to reason from addresses, route associations, prefix priority, translations, interfaces, and return paths instead of treating cloud networking as named boxes connected by lines.
+You can reason from addresses, route associations, prefix priority, translations, interfaces, and return paths instead of treating cloud networking as named boxes connected by lines.
 
 ### How does this reduce waste?
 
@@ -712,15 +712,15 @@ Routes make paths possible, but they do not decide which packets should pass, ho
 
 ## References
 
-- [Amazon VPC — IP addressing for VPCs and subnets](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html)
-- [Amazon VPC — VPC CIDR blocks](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-cidr-blocks.html)
-- [Amazon VPC — Subnet CIDR blocks](https://docs.aws.amazon.com/vpc/latest/userguide/subnet-sizing.html)
-- [Amazon VPC — Subnets for your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html)
-- [Amazon VPC — Subnet route tables](https://docs.aws.amazon.com/vpc/latest/userguide/subnet-route-tables.html)
-- [Amazon VPC — How route priority works](https://docs.aws.amazon.com/vpc/latest/userguide/route-tables-priority.html)
-- [Amazon VPC — Enable internet access using an internet gateway](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html)
-- [Amazon VPC — NAT gateway basics](https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-basics.html)
-- [Amazon VPC — DNS64 and NAT64](https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-nat64-dns64.html)
-- [Amazon VPC — Egress-only internet gateways](https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html)
-- [Amazon EC2 — Elastic network interfaces](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html)
-- [AWS Well-Architected — Ensure IP subnet allocation accounts for expansion and availability](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel02-bp03.html)
+- [Amazon VPC: IP addressing for VPCs and subnets](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html)
+- [Amazon VPC: VPC CIDR blocks](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-cidr-blocks.html)
+- [Amazon VPC: Subnet CIDR blocks](https://docs.aws.amazon.com/vpc/latest/userguide/subnet-sizing.html)
+- [Amazon VPC: Subnets for your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html)
+- [Amazon VPC: Subnet route tables](https://docs.aws.amazon.com/vpc/latest/userguide/subnet-route-tables.html)
+- [Amazon VPC: How route priority works](https://docs.aws.amazon.com/vpc/latest/userguide/route-tables-priority.html)
+- [Amazon VPC: Enable internet access using an internet gateway](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html)
+- [Amazon VPC: NAT gateway basics](https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-basics.html)
+- [Amazon VPC: DNS64 and NAT64](https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-nat64-dns64.html)
+- [Amazon VPC: Egress-only internet gateways](https://docs.aws.amazon.com/vpc/latest/userguide/egress-only-internet-gateway.html)
+- [Amazon EC2: Elastic network interfaces](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html)
+- [AWS Well-Architected: Ensure IP subnet allocation accounts for expansion and availability](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel02-bp03.html)

@@ -1,4 +1,4 @@
-# Chapter 35 — Worktrees and Parallel Development
+# Chapter 35: Worktrees and Parallel Development
 
 Two tasks often need the same repository at once: a feature is waiting for review while an urgent fix needs a different branch. Switching branches in one dirty directory risks mixing changes. A second clone works, but duplicates setup and can obscure which local refs are shared. Git worktrees provide separate checked-out directories attached to one repository.
 

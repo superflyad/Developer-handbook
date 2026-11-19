@@ -1,4 +1,4 @@
-# Chapter 98 — EBS, EFS, and Choosing Cloud Storage
+# Chapter 98: EBS, EFS, and Choosing Cloud Storage
 
 “Put it on durable storage” is not a design. A database needs blocks with predictable latency, a fleet may need a shared POSIX namespace, a web service may need immutable objects, and a batch job may need disposable local scratch. Those requirements lead to different services and different failure boundaries.
 
@@ -278,7 +278,7 @@ Lifecycle changes storage cost; it is not backup. AWS Backup can schedule protec
 - recovered path and name conflicts;
 - time to scan and validate large file counts.
 
-Replicating EFS can support Regional or zone recovery designs, but—as with S3—replication and backup have different independence and corruption semantics.
+Replicating EFS can support Regional or zone recovery designs, but replication and backup have different independence and corruption semantics, as they do with S3.
 
 ## 18. Instance store is intentionally ephemeral
 
@@ -594,7 +594,7 @@ Avoid forcing a general storage service onto a workload whose primary need is a 
 
 ### How does this make me a better engineer?
 
-It teaches you to distinguish interface semantics from physical persistence, measure the real bottleneck, and compose storage, compute, zone, key, and backup failure domains into one recovery contract.
+You can distinguish interface semantics from physical persistence, measure the real bottleneck, and compose storage, compute, zone, key, and backup failure domains into one recovery contract.
 
 ### How does this reduce waste?
 
@@ -614,19 +614,19 @@ Raw storage still leaves teams operating the database engine, replication, backu
 
 ## References
 
-- [Amazon EC2 — Storage options for EC2 instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Storage.html)
-- [Amazon EBS — Create and attach a volume](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-creating-volume.html)
-- [Amazon EBS — Volume types](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html)
-- [Amazon EBS — General Purpose SSD volumes](https://docs.aws.amazon.com/ebs/latest/userguide/general-purpose.html)
-- [Amazon EBS — Modify a volume](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-modify-volume.html)
-- [Amazon EBS — Snapshots](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html)
-- [Amazon EBS — Initialize restored volumes](https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html)
-- [Amazon EBS — Encryption](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html)
-- [Amazon EC2 — Instance-store persistence](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-lifetime.html)
-- [Amazon EFS — How EFS works](https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html)
-- [Amazon EFS — Mount targets](https://docs.aws.amazon.com/efs/latest/ug/accessing-fs.html)
-- [Amazon EFS — Performance](https://docs.aws.amazon.com/efs/latest/ug/performance.html)
-- [Amazon EFS — Encryption](https://docs.aws.amazon.com/efs/latest/ug/encryption.html)
-- [Amazon EFS — Lifecycle management](https://docs.aws.amazon.com/efs/latest/ug/enable-lifecycle-management.html)
-- [Amazon EFS — Backup](https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html)
-- [Chapter 97 — S3 Object Storage and Data Lifecycle](97-s3-object-storage-and-data-lifecycle.md)
+- [Amazon EC2: Storage options for EC2 instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Storage.html)
+- [Amazon EBS: Create and attach a volume](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-creating-volume.html)
+- [Amazon EBS: Volume types](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volume-types.html)
+- [Amazon EBS: General Purpose SSD volumes](https://docs.aws.amazon.com/ebs/latest/userguide/general-purpose.html)
+- [Amazon EBS: Modify a volume](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-modify-volume.html)
+- [Amazon EBS: Snapshots](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-snapshots.html)
+- [Amazon EBS: Initialize restored volumes](https://docs.aws.amazon.com/ebs/latest/userguide/initalize-volume.html)
+- [Amazon EBS: Encryption](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html)
+- [Amazon EC2: Instance-store persistence](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-store-lifetime.html)
+- [Amazon EFS: How EFS works](https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html)
+- [Amazon EFS: Mount targets](https://docs.aws.amazon.com/efs/latest/ug/accessing-fs.html)
+- [Amazon EFS: Performance](https://docs.aws.amazon.com/efs/latest/ug/performance.html)
+- [Amazon EFS: Encryption](https://docs.aws.amazon.com/efs/latest/ug/encryption.html)
+- [Amazon EFS: Lifecycle management](https://docs.aws.amazon.com/efs/latest/ug/enable-lifecycle-management.html)
+- [Amazon EFS: Backup](https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html)
+- [Chapter 97: S3 Object Storage and Data Lifecycle](97-s3-object-storage-and-data-lifecycle.md)

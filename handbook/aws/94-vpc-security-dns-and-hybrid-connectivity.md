@@ -1,4 +1,4 @@
-# Chapter 94 — VPC Security, DNS, and Hybrid Connectivity
+# Chapter 94: VPC Security, DNS, and Hybrid Connectivity
 
 A route exists from an application subnet to a database, yet the connection times out. The security group allows the service port, but a stateless subnet rule drops the return packet. In another VPC, the same hostname resolves to a public endpoint because private DNS was never associated. Connectivity is the composition of routing, filtering, naming, and ownership.
 
@@ -452,7 +452,7 @@ This chapter applies **composed predicates over a bidirectional graph**. Routes 
 
 ## From the Field
 
-A team creates an S3 interface endpoint but leaves private DNS disabled. Instances continue resolving the public service address and send traffic through a NAT gateway, so the endpoint appears unused while NAT cost grows. Enabling private DNS without checking the endpoint security group then causes timeouts. A complete trace—DNS answer, route, endpoint ENI, security group, endpoint policy, IAM, and bucket policy—would reveal both independent gaps.
+A team creates an S3 interface endpoint but leaves private DNS disabled. Instances continue resolving the public service address and send traffic through a NAT gateway, so the endpoint appears unused while NAT cost grows. Enabling private DNS without checking the endpoint security group then causes timeouts. A complete trace of the DNS answer, route, endpoint ENI, security group, endpoint policy, IAM, and bucket policy would reveal both independent gaps.
 
 ## Engineering Review
 
@@ -494,15 +494,15 @@ With account, identity, and network boundaries established, Chapter 95 turns to 
 
 ## References
 
-- [Amazon VPC — Infrastructure security and filter comparison](https://docs.aws.amazon.com/vpc/latest/userguide/infrastructure-security.html)
-- [Amazon VPC — Security groups](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html)
-- [AWS PrivateLink — Interface VPC endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/create-interface-endpoint.html)
-- [AWS PrivateLink — Gateway endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html)
-- [AWS PrivateLink — Endpoint policies](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-access.html)
-- [Route 53 — Resolver endpoints and forwarding](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html)
-- [Amazon VPC — VPC peering basics](https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html)
-- [Amazon VPC — AWS Transit Gateway](https://docs.aws.amazon.com/vpc/latest/tgw/)
+- [Amazon VPC: Infrastructure security and filter comparison](https://docs.aws.amazon.com/vpc/latest/userguide/infrastructure-security.html)
+- [Amazon VPC: Security groups](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html)
+- [AWS PrivateLink: Interface VPC endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/create-interface-endpoint.html)
+- [AWS PrivateLink: Gateway endpoints](https://docs.aws.amazon.com/vpc/latest/privatelink/gateway-endpoints.html)
+- [AWS PrivateLink: Endpoint policies](https://docs.aws.amazon.com/vpc/latest/privatelink/vpc-endpoints-access.html)
+- [Route 53: Resolver endpoints and forwarding](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html)
+- [Amazon VPC: VPC peering basics](https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html)
+- [Amazon VPC: AWS Transit Gateway](https://docs.aws.amazon.com/vpc/latest/tgw/)
 - [AWS Site-to-Site VPN User Guide](https://docs.aws.amazon.com/vpn/latest/s2svpn/)
-- [AWS Direct Connect — Encryption in transit](https://docs.aws.amazon.com/directconnect/latest/UserGuide/encryption-in-transit.html)
-- [Amazon VPC — VPC sharing](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html)
-- [Amazon VPC — Flow logs](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html)
+- [AWS Direct Connect: Encryption in transit](https://docs.aws.amazon.com/directconnect/latest/UserGuide/encryption-in-transit.html)
+- [Amazon VPC: VPC sharing](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html)
+- [Amazon VPC: Flow logs](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html)
