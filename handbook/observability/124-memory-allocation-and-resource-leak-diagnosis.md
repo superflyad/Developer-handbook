@@ -595,7 +595,7 @@ Chapter 125 follows latency through I/O queues, network round trips, connection 
 
 ## References
 
-- [Linux kernel documentation — The `/proc` filesystem](https://kernel.org/doc/html/latest/filesystems/proc.html)
+- [Linux kernel documentation — The `/proc` filesystem](https://docs.kernel.org/filesystems/proc.html)
 - [Microsoft Learn — Working Set](https://learn.microsoft.com/en-us/windows/win32/memory/working-set)
 - [Microsoft Learn — Memory Performance Information](https://learn.microsoft.com/en-us/windows/win32/memory/memory-performance-information)
 - [Go documentation — Diagnostics](https://go.dev/doc/diagnostics)

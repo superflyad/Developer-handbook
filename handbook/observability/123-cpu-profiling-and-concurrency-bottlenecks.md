@@ -611,9 +611,9 @@ Chapter 124 separates allocation rate, retained heap, resident memory, fragmenta
 
 ## References
 
-- [Linux kernel documentation — Workload tracing with perf](https://kernel.org/doc/html/latest/admin-guide/workload-tracing.html)
+- [Linux kernel documentation — Workload tracing with perf](https://docs.kernel.org/admin-guide/workload-tracing.html)
 - [Go documentation — Diagnostics](https://go.dev/doc/diagnostics)
 - [Python documentation — Profiling](https://docs.python.org/3/library/profiling.html)
 - [Brendan Gregg — CPU Flame Graphs](https://www.brendangregg.com/FlameGraphs/cpuflamegraphs.html)
-- [Linux kernel documentation — False sharing](https://kernel.org/doc/html/latest/kernel-hacking/false-sharing.html)
+- [Linux kernel documentation — False sharing](https://docs.kernel.org/kernel-hacking/false-sharing.html)
 - [Chapter 122 — Traces, Profiles, and Causal Context](122-traces-profiles-and-causal-context.md)

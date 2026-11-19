@@ -297,4 +297,4 @@ Part V replaced “the network” with explicit protocols, endpoints, paths, and
 - [Linux `ip-route(8)` manual](https://man7.org/linux/man-pages/man8/ip-route.8.html)
 - [curl command-line manual](https://curl.se/docs/manpage.html)
 - [Wireshark User's Guide](https://www.wireshark.org/docs/wsug_html_chunked/)
-- [Wireshark capture-filter reference](https://wiki.wireshark.org/CaptureFilters)
+- [Wireshark User's Guide — Filtering while capturing](https://www.wireshark.org/docs/wsug_html_chunked/ChCapCaptureFilterSection.html)

@@ -770,6 +770,6 @@ Cloud responsibility needs enforceable organizational boundaries. Chapter 91 tre
 - [AWS Fault Isolation Boundaries — Control planes and data planes](https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/control-planes-and-data-planes.html)
 - [AWS Well-Architected Reliability Pillar — Understanding availability needs](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/understanding-availability-needs.html)
 - [AWS Service Quotas User Guide](https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html)
-- [AWS Well-Architected Framework — Manage demand and supply resources](https://docs.aws.amazon.com/wellarchitected/latest/framework/cost-mandem.html)
+- [AWS Well-Architected Framework — Manage demand and supply resources](https://docs.aws.amazon.com/wellarchitected/latest/framework/cost08.html)
 - [AWS Cost Management — Cost Anomaly Detection](https://docs.aws.amazon.com/cost-management/latest/userguide/getting-started-ad.html)
 - [AWS Cost Management — Budgets](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html)
