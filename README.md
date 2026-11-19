@@ -55,6 +55,10 @@ The first edition contains **129 chapters across ten parts**, followed by a cros
 
 Browse the complete [Table of Contents](SUMMARY.md) or jump directly to the [Engineering Patterns appendix](handbook/appendices/engineering-patterns.md).
 
+For agent-assisted study, use the [reading workflow](HOW_TO_USE_THIS_HANDBOOK.md#with-an-ai-assistant) and the generated [machine-readable chapter index](https://superflyad.github.io/Developer-handbook/llms.txt). Both point back to the same canonical Markdown chapters.
+
+Maintainers can use the [agent answer evaluation](AGENT_EVALUATION.md) to check retrieval, technical accuracy, citations, and preserved limits against real questions.
+
 ## A living engineering reference
 
 The handbook is versioned like software. Markdown is the source of truth; the website and downloadable editions are reproducible build artifacts. Guidance evolves when platforms change, better evidence appears, or operational experience exposes a sharper model.

@@ -15,7 +15,7 @@
 
 ## Evidence
 
-<!-- Link primary sources and describe any reproducible investigation. -->
+<!-- Link primary sources near the claims they support. State what was checked, the platform or version where relevant, and any claims still needing specialist review. -->
 
 ## Verification
 
@@ -25,6 +25,7 @@
 - [ ] Run markdownlint across every Markdown file.
 - [ ] Build the website when navigation or presentation changes.
 - [ ] Test examples in a safe, disposable environment.
+- [ ] Check an agent recap against the changed chapter when it affects a consequential model or limitation.
 - [ ] Run the Git whitespace check.
 
 ## Editorial and safety review
