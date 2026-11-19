@@ -5,6 +5,9 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+  schedule:
+    - cron: "17 13 * * 3"
 
 permissions:
   contents: read
@@ -114,3 +117,48 @@ jobs:
       - name: Deploy website
         id: deployment
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+
+  maintenance-report:
+    name: Track publication health
+    if: always() && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: [validate, build-site, publish-preview]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      VALIDATE_RESULT: ${{ needs.validate.result }}
+      SITE_RESULT: ${{ needs.build-site.result }}
+      PUBLICATION_RESULT: ${{ needs.publish-preview.result }}
+    steps:
+      - name: Open, update, or resolve publication health issue
+        run: |
+          title="[Automation] Publication checks need review"
+          issue_number="$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --limit 100 --json number,title --jq '.[] | select(.title == "[Automation] Publication checks need review") | .number' | head -n 1)"
+
+          if [ "$VALIDATE_RESULT" = success ] && [ "$SITE_RESULT" = success ] && [ "$PUBLICATION_RESULT" = success ]; then
+            if [ -n "$issue_number" ]; then
+              gh issue close "$issue_number" --repo "$GITHUB_REPOSITORY" --reason completed
+            fi
+            exit 0
+          fi
+
+          report="$RUNNER_TEMP/publication-health.md"
+          {
+            echo "The current main branch did not pass every publication check. Inspect the failed job before changing source or build dependencies."
+            echo
+            echo "[Workflow run]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID)"
+            echo
+            echo '| Check | Result |'
+            echo '| --- | --- |'
+            echo "| Markdown and local links | $VALIDATE_RESULT |"
+            echo "| Searchable website | $SITE_RESULT |"
+            echo "| Downloadable formats | $PUBLICATION_RESULT |"
+          } > "$report"
+
+          if [ -n "$issue_number" ]; then
+            gh issue edit "$issue_number" --repo "$GITHUB_REPOSITORY" --body-file "$report"
+          else
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$title" --body-file "$report"
+          fi

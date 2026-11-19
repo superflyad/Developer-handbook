@@ -16,7 +16,11 @@ PDF, Word, ebook, and website editions are generated publication formats. They m
 
 ## Maintenance checks
 
-Pull requests validate chapter structure, local links, Markdown, and publication builds. A weekly external-link audit checks references outside the repository. It waits and checks again after a failed scan to filter out short-lived responses. If the second scan fails, the workflow saves both reports and opens or updates one tracking issue. A clean run closes that issue.
+Pull requests validate chapter structure, local links, Markdown, and publication builds. The publication checks also run weekly, even when no source changes have occurred. A failed run on `main` opens or updates one tracking issue; a clean run closes it.
+
+A separate weekly external-link audit checks references outside the repository. It waits and checks again after a failed scan to filter out short-lived responses. If the second scan fails, the workflow saves both reports and opens or updates one tracking issue. A clean run closes that issue.
+
+Dependabot proposes weekly website-dependency and GitHub Actions updates, while main-branch rules require a pull request and passing checks. Maintainers review and merge those proposals according to [project governance](GOVERNANCE.md).
 
 External responses can change or block automated clients. Review the report and the cited source before replacing a reference or excluding a domain; the audit does not rewrite citations automatically.
 
