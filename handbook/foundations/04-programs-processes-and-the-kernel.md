@@ -41,7 +41,7 @@ python3 script_b.py
 python3 script_c.py
 ```
 
-They use the same Python executable, but each process has its own memory, variables, files, working directory, and lifecycle.
+They use the same Python executable, but each process has its own address space, environment, working directory, and lifecycle. They can still access the same files. On Unix-like systems, a child created with `fork()` can even share an underlying open file description with its parent, including its file offset ([Linux `fork(2)`](https://man7.org/linux/man-pages/man2/fork.2.html)).
 
 This isolation is why one process can fail without automatically destroying the others.
 
@@ -105,7 +105,7 @@ A PID is temporary. After the process exits, the number may eventually be reused
 
 ## 6. Parent and child processes
 
-Processes form a hierarchy.
+On Unix-like systems, a process normally has a parent process, forming a hierarchy.
 
 ```text
 Terminal
@@ -292,7 +292,7 @@ One command crosses several layers of the operating system.
 
 ## 15. Exit codes
 
-When a process ends, it returns an exit status.
+When a process exits normally, it supplies an exit status. A process can also terminate because of a signal; the shell derives a command status from that termination information ([Linux `wait(2)`](https://man7.org/linux/man-pages/man2/wait.2.html); [Bash exit status](https://www.gnu.org/software/bash/manual/html_node/Exit-Status.html)).
 
 By convention:
 
@@ -308,7 +308,7 @@ tests pass → exit 0
 tests fail → exit 1
 ```
 
-A process does not only print text for humans. It also reports a machine-readable result.
+A command does not only print text for humans. Its status also gives the shell and automation a machine-readable result.
 
 ## 16. Why applications freeze
 
@@ -443,3 +443,10 @@ It turns debugging into a sequence of questions: Which process exists? What stat
 Open several applications on macOS and inspect Activity Monitor. Notice that one visible application may correspond to several processes.
 
 The interface shows applications. The operating system manages the process tree underneath.
+
+## References
+
+- [Linux manual: `fork(2)`](https://man7.org/linux/man-pages/man2/fork.2.html)
+- [Linux manual: `execve(2)`](https://man7.org/linux/man-pages/man2/execve.2.html)
+- [Linux manual: `wait(2)`](https://man7.org/linux/man-pages/man2/wait.2.html)
+- [GNU Bash manual: command execution environment](https://www.gnu.org/software/bash/manual/html_node/Command-Execution-Environment.html)

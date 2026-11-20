@@ -86,10 +86,10 @@ The shell understands syntax for:
 - command substitution,
 - exit-code-based control flow.
 
-For example:
+For example, in Bash:
 
 ```bash
-name="Michael"
+name="Ada"
 echo "$name"
 ```
 
@@ -115,14 +115,14 @@ echo "/Users/michael"
 
 The command receives the expanded result, not necessarily the text you originally typed.
 
-This same rule applies to:
+The shell also interprets:
 
-- variables,
+- variable expansions,
 - wildcard patterns,
-- command substitution,
+- command substitutions,
 - redirection operators,
 - pipelines,
-- quoting.
+- quoting rules.
 
 Many apparent command bugs are actually shell-parsing bugs.
 
@@ -174,13 +174,13 @@ A command may work in Terminal but fail in CI, an IDE, Docker, or a scheduled ta
 A shell variable belongs to the shell:
 
 ```bash
-name="Michael"
+name="Ada"
 ```
 
 An exported variable is included in the environment passed to future child processes:
 
 ```bash
-export name="Michael"
+export name="Ada"
 ```
 
 The distinction is:
@@ -210,7 +210,7 @@ For `zsh`, common configuration files include:
 ~/.zshrc
 ```
 
-They load under different conditions.
+They load under different conditions. In particular, `.zshrc` is read for interactive `zsh` sessions, while `.zprofile` is read for login sessions ([zsh startup files](https://zsh.sourceforge.io/Doc/Release/Files.html#Startup_002fShutdown-Files)).
 
 This explains why a command or variable may exist in Terminal but disappear in:
 
@@ -270,13 +270,13 @@ Suppose:
 file="My Notes.txt"
 ```
 
-This is unsafe:
+In Bash and POSIX-style shells, this unquoted expansion can split the filename into multiple arguments:
 
 ```bash
 cat $file
 ```
 
-The expanded text may be split into multiple arguments.
+Default `zsh` does not split unquoted scalar parameters on whitespace. That difference does not make unquoted expansion a portable habit ([zsh parameter expansion](https://zsh.sourceforge.io/Doc/Release/Expansion.html#Parameter-Expansion); [Bash word splitting](https://www.gnu.org/software/bash/manual/html_node/Word-Splitting.html)).
 
 This preserves one argument:
 
@@ -286,7 +286,7 @@ cat "$file"
 
 Quoting is not decoration. It controls how text becomes arguments.
 
-A strong default habit is to quote variable expansions unless you intentionally need splitting or pattern expansion.
+A strong default habit in shell scripts is to quote scalar variable expansions unless you intentionally need shell-specific splitting or pattern expansion. Arrays need their own shell-specific treatment.
 
 ## 13. Globbing
 
@@ -521,3 +521,11 @@ ps -p "$$"
 ```
 
 The first command displays the configured shell path. The second inspects the running shell process. Compare the configured program with the process that is actually executing.
+
+## References
+
+- [GNU Bash manual: shell execution environment](https://www.gnu.org/software/bash/manual/html_node/Command-Execution-Environment.html)
+- [GNU Bash manual: shell expansions](https://www.gnu.org/software/bash/manual/html_node/Shell-Expansions.html)
+- [GNU Bash manual: Bash startup files](https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html)
+- [zsh manual: startup files](https://zsh.sourceforge.io/Doc/Release/Files.html#Startup_002fShutdown-Files)
+- [zsh manual: parameter expansion](https://zsh.sourceforge.io/Doc/Release/Expansion.html#Parameter-Expansion)

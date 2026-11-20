@@ -92,7 +92,7 @@ PTY
 Shell or interactive program
 ```
 
-The PTY makes the process behave as though it is connected to a traditional terminal.
+The PTY presents a terminal interface to the process and carries data between it and the emulator ([Linux `pty(7)`](https://man7.org/linux/man-pages/man7/pty.7.html)).
 
 This distinction matters because some programs change behavior when attached to a terminal. They may enable:
 
@@ -209,31 +209,7 @@ The window did not move. The execution context did.
 
 ## 9. Terminal emulator choices
 
-Common macOS terminal emulators include:
-
-### Terminal.app
-
-Apple's native option. Stable, capable, and sufficient for learning Unix fundamentals.
-
-### iTerm2
-
-A mature third-party terminal with extensive panes, profiles, search, and customization.
-
-### Ghostty
-
-A modern terminal focused on native performance and platform integration.
-
-### Alacritty
-
-A fast, cross-platform terminal with a configuration-driven approach.
-
-### Warp
-
-A terminal with a more application-like interface and integrated workflow features.
-
-The terminal emulator is replaceable. Changing it does not require changing the shell.
-
-For foundational learning, start with Terminal.app. Add another terminal only when a specific limitation creates real friction.
+Apple's Terminal app is sufficient for the exercises in this handbook. If you need another emulator, compare the specific capabilities that matter to your work, such as accessibility, scrollback, profiles, remote-session behavior, and keyboard handling. Changing the emulator does not require changing the shell.
 
 ## 10. Shell choices
 
@@ -283,13 +259,11 @@ So the accurate conclusion is:
 
 > Bash and zsh are highly similar for ordinary interactive use, but they are not interchangeable scripting languages.
 
-## 12. Why macOS changed from bash to zsh
+## 12. Apple's default shell
 
-Apple changed the default interactive shell to `zsh` beginning with macOS Catalina.
+[Apple's Terminal guide](https://support.apple.com/guide/terminal/change-the-default-shell-trml113/mac) documents `zsh` as the default shell and explains how to select a different shell for new windows and tabs.
 
-A major practical factor was licensing and maintenance. Newer Bash releases use GPLv3, while Apple continued shipping an older Bash version. `zsh` provided a modern shell under licensing terms Apple was willing to distribute and maintain.
-
-The change did not mean Bash became technically obsolete. Bash remains widespread, especially on Linux and in automation.
+The default interactive shell does not determine which interpreter a script uses. Declare the interpreter required by shared scripts and verify its availability in the target environment.
 
 ## 13. Which shell should a macOS developer use?
 
@@ -432,3 +406,8 @@ pwd
 ```
 
 Change directories in one tab, then repeat `pwd` in both. Observe that the same terminal application hosts separate shell processes with separate working-directory state.
+
+## References
+
+- [Linux manual: `pty(7)`](https://man7.org/linux/man-pages/man7/pty.7.html)
+- [Apple Support: change the default shell in Terminal](https://support.apple.com/guide/terminal/change-the-default-shell-trml113/mac)
