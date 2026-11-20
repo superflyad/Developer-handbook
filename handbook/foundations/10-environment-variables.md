@@ -59,7 +59,7 @@ Parsing, validation, defaults, and error messages belong to the consuming applic
 
 There is no single live global environment shared by the entire computer.
 
-Each process has its own environment:
+Each process has its own environment. On Unix-like systems, `fork()` copies the parent's environment and `execve()` supplies an environment to the new program ([Linux `environ(7)`](https://man7.org/linux/man-pages/man7/environ.7.html)):
 
 ```text
 shell process
@@ -200,7 +200,7 @@ LOG_LEVEL
 
 Lowercase names are valid in common shells, but uppercase reduces collisions with ordinary shell variables and follows long-standing utility conventions.
 
-Environment names are case-sensitive in POSIX environments. Windows commonly treats environment-variable names case-insensitively. Cross-platform applications should avoid defining names that differ only by case.
+Environment names are case-sensitive in POSIX environments. Windows treats environment-variable names case-insensitively ([Microsoft .NET environment documentation](https://learn.microsoft.com/en-us/dotnet/api/system.environment.getenvironmentvariable)). Cross-platform applications should avoid defining names that differ only by case.
 
 ## 9. Values are strings, not shell code
 
@@ -235,13 +235,13 @@ command --config "$CONFIG_PATH"
 
 Quoting preserves the expanded value as one argument.
 
-This unsafe form can split the value or expand wildcard characters:
+In Bash and POSIX-style shells, this unquoted form can split the value or expand wildcard characters:
 
 ```bash
 command --config $CONFIG_PATH
 ```
 
-The variable stored one string. The shell changed it while creating arguments. Keep environment semantics and shell-expansion semantics separate.
+Default `zsh` does not split an unquoted scalar on whitespace. Shell behavior therefore changes the result of this example; quoting the scalar is a portable default ([zsh parameter expansion](https://zsh.sourceforge.io/Doc/Release/Expansion.html#Parameter-Expansion); [Bash word splitting](https://www.gnu.org/software/bash/manual/html_node/Word-Splitting.html)). Keep environment semantics and shell-expansion semantics separate.
 
 ## 11. `PATH` connects configuration to command resolution
 
@@ -303,7 +303,7 @@ Availability and exact meaning depend on the platform and launcher. An applicati
 
 ## 14. Environment size is limited
 
-The argument list and environment supplied when executing a process consume bounded space. POSIX exposes this through limits including `ARG_MAX`.
+The argument list and environment supplied when executing a process consume bounded space. POSIX exposes this through limits including `ARG_MAX`; the effective limit depends on the system and execution context ([Linux `execve(2)`](https://man7.org/linux/man-pages/man2/execve.2.html)).
 
 Environment variables are unsuitable for:
 
@@ -355,7 +355,7 @@ image defaults       → container definition
 runtime environment  → container process
 ```
 
-Secrets should not be baked into image layers or durable build metadata. Use build-secret mechanisms for build-time credentials and runtime secret delivery for running workloads.
+Secrets should not be baked into image layers or durable build metadata. Docker recommends secret or SSH mounts for build-time credentials instead of `ARG` or `ENV` ([Docker build secrets](https://docs.docker.com/build/building/secrets/)). Use the target platform's secret-delivery mechanism for running workloads.
 
 Always ask when the value is needed, who can inspect the resulting artifact, and how the value will be rotated.
 
@@ -559,6 +559,7 @@ Explicit environment contracts prevent machine-specific behavior and replace ran
 In a POSIX-style shell, run:
 
 ```bash
+unset HANDBOOK_MODE
 HANDBOOK_MODE="shell-only"
 sh -c 'printf "child sees: <%s>\n" "$HANDBOOK_MODE"'
 
@@ -577,3 +578,12 @@ Explain why the first child receives no exported value, the second inherits `she
 ## Looking Ahead
 
 Part I has now established files, processes, identities, streams, pipes, and inherited configuration. Chapter 11 combines those mechanisms into a practical method for designing reliable, composable engineering workflows.
+
+## References
+
+- [Linux manual: `environ(7)`](https://man7.org/linux/man-pages/man7/environ.7.html)
+- [Linux manual: `execve(2)`](https://man7.org/linux/man-pages/man2/execve.2.html)
+- [GNU Bash manual: word splitting](https://www.gnu.org/software/bash/manual/html_node/Word-Splitting.html)
+- [zsh manual: parameter expansion](https://zsh.sourceforge.io/Doc/Release/Expansion.html#Parameter-Expansion)
+- [Microsoft Learn: environment-variable case behavior](https://learn.microsoft.com/en-us/dotnet/api/system.environment.getenvironmentvariable)
+- [Docker documentation: build secrets](https://docs.docker.com/build/building/secrets/)
