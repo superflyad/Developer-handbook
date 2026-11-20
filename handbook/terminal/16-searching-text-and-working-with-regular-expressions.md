@@ -1,4 +1,4 @@
-# Chapter 16 — Searching Text and Working with Regular Expressions
+# Chapter 16: Searching Text and Working with Regular Expressions
 
 Text search is not simply “look for some characters.” It combines an input boundary, a pattern language, selection semantics, output formatting, and an exit-status contract.
 

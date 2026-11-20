@@ -1,4 +1,4 @@
-# Chapter 47 — Boot, Startup, and Shutdown
+# Chapter 47: Boot, Startup, and Shutdown
 
 An operating system does not appear all at once. Firmware initializes enough hardware to select a boot path, a loader places a kernel into memory, the kernel builds core abstractions, and user-space managers start services and login environments. Each phase depends on earlier evidence.
 

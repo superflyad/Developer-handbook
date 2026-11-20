@@ -14,6 +14,16 @@ Markdown in this repository is the canonical source.
 
 PDF, Word, ebook, and website editions are generated publication formats. They must not become independent versions of the handbook.
 
+## Maintenance checks
+
+Pull requests validate chapter structure, local links, Markdown, and publication builds. The publication checks also run weekly, even when no source changes have occurred. A failed run on `main` opens or updates one tracking issue; a clean run closes it.
+
+A separate weekly external-link audit checks references outside the repository. It waits and checks again after a failed scan to filter out short-lived responses. If the second scan fails, the workflow saves both reports and opens or updates one tracking issue. A clean run closes that issue.
+
+Dependabot proposes weekly website-dependency and GitHub Actions updates and assigns them to the maintainer. Automation issues are assigned to the maintainer as well. Main-branch rules require a pull request and passing checks. Maintainers review and merge those proposals according to [project governance](GOVERNANCE.md).
+
+External responses can change or block automated clients. Review the report and the cited source before replacing a reference or excluding a domain; the audit does not rewrite citations automatically.
+
 ## Content lifecycle
 
 Every chapter follows this lifecycle:
@@ -93,7 +103,7 @@ The handbook is organized into Parts and Chapters.
 
 The repository should use **Chapter**, not **Lesson**, for published material. Conversation may still use the word lesson while learning.
 
-## Part I — Foundations: Building the Machine
+## Part I: Foundations: Building the Machine
 
 1. Thinking Like a Unix Developer
 2. The Unix Mental Model
@@ -111,156 +121,156 @@ Part I builds the operating-system mental model before introducing command-focus
 
 ## Long-term roadmap
 
-### Part II — Mastering the Unix Environment
+### Part II: Mastering the Unix Environment
 
-- Chapter 12 — Command-Line Grammar and Getting Help
-- Chapter 13 — Navigation and Path Resolution
-- Chapter 14 — Safe File and Directory Operations
-- Chapter 15 — Finding Files and Inspecting Metadata
-- Chapter 16 — Searching Text and Working with Regular Expressions
-- Chapter 17 — Reading and Transforming Text
-- Chapter 18 — Quoting, Expansion, and Redirection in Practice
-- Chapter 19 — Processes, Jobs, and Signals
-- Chapter 20 — Permissions in Daily Work
-- Chapter 21 — Installing and Managing Software
-- Chapter 22 — Shell Startup, Configuration, and `PATH`
-- Chapter 23 — Building an Efficient Command-Line Workflow
+- Chapter 12: Command-Line Grammar and Getting Help
+- Chapter 13: Navigation and Path Resolution
+- Chapter 14: Safe File and Directory Operations
+- Chapter 15: Finding Files and Inspecting Metadata
+- Chapter 16: Searching Text and Working with Regular Expressions
+- Chapter 17: Reading and Transforming Text
+- Chapter 18: Quoting, Expansion, and Redirection in Practice
+- Chapter 19: Processes, Jobs, and Signals
+- Chapter 20: Permissions in Daily Work
+- Chapter 21: Installing and Managing Software
+- Chapter 22: Shell Startup, Configuration, and `PATH`
+- Chapter 23: Building an Efficient Command-Line Workflow
 
 Part II converts the mental model from Part I into practical fluency. It progresses through command literacy, filesystem work, discovery, text processing, shell evaluation, runtime control, permissions, software management, environment ownership, and an integrated workflow. Detailed inclusion and deferral boundaries live in `LEARNING_ROADMAP.md`.
 
-### Part III — Git Mastery
+### Part III: Git Mastery
 
-- Chapter 24 — Why Git Works: Repositories, Objects, and History
-- Chapter 25 — The Working Tree, Index, and `HEAD`
-- Chapter 26 — Staging and Making Coherent Commits
-- Chapter 27 — Reading History and Investigating Changes
-- Chapter 28 — Tracked Content, Ignore Rules, and Portability
-- Chapter 29 — Branches, References, Tags, and Detached `HEAD`
-- Chapter 30 — Remotes, Tracking, Fetching, and Pushing
-- Chapter 31 — Merging and Resolving Conflicts
-- Chapter 32 — Rebasing, Cherry-Picking, and History Rewriting
-- Chapter 33 — Undoing Changes and Recovering Work
-- Chapter 34 — Pull Requests, Review, and Merge Policy
-- Chapter 35 — Worktrees and Parallel Development
-- Chapter 36 — A Complete Git Change Lifecycle
+- Chapter 24: Why Git Works: Repositories, Objects, and History
+- Chapter 25: The Working Tree, Index, and `HEAD`
+- Chapter 26: Staging and Making Coherent Commits
+- Chapter 27: Reading History and Investigating Changes
+- Chapter 28: Tracked Content, Ignore Rules, and Portability
+- Chapter 29: Branches, References, Tags, and Detached `HEAD`
+- Chapter 30: Remotes, Tracking, Fetching, and Pushing
+- Chapter 31: Merging and Resolving Conflicts
+- Chapter 32: Rebasing, Cherry-Picking, and History Rewriting
+- Chapter 33: Undoing Changes and Recovering Work
+- Chapter 34: Pull Requests, Review, and Merge Policy
+- Chapter 35: Worktrees and Parallel Development
+- Chapter 36: A Complete Git Change Lifecycle
 
 Part III progresses from local state and history to references and integration, then to recovery and collaboration. Detailed purpose, inclusion, deferral, and outcome boundaries are in `LEARNING_ROADMAP.md`.
 
-### Part IV — Filesystems and Operating Systems
+### Part IV: Filesystems and Operating Systems
 
-- Chapter 37 — Filesystems as Namespaces and Persistent State
-- Chapter 38 — The Storage Stack: Devices, Volumes, Filesystems, and Mounts
-- Chapter 39 — File Identity, Hard Links, and Symbolic Links
-- Chapter 40 — Metadata, Timestamps, Attributes, and Extended Data
-- Chapter 41 — Space, Allocation, Caching, and Durability
-- Chapter 42 — Process Creation, Execution, and Lifecycle
-- Chapter 43 — Scheduling, Priorities, and Resource Accounting
-- Chapter 44 — Virtual Memory and Process Address Spaces
-- Chapter 45 — Interprocess Communication and Coordination
-- Chapter 46 — Services, Daemons, and Background Work
-- Chapter 47 — Boot, Startup, and Shutdown
-- Chapter 48 — Identity, Permissions, ACLs, and Privilege Boundaries
-- Chapter 49 — A Cross-Platform Operating-System Investigation
+- Chapter 37: Filesystems as Namespaces and Persistent State
+- Chapter 38: The Storage Stack: Devices, Volumes, Filesystems, and Mounts
+- Chapter 39: File Identity, Hard Links, and Symbolic Links
+- Chapter 40: Metadata, Timestamps, Attributes, and Extended Data
+- Chapter 41: Space, Allocation, Caching, and Durability
+- Chapter 42: Process Creation, Execution, and Lifecycle
+- Chapter 43: Scheduling, Priorities, and Resource Accounting
+- Chapter 44: Virtual Memory and Process Address Spaces
+- Chapter 45: Interprocess Communication and Coordination
+- Chapter 46: Services, Daemons, and Background Work
+- Chapter 47: Boot, Startup, and Shutdown
+- Chapter 48: Identity, Permissions, ACLs, and Privilege Boundaries
+- Chapter 49: A Cross-Platform Operating-System Investigation
 
 Part IV progresses from filesystem identity and storage to process resources, managed startup, and authorization. It ends with a read-mostly investigation that preserves comparable questions without pretending Linux, macOS, and Windows expose identical implementations. Detailed boundaries are in `LEARNING_ROADMAP.md`.
 
-### Part V — Networking
+### Part V: Networking
 
-- Chapter 50 — A Packet's Journey Through the Network Stack
-- Chapter 51 — Links, Frames, Ethernet, and Wi-Fi
-- Chapter 52 — IP Addressing and Subnetting
-- Chapter 53 — Host Configuration, DHCP, ARP, and Neighbor Discovery
-- Chapter 54 — Routing, Gateways, and Path Selection
-- Chapter 55 — DNS and Name Resolution
-- Chapter 56 — Sockets, Ports, and Endpoint Ownership
-- Chapter 57 — UDP, Datagrams, and Message Boundaries
-- Chapter 58 — TCP Reliability, Flow Control, and Connection State
-- Chapter 59 — HTTP Semantics and API Behavior
-- Chapter 60 — TLS, Certificates, and Public-Key Trust
-- Chapter 61 — SSH, Tunnels, and Remote Access Boundaries
-- Chapter 62 — Firewalls, NAT, Proxies, and Traffic Distribution
-- Chapter 63 — A Complete Network Troubleshooting Workflow
+- Chapter 50: A Packet's Journey Through the Network Stack
+- Chapter 51: Links, Frames, Ethernet, and Wi-Fi
+- Chapter 52: IP Addressing and Subnetting
+- Chapter 53: Host Configuration, DHCP, ARP, and Neighbor Discovery
+- Chapter 54: Routing, Gateways, and Path Selection
+- Chapter 55: DNS and Name Resolution
+- Chapter 56: Sockets, Ports, and Endpoint Ownership
+- Chapter 57: UDP, Datagrams, and Message Boundaries
+- Chapter 58: TCP Reliability, Flow Control, and Connection State
+- Chapter 59: HTTP Semantics and API Behavior
+- Chapter 60: TLS, Certificates, and Public-Key Trust
+- Chapter 61: SSH, Tunnels, and Remote Access Boundaries
+- Chapter 62: Firewalls, NAT, Proxies, and Traffic Distribution
+- Chapter 63: A Complete Network Troubleshooting Workflow
 
-### Part VI — Automation and Scripting
+### Part VI: Automation and Scripting
 
-- Chapter 64 — Deciding What to Automate
-- Chapter 65 — Reliable Shell Script Execution
-- Chapter 66 — Shell Control Flow, Functions, and Error Handling
-- Chapter 67 — Structured Inputs, Outputs, and Data Formats
-- Chapter 68 — Python Programs, Modules, and the Standard Library
-- Chapter 69 — Files, Paths, Text, and Structured Data in Python
-- Chapter 70 — Subprocesses, HTTP Clients, and External Boundaries
-- Chapter 71 — Python Environments, Dependencies, and Packaging
-- Chapter 72 — Configuration, Secrets, Logging, and Observability
-- Chapter 73 — Testing, Linting, and Type Checking Automation
-- Chapter 74 — Idempotency, State, Retries, and Recovery
-- Chapter 75 — Task Runners, Builds, and Repeatable Environments
-- Chapter 76 — Scheduling, Concurrency, and Work Queues
-- Chapter 77 — A Complete CI/CD Automation Lifecycle
+- Chapter 64: Deciding What to Automate
+- Chapter 65: Reliable Shell Script Execution
+- Chapter 66: Shell Control Flow, Functions, and Error Handling
+- Chapter 67: Structured Inputs, Outputs, and Data Formats
+- Chapter 68: Python Programs, Modules, and the Standard Library
+- Chapter 69: Files, Paths, Text, and Structured Data in Python
+- Chapter 70: Subprocesses, HTTP Clients, and External Boundaries
+- Chapter 71: Python Environments, Dependencies, and Packaging
+- Chapter 72: Configuration, Secrets, Logging, and Observability
+- Chapter 73: Testing, Linting, and Type Checking Automation
+- Chapter 74: Idempotency, State, Retries, and Recovery
+- Chapter 75: Task Runners, Builds, and Repeatable Environments
+- Chapter 76: Scheduling, Concurrency, and Work Queues
+- Chapter 77: A Complete CI/CD Automation Lifecycle
 
-### Part VII — Docker and Containers
+### Part VII: Docker and Containers
 
-- Chapter 78 — Why Containers Work: Isolation, Not Tiny Virtual Machines
-- Chapter 79 — Images, Layers, Build Contexts, and Caches
-- Chapter 80 — Reproducible and Efficient Container Builds
-- Chapter 81 — Registries, Tags, Digests, and Image Provenance
-- Chapter 82 — Container Processes, Signals, and Lifecycle
-- Chapter 83 — Container Filesystems, Volumes, and Persistent Data
-- Chapter 84 — Container Networking, Ports, and Service Discovery
-- Chapter 85 — Multi-Container Applications with Compose
-- Chapter 86 — Resource Limits, Health, Logs, and Runtime Diagnosis
-- Chapter 87 — Container Security and Least Privilege
-- Chapter 88 — Orchestration Foundations and Kubernetes Mental Models
-- Chapter 89 — A Complete Container Delivery Workflow
+- Chapter 78: Why Containers Work: Isolation, Not Tiny Virtual Machines
+- Chapter 79: Images, Layers, Build Contexts, and Caches
+- Chapter 80: Reproducible and Efficient Container Builds
+- Chapter 81: Registries, Tags, Digests, and Image Provenance
+- Chapter 82: Container Processes, Signals, and Lifecycle
+- Chapter 83: Container Filesystems, Volumes, and Persistent Data
+- Chapter 84: Container Networking, Ports, and Service Discovery
+- Chapter 85: Multi-Container Applications with Compose
+- Chapter 86: Resource Limits, Health, Logs, and Runtime Diagnosis
+- Chapter 87: Container Security and Least Privilege
+- Chapter 88: Orchestration Foundations and Kubernetes Mental Models
+- Chapter 89: A Complete Container Delivery Workflow
 
-### Part VIII — AWS and Cloud-Native Development
+### Part VIII: AWS and Cloud-Native Development
 
-- Chapter 90 — Cloud Computing, Shared Responsibility, and Service Models
-- Chapter 91 — AWS Accounts, Organizations, Regions, and Governance
-- Chapter 92 — IAM: Principals, Policies, Roles, and Temporary Credentials
-- Chapter 93 — VPCs, Subnets, Routes, and Address Planning
-- Chapter 94 — VPC Security, DNS, and Hybrid Connectivity
-- Chapter 95 — EC2, AMIs, and Elastic Compute
-- Chapter 96 — Elastic Load Balancing, Route 53, and CloudFront
-- Chapter 97 — S3 Object Storage and Data Lifecycle
-- Chapter 98 — EBS, EFS, and Choosing Cloud Storage
-- Chapter 99 — RDS, Aurora, and Managed Relational Databases
-- Chapter 100 — DynamoDB, Caching, and NoSQL Access Patterns
-- Chapter 101 — SQS, SNS, EventBridge, and Asynchronous Workflows
-- Chapter 102 — Lambda, API Gateway, and Serverless Execution
-- Chapter 103 — ECS, EKS, ECR, and Container Platforms on AWS
-- Chapter 104 — Encryption, Secrets, Configuration, and Cloud Observability
-- Chapter 105 — Infrastructure as Code and a Complete AWS Delivery Lifecycle
+- Chapter 90: Cloud Computing, Shared Responsibility, and Service Models
+- Chapter 91: AWS Accounts, Organizations, Regions, and Governance
+- Chapter 92: IAM: Principals, Policies, Roles, and Temporary Credentials
+- Chapter 93: VPCs, Subnets, Routes, and Address Planning
+- Chapter 94: VPC Security, DNS, and Hybrid Connectivity
+- Chapter 95: EC2, AMIs, and Elastic Compute
+- Chapter 96: Elastic Load Balancing, Route 53, and CloudFront
+- Chapter 97: S3 Object Storage and Data Lifecycle
+- Chapter 98: EBS, EFS, and Choosing Cloud Storage
+- Chapter 99: RDS, Aurora, and Managed Relational Databases
+- Chapter 100: DynamoDB, Caching, and NoSQL Access Patterns
+- Chapter 101: SQS, SNS, EventBridge, and Asynchronous Workflows
+- Chapter 102: Lambda, API Gateway, and Serverless Execution
+- Chapter 103: ECS, EKS, ECR, and Container Platforms on AWS
+- Chapter 104: Encryption, Secrets, Configuration, and Cloud Observability
+- Chapter 105: Infrastructure as Code and a Complete AWS Delivery Lifecycle
 
-### Part IX — System Design
+### Part IX: System Design
 
-- Chapter 106 — From Requirements to a System Model
-- Chapter 107 — Interfaces, Contracts, and Evolution
-- Chapter 108 — Data Models and Storage Selection
-- Chapter 109 — Capacity, Partitioning, and Horizontal Scale
-- Chapter 110 — Consistency, Transactions, and Concurrent Change
-- Chapter 111 — Caching as a Consistency Tradeoff
-- Chapter 112 — Messaging, Events, and Asynchronous Workflows
-- Chapter 113 — Coordination, Leadership, and Distributed Time
-- Chapter 114 — Resilience, Timeouts, Retries, and Failure Containment
-- Chapter 115 — Security, Privacy, and Multi-Tenant Boundaries
-- Chapter 116 — Architecture Decisions, Tradeoffs, and Evolution
-- Chapter 117 — A Complete System Design Review
+- Chapter 106: From Requirements to a System Model
+- Chapter 107: Interfaces, Contracts, and Evolution
+- Chapter 108: Data Models and Storage Selection
+- Chapter 109: Capacity, Partitioning, and Horizontal Scale
+- Chapter 110: Consistency, Transactions, and Concurrent Change
+- Chapter 111: Caching as a Consistency Tradeoff
+- Chapter 112: Messaging, Events, and Asynchronous Workflows
+- Chapter 113: Coordination, Leadership, and Distributed Time
+- Chapter 114: Resilience, Timeouts, Retries, and Failure Containment
+- Chapter 115: Security, Privacy, and Multi-Tenant Boundaries
+- Chapter 116: Architecture Decisions, Tradeoffs, and Evolution
+- Chapter 117: A Complete System Design Review
 
-### Part X — Performance, Debugging, and Observability
+### Part X: Performance, Debugging, and Observability
 
-- Chapter 118 — Debugging as Hypothesis Testing
-- Chapter 119 — Reproducing Failures and Building Minimal Cases
-- Chapter 120 — Logs and Structured Events
-- Chapter 121 — Metrics, SLIs, SLOs, and Actionable Alerts
-- Chapter 122 — Traces, Profiles, and Causal Context
-- Chapter 123 — CPU Profiling and Concurrency Bottlenecks
-- Chapter 124 — Memory, Allocation, and Resource-Leak Diagnosis
-- Chapter 125 — I/O, Network, and Database Performance
-- Chapter 126 — Load Testing, Capacity Planning, and Failure Injection
-- Chapter 127 — Incident Response and Operational Coordination
-- Chapter 128 — Post-Incident Learning and Continuous Improvement
-- Chapter 129 — A Complete Cross-Layer Engineering Investigation
+- Chapter 118: Debugging as Hypothesis Testing
+- Chapter 119: Reproducing Failures and Building Minimal Cases
+- Chapter 120: Logs and Structured Events
+- Chapter 121: Metrics, SLIs, SLOs, and Actionable Alerts
+- Chapter 122: Traces, Profiles, and Causal Context
+- Chapter 123: CPU Profiling and Concurrency Bottlenecks
+- Chapter 124: Memory, Allocation, and Resource-Leak Diagnosis
+- Chapter 125: I/O, Network, and Database Performance
+- Chapter 126: Load Testing, Capacity Planning, and Failure Injection
+- Chapter 127: Incident Response and Operational Coordination
+- Chapter 128: Post-Incident Learning and Continuous Improvement
+- Chapter 129: A Complete Cross-Layer Engineering Investigation
 
 Parts V–X contain 80 chapters. The first edition contains 129 chapters total plus the Engineering Patterns appendix. The detailed purpose, inclusion, deferral, outcome, and delivery boundaries live in `LEARNING_ROADMAP.md`.
 
@@ -299,6 +309,8 @@ Repository conventions:
 `SUMMARY.md` is the canonical publication order.
 
 `scripts/build_site.py` creates an isolated source tree, derives website navigation from `SUMMARY.md`, and builds the searchable GitHub Pages edition. The site provides persistent part and chapter navigation, full-text search, edit links, light and dark themes, previous and next navigation, social metadata, and responsive reading layouts. Website source customizations live under `site/` and `styles/site.css`.
+
+The website build also generates `llms.txt` from that navigation. It points to the canonical Markdown files on `main` and contains no parallel chapter text. Assisted-reading guidance and answer evaluations use those chapters and their primary references as evidence.
 
 `scripts/build_book.py` assembles the reader-facing front matter, Chapters 1–129, and Engineering Patterns appendix into one revision-identified source, rewrites internal links to stable anchors, and emits a source-and-artifact hash manifest. CI renders standalone HTML, EPUB, DOCX, and PDF previews from that source.
 

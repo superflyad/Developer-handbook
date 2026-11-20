@@ -1,4 +1,4 @@
-# Chapter 23 — Building an Efficient Command-Line Workflow
+# Chapter 23: Building an Efficient Command-Line Workflow
 
 Part II has introduced commands as interfaces, path-aware filesystem work, discovery, search, text transformation, shell evaluation, process control, permissions, package management, and configuration. This chapter combines them into one operating discipline.
 
@@ -434,7 +434,7 @@ Important repetition deserves the interface, tests, and language appropriate to 
 | Publish state | filesystem commands | provider and .NET operations | transactional or deployment systems |
 | Schedule and supervise | external manager | scheduled jobs/services | CI/CD or orchestration |
 
-The method—orient, constrain, observe, validate, mutate, verify—transfers even when syntax and data types change.
+The method has six steps: orient, constrain, observe, validate, mutate, and verify. It transfers even when syntax and data types change.
 
 ## Core Computer Science Concept
 

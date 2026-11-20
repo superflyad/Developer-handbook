@@ -1,4 +1,4 @@
-# Chapter 48 — Identity, Permissions, ACLs, and Privilege Boundaries
+# Chapter 48: Identity, Permissions, ACLs, and Privilege Boundaries
 
 Access belongs to an operation performed by a process, not to a username floating beside a file. The operating system evaluates the process's effective security context, the route through the namespace, the target object's policy, and additional platform controls.
 
@@ -88,7 +88,7 @@ Treat inheritance as a rule for producing child policy, not a magical live point
 
 ## 7. Elevation changes authority, not correctness
 
-`sudo`, macOS authorization, Windows User Account Control, administrator tokens, Linux capabilities, and service identities cross privilege boundaries differently. Elevation may bypass one denial while leaving another—such as read-only storage, sandbox policy, encryption, or application authorization—intact.
+`sudo`, macOS authorization, Windows User Account Control, administrator tokens, Linux capabilities, and service identities cross privilege boundaries differently. Elevation may bypass one denial while leaving another intact, such as read-only storage, sandbox policy, encryption, or application authorization.
 
 Run the narrowest approved command with elevated authority and preserve a clear audit trail. Do not run an entire editor, shell, build, or package ecosystem as administrator when one controlled operation requires privilege. Elevated tools can create root- or administrator-owned artifacts that later break normal workflows.
 

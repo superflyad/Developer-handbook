@@ -1,4 +1,4 @@
-# Chapter 7 — Identity, Authentication, Authorization, and Permissions
+# Chapter 7: Identity, Authentication, Authorization, and Permissions
 
 The previous chapters explained how Unix runs software. This chapter explains how Unix decides whether running software is allowed to act.
 
@@ -124,9 +124,9 @@ Permissions are concrete rules used to implement authorization decisions.
 
 Traditional Unix file permissions revolve around three operations:
 
-- **read** — inspect file contents or list a directory,
-- **write** — modify a file or directory entry,
-- **execute** — run a file as a program or traverse a directory.
+- **read**: inspect file contents or list a directory,
+- **write**: modify a file or directory entry,
+- **execute**: run a file as a program or traverse a directory.
 
 Other systems use different permission vocabularies:
 
@@ -354,10 +354,10 @@ Traditional Unix permissions are foundational, but they are not the entire moder
 
 A secure system separates four questions:
 
-1. **Identity** — Who or what is acting?
-2. **Authentication** — How is that claim verified?
-3. **Authorization** — What may the verified identity do?
-4. **Permissions** — Which concrete operations implement that authority?
+1. **Identity**: Who or what is acting?
+2. **Authentication**: How is that claim verified?
+3. **Authorization**: What may the verified identity do?
+4. **Permissions**: Which concrete operations implement that authority?
 
 This model transfers across operating systems, cloud platforms, databases, APIs, and distributed systems.
 

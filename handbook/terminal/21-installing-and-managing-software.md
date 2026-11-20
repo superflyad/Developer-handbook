@@ -1,4 +1,4 @@
-# Chapter 21 — Installing and Managing Software
+# Chapter 21: Installing and Managing Software
 
 Installing software introduces executable code, files, dependencies, trust roots, update responsibilities, and sometimes privileged services. A package manager coordinates that lifecycle.
 

@@ -1,4 +1,4 @@
-# Chapter 111 — Caching as a Consistency Tradeoff
+# Chapter 111: Caching as a Consistency Tradeoff
 
 A cache makes a fast copy easy to read. It also creates another version of truth, another authorization surface, another failure mode, and another traffic pattern when the copy disappears. A cache hit can be fast and wrong; a cache miss can be correct and take the source down with it.
 
@@ -485,7 +485,7 @@ Avoid caching low-reuse or high-cardinality queries, unbounded sensitive variant
 
 ### How does this make me a better engineer?
 
-It teaches you to see cached data as a replica, build complete keys, analyze races, and test empty and broken cache states rather than only warm hits.
+You can see cached data as a replica, build complete keys, analyze races, and test empty and broken cache states rather than only warm hits.
 
 ### How does this reduce waste?
 
@@ -505,11 +505,11 @@ Chapter 112 moves derived work across time and ownership boundaries through queu
 
 ## References
 
-- [RFC 9111 — HTTP Caching](https://www.rfc-editor.org/rfc/rfc9111.html)
-- [RFC 5861 — HTTP stale controls](https://www.rfc-editor.org/rfc/rfc5861.html)
-- [RFC 9205 — Building Protocols with HTTP](https://www.rfc-editor.org/rfc/rfc9205.html)
-- [Redis — Cache-aside pattern](https://redis.io/docs/latest/develop/use-cases/cache-aside/)
-- [AWS — Caching best practices](https://aws.amazon.com/caching/best-practices/)
-- [Cloudflare — Cache invalidation and revalidation](https://developers.cloudflare.com/cache/guides/invalidate-cache/)
-- [Chapter 100 — DynamoDB, Caching, and NoSQL Access Patterns](../aws/100-dynamodb-caching-and-nosql-access-patterns.md)
-- [Chapter 110 — Consistency, Transactions, and Concurrent Change](110-consistency-transactions-and-concurrent-change.md)
+- [RFC 9111: HTTP Caching](https://www.rfc-editor.org/rfc/rfc9111.html)
+- [RFC 5861: HTTP stale controls](https://www.rfc-editor.org/rfc/rfc5861.html)
+- [RFC 9205: Building Protocols with HTTP](https://www.rfc-editor.org/rfc/rfc9205.html)
+- [Redis: Cache-aside pattern](https://redis.io/docs/latest/develop/use-cases/cache-aside/)
+- [AWS: Caching best practices](https://aws.amazon.com/caching/best-practices/)
+- [Cloudflare: Cache invalidation and revalidation](https://developers.cloudflare.com/cache/guides/invalidate-cache/)
+- [Chapter 100: DynamoDB, Caching, and NoSQL Access Patterns](../aws/100-dynamodb-caching-and-nosql-access-patterns.md)
+- [Chapter 110: Consistency, Transactions, and Concurrent Change](110-consistency-transactions-and-concurrent-change.md)

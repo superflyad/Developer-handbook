@@ -1,4 +1,4 @@
-# Chapter 8 — Standard Input, Standard Output, and Standard Error
+# Chapter 8: Standard Input, Standard Output, and Standard Error
 
 The previous chapters established that the shell launches processes and that each process begins with open communication channels. This chapter makes the three conventional channels explicit.
 
@@ -411,7 +411,7 @@ Do not force complex bidirectional protocols, random-access data, durable messag
 
 ### How does this make me a better engineer?
 
-It teaches you to distinguish data, diagnostics, completion status, descriptor connections, and presentation behavior.
+You can distinguish data, diagnostics, completion status, descriptor connections, and presentation behavior.
 
 ### How does this reduce waste?
 

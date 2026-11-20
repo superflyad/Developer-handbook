@@ -1,4 +1,4 @@
-# Chapter 38 — The Storage Stack: Devices, Volumes, Filesystems, and Mounts
+# Chapter 38: The Storage Stack: Devices, Volumes, Filesystems, and Mounts
 
 “The disk is full” compresses several layers into one sentence. A path belongs to a mounted filesystem; that filesystem may live on a logical volume, partition, disk image, network service, or physical device. Accurate diagnosis moves through those layers rather than guessing from a drive letter.
 
@@ -136,7 +136,7 @@ Avoid assuming every platform uses identical volume terminology or running forma
 
 ### How does this make me a better engineer?
 
-It teaches you to locate the failed layer and recognize storage as an external dependency with explicit identity.
+You can locate the failed layer and recognize storage as an external dependency with explicit identity.
 
 ### How does this reduce waste?
 
@@ -152,7 +152,7 @@ Choose a read-only path on your workstation and use the commands for your platfo
 
 ## Looking Ahead
 
-The storage stack identifies where a filesystem lives. Chapter 39 examines how several pathnames can refer to one object—or refer indirectly to another pathname.
+The storage stack identifies where a filesystem lives. Chapter 39 examines how several pathnames can refer to one object, or refer indirectly to another pathname.
 
 ## References
 

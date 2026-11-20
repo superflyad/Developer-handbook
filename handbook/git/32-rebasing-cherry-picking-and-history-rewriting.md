@@ -1,4 +1,4 @@
-# Chapter 32 — Rebasing, Cherry-Picking, and History Rewriting
+# Chapter 32: Rebasing, Cherry-Picking, and History Rewriting
 
 Merging preserves two lines of development. Sometimes a series of *unpublished* commits is easier to review after it is replayed onto a newer base or arranged into a clearer sequence. That convenience has a cost: replayed commits are new commits, even when their patches look identical.
 
@@ -147,7 +147,7 @@ Avoid rewriting shared commits without an explicit team plan, and avoid skipping
 
 ### How does this make me a better engineer?
 
-It makes you reason about graph identity, reviewability, and the coordination cost of changing history.
+You can reason about graph identity, reviewability, and the coordination cost of changing history.
 
 ### How does this reduce waste?
 

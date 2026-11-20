@@ -1,6 +1,6 @@
-# Chapter 121 — Metrics, SLIs, SLOs, and Actionable Alerts
+# Chapter 121: Metrics, SLIs, SLOs, and Actionable Alerts
 
-Metrics compress many observations into time series. That compression makes trends, rates, distributions, objectives, and alerts affordable—but it also discards individual context. A useful metric begins with a question, has defined units and dimensions, and preserves enough information to make a valid decision.
+Metrics compress many observations into time series. That compression makes trends, rates, distributions, objectives, and alerts affordable, but it also discards individual context. A useful metric begins with a question, has defined units and dimensions, and preserves enough information to make a valid decision.
 
 Service-level indicators and objectives connect those measurements to user outcomes. Error budgets express tolerated imperfection. Alerts notify a human only when timely action is required. Together they create a control loop: observe, compare with an objective, decide, act, and verify.
 
@@ -66,7 +66,7 @@ Avoid using gauges for durations that occur repeatedly; a histogram preserves th
 
 An average hides shape. Nine requests at 10 ms and one at 5 seconds average about 509 ms, which describes no user's experience. Percentiles answer distribution questions, but their computation matters.
 
-Histograms count observations in configured buckets and preserve total count and sum. Compatible histograms can be aggregated across instances and time before calculating quantiles. Choose boundaries around user and SLO thresholds—for example 100, 300, 500, 1,000, and 2,000 ms—while controlling series cost and approximation error.
+Histograms count observations in configured buckets and preserve total count and sum. Compatible histograms can be aggregated across instances and time before calculating quantiles. Choose boundaries around user and SLO thresholds, such as 100, 300, 500, 1,000, and 2,000 ms, while controlling series cost and approximation error.
 
 Precomputed client-side quantiles often cannot be aggregated correctly. Averaging per-instance p95 values is statistically invalid. If instances expose only quantiles, the global p95 cannot be reconstructed from them.
 
@@ -169,7 +169,7 @@ Use complementary sources:
 
 State the measurement point in the SLI definition. “Latency under 300 ms” is ambiguous without start and end boundaries.
 
-Compare sources. If the server SLI is healthy while clients fail, the gap is evidence—not a reason to discard the client view.
+Compare sources. If the server SLI is healthy while clients fail, the gap is evidence, not a reason to discard the client view.
 
 ## 12. Write a complete SLO
 
@@ -614,12 +614,12 @@ Chapter 122 connects a metric anomaly to causal request paths and sampled stack 
 
 ## References
 
-- [OpenTelemetry — Metrics Data Model](https://opentelemetry.io/docs/specs/otel/metrics/data-model/)
-- [Prometheus — Instrumentation practices](https://prometheus.io/docs/practices/instrumentation/)
-- [Prometheus — Histograms and summaries](https://prometheus.io/docs/practices/histograms/)
-- [Prometheus — Metric and label naming](https://prometheus.io/docs/practices/naming/)
-- [Google SRE Book — Service Level Objectives](https://sre.google/sre-book/service-level-objectives/)
-- [Google SRE Workbook — Alerting on SLOs](https://sre.google/workbook/alerting-on-slos/)
-- [Google SRE Book — Monitoring Distributed Systems](https://sre.google/sre-book/monitoring-distributed-systems/)
-- [Brendan Gregg — The USE Method](https://www.brendangregg.com/usemethod.html)
-- [Chapter 120 — Logs and Structured Events](120-logs-and-structured-events.md)
+- [OpenTelemetry: Metrics Data Model](https://opentelemetry.io/docs/specs/otel/metrics/data-model/)
+- [Prometheus: Instrumentation practices](https://prometheus.io/docs/practices/instrumentation/)
+- [Prometheus: Histograms and summaries](https://prometheus.io/docs/practices/histograms/)
+- [Prometheus: Metric and label naming](https://prometheus.io/docs/practices/naming/)
+- [Google SRE Book: Service Level Objectives](https://sre.google/sre-book/service-level-objectives/)
+- [Google SRE Workbook: Alerting on SLOs](https://sre.google/workbook/alerting-on-slos/)
+- [Google SRE Book: Monitoring Distributed Systems](https://sre.google/sre-book/monitoring-distributed-systems/)
+- [Brendan Gregg: The USE Method](https://www.brendangregg.com/usemethod.html)
+- [Chapter 120: Logs and Structured Events](120-logs-and-structured-events.md)

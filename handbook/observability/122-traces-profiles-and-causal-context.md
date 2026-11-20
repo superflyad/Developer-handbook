@@ -1,4 +1,4 @@
-# Chapter 122 — Traces, Profiles, and Causal Context
+# Chapter 122: Traces, Profiles, and Causal Context
 
 Metrics show that a population changed. Logs describe individual events. A distributed trace connects the operations that participated in one logical journey. A profile samples where a process spends execution time or retains resources. These signals answer different questions and become more powerful when correlated without pretending they are interchangeable.
 
@@ -60,7 +60,7 @@ Useful spans correspond to operations whose latency, failure, or ownership can d
 
 Avoid spans for every helper, loop iteration, getter, or trivial function. Span volume, serialization, context management, and storage are not free. Profiles and local debuggers handle fine-grained code behavior better.
 
-Add an internal span when it isolates a consequential phase or ownership boundary. A 300 ms `task.update` root span becomes actionable when it shows 20 ms authorization, 220 ms connection acquisition, 25 ms transaction, and 10 ms encoding—not when it contains 800 method spans.
+Add an internal span when it isolates a consequential phase or ownership boundary. A 300 ms `task.update` root span becomes actionable when it shows 20 ms authorization, 220 ms connection acquisition, 25 ms transaction, and 10 ms encoding, not when it contains 800 method spans.
 
 Use semantic conventions for common protocols so cross-service queries retain consistent meaning.
 
@@ -157,7 +157,7 @@ A practical investigation path is:
 5. Resource metrics show waiters rising after a connection-limit change.
 6. A profile determines whether API CPU or lock contention also changed.
 
-Shared resource attributes—service, version, environment, region, cell, instance—and trace/span identities enable this movement. Use the same semantic meaning across signals.
+Shared resource attributes such as service, version, environment, region, and cell, together with trace and span identities, enable this movement. Use the same semantic meaning across signals.
 
 Do not duplicate every log field on every span and metric. Correlation should join complementary evidence, not multiply cost and sensitive data.
 
@@ -567,11 +567,11 @@ Chapter 123 uses sampling profiles, call trees, flame graphs, scheduler evidence
 
 ## References
 
-- [OpenTelemetry — Tracing API](https://opentelemetry.io/docs/specs/otel/trace/api/)
-- [OpenTelemetry — Context](https://opentelemetry.io/docs/specs/otel/context/)
-- [OpenTelemetry — Sampling](https://opentelemetry.io/docs/concepts/sampling/)
-- [OpenTelemetry — Profiles](https://opentelemetry.io/docs/specs/otel/profiles/)
-- [W3C — Trace Context](https://www.w3.org/TR/trace-context/)
-- [W3C — Baggage](https://www.w3.org/TR/baggage/)
-- [Chapter 120 — Logs and Structured Events](120-logs-and-structured-events.md)
-- [Chapter 121 — Metrics, SLIs, SLOs, and Actionable Alerts](121-metrics-slis-slos-and-actionable-alerts.md)
+- [OpenTelemetry: Tracing API](https://opentelemetry.io/docs/specs/otel/trace/api/)
+- [OpenTelemetry: Context](https://opentelemetry.io/docs/specs/otel/context/)
+- [OpenTelemetry: Sampling](https://opentelemetry.io/docs/concepts/sampling/)
+- [OpenTelemetry: Profiles](https://opentelemetry.io/docs/specs/otel/profiles/)
+- [W3C: Trace Context](https://www.w3.org/TR/trace-context/)
+- [W3C: Baggage](https://www.w3.org/TR/baggage/)
+- [Chapter 120: Logs and Structured Events](120-logs-and-structured-events.md)
+- [Chapter 121: Metrics, SLIs, SLOs, and Actionable Alerts](121-metrics-slis-slos-and-actionable-alerts.md)

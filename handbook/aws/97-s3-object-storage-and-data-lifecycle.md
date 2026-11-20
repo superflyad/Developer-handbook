@@ -1,10 +1,16 @@
-# Chapter 97 — S3 Object Storage and Data Lifecycle
+# Chapter 97: S3 Object Storage and Data Lifecycle
 
 A bucket can hold billions of durable objects, yet a careless design can still lose the only useful version, expose private data, retain abandoned multipart parts forever, or emit the same business event twice. S3 removes disk administration; it does not remove the need to define data identity and lifecycle.
 
 The central idea is:
 
-> Treat every object as an immutable value identified by bucket, key, and version, then design authorization, recovery, retention, replication, events, and cost around that identity.
+> Treat each stored object version as a distinct value. Design authorization, recovery, retention, replication, events, and cost around the bucket, key, and, when available, version ID.
+
+## In brief
+
+- **Model:** A bucket and key address the current state, which can be a delete marker in a versioned bucket. A version ID can identify a particular stored value when versioning is enabled.
+- **Use:** Define ownership, overwrite behavior, recovery, retention, and cost before relying on a bucket as durable application state.
+- **Limit:** Strong consistency for object operations does not make a group of keys transactional, and event notifications can arrive more than once or out of order.
 
 ## 1. Object storage is not a remote filesystem
 
@@ -69,7 +75,7 @@ Do not infer business truth solely from a listing convention. Store a manifest, 
 
 ## 4. S3 is strongly consistent, but not multi-object transactional
 
-S3 provides strong read-after-write consistency for object `PUT` and `DELETE` operations in all Regions. After a successful write, subsequent reads and listings observe it. Updating one key is atomic: a concurrent reader gets the old value or the new value, not partial bytes.
+[S3 provides strong read-after-write consistency](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html) for object `PUT` and `DELETE` operations in all Regions. After a successful write, subsequent reads and listings observe it. Updating one key is atomic: a concurrent reader gets the old value or the new value, not partial bytes.
 
 Strong consistency does not make this sequence atomic:
 
@@ -162,7 +168,7 @@ Require HTTPS with policy conditions. At-rest encryption does not protect plaint
 
 ## 10. Versioning makes current state recoverable
 
-With versioning enabled, each successful overwrite creates a new version. A simple `DELETE` normally inserts a delete marker as the current version instead of permanently erasing prior versions. Removing that marker can reveal the previous version.
+[With versioning enabled](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html), each successful overwrite creates a new version. A simple `DELETE` normally inserts a delete marker as the current version instead of permanently erasing prior versions. Removing that marker can reveal the previous version.
 
 Versioning changes operations:
 
@@ -190,7 +196,7 @@ Retention is not backup by itself. A protected corrupt version remains corrupt, 
 
 ## 12. Storage classes encode access and resilience assumptions
 
-Choose storage class from access frequency, retrieval latency, availability needs, resilience scope, object size, retention duration, and request/retrieval cost—not from the storage rate alone.
+Choose storage class from access frequency, retrieval latency, availability needs, resilience scope, object size, retention duration, and request/retrieval cost, not from the storage rate alone.
 
 The main families include:
 
@@ -296,7 +302,7 @@ Classify metadata as carefully as object bytes. Do not put secrets or unnecessar
 
 ## 18. Events require idempotent, order-aware consumers
 
-S3 can send event notifications to supported SNS topics, SQS queues, Lambda functions, and EventBridge. Notifications are designed for at-least-once delivery and are not guaranteed to arrive in event order. Rare duplicates are expected behavior.
+S3 can send event notifications to supported SNS topics, SQS queues, Lambda functions, and EventBridge. [Notifications are designed for at-least-once delivery](https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-event-types-and-destinations.html) and are not guaranteed to arrive in event order. Rare duplicates are expected behavior.
 
 An event consumer should:
 
@@ -678,7 +684,7 @@ Avoid treating S3 as a drop-in replacement for low-latency block storage, shared
 
 ### How does this make me a better engineer?
 
-It teaches you to identify the exact stored value, separate current state from retained history, model asynchronous derived state, and prove who can read, replace, replicate, retain, or permanently delete data.
+You can identify the exact stored value, separate current state from retained history, model asynchronous derived state, and prove who can read, replace, replicate, retain, or permanently delete data.
 
 ### How does this reduce waste?
 
@@ -698,20 +704,20 @@ Object storage is only one data-access model. Chapter 98 compares S3 with EBS bl
 
 ## References
 
-- [Amazon S3 — Service overview and consistency model](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
-- [Amazon S3 — Naming objects](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html)
-- [Amazon S3 — How access is authorized](https://docs.aws.amazon.com/AmazonS3/latest/userguide/how-s3-evaluates-access-control.html)
-- [Amazon S3 — Object Ownership and disabling ACLs](https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html)
-- [Amazon S3 — Blocking public access](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html)
-- [Amazon S3 — Default bucket encryption](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html)
-- [Amazon S3 — Versioning](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html)
-- [Amazon S3 — Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html)
-- [Amazon S3 — Storage classes](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html)
-- [Amazon S3 — Managing object lifecycle](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html)
-- [Amazon S3 — Lifecycle rule elements and version behavior](https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html)
-- [Amazon S3 — Replication requirements and considerations](https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-requirements.html)
-- [Amazon S3 — Multipart upload](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html)
-- [Amazon S3 — Checking object integrity](https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html)
-- [Amazon S3 — Event types, destinations, ordering, and duplicates](https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-event-types-and-destinations.html)
-- [Amazon S3 — Conditional writes](https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-writes.html)
-- [Chapter 96 — Elastic Load Balancing, Route 53, and CloudFront](96-elastic-load-balancing-route-53-and-cloudfront.md)
+- [Amazon S3: Service overview and consistency model](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
+- [Amazon S3: Naming objects](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html)
+- [Amazon S3: How access is authorized](https://docs.aws.amazon.com/AmazonS3/latest/userguide/how-s3-evaluates-access-control.html)
+- [Amazon S3: Object Ownership and disabling ACLs](https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html)
+- [Amazon S3: Blocking public access](https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html)
+- [Amazon S3: Default bucket encryption](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html)
+- [Amazon S3: Versioning](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html)
+- [Amazon S3: Object Lock](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html)
+- [Amazon S3: Storage classes](https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html)
+- [Amazon S3: Managing object lifecycle](https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html)
+- [Amazon S3: Lifecycle rule elements and version behavior](https://docs.aws.amazon.com/AmazonS3/latest/userguide/intro-lifecycle-rules.html)
+- [Amazon S3: Replication requirements and considerations](https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-requirements.html)
+- [Amazon S3: Multipart upload](https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html)
+- [Amazon S3: Checking object integrity](https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html)
+- [Amazon S3: Event types, destinations, ordering, and duplicates](https://docs.aws.amazon.com/AmazonS3/latest/userguide/notification-how-to-event-types-and-destinations.html)
+- [Amazon S3: Conditional writes](https://docs.aws.amazon.com/AmazonS3/latest/userguide/conditional-writes.html)
+- [Chapter 96: Elastic Load Balancing, Route 53, and CloudFront](96-elastic-load-balancing-route-53-and-cloudfront.md)

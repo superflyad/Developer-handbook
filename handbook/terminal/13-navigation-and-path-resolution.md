@@ -1,4 +1,4 @@
-# Chapter 13 — Navigation and Path Resolution
+# Chapter 13: Navigation and Path Resolution
 
 A command that names a file depends on two things: the pathname supplied and the process's current working directory. Navigation becomes reliable when both are explicit.
 
@@ -294,7 +294,7 @@ Avoid depending on an undocumented working directory in reusable automation. Est
 
 ### How does this make me a better engineer?
 
-It teaches you to separate a textual pathname, its starting context, and the filesystem object ultimately resolved.
+You can separate a textual pathname, its starting context, and the filesystem object ultimately resolved.
 
 ### How does this reduce waste?
 

@@ -1,4 +1,4 @@
-# Chapter 78 — Why Containers Work: Isolation, Not Tiny Virtual Machines
+# Chapter 78: Why Containers Work: Isolation, Not Tiny Virtual Machines
 
 A container can look like a small machine: it has a root filesystem, hostname, network interfaces, users, and process IDs. On Linux, those views are primarily created around ordinary host processes. There is no separate guest kernel inside a typical container.
 
@@ -410,20 +410,20 @@ It prevents unnecessary guest-style administration, unsafe privilege escalation,
 
 ## Practical Observation
 
-Run the bounded lab on an approved disposable engine. Record the namespace links, container-visible PID 1, engine-host PID, capability mask, cgroup membership, root mount mode, and tmpfs behavior. Change exactly one safe boundary—such as the PID limit—and explain the observed difference before cleanup.
+Run the bounded lab on an approved disposable engine. Record the namespace links, container-visible PID 1, engine-host PID, capability mask, cgroup membership, root mount mode, and tmpfs behavior. Change exactly one safe boundary, such as the PID limit, and explain the observed difference before cleanup.
 
 ## Looking Ahead
 
-The runtime needs a filesystem and configuration to start that isolated process. Chapter 79 explains how image manifests, content-addressed layers, build contexts, copy-on-write snapshots, and cache keys provide that input—and how unexpected content enters it.
+The runtime needs a filesystem and configuration to start that isolated process. Chapter 79 explains how image manifests, content-addressed layers, build contexts, copy-on-write snapshots, and cache keys provide that input, and how unexpected content enters it.
 
 ## References
 
 - [Linux `namespaces(7)` manual page](https://man7.org/linux/man-pages/man7/namespaces.7.html)
 - [Linux `user_namespaces(7)` manual page](https://man7.org/linux/man-pages/man7/user_namespaces.7.html)
 - [Linux `capabilities(7)` manual page](https://man7.org/linux/man-pages/man7/capabilities.7.html)
-- [Linux kernel documentation — Control Group v2](https://docs.kernel.org/admin-guide/cgroup-v2.html)
-- [Open Container Initiative Runtime Specification — Bundle](https://specs.opencontainers.org/runtime-spec/bundle/)
-- [Open Container Initiative Runtime Specification — Linux configuration](https://specs.opencontainers.org/runtime-spec/config-linux/)
+- [Linux kernel documentation: Control Group v2](https://docs.kernel.org/admin-guide/cgroup-v2.html)
+- [Open Container Initiative Runtime Specification: Bundle](https://specs.opencontainers.org/runtime-spec/bundle/)
+- [Open Container Initiative Runtime Specification: Linux configuration](https://specs.opencontainers.org/runtime-spec/config-linux/)
 - [Docker Engine security](https://docs.docker.com/engine/security/)
 - [Docker Engine rootless mode](https://docs.docker.com/engine/security/rootless/)
-- [Microsoft — Windows and containers](https://learn.microsoft.com/en-us/virtualization/windowscontainers/about/)
+- [Microsoft: Windows and containers](https://learn.microsoft.com/en-us/virtualization/windowscontainers/about/)

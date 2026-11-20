@@ -1,4 +1,4 @@
-# Chapter 6 — Terminal Emulators: The Window into Unix
+# Chapter 6: Terminal Emulators: The Window into Unix
 
 Chapter 5 explained the shell as a command interpreter and process coordinator. This chapter separates that shell from the application you see on screen.
 
@@ -412,7 +412,7 @@ Do not force terminal workflows onto tasks that are inherently visual or better 
 
 ### How does this make me a better engineer?
 
-It teaches you to identify whether behavior belongs to the UI, shell, program, remote system, or kernel.
+You can identify whether behavior belongs to the UI, shell, program, remote system, or kernel.
 
 ### How does this reduce waste?
 

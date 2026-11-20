@@ -1,4 +1,4 @@
-# Chapter 5 — The Shell
+# Chapter 5: The Shell
 
 Chapter 4 established that a process is a running program with identity, state, resources, and a lifecycle. The shell is one such process, but it has a special role: it interprets command language and coordinates other processes.
 
@@ -501,7 +501,7 @@ Avoid using shell as the primary implementation language for large, complex, sta
 
 ### How does this make me a better engineer?
 
-It teaches you to distinguish shell parsing, process execution, inherited state, and application behavior.
+You can distinguish shell parsing, process execution, inherited state, and application behavior.
 
 ### How does this reduce waste?
 

@@ -1,4 +1,4 @@
-# Chapter 33 — Undoing Changes and Recovering Work
+# Chapter 33: Undoing Changes and Recovering Work
 
 “Undo my Git change” is incomplete. The right operation depends on *which state changed*, *what must be preserved*, and *whether anyone else has seen the commit*. A useful recovery procedure begins with observation, not a destructive command.
 

@@ -1,4 +1,4 @@
-# Chapter 127 — Incident Response and Operational Coordination
+# Chapter 127: Incident Response and Operational Coordination
 
 An incident changes the engineering problem. Under normal conditions, a team can investigate broadly, compare alternatives, and schedule a durable repair. During an incident, user harm is active or imminent, evidence is disappearing, attention is scarce, and every change can improve, obscure, or worsen the system. Technical skill still matters, but uncoordinated skill becomes another source of risk.
 
@@ -158,7 +158,7 @@ Responders naturally generate explanations. Make them inspectable:
 | new API build exhausts pool | impact began after rollout; pool wait high | one old shard also slow | compare pool wait by artifact | Lin | testing |
 | database lock storm | write latency and blockers rose | read-only path also affected | inspect wait categories by journey | Sam | queued |
 
-Rank hypotheses by explanatory power, impact, test cost, safety, and reversibility—not seniority or repetition. Time-box investigations that do not change a mitigation decision.
+Rank hypotheses by explanatory power, impact, test cost, safety, and reversibility, not seniority or repetition. Time-box investigations that do not change a mitigation decision.
 
 Update status to supported, contradicted, inconclusive, or deferred. Never erase a failed hypothesis; it prevents repeated work and later reveals where the team lacked signals.
 
@@ -648,7 +648,7 @@ Use it when impact exceeds routine operational handling, multiple people or syst
 
 ### When should I avoid it?
 
-Do not invoke a heavyweight major-incident structure for every isolated support issue. Use the smallest structure that maintains clear ownership, evidence, and safe change—and expand early when impact warrants it.
+Do not invoke a heavyweight major-incident structure for every isolated support issue. Use the smallest structure that maintains clear ownership, evidence, and safe change, and expand early when impact warrants it.
 
 ### How does this make me a better engineer?
 
@@ -672,11 +672,11 @@ Chapter 128 uses the incident's evidence and decision history to reconstruct wha
 
 ## References
 
-- [NIST SP 800-61 Rev. 3 — Incident Response Recommendations and Considerations for Cybersecurity Risk Management](https://csrc.nist.gov/pubs/sp/800/61/r3/final)
-- [Google SRE Workbook — Incident Response](https://sre.google/workbook/incident-response/)
-- [Google SRE Book — Managing Incidents](https://sre.google/sre-book/managing-incidents/)
-- [Microsoft Security — Incident Response Overview](https://learn.microsoft.com/en-us/security/compass/incident-response-overview)
-- [Microsoft Azure Architecture Center — Computer Forensics Chain of Custody](https://learn.microsoft.com/en-us/azure/architecture/example-scenario/forensics/)
-- [Chapter 115 — Security, Privacy, and Multi-Tenant Boundaries](../system-design/115-security-privacy-and-multi-tenant-boundaries.md)
-- [Chapter 121 — Metrics, SLIs, SLOs, and Actionable Alerts](121-metrics-slis-slos-and-actionable-alerts.md)
-- [Chapter 126 — Load Testing, Capacity Planning, and Failure Injection](126-load-testing-capacity-planning-and-failure-injection.md)
+- [NIST SP 800-61 Rev. 3: Incident Response Recommendations and Considerations for Cybersecurity Risk Management](https://csrc.nist.gov/pubs/sp/800/61/r3/final)
+- [Google SRE Workbook: Incident Response](https://sre.google/workbook/incident-response/)
+- [Google SRE Book: Managing Incidents](https://sre.google/sre-book/managing-incidents/)
+- [Microsoft Security: Incident Response Overview](https://learn.microsoft.com/en-us/security/compass/incident-response-overview)
+- [Microsoft Azure Architecture Center: Computer Forensics Chain of Custody](https://learn.microsoft.com/en-us/azure/architecture/example-scenario/forensics/)
+- [Chapter 115: Security, Privacy, and Multi-Tenant Boundaries](../system-design/115-security-privacy-and-multi-tenant-boundaries.md)
+- [Chapter 121: Metrics, SLIs, SLOs, and Actionable Alerts](121-metrics-slis-slos-and-actionable-alerts.md)
+- [Chapter 126: Load Testing, Capacity Planning, and Failure Injection](126-load-testing-capacity-planning-and-failure-injection.md)

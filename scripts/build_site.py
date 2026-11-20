@@ -21,6 +21,7 @@ OUTPUT = BUILD / "site"
 CONFIG = BUILD / "mkdocs.generated.yml"
 PROJECT_URL = "https://github.com/superflyad/Developer-handbook"
 SITE_URL = "https://superflyad.github.io/Developer-handbook/"
+RAW_SOURCE_URL = "https://raw.githubusercontent.com/superflyad/Developer-handbook/main"
 
 SECTION = re.compile(r"^## (?P<title>.+?)\s*$")
 LINK = re.compile(r"^\s*(?:[-*]|\d+\.)\s+\[(?P<title>[^]]+)]\((?P<target>[^)]+)\)")
@@ -33,6 +34,7 @@ INLINE_LINK = re.compile(
 
 COMMUNITY_PAGES = [
     ("Contributing", "CONTRIBUTING.md"),
+    ("Agent Answer Evaluation", "AGENT_EVALUATION.md"),
     ("Governance", "GOVERNANCE.md"),
     ("Support", "SUPPORT.md"),
     ("Security", "SECURITY.md"),
@@ -156,6 +158,7 @@ def prepare_sources(summary_sources: list[Path]) -> None:
     asset_destination = STAGING / "assets" / "social-preview.png"
     asset_destination.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(ROOT / "assets" / "social-preview.png", asset_destination)
+    shutil.copy2(ROOT / "assets" / "favicon.svg", STAGING / "assets" / "favicon.svg")
 
 
 def write_config(navigation: list[dict[str, object]]) -> None:
@@ -182,8 +185,8 @@ def write_config(navigation: list[dict[str, object]]) -> None:
             "name": "material",
             "custom_dir": str(ROOT / "site" / "overrides"),
             "language": "en",
-            "logo": "material/book-open-page-variant",
-            "favicon": "material/book-open-page-variant",
+            "icon": {"logo": "material/book-open-page-variant"},
+            "favicon": "assets/favicon.svg",
             "features": [
                 "announce.dismiss",
                 "content.action.edit",
@@ -268,6 +271,32 @@ def write_config(navigation: list[dict[str, object]]) -> None:
     )
 
 
+def write_agent_index(navigation: list[dict[str, object]]) -> None:
+    """Publish a compact index pointing agents to canonical Markdown sources."""
+    lines = [
+        "# The Developer Handbook",
+        "",
+        "> A systems-first software engineering handbook.",
+        "",
+        "This file is a navigation aid. The linked Markdown chapters are the source of truth.",
+        "Check their references for version-sensitive behavior and preserve stated limits in summaries.",
+        "These links follow the live main branch; use a tagged release for a fixed edition.",
+        "",
+        f"- [Reader website]({SITE_URL})",
+        f"- [How to use the handbook]({RAW_SOURCE_URL}/HOW_TO_USE_THIS_HANDBOOK.md)",
+        f"- [Complete table of contents]({RAW_SOURCE_URL}/SUMMARY.md)",
+    ]
+    for section in navigation[1:]:
+        section_title, entries = next(iter(section.items()))
+        lines.extend(("", f"## {section_title}", ""))
+        for entry in entries:
+            title, path = next(iter(entry.items()))
+            if path in {"SUMMARY.md", "AGENT_EVALUATION.md"}:
+                continue
+            lines.append(f"- [{title}]({RAW_SOURCE_URL}/{quote(path, safe='/')})")
+    (OUTPUT / "llms.txt").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
 def build() -> None:
     navigation, sources = summary_navigation()
     prepare_sources(sources)
@@ -288,10 +317,13 @@ def build() -> None:
         cwd=ROOT,
         check=True,
     )
+    write_agent_index(navigation)
     index = OUTPUT / "index.html"
     search = OUTPUT / "search" / "search_index.json"
-    if not index.is_file() or not search.is_file():
-        raise RuntimeError("website build did not produce its index and search data")
+    favicon = OUTPUT / "assets" / "favicon.svg"
+    agent_index = OUTPUT / "llms.txt"
+    if not all(path.is_file() for path in (index, search, favicon, agent_index)):
+        raise RuntimeError("website build did not produce its required files")
     print(
         f"Built searchable website from {len(sources) + len(COMMUNITY_PAGES) + 2} "
         f"Markdown pages in {OUTPUT}"

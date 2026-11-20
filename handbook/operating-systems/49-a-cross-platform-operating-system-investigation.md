@@ -1,4 +1,4 @@
-# Chapter 49 — A Cross-Platform Operating-System Investigation
+# Chapter 49: A Cross-Platform Operating-System Investigation
 
 Operating-system incidents cross layers. A service cannot write a file; the path belongs to an unexpected volume; the process runs under a different identity; memory pressure delays it; and a restart hides the original evidence. This chapter provides one read-mostly investigation structure with platform-specific collection paths.
 
@@ -270,7 +270,7 @@ End with:
 - authorization trace;
 - evidence-supported hypothesis and alternatives;
 - next read-only diagnostic step;
-- proposed change, risk, rollback, and verification—if remediation is authorized later.
+- proposed change, risk, rollback, and verification if remediation is authorized later.
 
 Do not attach raw dumps containing secrets. Include exact commands only after redacting identifiers that should remain private.
 
@@ -316,7 +316,7 @@ Avoid running broad collection against sensitive systems without authorization o
 
 ### How does this make me a better engineer?
 
-It trains you to build causal system models, preserve evidence, and state uncertainty precisely.
+You can build causal system models, preserve evidence, and state uncertainty precisely.
 
 ### How does this reduce waste?
 

@@ -2,7 +2,7 @@
 
 ## Author and maintainer
 
-- [Michael Adeniken](https://github.com/superflyad) — creator, principal author, and maintainer
+- [Michael Adeniken](https://github.com/superflyad): creator, principal author, and maintainer
 
 ## Contributors
 

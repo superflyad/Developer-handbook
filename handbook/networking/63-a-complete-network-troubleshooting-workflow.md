@@ -1,4 +1,4 @@
-# Chapter 63 — A Complete Network Troubleshooting Workflow
+# Chapter 63: A Complete Network Troubleshooting Workflow
 
 Network troubleshooting is the disciplined reduction of uncertainty across a path. It begins with one observable failure, uses the least invasive evidence that can separate competing explanations, and stops when ownership and the next action are clear.
 
@@ -180,7 +180,7 @@ Do not send state-changing requests merely to produce a control. Prefer document
 
 ## 12. Capture packets only with a boundary and purpose
 
-Packet capture is appropriate when a specific remaining hypothesis depends on packets at a known observation point—for example, whether a SYN leaves an interface, whether a reply returns, or which endpoint sent a reset.
+Packet capture is appropriate when a specific remaining hypothesis depends on packets at a known observation point, such as whether a SYN leaves an interface, whether a reply returns, or which endpoint sent a reset.
 
 Before capture, define:
 
@@ -251,7 +251,7 @@ Network troubleshooting is **sequential hypothesis testing across layered contra
 
 ## From the Field
 
-Users in one office report intermittent HTTPS timeouts. DNS answers and TLS are healthy when requests connect. Route selection shows the affected clients prefer IPv6; a controlled comparison succeeds over IPv4 and times out over IPv6. Edge logs contain no matching IPv6 attempts, while the office gateway shows the IPv6 route pointing to a retired tunnel. The narrow repair is the stale IPv6 route—not DNS flushing, certificate replacement, or a broad firewall exception.
+Users in one office report intermittent HTTPS timeouts. DNS answers and TLS are healthy when requests connect. Route selection shows the affected clients prefer IPv6; a controlled comparison succeeds over IPv4 and times out over IPv6. Edge logs contain no matching IPv6 attempts, while the office gateway shows the IPv6 route pointing to a retired tunnel. The narrow repair is the stale IPv6 route, not DNS flushing, certificate replacement, or a broad firewall exception.
 
 ## Engineering Review
 
@@ -273,7 +273,7 @@ Do not use production probing or capture beyond authorization, and do not contin
 
 ### How does this make me a better engineer?
 
-It teaches you to convert symptoms into falsifiable hypotheses and communicate exactly what each observation proves.
+You can convert symptoms into falsifiable hypotheses and communicate exactly what each observation proves.
 
 ### How does this reduce waste?
 
@@ -289,7 +289,7 @@ Choose an authorized read-only request to a documentation or lab service. Write 
 
 ## Looking Ahead
 
-Part V replaced “the network” with explicit protocols, endpoints, paths, and evidence. Part VI begins by deciding which stable, understood manual workflows deserve automation—and which still require human judgment.
+Part V replaced “the network” with explicit protocols, endpoints, paths, and evidence. Part VI begins by deciding which stable, understood manual workflows deserve automation, and which still require human judgment.
 
 ## References
 
@@ -297,4 +297,4 @@ Part V replaced “the network” with explicit protocols, endpoints, paths, and
 - [Linux `ip-route(8)` manual](https://man7.org/linux/man-pages/man8/ip-route.8.html)
 - [curl command-line manual](https://curl.se/docs/manpage.html)
 - [Wireshark User's Guide](https://www.wireshark.org/docs/wsug_html_chunked/)
-- [Wireshark capture-filter reference](https://wiki.wireshark.org/CaptureFilters)
+- [Wireshark User's Guide: Filtering while capturing](https://www.wireshark.org/docs/wsug_html_chunked/ChCapCaptureFilterSection.html)

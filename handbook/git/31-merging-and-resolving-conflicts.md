@@ -1,4 +1,4 @@
-# Chapter 31 — Merging and Resolving Conflicts
+# Chapter 31: Merging and Resolving Conflicts
 
 Two branches can evolve from one commit into different states. Merging reconciles their histories and content while preserving their ancestry.
 

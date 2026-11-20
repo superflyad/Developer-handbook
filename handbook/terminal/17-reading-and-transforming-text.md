@@ -1,4 +1,4 @@
-# Chapter 17 — Reading and Transforming Text
+# Chapter 17: Reading and Transforming Text
 
 Unix text tools are powerful because each applies a small operation to a stream. Their correctness depends on the structure the bytes are assumed to represent.
 
@@ -346,7 +346,7 @@ Avoid delimiter-based shortcuts for structured, adversarial, nested, multiline, 
 
 ### How does this make me a better engineer?
 
-It teaches you to reason about representation, ordering, streaming state, resource costs, and intermediate contracts.
+You can reason about representation, ordering, streaming state, resource costs, and intermediate contracts.
 
 ### How does this reduce waste?
 

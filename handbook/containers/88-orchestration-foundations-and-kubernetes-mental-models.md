@@ -1,6 +1,6 @@
-# Chapter 88 — Orchestration Foundations and Kubernetes Mental Models
+# Chapter 88: Orchestration Foundations and Kubernetes Mental Models
 
-Starting a container is straightforward. Keeping the intended number of healthy, correctly configured instances running across changing hosts—while rolling versions, routing traffic, attaching storage, and enforcing policy—is a different problem.
+Starting a container is straightforward. Keeping the intended number of healthy, correctly configured instances running across changing hosts while rolling versions, routing traffic, attaching storage, and enforcing policy is a different problem.
 
 The central idea is:
 
@@ -92,7 +92,7 @@ Automation should wait for explicit conditions with a time budget and surface th
 
 A Pod groups one or more tightly coupled containers that share a lifecycle and selected namespaces and resources. Containers in a Pod share a network namespace and can communicate over loopback. They can mount shared Pod volumes.
 
-Put containers in one Pod only when they need tight co-location, shared fate, or shared local resources—for example, an application and a purpose-built helper that must run beside each instance.
+Put containers in one Pod only when they need tight co-location, shared fate, or shared local resources, such as an application and a purpose-built helper that must run beside each instance.
 
 Do not put an entire distributed application in one Pod. Independently scaled, deployed, secured, or recovered services belong in separate workload units.
 
@@ -430,7 +430,7 @@ Cluster adoption adds ongoing work:
 
 Managed Kubernetes transfers some component operation to a provider, not application ownership or all cluster configuration.
 
-Measure platform success through safer lead time, recovery, reliability, security, and reduced cognitive load—not by object count.
+Measure platform success through safer lead time, recovery, reliability, security, and reduced cognitive load, not by object count.
 
 ## 30. Practical simulation: reconcile and roll replicas
 
@@ -692,7 +692,7 @@ Avoid adopting Kubernetes when a simpler managed platform or recoverable single-
 
 ### How does this make me a better engineer?
 
-It teaches you to separate intent from observation, scheduling from execution, Pod identity from service identity, readiness from liveness, and controller rollback from data recovery.
+You can separate intent from observation, scheduling from execution, Pod identity from service identity, readiness from liveness, and controller rollback from data recovery.
 
 ### How does this reduce waste?
 

@@ -1,4 +1,4 @@
-# Chapter 1 — Thinking Like a Unix Developer
+# Chapter 1: Thinking Like a Unix Developer
 
 Unix is not primarily a collection of commands. It is a way of designing and operating systems.
 
@@ -6,9 +6,15 @@ The central shift is this:
 
 > Do not begin by asking which application can perform a task. Begin by asking how data can move through a sequence of small, reliable tools.
 
+## In brief
+
+- **Model:** Programs exchange data through files, streams, arguments, and other explicit interfaces. Exit status reports whether a command completed successfully.
+- **Use:** Separate discovery, transformation, and validation in repeatable workflows.
+- **Limit:** A pipeline does not make a poorly understood process safe, and some tasks need richer interaction or coordinated state.
+
 ## 1. The problem Unix tries to solve
 
-Computing tasks change constantly. A single large program can support only the workflows its author anticipated. Unix instead favors small programs with stable interfaces so users can combine them into workflows that were never designed in advance.
+Computing tasks change constantly. A single large program can support only the workflows its author anticipated. Unix instead favors small programs with stable interfaces so users can combine them into workflows that were never designed in advance. Ritchie and Thompson's [Unix system paper](https://cm-bell-labs.github.io/who/dmr/cacm.html) describes pipes as a way to connect independently developed programs.
 
 This produces a system that is flexible without requiring every tool to understand every other tool.
 
@@ -20,7 +26,7 @@ A Unix command is best understood as a transformation:
 input → program → output
 ```
 
-A program may receive filenames, command-line arguments, environment variables, or a stream of data. It performs one responsibility and produces a result that another program can consume.
+A command may receive filenames, command-line arguments, environment variables, or a stream of data. A well-scoped command performs a focused task and produces a result that another program can consume.
 
 This resembles a well-designed function:
 
@@ -52,7 +58,7 @@ Conceptually, this workflow:
 2. passes those files to `grep`, which emits matching records,
 3. counts the emitted records.
 
-Piping plain `find` output into `grep` would search the filenames themselves, not the contents of the files. Here, `-exec ... {} +` supplies the discovered paths to `grep` as file arguments. The exact command will be refined in later chapters. For now, focus on the architecture: each stage has one responsibility and communicates through a standard interface.
+Piping plain `find` output into `grep` would search the filenames themselves, not the contents of the files. Here, `-exec ... {} +` supplies the discovered paths to `grep` as file arguments, as described in the [GNU findutils manual](https://www.gnu.org/software/findutils/manual/html_node/Multiple-Files.html). The exact command will be refined in later chapters. For now, focus on the architecture: each stage has one responsibility and communicates through a standard interface.
 
 ## 4. Text as an interoperability format
 
@@ -73,7 +79,7 @@ This design choice survives throughout modern engineering:
 - YAML and JSON configuration,
 - Dockerfiles,
 - Terraform,
-- Git metadata and patches,
+- commit messages and patches,
 - CI/CD definitions.
 
 Text is not always the most compact or fastest representation. Binary formats are appropriate for images, databases, compiled programs, and performance-sensitive protocols. The lesson is not “everything must be text.” The lesson is “prefer transparent, interoperable representations unless another requirement is more important.”
@@ -82,11 +88,11 @@ Text is not always the most compact or fastest representation. Binary formats ar
 
 Unix tools compose because they commonly agree on three data channels:
 
-- **standard input (`stdin`)** — incoming data,
-- **standard output (`stdout`)** — normal results,
-- **standard error (`stderr`)** — diagnostics and failures.
+- **standard input (`stdin`)**: incoming data,
+- **standard output (`stdout`)**: normal results,
+- **standard error (`stderr`)**: diagnostics.
 
-A program that respects these interfaces can participate in pipelines without knowing which program came before or after it.
+A command also returns an exit status, which callers use to distinguish success from failure. A program that respects these interfaces can participate in pipelines without knowing which program came before or after it.
 
 This is the same engineering principle behind:
 
@@ -106,7 +112,7 @@ Manual work is acceptable during exploration. Repeated manual work is a signal t
 Automation provides:
 
 - repeatability,
-- lower error rates,
+- consistent execution of validated steps,
 - faster execution,
 - documentation of the process,
 - easier delegation,
@@ -144,7 +150,7 @@ The same habits that produce good shell workflows also produce maintainable soft
 | --- | --- | --- |
 | Windows | GUI and application-centric workflows | PowerShell, Windows Terminal, WSL, package managers, and automation are first-class tools |
 | macOS | Polished desktop built on Unix foundations | Native Unix tools coexist with strong graphical applications |
-| Linux | Command-line and server-oriented workflows | Dominant environment for servers, containers, cloud workloads, and embedded systems |
+| Linux | Command-line and server-oriented workflows | Widely used for servers, containers, cloud workloads, and embedded systems |
 
 The transferable skill is not memorizing one platform's commands. It is learning to reason about processes, files, streams, interfaces, state, and automation.
 
@@ -168,7 +174,7 @@ Avoid forcing pipelines onto tasks that require rich interaction, transactions a
 
 ### How does this make me a better engineer?
 
-It trains you to design software around explicit responsibilities and interfaces rather than hidden coupling.
+You can design software around explicit responsibilities and interfaces rather than hidden coupling.
 
 ### How does this reduce waste?
 
@@ -189,3 +195,10 @@ Before the next chapter, observe three actions you perform on your computer. For
 5. Could a stable interface make it easier to automate later?
 
 Do not automate anything yet. The first skill is recognizing the workflow correctly.
+
+## References
+
+- [Ritchie and Thompson: The UNIX Time-Sharing System](https://cm-bell-labs.github.io/who/dmr/cacm.html)
+- [GNU Bash Manual: Pipelines](https://www.gnu.org/software/bash/manual/html_node/Pipelines.html)
+- [GNU Findutils Manual: Multiple Files](https://www.gnu.org/software/findutils/manual/html_node/Multiple-Files.html)
+- [GNU Coreutils Manual: `uniq`](https://www.gnu.org/software/coreutils/manual/html_node/uniq-invocation.html)

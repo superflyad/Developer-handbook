@@ -1,4 +1,4 @@
-# Chapter 102 — Lambda, API Gateway, and Serverless Execution
+# Chapter 102: Lambda, API Gateway, and Serverless Execution
 
 A serverless function removes server provisioning from the application team. It does not remove runtime lifecycle, capacity, identity, networking, failure, cost, or ownership. A function that can scale to a thousand concurrent invocations can also open a thousand database connections, retry one poisoned batch indefinitely, or turn a malformed response into a public `502`.
 
@@ -12,7 +12,7 @@ AWS Lambda's current product surface includes more than the original short-lived
 
 This chapter centers **Lambda Event Functions**: handlers invoked directly, asynchronously, or through event source mappings. They are the common foundation for API Gateway backends, S3 notifications, SQS consumers, and stream processors. A standard Event Function invocation runs for at most 15 minutes.
 
-Durable Functions add checkpointed, code-first workflows that can span waits and resume for up to one year. Lambda Managed Instances and other newer modes alter execution duration, isolation, or concurrency assumptions. Treat those as distinct design choices and verify their current documentation, availability, quotas, and cost. Do not copy an Event Function assumption—such as one active invocation per execution environment—onto every Lambda mode.
+Durable Functions add checkpointed, code-first workflows that can span waits and resume for up to one year. Lambda Managed Instances and other newer modes alter execution duration, isolation, or concurrency assumptions. Treat those as distinct design choices and verify their current documentation, availability, quotas, and cost. Do not apply an Event Function assumption, such as one active invocation per execution environment, to every Lambda mode.
 
 For any function, record:
 
@@ -158,7 +158,7 @@ For an Event Function with one active invocation per environment, approximate co
 concurrency = requests per second × average duration in seconds
 ```
 
-At 2,000 requests per second and 250 milliseconds, average concurrency is about 500. Plan with peak rate and high duration percentiles, plus headroom—not only averages. A dependency slowdown increases duration, which increases concurrency, which can increase dependency load further.
+At 2,000 requests per second and 250 milliseconds, average concurrency is about 500. Plan with peak rate and high duration percentiles, plus headroom, not only averages. A dependency slowdown increases duration, which increases concurrency, which can increase dependency load further.
 
 Regional account concurrency is shared. New accounts can start with reduced quotas, and current quotas vary by Region and execution mode. Inspect Service Quotas before launch and load-test the full path.
 
@@ -570,7 +570,7 @@ Avoid a standard Event Function for continuously running services, sustained hos
 
 ### How does this make me a better engineer?
 
-It teaches you to translate traffic and duration into capacity, separate execution permission from invoke permission, scope retry to the trigger, and treat configuration as release state.
+You can translate traffic and duration into capacity, separate execution permission from invoke permission, scope retry to the trigger, and treat configuration as release state.
 
 ### How does this reduce waste?
 
@@ -590,24 +590,24 @@ Functions fit bounded event work, but many services need long-running processes,
 
 ## References
 
-- [AWS Lambda — Functions and durable functions](https://docs.aws.amazon.com/lambda/latest/dg/lambda-functions-chapter.html)
-- [AWS Lambda — Event Function invocation methods](https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html)
-- [AWS Lambda — Execution environment lifecycle](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtime-environment.html)
-- [AWS Lambda — Event Function scaling](https://docs.aws.amazon.com/lambda/latest/dg/lambda-concurrency.html)
-- [AWS Lambda — Reserved concurrency](https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html)
-- [AWS Lambda — Asynchronous invocation errors and retries](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-error-handling.html)
-- [AWS Lambda — Event source mappings](https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html)
-- [AWS Lambda — Using Lambda with Amazon SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html)
-- [AWS Lambda — SQS error handling and partial batch response](https://docs.aws.amazon.com/lambda/latest/dg/services-sqs-errorhandling.html)
-- [AWS Lambda — Deployment packages](https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-zip.html)
-- [AWS Lambda — Event Function versions](https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html)
-- [AWS Lambda — Aliases](https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html)
-- [AWS Lambda — Execution roles](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html)
-- [AWS Lambda — VPC access](https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html)
-- [AWS Lambda — Environment variables](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html)
-- [AWS Lambda — Metrics](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html)
-- [AWS Lambda — Quotas](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html)
-- [AWS Lambda — Durable Function concepts](https://docs.aws.amazon.com/lambda/latest/dg/durable-basic-concepts.html)
-- [Amazon API Gateway — Choose between REST APIs and HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vs-rest.html)
-- [Amazon API Gateway — Lambda proxy integrations](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html)
-- [Chapter 101 — SQS, SNS, EventBridge, and Asynchronous Workflows](101-sqs-sns-eventbridge-and-asynchronous-workflows.md)
+- [AWS Lambda: Functions and durable functions](https://docs.aws.amazon.com/lambda/latest/dg/lambda-functions-chapter.html)
+- [AWS Lambda: Event Function invocation methods](https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html)
+- [AWS Lambda: Execution environment lifecycle](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtime-environment.html)
+- [AWS Lambda: Event Function scaling](https://docs.aws.amazon.com/lambda/latest/dg/lambda-concurrency.html)
+- [AWS Lambda: Reserved concurrency](https://docs.aws.amazon.com/lambda/latest/dg/configuration-concurrency.html)
+- [AWS Lambda: Asynchronous invocation errors and retries](https://docs.aws.amazon.com/lambda/latest/dg/invocation-async-error-handling.html)
+- [AWS Lambda: Event source mappings](https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html)
+- [AWS Lambda: Using Lambda with Amazon SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html)
+- [AWS Lambda: SQS error handling and partial batch response](https://docs.aws.amazon.com/lambda/latest/dg/services-sqs-errorhandling.html)
+- [AWS Lambda: Deployment packages](https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-zip.html)
+- [AWS Lambda: Event Function versions](https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html)
+- [AWS Lambda: Aliases](https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html)
+- [AWS Lambda: Execution roles](https://docs.aws.amazon.com/lambda/latest/dg/lambda-intro-execution-role.html)
+- [AWS Lambda: VPC access](https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html)
+- [AWS Lambda: Environment variables](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html)
+- [AWS Lambda: Metrics](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html)
+- [AWS Lambda: Quotas](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html)
+- [AWS Lambda: Durable Function concepts](https://docs.aws.amazon.com/lambda/latest/dg/durable-basic-concepts.html)
+- [Amazon API Gateway: Choose between REST APIs and HTTP APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vs-rest.html)
+- [Amazon API Gateway: Lambda proxy integrations](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html)
+- [Chapter 101: SQS, SNS, EventBridge, and Asynchronous Workflows](101-sqs-sns-eventbridge-and-asynchronous-workflows.md)

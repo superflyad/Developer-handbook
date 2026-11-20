@@ -1,4 +1,4 @@
-# Chapter 90 — Cloud Computing, Shared Responsibility, and Service Models
+# Chapter 90: Cloud Computing, Shared Responsibility, and Service Models
 
 Moving a database from a host you patch to a managed API can remove operating-system work. It does not decide who classifies the data, grants access, chooses failure domains, tests restore, watches quotas, or pays for idle capacity.
 
@@ -374,7 +374,7 @@ Every provisioned resource should answer:
 
 Tags can help allocation, automation, and access control, but support varies by service and billing dimension. Account boundaries and cost categories can cover charges that resource tags cannot.
 
-Budget data and alerts can lag usage. Prevent expensive mistakes with quotas, policy, safe defaults, expiration automation, and pre-deployment estimation—not budgets alone.
+Budget data and alerts can lag usage. Prevent expensive mistakes with quotas, policy, safe defaults, expiration automation, and pre-deployment estimation, not budgets alone.
 
 ## 23. Unit economics connect architecture to cost
 
@@ -744,7 +744,7 @@ Avoid treating the three service-model labels as precise product specifications;
 
 ### How does this make me a better engineer?
 
-It teaches you to reason from interfaces, failure domains, quotas, meters, and retained duties instead of treating abstraction as the disappearance of responsibility.
+You can reason from interfaces, failure domains, quotas, meters, and retained duties instead of treating abstraction as the disappearance of responsibility.
 
 ### How does this reduce waste?
 
@@ -752,7 +752,7 @@ It prevents duplicated operation, ownership gaps, unplanned quota failure, idle 
 
 ## Handbook Principle #90
 
-> Every managed layer removes some work and exposes a new contract—write down both before depending on it.
+> Every managed layer removes some work and exposes a new contract. Document both before depending on it.
 
 ## Practical Observation
 
@@ -764,12 +764,12 @@ Cloud responsibility needs enforceable organizational boundaries. Chapter 91 tre
 
 ## References
 
-- [NIST SP 800-145 — The NIST Definition of Cloud Computing](https://csrc.nist.gov/pubs/sp/800/145/final)
+- [NIST SP 800-145: The NIST Definition of Cloud Computing](https://csrc.nist.gov/pubs/sp/800/145/final)
 - [AWS Shared Responsibility Model](https://aws.amazon.com/compliance/shared-responsibility-model/)
 - [AWS Regions and Availability Zones](https://docs.aws.amazon.com/global-infrastructure/latest/regions/aws-regions-availability-zones.html)
-- [AWS Fault Isolation Boundaries — Control planes and data planes](https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/control-planes-and-data-planes.html)
-- [AWS Well-Architected Reliability Pillar — Understanding availability needs](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/understanding-availability-needs.html)
+- [AWS Fault Isolation Boundaries: Control planes and data planes](https://docs.aws.amazon.com/whitepapers/latest/aws-fault-isolation-boundaries/control-planes-and-data-planes.html)
+- [AWS Well-Architected Reliability Pillar: Understanding availability needs](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/understanding-availability-needs.html)
 - [AWS Service Quotas User Guide](https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html)
-- [AWS Well-Architected Framework — Manage demand and supply resources](https://docs.aws.amazon.com/wellarchitected/latest/framework/cost-mandem.html)
-- [AWS Cost Management — Cost Anomaly Detection](https://docs.aws.amazon.com/cost-management/latest/userguide/getting-started-ad.html)
-- [AWS Cost Management — Budgets](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html)
+- [AWS Well-Architected Framework: Manage demand and supply resources](https://docs.aws.amazon.com/wellarchitected/latest/framework/cost08.html)
+- [AWS Cost Management: Cost Anomaly Detection](https://docs.aws.amazon.com/cost-management/latest/userguide/getting-started-ad.html)
+- [AWS Cost Management: Budgets](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html)

@@ -1,4 +1,4 @@
-# Chapter 34 — Pull Requests, Review, and Merge Policy
+# Chapter 34: Pull Requests, Review, and Merge Policy
 
 Git can exchange commits without a hosting service. A pull request (PR) adds a collaboration layer: it proposes integrating one branch into another, exposes a diff for review, and often gates the integration on checks and approvals. The branch and commits are Git; the PR, discussion, and policy are hosting-platform features.
 

@@ -1,4 +1,4 @@
-# Chapter 25 — The Working Tree, Index, and `HEAD`
+# Chapter 25: The Working Tree, Index, and `HEAD`
 
 A commit records one tree, but development happens between commits. Git keeps the current files, the proposed next snapshot, and the current commit conceptually separate.
 

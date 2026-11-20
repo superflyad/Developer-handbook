@@ -1,4 +1,4 @@
-# Chapter 3 — The Unix Filesystem
+# Chapter 3: The Unix Filesystem
 
 Chapter 2 introduced the operating system as a resource manager. The filesystem is one of its most important interfaces: it gives programs and people a stable way to name, organize, inspect, and share persistent data.
 
@@ -35,7 +35,7 @@ The filesystem is therefore both a storage abstraction and a coordination mechan
 
 ## 2. Names are not the stored objects
 
-A filename is a name in a directory. It is not the file's contents, and on common Unix filesystems it is not the file's underlying identity.
+A filename is a name in a directory. It is not the file's contents, and on common Unix filesystems it is not the file's underlying identity. Linux records an [inode number and link count](https://man7.org/linux/man-pages/man7/inode.7.html) separately from the path used to reach a file.
 
 A useful simplified model is:
 
@@ -67,18 +67,18 @@ Directories can contain directories, producing a hierarchy:
 ```text
 /
 ├── Users
-│   └── michael
+│   └── alex
 │       └── Projects
 ├── Applications
 ├── Library
 └── tmp
 ```
 
-This hierarchy gives every reachable object a location within a namespace. The same filename can appear in different directories because the containing directory is part of the name's context.
+This hierarchy gives every named object a location within a namespace. The same filename can appear in different directories because the containing directory is part of the name's context.
 
 ```text
-/Users/michael/Projects/app/config.json
-/Users/michael/Projects/api/config.json
+/Users/alex/Projects/app/config.json
+/Users/alex/Projects/api/config.json
 ```
 
 Both objects are named `config.json`, but their paths distinguish them.
@@ -103,7 +103,7 @@ Keeping namespace and identity separate prevents an easy conceptual mistake.
 An **absolute path** starts at the root directory:
 
 ```text
-/Users/michael/Projects/handbook/README.md
+/Users/alex/Projects/handbook/README.md
 ```
 
 A **relative path** starts at a process's current working directory:
@@ -112,10 +112,10 @@ A **relative path** starts at a process's current working directory:
 handbook/README.md
 ```
 
-If the working directory is `/Users/michael/Projects`, the relative path above resolves to:
+If the working directory is `/Users/alex/Projects`, the relative path above resolves to:
 
 ```text
-/Users/michael/Projects/handbook/README.md
+/Users/alex/Projects/handbook/README.md
 ```
 
 Relative paths are convenient because a project can move as a unit. Absolute paths are explicit but often bind a workflow to one machine or directory layout.
@@ -128,7 +128,7 @@ The correct choice depends on the required stability:
 
 ## 6. The current working directory belongs to a process
 
-The current working directory is process state. A relative path has no complete meaning until it is combined with that state.
+The current working directory is process state. For ordinary [relative path resolution](https://man7.org/linux/man-pages/man7/path_resolution.7.html), the path has no complete meaning until it is combined with that state.
 
 ```text
 process working directory + relative path = resolved location
@@ -200,12 +200,12 @@ The namespace can expose more than regular files and directories.
 
 Common Unix object types include:
 
-- **regular files** — stored data such as source code, images, and executables,
-- **directories** — mappings from names to objects,
-- **symbolic links** — objects containing a path to another location,
-- **device nodes** — interfaces to certain devices,
-- **named pipes** — filesystem-visible communication channels,
-- **sockets** — endpoints that processes can use for communication.
+- **regular files**: stored data such as source code, images, and executables,
+- **directories**: mappings from names to objects,
+- **symbolic links**: objects containing a path to another location,
+- **device nodes**: interfaces to certain devices,
+- **named pipes**: filesystem-visible communication channels,
+- **sockets**: endpoints that processes can use for communication.
 
 This supports the broader Unix preference for a small set of familiar interfaces. It does not mean that every resource is literally a regular file.
 
@@ -227,12 +227,12 @@ Some details are easy to oversimplify. For example, systems may track several ti
 
 ## 12. Path resolution
 
-When a process opens a path, the operating system resolves it component by component.
+When a process opens a path, the operating system [resolves it component by component](https://man7.org/linux/man-pages/man7/path_resolution.7.html).
 
 For this path:
 
 ```text
-/Users/michael/Projects/app/config.json
+/Users/alex/Projects/app/config.json
 ```
 
 a simplified resolution is:
@@ -240,7 +240,7 @@ a simplified resolution is:
 ```text
 start at /
   ↓ find Users
-  ↓ find michael
+  ↓ find alex
   ↓ find Projects
   ↓ find app
   ↓ find config.json
@@ -283,7 +283,7 @@ README.md
 readme.md
 ```
 
-However, default macOS volumes are often case-insensitive while preserving the case used when a name was created. Linux filesystems are commonly case-sensitive. Windows filesystems are commonly case-insensitive by default, though modern configurations can introduce exceptions.
+However, [APFS offers both case-sensitive and case-insensitive formats](https://support.apple.com/guide/disk-utility/file-system-formats-dsku19ed921c/mac); macOS volumes often use the latter while preserving the case used when a name was created. Linux filesystems are commonly case-sensitive. Windows filesystems are commonly case-insensitive by default, though configurations can introduce exceptions.
 
 This difference causes real portability failures. Code can work on a developer's Mac or Windows machine and fail in a Linux CI runner because an import or path uses the wrong capitalization.
 
@@ -349,7 +349,7 @@ This is a recurring debugging rule: determine whether a failure belongs to shell
 
 Deleting a directory entry removes a name from the namespace. Reclaiming the underlying storage can occur later.
 
-On common Unix filesystems, an object can remain reachable through another hard link or remain open inside a process. Its data can continue consuming space until the remaining references are gone.
+On common Unix filesystems, an object can remain reachable through another hard link or remain open inside a process. As documented for [Linux `unlink`](https://man7.org/linux/man-pages/man2/unlink.2.html), its data can continue consuming space until the remaining references are gone.
 
 This explains a production symptom in which a large log is deleted but disk space does not immediately return. A running service may still hold the object open. The correct investigation crosses two layers:
 
@@ -516,3 +516,10 @@ Then consider how the result might differ on another filesystem without changing
 ## Looking Ahead
 
 The filesystem explains how programs and data are named and found. Chapter 4 adds motion: how stored program files become running processes with memory, identity, open resources, and a lifecycle managed by the kernel.
+
+## References
+
+- [Linux manual: `path_resolution(7)`](https://man7.org/linux/man-pages/man7/path_resolution.7.html)
+- [Linux manual: `inode(7)`](https://man7.org/linux/man-pages/man7/inode.7.html)
+- [Linux manual: `unlink(2)`](https://man7.org/linux/man-pages/man2/unlink.2.html)
+- [Apple Support: APFS formats and case sensitivity](https://support.apple.com/guide/disk-utility/file-system-formats-dsku19ed921c/mac)

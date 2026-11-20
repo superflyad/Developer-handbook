@@ -1,8 +1,8 @@
-# Chapter 109 — Capacity, Partitioning, and Horizontal Scale
+# Chapter 109: Capacity, Partitioning, and Horizontal Scale
 
 A service averaging 20% CPU can still fail every morning because one tenant sends half the writes to one partition. A fleet can add replicas while latency rises because requests wait in a saturated database pool that does not scale with the fleet. An autoscaler can react correctly and still arrive after a three-minute burst is over.
 
-Scale is a workload shape, a bottleneck, and a time-dependent control problem—not a replica count.
+Scale is a workload shape, a bottleneck, and a time-dependent control problem, not a replica count.
 
 The central idea is:
 
@@ -612,7 +612,7 @@ Do not shard a small workload merely to demonstrate sophistication. Estimate and
 
 ### How does this make me a better engineer?
 
-It teaches you to preserve units, distinguish concurrency from throughput, look for skew, model time-to-capacity, and treat movement as a correctness event.
+You can preserve units, distinguish concurrency from throughput, look for skew, model time-to-capacity, and treat movement as a correctness event.
 
 ### How does this reduce waste?
 
@@ -632,12 +632,12 @@ Partitioning and replication create concurrent observations and writes. Chapter 
 
 ## References
 
-- [Google SRE Workbook — Data processing pipelines and capacity](https://sre.google/workbook/data-processing/)
-- [Kubernetes — Horizontal Pod Autoscaling](https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/)
-- [Kubernetes — Node autoscaling](https://kubernetes.io/docs/concepts/cluster-administration/node-autoscaling/)
-- [Amazon DynamoDB — Partition-key design](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html)
-- [Amazon DynamoDB — Write sharding](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-sharding.html)
-- [Apache Kafka — Introduction and partition model](https://kafka.apache.org/documentation/#intro_concepts_and_terms)
-- [Chapter 76 — Scheduling, Concurrency, and Work Queues](../automation/76-scheduling-concurrency-and-work-queues.md)
-- [Chapter 103 — ECS, EKS, ECR, and Container Platforms on AWS](../aws/103-ecs-eks-ecr-and-container-platforms-on-aws.md)
-- [Chapter 108 — Data Models and Storage Selection](108-data-models-and-storage-selection.md)
+- [Google SRE Workbook: Data processing pipelines and capacity](https://sre.google/workbook/data-processing/)
+- [Kubernetes: Horizontal Pod Autoscaling](https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/)
+- [Kubernetes: Node autoscaling](https://kubernetes.io/docs/concepts/cluster-administration/node-autoscaling/)
+- [Amazon DynamoDB: Partition-key design](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html)
+- [Amazon DynamoDB: Write sharding](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-sharding.html)
+- [Apache Kafka: Introduction and partition model](https://kafka.apache.org/documentation/#intro_concepts_and_terms)
+- [Chapter 76: Scheduling, Concurrency, and Work Queues](../automation/76-scheduling-concurrency-and-work-queues.md)
+- [Chapter 103: ECS, EKS, ECR, and Container Platforms on AWS](../aws/103-ecs-eks-ecr-and-container-platforms-on-aws.md)
+- [Chapter 108: Data Models and Storage Selection](108-data-models-and-storage-selection.md)

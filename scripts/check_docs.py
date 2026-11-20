@@ -15,7 +15,7 @@ APPENDICES = CHAPTERS / "appendices"
 SUMMARY = ROOT / "SUMMARY.md"
 FIRST_EDITION_LAST_CHAPTER = 129
 CHAPTER_FILE = re.compile(r"^(?P<number>\d{2,3})-.+\.md$")
-CHAPTER_TITLE = re.compile(r"^# Chapter (?P<number>\d+) — .+$")
+CHAPTER_TITLE = re.compile(r"^# Chapter (?P<number>\d+): .+$")
 APPENDIX_FILE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*\.md$")
 APPENDIX_TITLE = re.compile(r"^# (?!Chapter ).+$")
 MARKDOWN_LINK = re.compile(r"(?<!!)\[[^\]]+\]\((?P<destination>[^)]+)\)")
@@ -74,7 +74,7 @@ def check_chapter_titles(files: list[Path]) -> list[str]:
         title_match = CHAPTER_TITLE.match(title)
         if not title_match:
             errors.append(
-                f"{path.relative_to(ROOT)}: first line must use '# Chapter N — Title'"
+                f"{path.relative_to(ROOT)}: first line must use '# Chapter N: Title'"
             )
             continue
 
@@ -199,12 +199,27 @@ def check_local_links(files: list[Path]) -> list[str]:
     return errors
 
 
+def check_em_dashes(files: list[Path]) -> list[str]:
+    """Keep the handbook's punctuation rule enforceable."""
+    errors: list[str] = []
+    for path in files:
+        for line_number, line in enumerate(
+            path.read_text(encoding="utf-8").splitlines(), start=1
+        ):
+            if "\u2014" in line:
+                errors.append(
+                    f"{path.relative_to(ROOT)}:{line_number}: em dash is not allowed"
+                )
+    return errors
+
+
 def main() -> int:
     files = markdown_files()
     errors = (
         check_chapter_titles(files)
         + check_chapter_sequence(files)
         + check_local_links(files)
+        + check_em_dashes(files)
     )
 
     if errors:

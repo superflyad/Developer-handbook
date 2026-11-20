@@ -1,4 +1,4 @@
-# Chapter 51 — Links, Frames, Ethernet, and Wi-Fi
+# Chapter 51: Links, Frames, Ethernet, and Wi-Fi
 
 Before an IP packet can reach a router or another local host, it must cross a link. Ethernet and Wi-Fi provide link-layer delivery with different media and coordination, while switches and access points determine how far a frame can travel.
 
@@ -161,7 +161,7 @@ Links deliver frames locally. Chapter 52 introduces IPv4 and IPv6 addresses and 
 
 ## References
 
-- [RFC 894 — IP over Ethernet](https://www.rfc-editor.org/rfc/rfc894)
-- [RFC 8200 — Internet Protocol, Version 6](https://www.rfc-editor.org/rfc/rfc8200)
-- [IEEE 802.1 — Bridging and Management](https://www.ieee802.org/1/)
+- [RFC 894: IP over Ethernet](https://www.rfc-editor.org/rfc/rfc894)
+- [RFC 8200: Internet Protocol, Version 6](https://www.rfc-editor.org/rfc/rfc8200)
+- [IEEE 802.1: Bridging and Management](https://www.ieee802.org/1/)
 - [Linux Kernel: Ethernet Bridging](https://docs.kernel.org/networking/bridge.html)

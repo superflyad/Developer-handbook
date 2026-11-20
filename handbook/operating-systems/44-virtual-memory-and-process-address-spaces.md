@@ -1,4 +1,4 @@
-# Chapter 44 — Virtual Memory and Process Address Spaces
+# Chapter 44: Virtual Memory and Process Address Spaces
 
 A process does not normally address physical RAM directly. It operates in a virtual address space whose pages the operating system maps to physical memory, files, swap or pagefile backing, shared pages, or no storage until first use. This indirection provides isolation and flexible allocation, but makes memory numbers easy to misread.
 
@@ -123,7 +123,7 @@ Avoid comparing platform metrics by label alone or declaring a leak from virtual
 
 ### How does this make me a better engineer?
 
-It makes you distinguish address-space promises, current residency, shared cost, and pressure.
+You can distinguish address-space promises, current residency, shared cost, and pressure.
 
 ### How does this reduce waste?
 
@@ -131,7 +131,7 @@ It prevents false capacity alarms, inappropriate process restarts, and optimizat
 
 ## Handbook Principle #44
 
-> Interpret memory by mapping type, residency, sharing, and enforcement scope—not by one process number.
+> Interpret memory by mapping type, residency, sharing, and enforcement scope, not by one process number.
 
 ## Practical Observation
 

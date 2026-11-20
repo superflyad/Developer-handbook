@@ -1,4 +1,4 @@
-# Chapter 53 — Host Configuration, DHCP, ARP, and Neighbor Discovery
+# Chapter 53: Host Configuration, DHCP, ARP, and Neighbor Discovery
 
 An interface needs more than an address. It needs a prefix, routes, name-resolution settings, and a way to reach the next hop on its link. These values can be configured statically or learned through several protocols that solve different problems.
 
@@ -70,7 +70,7 @@ Who has 192.0.2.1? Tell 192.0.2.20.   → local broadcast
 192.0.2.1 is at 02:00:5e:10:00:01.   → reply
 ```
 
-The sender caches the mapping for a limited time. To contact a remote destination, it resolves the gateway's address—not the remote host's MAC. Routers do not forward ordinary ARP requests across subnet boundaries.
+The sender caches the mapping for a limited time. To contact a remote destination, it resolves the gateway's address, not the remote host's MAC. Routers do not forward ordinary ARP requests across subnet boundaries.
 
 An incomplete neighbor entry means resolution is still pending or failed. A stale entry is not automatically broken; operating systems can retain and probe cached state. Interpret the platform's neighbor-state model before deleting anything.
 
@@ -193,7 +193,7 @@ It prevents repeated lease renewals and cache flushes when the failing value bel
 
 ## Practical Observation
 
-On one interface you own, record the origin and lifetime of its addresses, prefix, default routes, DNS servers, and current neighbor entries. Choose one remote destination and identify which local next hop—not remote host—requires a neighbor mapping. Do not renew leases, flush caches, or alter the interface.
+On one interface you own, record the origin and lifetime of its addresses, prefix, default routes, DNS servers, and current neighbor entries. Choose one remote destination and identify which local next hop requires a neighbor mapping, rather than the remote host. Do not renew leases, flush caches, or alter the interface.
 
 ## Looking Ahead
 
@@ -201,8 +201,8 @@ Once a host has configuration and can reach a next hop, routers choose among pre
 
 ## References
 
-- [RFC 2131 — Dynamic Host Configuration Protocol](https://www.rfc-editor.org/rfc/rfc2131)
-- [RFC 9915 — Dynamic Host Configuration Protocol for IPv6](https://www.rfc-editor.org/rfc/rfc9915)
-- [RFC 826 — An Ethernet Address Resolution Protocol](https://www.rfc-editor.org/rfc/rfc826)
-- [RFC 4861 — Neighbor Discovery for IPv6](https://www.rfc-editor.org/rfc/rfc4861)
-- [RFC 4862 — IPv6 Stateless Address Autoconfiguration](https://www.rfc-editor.org/rfc/rfc4862)
+- [RFC 2131: Dynamic Host Configuration Protocol](https://www.rfc-editor.org/rfc/rfc2131)
+- [RFC 9915: Dynamic Host Configuration Protocol for IPv6](https://www.rfc-editor.org/rfc/rfc9915)
+- [RFC 826: An Ethernet Address Resolution Protocol](https://www.rfc-editor.org/rfc/rfc826)
+- [RFC 4861: Neighbor Discovery for IPv6](https://www.rfc-editor.org/rfc/rfc4861)
+- [RFC 4862: IPv6 Stateless Address Autoconfiguration](https://www.rfc-editor.org/rfc/rfc4862)

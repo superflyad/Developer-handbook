@@ -1,4 +1,4 @@
-# Chapter 74 — Idempotency, State, Retries, and Recovery
+# Chapter 74: Idempotency, State, Retries, and Recovery
 
 An automation can lose a response after the remote system accepts its request. At that moment, “try again” may recover the run or duplicate the effect. Safe recovery requires more than an exception handler.
 
@@ -723,7 +723,7 @@ Avoid automatic retry or compensation when repetition semantics, current state, 
 
 ### How does this make me a better engineer?
 
-It trains you to reason about facts versus observations, name uncertainty, define legal transitions, and design recovery before failure.
+You can reason about facts versus observations, name uncertainty, define legal transitions, and design recovery before failure.
 
 ### How does this reduce waste?
 
@@ -743,10 +743,10 @@ Idempotent operations and durable recovery still need one consistent way to buil
 
 ## References
 
-- [RFC 9110: HTTP Semantics — Idempotent Methods](https://www.rfc-editor.org/rfc/rfc9110.html#name-idempotent-methods)
-- [Amazon Builders' Library — Timeouts, retries, and backoff with jitter](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/)
-- [AWS Well-Architected Framework — Control and limit retry calls](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel_mitigate_interaction_failure_limit_retries.html)
+- [RFC 9110: HTTP Semantics: Idempotent Methods](https://www.rfc-editor.org/rfc/rfc9110.html#name-idempotent-methods)
+- [Amazon Builders' Library: Timeouts, retries, and backoff with jitter](https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/)
+- [AWS Well-Architected Framework: Control and limit retry calls](https://docs.aws.amazon.com/wellarchitected/latest/framework/rel05-bp03.html)
 - [Google Cloud Storage retry strategy](https://cloud.google.com/storage/docs/retry-strategy)
-- [Microsoft Azure Architecture Center — Saga pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/saga)
-- [Microsoft Azure Architecture Center — Compensating Transaction pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/compensating-transaction)
+- [Microsoft Azure Architecture Center: Saga pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/saga)
+- [Microsoft Azure Architecture Center: Compensating Transaction pattern](https://learn.microsoft.com/en-us/azure/architecture/patterns/compensating-transaction)
 - [SQLite transaction documentation](https://www.sqlite.org/lang_transaction.html)

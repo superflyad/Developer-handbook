@@ -1,4 +1,4 @@
-# Chapter 69 — Files, Paths, Text, and Structured Data in Python
+# Chapter 69: Files, Paths, Text, and Structured Data in Python
 
 Filesystem automation crosses several contracts at once: path interpretation, object type, permissions, encoding, structured syntax, metadata, concurrency, and recovery. A path-looking string proves none of them.
 
@@ -79,7 +79,7 @@ Always declare encoding for persisted or exchanged text. A platform default can 
 
 Newline translation is another boundary. For JSON, ordinary text mode is usually appropriate. For CSV, Python's `csv` module requires opening files with `newline=""` so the library, not the text layer, owns CSV newline handling.
 
-Avoid reading an unbounded file into memory. Check trusted metadata only as an initial limit—file size can change—and use bounded or streaming parsing where adversarial size matters.
+Avoid reading an unbounded file into memory. Trusted metadata provides only an initial limit because file size can change. Use bounded or streaming parsing where adversarial size matters.
 
 ## 5. Context managers close resources
 
@@ -450,7 +450,7 @@ Avoid treating this single-file pattern as a database transaction, security conf
 
 ### How does this make me a better engineer?
 
-It makes you distinguish path syntax, object identity, bytes, text, parsed values, metadata, and published state.
+You can distinguish path syntax, object identity, bytes, text, parsed values, metadata, and published state.
 
 ### How does this reduce waste?
 

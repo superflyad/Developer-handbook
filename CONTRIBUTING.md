@@ -59,6 +59,22 @@ Write for an engineer who wants a transferable mental model, not merely a comman
 
 Do not add invented benchmarks, unverifiable claims, vendor marketing language, or examples whose safe outcome depends on an unstated environment.
 
+## Continuing chapter review
+
+Review chapters in small, coherent groups so technical claims and prose receive careful attention. For each group:
+
+Prioritize chapters without primary references, claims tied to changing platform behavior, and examples that readers may apply to production systems.
+
+1. Check the chapter against current primary references and record any claim that needs verification.
+2. Remove repeated stock phrasing, unclear pronouns, and sentences that hide the actual mechanism or decision.
+3. Confirm that examples still match the stated platform and that links, headings, and cross references remain accurate.
+4. Open a scoped issue for work that needs a specialist or a larger rewrite. Include the chapter, exact passage, evidence, and proposed outcome.
+5. Submit reviewed corrections through a pull request with the validation results. Maintainers decide when to merge.
+
+The editorial checks enforce objective rules such as title format and punctuation. Reviewers remain responsible for clarity, accuracy, and whether a chapter adds useful knowledge.
+
+In the pull request, distinguish claims checked against a primary source, examples run in a stated environment, and sections that still need specialist review. A passing build and an unbroken reference link do not establish technical accuracy.
+
 ## Pull requests
 
 Keep each pull request coherent and reviewable. Complete the pull-request template and include:
