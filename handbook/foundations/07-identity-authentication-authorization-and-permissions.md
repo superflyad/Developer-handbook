@@ -4,7 +4,7 @@ The previous chapters explained how Unix runs software. This chapter explains ho
 
 The central idea is:
 
-> Every secure system must know who is acting, how that identity was verified, what authority it has, and which operations are permitted.
+> An access decision depends on the acting process's credentials, the requested operation, the target resource, and the applicable policy. Authentication may establish an identity at a login boundary; authorization evaluates a specific action.
 
 Unix expresses this through users, groups, process credentials, ownership, permissions, and kernel enforcement. The same model appears later in AWS IAM, databases, containers, Kubernetes, APIs, OAuth, and enterprise identity systems.
 
@@ -49,7 +49,7 @@ Examples include:
 
 In Unix, users are represented internally by numeric user IDs, or **UIDs**. Names such as `michael` are human-readable mappings to those identifiers.
 
-The kernel reasons primarily about identifiers and credentials, not display names.
+The kernel reasons primarily about identifiers and credentials, not display names. On Linux, a process has several user and group IDs with different roles, including effective IDs used in access decisions ([Linux `credentials(7)`](https://man7.org/linux/man-pages/man7/credentials.7.html)).
 
 ## 3. Processes carry identity
 
@@ -68,11 +68,11 @@ It also has security credentials, including user and group identities.
 
 This means the more precise question is not:
 
-> Can Michael read this file?
+> Can this user read this file?
 
 It is:
 
-> Can this process, running with Michael's credentials, read this file?
+> Can this process, running with that user's credentials, read this file?
 
 That distinction matters for shells, services, containers, scheduled jobs, CI systems, and remote sessions.
 
@@ -179,7 +179,7 @@ developers
 
 A resource can grant access to the `developers` group once instead of maintaining several individual rules.
 
-The same pattern appears in:
+Related grouping mechanisms appear in:
 
 - Unix groups,
 - Active Directory groups,
@@ -187,6 +187,8 @@ The same pattern appears in:
 - GitHub teams,
 - database roles,
 - Kubernetes RBAC groups.
+
+The systems differ in what a group can represent. For example, an [AWS IAM group](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups.html) can carry policies for its users but cannot itself be named as a principal in a resource policy.
 
 Groups reduce administrative duplication, but poorly designed groups can also accumulate excessive authority. Membership must remain intentional.
 
@@ -229,6 +231,8 @@ It is often described as the administrator account, but a more useful mental mod
 
 Root is powerful because the operating system treats its credentials specially.
 
+On Linux, user namespaces and capability sets can constrain what a process with UID `0` can do. UID `0` alone is not proof of unrestricted host authority ([Linux `capabilities(7)`](https://man7.org/linux/man-pages/man7/capabilities.7.html)).
+
 Running as root does not make a program correct or safe. It merely gives the process enough authority to cause much greater damage when something goes wrong.
 
 ## 11. `sudo`
@@ -267,9 +271,9 @@ It should not automatically have authority to delete production databases.
 
 Least privilege reduces blast radius. It protects systems not only from malicious behavior, but also from ordinary mistakes and defective software.
 
-## 13. Identity, authority, and capability
+## 13. Identity, authority, and operational ability
 
-These three ideas are related but distinct.
+These ideas are related but distinct.
 
 ### Identity
 
@@ -279,17 +283,19 @@ Who or what is acting?
 
 What operations is that identity permitted to perform?
 
-### Capability
+### Operational ability
 
-What operations can the system actually perform with the tools and resources available?
+Can the operation complete with the available tools, connectivity, and healthy dependencies?
 
 Examples:
 
-- A user may be authorized to compile C++ but have no compiler installed.
-- Docker may be installed, but the user may lack permission to access the Docker socket.
-- A process may have database credentials but no network route to the database.
+- A user may be authorized to compile C++ but have no compiler installed. The tool is unavailable.
+- Docker may be installed, but the user may lack permission to access the Docker socket. The operation is unauthorized.
+- A process may have database credentials but no network route to the database. The target is unreachable.
 
-This distinction prevents vague debugging. A failure may come from missing authority, missing capability, or the wrong identity.
+In security engineering, **capability** has more specific meanings. Linux capabilities, for example, divide privileged operations into discrete permissions. Do not use that term as a catchall for tool availability or network reachability ([Linux `capabilities(7)`](https://man7.org/linux/man-pages/man7/capabilities.7.html)).
+
+Distinguishing identity, authorization, and operational ability prevents vague debugging.
 
 ## 14. Authentication is not authorization
 
@@ -429,3 +435,9 @@ On a Unix-like system, the following concepts can be inspected separately:
 - the permissions attached to that file.
 
 The commands for inspecting them come later. For now, keep the model clear: a process acts, credentials identify it, the kernel evaluates authority, and the resource is either exposed or protected.
+
+## References
+
+- [Linux manual: `credentials(7)`](https://man7.org/linux/man-pages/man7/credentials.7.html)
+- [Linux manual: `capabilities(7)`](https://man7.org/linux/man-pages/man7/capabilities.7.html)
+- [AWS IAM: user groups](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups.html)

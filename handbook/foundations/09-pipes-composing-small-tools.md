@@ -91,7 +91,7 @@ Concurrency is part of the mechanism, even when the pipeline is typed as one lin
 
 ## 5. Pipes have bounded capacity
 
-The operating system buffers a limited amount of pipe data. The exact capacity is implementation-dependent and should not be treated as an application contract.
+The operating system buffers a limited amount of pipe data. The exact capacity is implementation-dependent and should not be treated as an application contract ([Linux `pipe(7)`](https://man7.org/linux/man-pages/man7/pipe.7.html)).
 
 When the pipe is empty, a blocking reader waits for data or end-of-file. When the pipe is full, a blocking writer waits for space.
 
@@ -226,7 +226,7 @@ failing_producer | successful_consumer
 
 The pipeline may appear successful because the consumer exited successfully.
 
-Bash and zsh provide a `pipefail` option, and POSIX.1-2024 also specifies it:
+Bash and zsh provide a `pipefail` option, and POSIX.1-2024 also specifies it ([Bash pipelines](https://www.gnu.org/software/bash/manual/html_node/Pipelines.html); [POSIX shell command language](https://pubs.opengroup.org/onlinepubs/9799919799/utilities/V3_chap02.html)):
 
 ```bash
 set -o pipefail
@@ -457,7 +457,7 @@ One pipe buffer fills. The child blocks while trying to write. The parent keeps 
 
 The bug is not “subprocesses are unreliable.” It is a flow-control deadlock caused by bounded buffers and an incorrect consumption strategy.
 
-Subprocess libraries commonly provide a communication method that drains both streams while waiting. Understanding the pipe model explains why that method exists.
+Python's [`subprocess` documentation](https://docs.python.org/3/library/subprocess.html#subprocess.Popen.communicate) recommends `communicate()` for this case because waiting before draining a captured pipe can deadlock. That method buffers captured data in memory, so unbounded output needs a different design.
 
 ## Engineering Review
 
@@ -508,3 +508,10 @@ Confirm that `tee` preserves the downstream result while recording the intermedi
 ## Looking Ahead
 
 Pipes carry data between process interfaces. Chapter 10 examines a different inherited interface: the environment, which supplies named configuration values when a process starts.
+
+## References
+
+- [Linux manual: `pipe(7)`](https://man7.org/linux/man-pages/man7/pipe.7.html)
+- [GNU Bash manual: pipelines](https://www.gnu.org/software/bash/manual/html_node/Pipelines.html)
+- [POSIX.1-2024: shell command language](https://pubs.opengroup.org/onlinepubs/9799919799/utilities/V3_chap02.html)
+- [Python documentation: `subprocess`](https://docs.python.org/3/library/subprocess.html)

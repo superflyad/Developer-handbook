@@ -10,7 +10,7 @@ The central idea is:
 
 A program often needs to receive data and report results. Hard-coding one keyboard, filename, window, or network connection into the program would make it difficult to reuse.
 
-Unix gives a new process conventional channels that are already open:
+A shell or other launcher normally connects a new command's conventional channels before it runs. A program can also be started with a channel redirected or closed, so it should not assume every descriptor is open ([Bash redirections](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)).
 
 ```text
 standard input  → program → standard output
@@ -56,7 +56,7 @@ These are conventions, not truth detectors. A program can write the wrong inform
 
 Two related layers are often collapsed in casual explanations.
 
-At the operating-system level, a process refers to open resources using small integers called **file descriptors**. The conventional descriptors are initially:
+At the operating-system level, a process refers to open resources using small integers called **file descriptors**. The conventional descriptor numbers are:
 
 ```text
 0  standard input
@@ -443,3 +443,9 @@ Explain why the terminal and file receive different information even though the 
 ## Looking Ahead
 
 Standard streams define the interfaces. Chapter 9 explains how the shell connects the standard output of one process to the standard input of another through a real interprocess channel: the pipe.
+
+## References
+
+- [GNU Bash manual: redirections](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
+- [Linux manual: `stdin(3)`](https://man7.org/linux/man-pages/man3/stdin.3.html)
+- [Linux manual: `pipe(7)`](https://man7.org/linux/man-pages/man7/pipe.7.html)
