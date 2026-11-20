@@ -56,7 +56,7 @@ utility [options] [operands]
 - An **option argument** supplies a value to an option, such as the number in `head -n 5`.
 - An **operand** names the object to process, such as `application.log`.
 
-These are conventions, not syntax enforced universally by the shell. Each program parses its own arguments. POSIX defines utility syntax guidelines, while GNU and other ecosystems add conventions such as long options.
+These are conventions, not syntax enforced universally by the shell. Each program parses its own arguments. POSIX defines [utility syntax guidelines](https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/V1_chap12.html), while GNU and other ecosystems add conventions such as long options.
 
 Common forms include:
 
@@ -113,7 +113,7 @@ Prefer `command -v` or the shell's `type` builtin when reasoning about shell com
 
 ## 6. A pathname bypasses `PATH` search
 
-If a command name contains a slash, Bash treats it as a pathname rather than searching `PATH`:
+If a command name contains a slash, Bash treats it as a pathname rather than searching `PATH` ([Bash command search](https://www.gnu.org/software/bash/manual/html_node/Command-Search-and-Execution.html)):
 
 ```bash
 ./tools/check
@@ -207,7 +207,7 @@ status=$?
 printf 'status=%s\n' "$status"
 ```
 
-Many commands use zero for success and nonzero for failure, but meanings are command-specific. For `grep`, zero means a match was selected, one means no match, and a larger value indicates an error in common implementations.
+Many commands use zero for success and nonzero for failure, but meanings are command-specific. GNU `grep` normally returns zero when a line is selected, one when none is selected, and two for an error. Its quiet mode has an exception when a match is found, and other implementations may use other error values ([GNU Grep exit status](https://www.gnu.org/software/grep/manual/html_node/Exit-Status.html)).
 
 “Nonzero” therefore does not always mean “the tool malfunctioned.” It can represent a useful negative result. Read the documented exit-status contract before placing a command in automation.
 
@@ -331,3 +331,9 @@ Record which forms are Bash-specific, which command implementation each form sel
 ## Looking Ahead
 
 Commands operate relative to a location and on pathnames. Chapter 13 makes working directories and path resolution predictable before Part II begins changing filesystem state.
+
+## References
+
+- [POSIX.1-2024: utility conventions](https://pubs.opengroup.org/onlinepubs/9799919799/basedefs/V1_chap12.html)
+- [GNU Bash manual: command search and execution](https://www.gnu.org/software/bash/manual/html_node/Command-Search-and-Execution.html)
+- [GNU Grep manual: exit status](https://www.gnu.org/software/grep/manual/html_node/Exit-Status.html)

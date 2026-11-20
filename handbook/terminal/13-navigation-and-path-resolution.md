@@ -8,7 +8,7 @@ The central idea is:
 
 ## 1. Location is process state
 
-Every process has a current working directory. A shell reports its own with:
+Every user process has a current working directory. Relative pathname lookup normally starts there ([Linux `path_resolution(7)`](https://man7.org/linux/man-pages/man7/path_resolution.7.html)). A shell reports its own with:
 
 ```bash
 pwd
@@ -182,13 +182,13 @@ target='draft reports/May review.md'
 ls -l -- "$target"
 ```
 
-This is unsafe:
+In Bash and POSIX-style shells, this unquoted form can split or expand the pathname:
 
 ```bash
 ls -l $target
 ```
 
-The shell may split and expand the value into multiple arguments. The bug occurs before `ls` begins.
+Default `zsh` does not split an unquoted scalar on whitespace. Quoting still makes the intended argument boundary explicit across these shells ([zsh parameter expansion](https://zsh.sourceforge.io/Doc/Release/Expansion.html#Parameter-Expansion); [Bash word splitting](https://www.gnu.org/software/bash/manual/html_node/Word-Splitting.html)).
 
 ## 11. Establish location without relying on memory
 
@@ -322,3 +322,10 @@ Explain why the logical and physical displays may differ and which path a child 
 ## Looking Ahead
 
 Navigation observes and changes process location. Chapter 14 uses that verified context to create, copy, move, and remove filesystem entries safely.
+
+## References
+
+- [Linux manual: `path_resolution(7)`](https://man7.org/linux/man-pages/man7/path_resolution.7.html)
+- [GNU Bash manual: tilde expansion](https://www.gnu.org/software/bash/manual/html_node/Tilde-Expansion.html)
+- [GNU Bash manual: word splitting](https://www.gnu.org/software/bash/manual/html_node/Word-Splitting.html)
+- [zsh manual: parameter expansion](https://zsh.sourceforge.io/Doc/Release/Expansion.html#Parameter-Expansion)
