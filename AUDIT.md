@@ -18,7 +18,7 @@ For each chapter:
 | Part | Chapters | Audit queue |
 | --- | --- | --- |
 | Foundations | 1–11 | Chapters 1–3 had initial scoped source work in PRs #17 and #18. Chapters 4–6 received a scoped source pass in PR #21, and Chapters 7–9 in PR #22. Chapters 10–11 are receiving the next pass. A complete claim-by-claim review of Part I remains open. |
-| Unix environment | 12–23 | Queued in [issue #19](https://github.com/superflyad/Developer-handbook/issues/19). |
+| Unix environment | 12–23 | Chapters 12–13 are receiving an initial source pass. Chapters 14–23 remain queued in [issue #19](https://github.com/superflyad/Developer-handbook/issues/19). |
 | Git | 24–36 | Queued. |
 | Operating systems | 37–49 | Queued. |
 | Networking | 50–63 | Chapter 55 had initial scoped source work in PR #17. The part remains queued for a complete review. |
