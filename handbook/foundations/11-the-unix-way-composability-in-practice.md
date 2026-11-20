@@ -156,7 +156,7 @@ At the workflow level, decide:
 - whether an early-closing consumer makes upstream `SIGPIPE` expected,
 - which diagnostics must be retained.
 
-`pipefail` can expose an earlier failure, but it cannot decide the workflow's business semantics. For example, `grep` commonly distinguishes matches, no matches, and operational errors through different statuses. A script must decide which outcomes are acceptable in context.
+`pipefail` can expose an earlier failure, but it cannot decide the workflow's business semantics. For example, GNU `grep` normally returns 0 for a selected line, 1 for no selected lines, and 2 for an error; quiet mode has an important exception when a match is found ([GNU Grep exit status](https://www.gnu.org/software/grep/manual/html_node/Exit-Status.html)). A script must decide which outcomes are acceptable in context.
 
 Failure policy is part of the composition, not a switch that can replace understanding.
 
@@ -183,7 +183,7 @@ Test boundary cases before automation turns a small assumption into a repeated f
 
 ## 9. Keep ordering assumptions explicit
 
-Some stages require or change order. For example, `uniq` combines adjacent duplicates. It does not promise to find identical records scattered throughout arbitrary input. A preceding `sort` establishes adjacency but also destroys the original order.
+Some stages require or change order. For example, `uniq` combines adjacent duplicates. It does not promise to find identical records scattered throughout arbitrary input ([GNU Coreutils `uniq`](https://www.gnu.org/software/coreutils/manual/html_node/uniq-invocation.html)). A preceding `sort` establishes adjacency but also changes the original order.
 
 ```text
 original order
@@ -587,7 +587,7 @@ Then change one input line to:
 api,"ERROR,RETRYING"
 ```
 
-Observe that the simple comma-field contract no longer represents the data correctly. Explain whether the right response is a more careful pipeline, a real CSV parser, or a different source format.
+Observe that the simple comma-field contract no longer represents the data correctly. Explain whether the right response is a more careful pipeline, a real CSV parser, or a different source format. A CSV parser must apply the format's quoting rules, not merely split at each comma ([Python `csv` documentation](https://docs.python.org/3/library/csv.html)).
 
 ## Part I Review
 
@@ -607,3 +607,9 @@ composition turns stable interfaces into workflows
 ```
 
 Part II moves from this mental model into deliberate command-line practice: navigation, file operations, search, text processing, expansion, job control, package management, shell configuration, and efficient daily workflows.
+
+## References
+
+- [GNU Grep manual: exit status](https://www.gnu.org/software/grep/manual/html_node/Exit-Status.html)
+- [GNU Coreutils manual: `uniq`](https://www.gnu.org/software/coreutils/manual/html_node/uniq-invocation.html)
+- [Python documentation: `csv`](https://docs.python.org/3/library/csv.html)
